@@ -1,0 +1,1 @@
+The code to compute the incomplete gamma function was adapted from the Compute.io package, which is released under an MIT license, Copyright (c) 2015 The Compute.io Authors. All rights reserved.

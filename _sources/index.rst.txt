@@ -1,0 +1,62 @@
+Probability Distribution Explorer
+=================================
+
+Welcome to the probability distribution explorer. This is a tool for you to explore commonly used probability distributions, including information about the stories behind them (e.g., the outcome of a coin flip is Bernoulli distributed), their probability mass/probability density functions, their moments, etc. Also included is syntax on how to use these distributions in `NumPy <https://docs.scipy.org/doc/numpy/reference/random/index.html>`_, `SciPy <https://docs.scipy.org/doc/scipy/reference/stats.html>`_, and `Stan <https://mc-stan.org>`_. Each distribution has its own vignette, which you can dive right in to exploring. You are, however, strongly advised to read up on the background before proceeding to the distributions so you understand the notation and key concepts.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Background
+
+   background/motivation
+   background/review_of_key_concepts
+   background/software
+   background/resources
+   background/vignette_contents
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Univariate discrete
+
+   discrete/bernoulli
+   discrete/binomial
+   discrete/categorical
+   discrete/discrete_uniform
+   discrete/geometric
+   discrete/hypergeometric
+   discrete/negative_binomial
+   discrete/poisson
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Univariate continuous
+
+   continuous/beta
+   continuous/cauchy
+   continuous/exponential
+   continuous/gamma
+   continuous/halfcauchy
+   continuous/halfnormal
+   continuous/halfstudent_t
+   continuous/inverse_gamma
+   continuous/lognormal
+   continuous/normal
+   continuous/pareto
+   continuous/student_t
+   continuous/uniform
+   continuous/weibull
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Multivariate discrete
+
+   multivariate_discrete/multinomial
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Multivariate continuous
+
+   multivariate_continuous/dirichlet
+   multivariate_continuous/lkj
+   multivariate_continuous/multivariate_normal
+
+
