@@ -32,7 +32,8 @@ Below I show an interactive plot for the Normal distribution to demonstrate how 
     import bokeh.io
     import distribution_explorer
 
-    bokeh.io.show(distribution_explorer.explore('normal'))
+    bokeh.io.show(distribution_explorer.explore('normal', background_fill_alpha=0, border_fill_alpha=0))
+
 
 There is a slider for each of the parameters of the distribution. You can adjust the position of the slider to adjust the value of the parameter, and the plots updated accordingly. The text windows on either side of the sliders allow you to adjust the allowable range of the sliders. If you choose a value outside of the allowable values of the parameter, the minimum or maximum allowed value of the parameter will be used instead.
 

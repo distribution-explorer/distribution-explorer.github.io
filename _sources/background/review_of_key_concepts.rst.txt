@@ -87,6 +87,8 @@ We plot a PDF as a smooth curve. The curve only appears for values of the x-axis
 	p = bokeh.plotting.figure(height=200, width=300, x_axis_label='x', 
 	y_axis_label='f(x; 1.68, 5)', title='Gamma PDF', x_range=[-0.15, 4], tools="save")
 	p.line(x, y_pdf, line_width=2)
+	p.background_fill_alpha = 0
+	p.border_fill_alpha = 0
 
 	bokeh.io.show(p)
 
@@ -118,6 +120,8 @@ Since they take on discrete values, we plot PMFs differently. The convention in 
 
 	p.circle(x, y_pmf, size=5)
 	p.segment(x0=x, x1=x, y0=0, y1=y_pmf, line_width=2)
+	p.background_fill_alpha = 0
+	p.border_fill_alpha = 0
 
 	bokeh.io.show(p)
 
@@ -147,6 +151,8 @@ Plots of CDFs for continuous distributions are plotted as smooth curves. Taking 
 	p = bokeh.plotting.figure(height=200, width=300, x_axis_label='x', 
 	y_axis_label='F(x; 1.68, 5)', title='Gamma CDF', x_range=[-0.15, 4], tools="save")
 	p.line(x, y_cdf, line_width=2)
+	p.background_fill_alpha = 0
+	p.border_fill_alpha = 0
 
 	bokeh.io.show(p)
 
@@ -186,6 +192,9 @@ For discrete distributions, I plot the CDFs as "staircases," as shown below.
 	                          y_axis_label='F(n; 20, 0.34)',
 	                          title='Binomial CDF', tools="save")
 	p.line(x_c, y_c, line_width=2)
+	p.background_fill_alpha = 0
+	p.border_fill_alpha = 0
+
 	bokeh.io.show(p)
 
 The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to :math:`-\infty` and :math:`\infty`, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.
@@ -213,6 +222,10 @@ The CDF appears to be multivalued at the vertical lines of the staircase. It is 
 	p.circle([0], [0], fill_color='white')
 	p.circle(x[1:], y[:-1], fill_color='white')
 	p.circle(x, y)
+	p.background_fill_alpha = 0
+	p.border_fill_alpha = 0
+
+
 	bokeh.io.show(p)
 
 However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret. Furthemore, we know that all CDFs extend toward :math:`x=-\infty` with a value of zero and toward :math:`x=\infty` with a value of one. So, again, there is no ambiguity in cutting off the infinitely long tails of the CDF.

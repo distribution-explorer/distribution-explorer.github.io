@@ -50,7 +50,7 @@ Moments
 
 Mean: :math:`\mu` for :math:`\nu > 1`, otherwise undefined.
 
-Variance: :math:`\displaystyle{\frac{\nu}{\nu - 2}}` for :math:`\nu > 2`. If :math:`1 < \nu < 2`, then the variance is infinite. If :math:`\nu \le 1`, the variance is undefined.
+Variance: :math:`\displaystyle{\frac{\nu}{\nu - 2}}\,\sigma^2` for :math:`\nu > 2`. If :math:`1 < \nu < 2`, then the variance is infinite. If :math:`\nu \le 1`, the variance is undefined.
 
 
 ----
@@ -102,7 +102,7 @@ PDF and CDF plots
     import bokeh.io
     import distribution_explorer
 
-    bokeh.io.show(distribution_explorer.explore('student_t'))
+    bokeh.io.show(distribution_explorer.explore('student_t', background_fill_alpha=0, border_fill_alpha=0))
 
 ----
 

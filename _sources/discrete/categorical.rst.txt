@@ -116,7 +116,7 @@ PMF and CDF plots
     import bokeh.io
     import distribution_explorer
 
-    bokeh.io.show(distribution_explorer.explore('categorical'))
+    bokeh.io.show(distribution_explorer.explore('categorical', background_fill_alpha=0, border_fill_alpha=0))
 
 
 ----

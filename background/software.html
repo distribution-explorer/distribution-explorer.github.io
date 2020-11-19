@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,19 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -25,8 +31,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script src="../_static/togglebutton.js"></script>
-        <script >var togglebuttonSelector = '.toggle';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
@@ -34,12 +38,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Other resources" href="resources.html" />
@@ -80,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -142,6 +141,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -270,7 +270,7 @@
 </pre></div>
 </div>
 <p>If I wanted to compute the probability density function for specific values of <span class="math notranslate nohighlight">\(x\)</span> and plot it, I could do the following.</p>
-<div class="highlight-python notranslate" id="background/software.bokeh-plot-3810a03559d648918f2b8bd83d1875c2-external-background-software.js"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate" id="background/software.bokeh-plot-a6206d22b7974356bc8443f0cf3915bc-external-background-software.js"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span>
 
 <span class="kn">import</span> <span class="nn">bokeh.io</span>
@@ -284,14 +284,15 @@
 <span class="n">y_pdf</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Make the plot</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s2">&quot;save&quot;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_pdf</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">range_padding</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
 
-<script src="bokeh-plot-3810a03559d648918f2b8bd83d1875c2-external-background-software.js" id="e73727bd-2f6c-4d94-ba55-a317297b1e28"></script><p>In the vignettes for each distribution, I show the syntax of how to instantiate the class using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm(mu,</span> <span class="pre">sigma)</span></code>.</p>
+<script src="bokeh-plot-a6206d22b7974356bc8443f0cf3915bc-external-background-software.js" id="a43e7d54-1f86-4b1b-8d2d-3417048fa296"></script><p>In the vignettes for each distribution, I show the syntax of how to instantiate the class using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm(mu,</span> <span class="pre">sigma)</span></code>.</p>
 </div>
 <div class="section" id="usage-of-stan">
 <h2>Usage of Stan<a class="headerlink" href="#usage-of-stan" title="Permalink to this headline">¶</a></h2>
@@ -329,11 +330,11 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Jul 06, 2020.
+        Last updated on Nov 19, 2020.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7faec8b74250> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fabdef199a0> 
 
 <p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
@@ -356,7 +357,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

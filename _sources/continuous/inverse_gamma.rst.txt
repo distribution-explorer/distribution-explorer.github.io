@@ -98,7 +98,7 @@ PDF and CDF plots
     import bokeh.io
     import distribution_explorer
 
-    bokeh.io.show(distribution_explorer.explore('inverse_gamma'))
+    bokeh.io.show(distribution_explorer.explore('inverse_gamma', background_fill_alpha=0, border_fill_alpha=0))
 
 ----
 

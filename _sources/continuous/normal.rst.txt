@@ -131,7 +131,7 @@ PDF and CDF plots
     import bokeh.io
     import distribution_explorer
 
-    bokeh.io.show(distribution_explorer.explore('normal'))
+    bokeh.io.show(distribution_explorer.explore('normal', background_fill_alpha=0, border_fill_alpha=0))
 
 ----
 

@@ -109,7 +109,7 @@ PMF and CDF plots
     import bokeh.io
     import distribution_explorer
 
-    bokeh.io.show(distribution_explorer.explore('discrete_uniform'))
+    bokeh.io.show(distribution_explorer.explore('discrete_uniform', background_fill_alpha=0, border_fill_alpha=0))
 
 ----
 

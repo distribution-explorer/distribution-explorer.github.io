@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,19 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -25,8 +31,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
-        <script src="../_static/togglebutton.js"></script>
-        <script >var togglebuttonSelector = '.toggle';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
@@ -34,12 +38,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Uniform distribution" href="uniform.html" />
@@ -80,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -149,6 +148,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -251,7 +251,7 @@ f(y;\nu, \mu, \sigma) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\f
 <div class="section" id="moments">
 <h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline">¶</a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\mu\)</span> for <span class="math notranslate nohighlight">\(\nu &gt; 1\)</span>, otherwise undefined.</p>
-<p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\nu}{\nu - 2}}\)</span> for <span class="math notranslate nohighlight">\(\nu &gt; 2\)</span>. If <span class="math notranslate nohighlight">\(1 &lt; \nu &lt; 2\)</span>, then the variance is infinite. If <span class="math notranslate nohighlight">\(\nu \le 1\)</span>, the variance is undefined.</p>
+<p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\nu}{\nu - 2}}\,\sigma^2\)</span> for <span class="math notranslate nohighlight">\(\nu &gt; 2\)</span>. If <span class="math notranslate nohighlight">\(1 &lt; \nu &lt; 2\)</span>, then the variance is infinite. If <span class="math notranslate nohighlight">\(\nu \le 1\)</span>, the variance is undefined.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="usage">
@@ -299,7 +299,7 @@ f(y;\nu, \mu, \sigma) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\f
 <div class="section" id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this headline">¶</a></h2>
 
-<script src="bokeh-plot-9e78c5b207b64c00805a9ddbfbe0bf3f-external-continuous-student_t.js" id="5f3d28d1-b9ef-49bf-bf6d-fe0f7340a995"></script></div>
+<script src="bokeh-plot-9c20a9790ae944a4a3a0e5c2b65ac245-external-continuous-student_t.js" id="19296ed3-66d5-4e73-9d5a-dc6af9942da7"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
@@ -333,11 +333,11 @@ f(y;\nu, \mu, \sigma) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\f
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Jul 06, 2020.
+        Last updated on Nov 19, 2020.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7faec7db2590> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fabdecb3820> 
 
 <p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
@@ -360,7 +360,6 @@ f(y;\nu, \mu, \sigma) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\f
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

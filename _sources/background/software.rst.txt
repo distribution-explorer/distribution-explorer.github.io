@@ -93,8 +93,9 @@ If I wanted to compute the probability density function for specific values of :
 	y_pdf = norm.pdf(x)
 
 	# Make the plot
-	p = bokeh.plotting.figure(height=200, width=300, x_axis_label='x', y_axis_label='f(x)')
+	p = bokeh.plotting.figure(height=200, width=300, x_axis_label='x', y_axis_label='f(x)', tools="save")
 	p.line(x, y_pdf, line_width=2)
+	p.x_range.range_padding = 0
 
 	bokeh.io.show(p)
 
