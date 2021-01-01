@@ -35,7 +35,7 @@ As for the :ref:`normal`, there are two parameters, the location parameter :math
 Support
 -------
 
-The Log-Normal distribution is supported on the set of real numbers.
+The Log-Normal distribution is supported on the set of positive real numbers.
 
 
 
