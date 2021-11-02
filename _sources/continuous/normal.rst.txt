@@ -96,7 +96,7 @@ Related distributions
 .. math::
 
     \begin{align}
-    \ln f(y;\theta) \approx \ln f(y^*;\theta) + \left.\frac{1}{2}\,\frac{\mathrm{d} \ln f(y;\theta)}{\mathrm{d}y}\right|_{y=y^*}\,(y-y^*)^2.
+    \ln f(y;\theta) \approx \ln f(y^*;\theta) + \left.\frac{1}{2}\,\frac{\mathrm{d}^2 \ln f(y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\,(y-y^*)^2.
     \end{align}
 
 This is the log PDF that is that of a Normal distribution. The location parameter of the approximate Normal distribution is :math:`y^*` (the location of the peak) and the scale parameter is 
@@ -104,7 +104,7 @@ This is the log PDF that is that of a Normal distribution. The location paramete
 .. math::
 
     \begin{align}
-    -\left(\left.\frac{\mathrm{d} \ln f(y;\theta)}{\mathrm{d}y}\right|_{y=y^*}\right)^{-1/2}.
+    -\left(\left.\frac{\mathrm{d}^2 \ln f(y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\right)^{-1/2}.
     \end{align}
 
 Note, though, that this may be a very poor approximation as we move even a small distance from the peak.

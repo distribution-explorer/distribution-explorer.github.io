@@ -1,71 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Negative Binomial distribution &mdash; Probability Distribution Explorer  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Poisson distribution" href="poisson.html" />
     <link rel="prev" title="Hypergeometric distribution" href="hypergeometric.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -73,19 +41,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Background</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../background/motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/review_of_key_concepts.html">Review of key concepts</a></li>
@@ -93,7 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../background/resources.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/vignette_contents.html">Vignette contents</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Univariate discrete</span></p>
+<p class="caption" role="heading"><span class="caption-text">Univariate discrete</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">Bernoulli distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binomial.html">Binomial distribution</a></li>
@@ -117,7 +74,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="poisson.html">Poisson distribution</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Univariate continuous</span></p>
+<p class="caption" role="heading"><span class="caption-text">Univariate continuous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
@@ -134,70 +91,38 @@
 <li class="toctree-l1"><a class="reference internal" href="../continuous/uniform.html">Uniform distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/weibull.html">Weibull distribution</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Multivariate discrete</span></p>
+<p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_discrete/multinomial.html">Multinomial distribution</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Multivariate continuous</span></p>
+<p class="caption" role="heading"><span class="caption-text">Multivariate continuous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/dirichlet.html">Dirichlet distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/lkj.html">Lewandowski-Kurowicka-Joe (LKJ) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/multivariate_normal.html">Multivariate Normal distribution</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #827F7F" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Probability Distribution Explorer</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
 
-    
 
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -222,32 +147,32 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="negative-binomial-distribution">
-<span id="negative-binomial"></span><h1>Negative Binomial distribution<a class="headerlink" href="#negative-binomial-distribution" title="Permalink to this headline">¶</a></h1>
+<section id="negative-binomial-distribution">
+<span id="negative-binomial"></span><h1>Negative Binomial distribution<a class="headerlink" href="#negative-binomial-distribution" title="Permalink to this headline"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline">¶</a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline"></a></h2>
 <p>We perform a series of Bernoulli trials with probability <span class="math notranslate nohighlight">\(\beta/(1+\beta)\)</span> of success. The number of failures, <span class="math notranslate nohighlight">\(y\)</span>, before we get <span class="math notranslate nohighlight">\(\alpha\)</span> successes is Negative Binomially distributed.</p>
 <p>An equivalent story is this: Draw a parameter <span class="math notranslate nohighlight">\(\lambda\)</span> out of a <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a> with parameters <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. Then draw a number <span class="math notranslate nohighlight">\(y\)</span> out of a <a class="reference internal" href="poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a> with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>. Then <span class="math notranslate nohighlight">\(y\)</span> is Negative Binomially distributed with parameters <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. For this reason, the Negative Binomial distribution is sometimes called the Gamma-Poisson distribution.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h2>
 <p>Bursty gene expression can give mRNA count distributions that are Negative Binomially distributed. Here, “success” is that a burst in gene expression stops. In this case, the parameter <span class="math notranslate nohighlight">\(1/\beta\)</span> is the mean number of transcripts in a burst of expression. The parameter <span class="math notranslate nohighlight">\(\alpha\)</span> is related to the frequency of the bursts.  If multiple bursts are possible within the lifetime of mRNA, then <span class="math notranslate nohighlight">\(\alpha &gt; 1\)</span>. Then, the number of “failures” is the number of mRNA transcripts that are made in the characteristic lifetime of mRNA.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
 <p>There are two parameters: <span class="math notranslate nohighlight">\(\alpha\)</span>, the desired number of successes, and <span class="math notranslate nohighlight">\(\beta\)</span>, which is the mean of the <span class="math notranslate nohighlight">\(\alpha\)</span> identical Gamma distributions that give the Negative Binomial. The probability of success of each Bernoulli trial is given by <span class="math notranslate nohighlight">\(\beta/(1+\beta)\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline"></a></h2>
 <p>The Negative-Binomial distribution is supported on the set of nonnegative integers.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this headline">¶</a></h2>
+<section id="probability-mass-function">
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this headline"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 f(y;\alpha,\beta) = \begin{pmatrix}
@@ -262,16 +187,16 @@ y+\alpha-1 \\
 f(y;\alpha,\beta) = \frac{\Gamma(y+\alpha)}{\Gamma(\alpha) \, y!}\,\left(\frac{\beta}{1+\beta}\right)^\alpha \left(\frac{1}{1+\beta}\right)^y.
 \end{align}\]</div>
 <p>See the notes below for other parametrizations.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline">¶</a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\alpha}{\beta}}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\alpha(1+\beta)}{\beta^2}}\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 41%" />
@@ -303,19 +228,19 @@ f(y;\alpha,\beta) = \frac{\Gamma(y+\alpha)}{\Gamma(\alpha) \, y!}\,\left(\frac{\
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline">¶</a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="geometric.html#geometric"><span class="std std-ref">Geometric distribution</span></a> is a special case of the Negative Binomial distribution in which <span class="math notranslate nohighlight">\(\alpha=1\)</span> and <span class="math notranslate nohighlight">\(\theta = \beta/(1+\beta)\)</span>.</p></li>
 <li><p>The continuous analog of the Negative Binomial distribution is the <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a>.</p></li>
 <li><p>In a certain limit, which is easier considered using the <span class="math notranslate nohighlight">\((\mu,\phi)\)</span> parametrization below, the Negative Binomial distribution becomes a <a class="reference internal" href="poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a>. See the note below for this limit.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>The Negative Binomial distribution may be parametrized such that the probability mass function is</p></li>
 </ul>
@@ -339,21 +264,21 @@ f(y;\alpha,\beta) = \frac{\Gamma(y+\alpha)}{\Gamma(\alpha) \, y!}\,\left(\frac{\
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{n\,\frac{1-p}{p}}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{n\,\frac{1-p}{p^2}}\)</span>.</p>
 <p>Note that Wikipedia uses this parametrization except defining <span class="math notranslate nohighlight">\(p\)</span> to be the probability of <em>failure</em> of a Bernoulli trial, in accordance with the story above.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pmf-and-cdf-plots">
-<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this headline">¶</a></h2>
+<section id="pmf-and-cdf-plots">
+<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this headline"></a></h2>
 <p>In the α-β formulation:</p>
 
-<script src="bokeh-plot-e18621ac0de64fdd9cfb4f650bf90e79-external-discrete-negative_binomial.js" id="a70b88a7-795b-418e-976a-34549ee00d5a"></script><div class="line-block">
+<script src="bokeh-plot-27aab4644e064f76a65fb7f60d04e127-external-discrete-negative_binomial.js" id="b66aeb98-f48f-4cbd-87c2-734d1318410a"></script><div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>In the µ-φ formulation:</p>
 
-<script src="bokeh-plot-4e6900aa632b4fb3bef6f57975cffddb-external-discrete-negative_binomial.js" id="0722fb69-8731-4996-ab81-2920d9adcef5"></script></div>
+<script src="bokeh-plot-312c1740917c4b84b6df060b5f5a792e-external-discrete-negative_binomial.js" id="039e6475-c3f4-42e4-bc8c-901b4a0f5b8b"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.negative_binomial.html">Numpy</a></p></li>
@@ -361,35 +286,26 @@ f(y;\alpha,\beta) = \frac{\Gamma(y+\alpha)}{\Gamma(\alpha) \, y!}\,\left(\frac{\
 <li><p><a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/negative-binomial-distribution.html">Stan α-β formulation</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/nbalt.html">Stan µ-φ formulation formulation</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="poisson.html" class="btn btn-neutral float-right" title="Poisson distribution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="hypergeometric.html" class="btn btn-neutral float-left" title="Hypergeometric distribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hypergeometric.html" class="btn btn-neutral float-left" title="Hypergeometric distribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="poisson.html" class="btn btn-neutral float-right" title="Poisson distribution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">
-        Last updated on Mar 16, 2021.
-      </span>
+      <span class="lastupdated">Last updated on Nov 01, 2021.
+      </span></p>
+  </div>
 
-    </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa7038ed1c0> 
+   <jinja2.runtime.BlockReference object at 0x7f90358e10a0> 
 
 <p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
@@ -404,25 +320,15 @@ f(y;\alpha,\beta) = \frac{\Gamma(y+\alpha)}{\Gamma(\alpha) \, y!}\,\left(\frac{\
  
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-    
+  </script>  
 
   <style>
          .wy-nav-content { max-width: 900px; }

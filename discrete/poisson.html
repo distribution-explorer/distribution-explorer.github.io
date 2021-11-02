@@ -1,71 +1,39 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poisson distribution &mdash; Probability Distribution Explorer  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-
-  
-  
-  
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Beta distribution" href="../continuous/beta.html" />
     <link rel="prev" title="Negative Binomial distribution" href="negative_binomial.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -73,19 +41,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Background</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../background/motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/review_of_key_concepts.html">Review of key concepts</a></li>
@@ -93,7 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../background/resources.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/vignette_contents.html">Vignette contents</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Univariate discrete</span></p>
+<p class="caption" role="heading"><span class="caption-text">Univariate discrete</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">Bernoulli distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binomial.html">Binomial distribution</a></li>
@@ -116,7 +73,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Univariate continuous</span></p>
+<p class="caption" role="heading"><span class="caption-text">Univariate continuous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
@@ -133,70 +90,38 @@
 <li class="toctree-l1"><a class="reference internal" href="../continuous/uniform.html">Uniform distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/weibull.html">Weibull distribution</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Multivariate discrete</span></p>
+<p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_discrete/multinomial.html">Multinomial distribution</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Multivariate continuous</span></p>
+<p class="caption" role="heading"><span class="caption-text">Multivariate continuous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/dirichlet.html">Dirichlet distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/lkj.html">Lewandowski-Kurowicka-Joe (LKJ) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/multivariate_normal.html">Multivariate Normal distribution</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #827F7F" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Probability Distribution Explorer</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
 
-    
 
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -221,45 +146,45 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="poisson-distribution">
-<span id="poisson"></span><h1>Poisson distribution<a class="headerlink" href="#poisson-distribution" title="Permalink to this headline">¶</a></h1>
+<section id="poisson-distribution">
+<span id="poisson"></span><h1>Poisson distribution<a class="headerlink" href="#poisson-distribution" title="Permalink to this headline"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline">¶</a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline"></a></h2>
 <p>The number <span class="math notranslate nohighlight">\(n\)</span> of arrivals of a Poisson process in unit time is Poisson distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h2>
 <p>The number of mutations in a strand of DNA per unit length (since mutations are rare) are Poisson distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
 <p>The single parameter is the rate <span class="math notranslate nohighlight">\(\lambda\)</span> of the arrival of the Poisson process.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline"></a></h2>
 <p>The Poisson distribution is supported on the set of nonnegative integers.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this headline">¶</a></h2>
+<section id="probability-mass-function">
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this headline"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(n;\lambda) = \frac{\lambda^n}{n!}\,\mathrm{e}^{-\lambda}.
 \end{align}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline">¶</a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\lambda\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\lambda\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
@@ -282,58 +207,49 @@ f(n;\lambda) = \frac{\lambda^n}{n!}\,\mathrm{e}^{-\lambda}.
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline">¶</a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>In the limit of <span class="math notranslate nohighlight">\(N\to\infty\)</span> and <span class="math notranslate nohighlight">\(\theta\to 0\)</span> such that the quantity <span class="math notranslate nohighlight">\(N\theta\)</span> is fixed, the <a class="reference internal" href="binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> becomes a Poisson distribution with parameter <span class="math notranslate nohighlight">\(\lambda = N\theta\)</span>. Thus, for large <span class="math notranslate nohighlight">\(N\)</span> and small <span class="math notranslate nohighlight">\(\theta\)</span>, the Binomial distribution is well-approximating by the Poisson distribution. Considering the biological example of mutations, this is Binomially distributed: There are <span class="math notranslate nohighlight">\(N\)</span> bases, each with a probability <span class="math notranslate nohighlight">\(\theta\)</span> of mutation, so the number of mutations, <span class="math notranslate nohighlight">\(n\)</span> is Binomially distributed. Since <span class="math notranslate nohighlight">\(\theta\)</span> is small and <span class="math notranslate nohighlight">\(N\)</span> is large, it is approximately Poisson distributed.</p></li>
 <li><p>Under the <span class="math notranslate nohighlight">\((\mu,\phi)\)</span> parametrization of the <a class="reference internal" href="negative_binomial.html#negative-binomial"><span class="std std-ref">Negative Binomial distribution</span></a>, taking the limit of large <span class="math notranslate nohighlight">\(\phi\)</span> yields the Poisson distribution.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pmf-and-cdf-plots">
-<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this headline">¶</a></h2>
+<section id="pmf-and-cdf-plots">
+<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this headline"></a></h2>
 
-<script src="bokeh-plot-9b036948f00c411585e7d6778113a687-external-discrete-poisson.js" id="067cfd93-83e5-43ca-9a1c-b479c4166591"></script></div>
+<script src="bokeh-plot-79b5add7fbf447c593486cc4d7b2e015-external-discrete-poisson.js" id="394107ac-0579-40ef-8a68-82282e401f3a"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.poisson.html">Numpy</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.poisson.html">Scipy</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/poisson.html">Stan</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../continuous/beta.html" class="btn btn-neutral float-right" title="Beta distribution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="negative_binomial.html" class="btn btn-neutral float-left" title="Negative Binomial distribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="negative_binomial.html" class="btn btn-neutral float-left" title="Negative Binomial distribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../continuous/beta.html" class="btn btn-neutral float-right" title="Beta distribution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">
-        Last updated on Mar 16, 2021.
-      </span>
+      <span class="lastupdated">Last updated on Nov 01, 2021.
+      </span></p>
+  </div>
 
-    </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa703509d30> 
+   <jinja2.runtime.BlockReference object at 0x7f9035702a90> 
 
 <p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
@@ -348,25 +264,15 @@ f(n;\lambda) = \frac{\lambda^n}{n!}\,\mathrm{e}^{-\lambda}.
  
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-    
+  </script>  
 
   <style>
          .wy-nav-content { max-width: 900px; }
