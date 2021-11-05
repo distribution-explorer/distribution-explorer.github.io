@@ -1,17 +1,38 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Multinomial distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
@@ -19,21 +40,39 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Dirichlet distribution" href="../multivariate_continuous/dirichlet.html" />
     <link rel="prev" title="Weibull distribution" href="../continuous/weibull.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
+          
+
+          
             <a href="../index.html">
+          
+
+          
+            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -41,8 +80,19 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Background</span></p>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Background</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../background/motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/review_of_key_concepts.html">Review of key concepts</a></li>
@@ -50,7 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../background/resources.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/vignette_contents.html">Vignette contents</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Univariate discrete</span></p>
+<p class="caption"><span class="caption-text">Univariate discrete</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../discrete/bernoulli.html">Bernoulli distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discrete/binomial.html">Binomial distribution</a></li>
@@ -61,7 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../discrete/negative_binomial.html">Negative Binomial distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discrete/poisson.html">Poisson distribution</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Univariate continuous</span></p>
+<p class="caption"><span class="caption-text">Univariate continuous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
@@ -78,7 +128,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../continuous/uniform.html">Uniform distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/weibull.html">Weibull distribution</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
+<p class="caption"><span class="caption-text">Multivariate discrete</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Multinomial distribution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#story">Story</a></li>
@@ -94,34 +144,68 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Multivariate continuous</span></p>
+<p class="caption"><span class="caption-text">Multivariate continuous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/dirichlet.html">Dirichlet distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/lkj.html">Lewandowski-Kurowicka-Joe (LKJ) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multivariate_continuous/multivariate_normal.html">Multivariate Normal distribution</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #827F7F" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Probability Distribution Explorer</a>
+        
       </nav>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
 
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+
+    
 
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   
 <style>
 /* CSS overrides for sphinx_rtd_theme */
@@ -147,32 +231,32 @@
 }
 </style>
 <section id="multinomial-distribution">
-<span id="multinomial"></span><h1>Multinomial distribution<a class="headerlink" href="#multinomial-distribution" title="Permalink to this headline"></a></h1>
+<span id="multinomial"></span><h1>Multinomial distribution<a class="headerlink" href="#multinomial-distribution" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
 <section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline"></a></h2>
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline">¶</a></h2>
 <p>This is a generalization of the <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a>. Instead of a Bernoulli trial consisting of two outcomes, each trial has <span class="math notranslate nohighlight">\(K\)</span> outcomes. The probability of getting <span class="math notranslate nohighlight">\(y_1\)</span> of outcome 1, <span class="math notranslate nohighlight">\(y_2\)</span> of outcome 2, …, and <span class="math notranslate nohighlight">\(y_K\)</span> of outcome <span class="math notranslate nohighlight">\(K\)</span> out of a total of <span class="math notranslate nohighlight">\(N\)</span> trials is Multinomially distributed.</p>
 </section>
 <hr class="docutils" />
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>There are two alleles in a population, A and a. Each individual may have genotype AA, Aa, or aa. The probability distribution describing having <span class="math notranslate nohighlight">\(y_1\)</span> AA individuals, <span class="math notranslate nohighlight">\(y_2\)</span> Aa individuals, and <span class="math notranslate nohighlight">\(y_3\)</span> aa individuals in a population of <span class="math notranslate nohighlight">\(N\)</span> total individuals is Multinomially distributed.</p>
 </section>
 <hr class="docutils" />
 <section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p><span class="math notranslate nohighlight">\(N\)</span>, the total number of trials, and <span class="math notranslate nohighlight">\(\boldsymbol{\theta} = \left\{\theta_1, \theta_2, \ldots,\theta_K\right\}\)</span>, the probabilities of each outcome. Note that <span class="math notranslate nohighlight">\(\sum_{i=1}^K \theta_i = 1\)</span> and there is the further restriction that <span class="math notranslate nohighlight">\(N = \sum_{i=1}^K y_i\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline"></a></h2>
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>The <span class="math notranslate nohighlight">\(K\)</span>-nomial distribution is supported on <span class="math notranslate nohighlight">\(\mathbb{N}^K\)</span>.</p>
 </div></blockquote>
 </section>
 <hr class="docutils" />
 <section id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this headline"></a></h2>
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_1^{y_1}\,\theta_2^{y_2}\cdots\theta_K^{y_K}.
@@ -180,14 +264,14 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 </section>
 <hr class="docutils" />
 <section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline"></a></h2>
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline">¶</a></h2>
 <p>Mean of <span class="math notranslate nohighlight">\(y_i\)</span>: <span class="math notranslate nohighlight">\(N\theta_i\)</span></p>
 <p>Variance of <span class="math notranslate nohighlight">\(y_i\)</span>: <span class="math notranslate nohighlight">\(N\theta_i(1-\theta_i)\)</span></p>
 <p>Covariance of <span class="math notranslate nohighlight">\(y_i, y_j\)</span> with <span class="math notranslate nohighlight">\(j\ne i\)</span>: <span class="math notranslate nohighlight">\(-N\theta_i\theta_j\)</span></p>
 </section>
 <hr class="docutils" />
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>The usage below assumes <code class="docutils literal notranslate"><span class="pre">theta</span></code> is a length <span class="math notranslate nohighlight">\(K\)</span> array.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -218,21 +302,21 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 </section>
 <hr class="docutils" />
 <section id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline"></a></h2>
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The Multinomial distribution generalizes the <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> to multiple dimensions.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>For a sampling statement in Stan, the value of <span class="math notranslate nohighlight">\(N\)</span> is implied.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline"></a></h2>
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Multinomial_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.multinomial.html">Numpy</a></p></li>
@@ -244,21 +328,24 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../continuous/weibull.html" class="btn btn-neutral float-left" title="Weibull distribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../multivariate_continuous/dirichlet.html" class="btn btn-neutral float-right" title="Dirichlet distribution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../continuous/weibull.html" class="btn btn-neutral float-left" title="Weibull distribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Nov 01, 2021.
-      </span></p>
-  </div>
+      <span class="lastupdated">
+        Last updated on Nov 05, 2021.
+      </span>
 
-   <jinja2.runtime.BlockReference object at 0x7f9035e82a60> 
+    </p>
+  </div> <jinja2.runtime.BlockReference object at 0x7fd49cd0a2b0> 
 
 <p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
@@ -275,13 +362,22 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>  
+  </script>
+
+  
+  
+    
+    
 
   <style>
          .wy-nav-content { max-width: 900px; }
