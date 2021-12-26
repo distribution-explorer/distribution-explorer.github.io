@@ -116,6 +116,12 @@ The location parameter :math:`\phi` is the mean of the distribution and :math:`\
     &\beta = (1-\phi)\kappa.
     \end{align}
 
+The mean and variance in terms of :math:`\phi` and :math:`\kappa` are
+
+Mean: :math:`\displaystyle{\phi}`
+
+Variance: :math:`\displaystyle{\frac{\phi(1-\phi)}{1+\kappa}}`.
+
 
 ----
 
