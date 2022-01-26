@@ -167,8 +167,6 @@ In the α-β formulation:
     bokeh.io.show(distribution_explorer.explore('negative_binomial', background_fill_alpha=0, border_fill_alpha=0))
 
 
-|
-
 
 In the µ-φ formulation:
 
