@@ -183,19 +183,19 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>NumPy</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">rg.multinomial(N,</span> <span class="pre">theta)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rng.multinomial(N,</span> <span class="pre">theta)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>SciPy</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">scipy.stats.multinomial(N,</span> <span class="pre">theta)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Stan sampling</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">multinomial(theta)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Stan rng</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">multinomial_rng(theta,</span> <span class="pre">N)</span></code></p></td>
-</tr>
 <tr class="row-even"><td><p><strong>Distributions.jl</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Multinomial(N,</span> <span class="pre">theta)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stan sampling</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">multinomial(theta)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Stan rng</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">multinomial_rng(theta,</span> <span class="pre">N)</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -221,7 +221,8 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Multinomial_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.multinomial.html">Numpy</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.multinomial.html">Scipy</a></p></li>
-<li><p><a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/multinomial-distribution.html">Stan</a></p></li>
+<li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/multivariate/#Distributions.Multinomial">Distributions.jl</a></p></li>
+<li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/multinomial-distribution.html">Stan</a></p></li>
 </ul>
 </div>
 </div>
@@ -242,7 +243,7 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12f8c2e50> 
+   <jinja2.runtime.BlockReference object at 0x11f6af5d0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

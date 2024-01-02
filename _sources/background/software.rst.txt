@@ -107,13 +107,13 @@ Usage of Stan
 
 We follow `Stan's conventions for probability functions <https://mc-stan.org/docs/functions-reference/conventions-for-probability-functions.html>`_. Within a Stan program specifying a model, we would write 
 
-.. code::
+.. code:: stan
 
 	y ~ normal(mu, sigma);
 
 to specify that ``y`` is Normally distributed with parameters ``mu`` and ``sigma``. If we want to draw a random number from a distribution using Stan, we add a ``_rng`` suffix to the probability function name. So, to draw a random number from a Normal distribution and store it as ``x``, we do
 
-.. code::
+.. code:: stan
 
 	x = normal_rng(mu, sigma);
 
@@ -147,7 +147,7 @@ The `Distributions.jl package <https://juliastats.org/Distributions.jl/stable/>`
 
 The available distributions in the Distributions.jl package can be used in Bayesian inference in the `Turing.jl <https://turinglang.org/>`_ package. When specifying a model, the syntax is similar to Stan. For example, if y is Normally distributed with parameters µ and σ, the model specification statement is
 
-.. code::
+.. code:: stan
 
     y ~ Normal(mu, sigma)
 

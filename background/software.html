@@ -177,7 +177,7 @@
 </pre></div>
 </div>
 <p>If I wanted to compute the probability density function for specific values of <span class="math notranslate nohighlight">\(x\)</span> and plot it, I could do the following.</p>
-<div class="highlight-python notranslate" id="background-software.bokeh-content-899e2c3c300648adb54ae56802521ab6-background-software.js"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate" id="background-software.bokeh-content-9e77b0357c1243eb80de17a38a7b103e-background-software.js"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span>
 
 <span class="kn">import</span> <span class="nn">bokeh.io</span>
@@ -198,16 +198,16 @@
 <span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
-<div style="height:200px;"><script src="bokeh-content-899e2c3c300648adb54ae56802521ab6-background-software.js" id="db223602-3dd0-48a6-ae9b-7c3086d2bcea"></script></div><p>In the entry for each distribution, I show the syntax of how to instantiate the class using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm(mu,</span> <span class="pre">sigma)</span></code>.</p>
+<div style="height:200px;"><script src="bokeh-content-9e77b0357c1243eb80de17a38a7b103e-background-software.js" id="f5723f37-d899-4af8-b802-a0071c4be6be"></script></div><p>In the entry for each distribution, I show the syntax of how to instantiate the class using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm(mu,</span> <span class="pre">sigma)</span></code>.</p>
 </div>
 <div class="section" id="usage-of-stan">
 <h2>Usage of Stan<a class="headerlink" href="#usage-of-stan" title="Permalink to this heading"></a></h2>
 <p>We follow <a class="reference external" href="https://mc-stan.org/docs/functions-reference/conventions-for-probability-functions.html">Stan’s conventions for probability functions</a>. Within a Stan program specifying a model, we would write</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">~</span> <span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">);</span>
+<div class="highlight-stan notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">~</span><span class="w"> </span><span class="nb">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>to specify that <code class="docutils literal notranslate"><span class="pre">y</span></code> is Normally distributed with parameters <code class="docutils literal notranslate"><span class="pre">mu</span></code> and <code class="docutils literal notranslate"><span class="pre">sigma</span></code>. If we want to draw a random number from a distribution using Stan, we add a <code class="docutils literal notranslate"><span class="pre">_rng</span></code> suffix to the probability function name. So, to draw a random number from a Normal distribution and store it as <code class="docutils literal notranslate"><span class="pre">x</span></code>, we do</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">normal_rng</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">);</span>
+<div class="highlight-stan notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">normal_rng</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Other suffixes are available, and the call signature can change depending on the suffix. For example, to compute the value of the logarithm of the PDF of the Normal distribution at point <code class="docutils literal notranslate"><span class="pre">x</span></code>, we use <code class="docutils literal notranslate"><span class="pre">normal_lpdf(x</span> <span class="pre">|</span> <span class="pre">mu,</span> <span class="pre">sigma)</span></code>.</p>
@@ -233,7 +233,7 @@
 </pre></div>
 </div>
 <p>The available distributions in the Distributions.jl package can be used in Bayesian inference in the <a class="reference external" href="https://turinglang.org/">Turing.jl</a> package. When specifying a model, the syntax is similar to Stan. For example, if y is Normally distributed with parameters µ and σ, the model specification statement is</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">~</span> <span class="n">Normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<div class="highlight-stan notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">~</span> <span class="n">Normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In the Explorer, we present the instantiation/model specification syntax for the distributions with parametrization consistent with Stan.</p>
@@ -256,7 +256,7 @@
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12fe93b10> 
+   <jinja2.runtime.BlockReference object at 0x1201a8b10> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

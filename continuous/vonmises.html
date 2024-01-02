@@ -247,8 +247,8 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <li><p>Stan considers the PDF to be periodic such that it will use the same result for the (log) PDF for <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(y + 2n\pi\)</span> for any integer <span class="math notranslate nohighlight">\(n\)</span>. However, it only defines the CDF on the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>, applying the same transformation to the location parameter as NumPy, shown above. Similarly, when sampling, the location parameter <span class="math notranslate nohighlight">\(\mu\)</span> lies in the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p></li>
 <li><p>In the context of Markov chain Monte Carlo, evaluation of the Von Mises (log) PDF and CDF for large <span class="math notranslate nohighlight">\(\kappa\)</span> can be numerically unstable. NumPy and SciPy both automatically use Normal approximations in this regime (invisible to the user). Stan, however, does not. The Stan documentation therefore recommends doing that manually, adopting the following sampling statement.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">kappa</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="n">y</span> <span class="o">~</span> <span class="n">von_mises</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">kappa</span><span class="p">);</span>
-<span class="k">else</span> <span class="n">y</span> <span class="o">~</span> <span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">kappa</span><span class="p">));</span>
+<div class="highlight-stan notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">kappa</span> <span class="o">&lt;</span> <span class="mf">100</span><span class="p">)</span> <span class="n">y</span> <span class="o">~</span><span class="w"> </span><span class="nb">von_mises</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">kappa</span><span class="p">);</span>
+<span class="k">else</span> <span class="n">y</span> <span class="o">~</span><span class="w"> </span><span class="nb">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mf">1</span> <span class="o">/</span> <span class="n">kappa</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -256,7 +256,7 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <div class="section" id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
 <p>Not all value-quantile pairs are achievable, and quantile setting may fail in some cases.</p>
-<script src="bokeh-content-0833e1b246824a2fa1bbf27a2dd9ddac-continuous-vonmises.js" id="b731ff13-6c79-478a-aebd-eaa14d861921"></script></div>
+<script src="bokeh-content-2ba8ec5e1a00462da348ece04a42c6b5-continuous-vonmises.js" id="fcb94549-0556-4a81-ae74-099f7cf16a64"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
@@ -286,7 +286,7 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12f01f590> 
+   <jinja2.runtime.BlockReference object at 0x11fcf2f10> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

@@ -59,6 +59,13 @@ Probability density function
 
 ----
 
+Cumulative distribution function
+--------------------------------
+
+There is no analytic expression for the CDF.
+
+----
+
 Moments
 -------
 
@@ -79,21 +86,21 @@ The usage below assumes that ``mu`` is a length :math:`K` array, ``Sigma`` is a 
 +-------------------------------+----------------------------------------------------------+
 | Package                       | Syntax                                                   |
 +===============================+==========================================================+
-| **NumPy**                     | ``rg.multivariate_normal(mu, Sigma)``                    |
+| **NumPy**                     | ``rng.multivariate_normal(mu, Sigma)``                   |
 +-------------------------------+----------------------------------------------------------+
-| **NumPy Cholesky**            | ``rg.multivariate_normal(mu, np.dot(L, L.T))``           |
+| **NumPy Cholesky**            | ``rng.multivariate_normal(mu, np.dot(L, L.T))``          |
 +-------------------------------+----------------------------------------------------------+
 | **SciPy**                     | ``scipy.stats.multivariate_normal(mu, Sigma)``           |
 +-------------------------------+----------------------------------------------------------+
 | **SciPy Cholesky**            | ``scipy.stats.multivariate_normal(mu, np.dot(L, L.T))``  |
 +-------------------------------+----------------------------------------------------------+
-| **Stan**                      | ``multi_normal(mu, Sigma)``                              |
-+-------------------------------+----------------------------------------------------------+
-| **Stan Cholesky**             | ``multi_normal_cholesky(mu, L)``                         |
-+-------------------------------+----------------------------------------------------------+
 | **Distributions.jl**          | ``MvNormal(mu, Sigma)``                                  |
 +-------------------------------+----------------------------------------------------------+
 | **Distributions.jl Cholesky** | ``MvNormal(mu, L * L')``                                 |
++-------------------------------+----------------------------------------------------------+
+| **Stan**                      | ``multi_normal(mu, Sigma)``                              |
++-------------------------------+----------------------------------------------------------+
+| **Stan Cholesky**             | ``multi_normal_cholesky(mu, L)``                         |
 +-------------------------------+----------------------------------------------------------+
 
 ----
@@ -110,7 +117,7 @@ Notes
 -----
 
 - The covariance matrix may also be written as :math:`\mathsf{\Sigma} = \mathsf{S} \cdot \mathsf{C} \cdot \mathsf{S}`, where :math:`\mathsf{S} = \sqrt{\mathrm{diag}(\mathsf{\Sigma})}`, and entry :math:`i, j` in the **correlation matrix** :math:`\mathsf{C}` is :math:`C_{ij} = \sigma_{ij}/\sigma_i\sigma_j`.
-- Because :math:`\mathsf{\Sigma}` is symmetric and strictly positive definite, it can be uniquely defined in terms of its :ref:`Cholesky decomposition <https://en.wikipedia.org/wiki/Cholesky_decomposition>`, :math:`\mathsf{L}`, which satisfies :math:`\mathsf{\Sigma} = \mathsf{L}\cdot\mathsf{L}^\mathsf{T}`. In practice, you will almost always use the Cholesky representation of the Multivariate Normal distribution in Stan.
+- Because :math:`\mathsf{\Sigma}` is symmetric and strictly positive definite, it can be uniquely defined in terms of its :ref:`Cholesky decomposition <https://en.wikipedia.org/wiki/Cholesky_decomposition>`, :math:`\mathsf{L}`, which satisfies :math:`\mathsf{\Sigma} = \mathsf{L}\cdot\mathsf{L}^\mathsf{T}`.
 
 ----
 
@@ -120,4 +127,6 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Multivariate_normal_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.multivariate_normal.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.multivariate_normal.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/multivariate-normal-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/multivariate/#Distributions.AbstractMvNormal>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/multivariate-normal-distribution.html>`_
+- `Stan Cholesky <https://mc-stan.org/docs/functions-reference/multi-normal-cholesky-fun.html>`_

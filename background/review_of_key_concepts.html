@@ -179,20 +179,20 @@ F(x) = \int_{-\infty}^x\mathrm{d}x'\,f(x').
 <div class="section" id="plots-of-pdfs">
 <h3>Plots of PDFs<a class="headerlink" href="#plots-of-pdfs" title="Permalink to this heading"></a></h3>
 <p>We plot a PDF as a smooth curve. The curve only appears for values of the x-axis for which the distribution is supported; that is on the domain of the distribution. As an example, below is a plot of a PDF for the <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a>, which is supported on the set of positive real numbers.</p>
-<div style="height:200px;"><script src="bokeh-content-8538c688374f453ab44a4c1edd40d55f-background-review_of_key_concepts.js" id="ed101514-1cc3-4a8b-a687-2c76908b5a6e"></script></div></div>
+<div style="height:200px;"><script src="bokeh-content-7dc495e769674591a4bcbe01e8ba3f88-background-review_of_key_concepts.js" id="ce0fd9ea-b663-41b5-860a-6efbb11e3e54"></script></div></div>
 <div class="section" id="plots-of-pmfs">
 <h3>Plots of PMFs<a class="headerlink" href="#plots-of-pmfs" title="Permalink to this heading"></a></h3>
 <p>Since they take on discrete values, we plot PMFs differently. Our convention is that each nonzero probability is shown by a point with a line connecting to the x-axis. As an example, below is a plot of a <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> PMF.</p>
-<div style="height:200px;"><script src="bokeh-content-b9bd4135aa204a7bb65d70d6fdb10fd9-background-review_of_key_concepts.js" id="c409331c-04e8-4d16-962f-e6a8253eed08"></script></div></div>
+<div style="height:200px;"><script src="bokeh-content-f5c5c9846beb47218aa6a7dfdefa3e92-background-review_of_key_concepts.js" id="b8e86738-3bd1-4165-92c4-d16bc31f0bc4"></script></div></div>
 <div class="section" id="plots-of-cdfs-for-continuous-distributions">
 <h3>Plots of CDFs for continuous distributions<a class="headerlink" href="#plots-of-cdfs-for-continuous-distributions" title="Permalink to this heading"></a></h3>
 <p>Plots of CDFs for continuous distributions are plotted as smooth curves. Taking the example of the Gamma distribution again, the CDF is plotted as below.</p>
-<div style="height:200px;"><script src="bokeh-content-2765b43ddb8f4cbd9624fa9a48a6571f-background-review_of_key_concepts.js" id="f431ab6e-ea95-41d5-9d9e-fd5d5f263f66"></script></div></div>
+<div style="height:200px;"><script src="bokeh-content-2f0e0a5f10a54b669bdaf2b571adfb03-background-review_of_key_concepts.js" id="c114a184-4534-4a48-a56e-3ebf517a294e"></script></div></div>
 <div class="section" id="plots-of-cdfs-for-discrete-distributions">
 <h3>Plots of CDFs for discrete distributions<a class="headerlink" href="#plots-of-cdfs-for-discrete-distributions" title="Permalink to this heading"></a></h3>
 <p>For discrete distributions, I plot the CDFs as “staircases,” as shown below.</p>
-<div style="height:200px;"><script src="bokeh-content-39df245256344210bbe65a452aaba0ae-background-review_of_key_concepts.js" id="a13d1018-5979-432e-b891-44b3f5bde4db"></script></div><p>The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.</p>
-<div style="height:200px;"><script src="bokeh-content-944d44ccb6014afb918db1b118ee8584-background-review_of_key_concepts.js" id="e5828207-a8e0-4599-bc40-287c1705b6ee"></script></div><p>However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret.</p>
+<div style="height:200px;"><script src="bokeh-content-125681d9774d40bf9bcd34ccb4fffd97-background-review_of_key_concepts.js" id="b2097447-30fc-412a-a2a3-ba1122dc197b"></script></div><p>The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.</p>
+<div style="height:200px;"><script src="bokeh-content-cbbf51ed694643eb8015b1869d1201a9-background-review_of_key_concepts.js" id="ecea7315-f8f4-4ba9-8fd2-ce9bd1e7b38f"></script></div><p>However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret.</p>
 </div>
 </div>
 <div class="section" id="parametrization">
@@ -246,7 +246,7 @@ E(g(x)) = \sum_i  g(x_i) f(x_i).
 </div>
 <div class="section" id="multivariate-distributions">
 <h2>Multivariate distributions<a class="headerlink" href="#multivariate-distributions" title="Permalink to this heading"></a></h2>
-<p>So far, we have assumed <strong>univariate distributions</strong>, that is probability distributions of a single random variable. We may also consider <strong>multivariate distributions</strong>, which describe more than one random variable. For a distribution of <span class="math notranslate nohighlight">\(n\)</span> random variables, we define the PMF or PDF as <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span>. For ease of discussion, we can consider the bivariate case describing random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> which may take on values <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. In that case, the PMF or PDF is written as <span class="math notranslate nohighlight">\(f(x, y)\)</span>. It is permissible that some variables are discrete and others continuous. The multivariate cumulative distribution function is given by <span class="math notranslate nohighlight">\(F(x, y) = P(X \le x, Y \le y)\)</span>.</p>
+<p>So far, we have assumed <strong>univariate distributions</strong>, that is probability distributions of a single random variable. We may also consider <strong>multivariate distributions</strong>, which describe more than one random variable. For a distribution of <span class="math notranslate nohighlight">\(n\)</span> random variables, we define the PMF or PDF as <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span>. It is permissible that some variables are discrete and others continuous. For ease of discussion, we can consider the bivariate case describing random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> which may take on values <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. In that case, the PMF or PDF is written as <span class="math notranslate nohighlight">\(f(x, y)\)</span>. The bivariate cumulative distribution function is given by <span class="math notranslate nohighlight">\(F(x, y) = P(X \le x, Y \le y)\)</span>.</p>
 </div>
 </div>
 
@@ -266,7 +266,7 @@ E(g(x)) = \sum_i  g(x_i) f(x_i).
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12fd89c10> 
+   <jinja2.runtime.BlockReference object at 0x1200711d0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

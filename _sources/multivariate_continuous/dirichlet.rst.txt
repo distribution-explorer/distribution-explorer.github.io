@@ -27,7 +27,7 @@ The parameters are :math:`\alpha_1`, :math:`\alpha_2`, ..., :math:`\alpha_K`, al
 Support
 -------
 
-The Dirichlet distribution has support on the interval [0, 1] such that :math:`\sum_{i=1}^K \theta_i = 1`.
+The Dirichlet distribution has support on the interval [0, 1] with the constraint that :math:`\sum_{i=1}^K \theta_i = 1`.
 
 ----
 
@@ -41,15 +41,14 @@ Probability density function
 	f(\boldsymbol{\theta};\boldsymbol{\alpha}) = \frac{1}{B(\boldsymbol{\alpha})}\,\prod_{i=1}^K \theta_i^{\alpha_i-1},
 	\end{align}
 
-where
+where :math:`B(\boldsymbol{\alpha})` is the :ref:`multivariate beta function <Multivariate beta function>`.
 
-.. math::
+----
 
-    \begin{align}
-    B(\boldsymbol{\alpha}) = \frac{\prod_{i=1}^K\Gamma(\alpha_i)}{\Gamma\left(\sum_{i=1}^K \alpha_i\right)}
-    \end{align}
+Cumulative distribution function
+--------------------------------
 
-is the `multivariate Beta function <https://en.wikipedia.org/wiki/Beta_function#Multivariate_beta_function>`_.
+There is no analytic expression for the CDF.
 
 ----
 
@@ -68,18 +67,18 @@ Covariance of :math:`\theta_i, \theta_j` with :math:`j\ne i`: :math:`\displaysty
 Usage
 -----
 
-The usage below assumes that ``alpha`` is a length :math:`K` array.
+The usage below assumes that ``alpha`` is an array of length :math:`K`.
 
 +----------------------+---------------------------------------------------+
 | Package              | Syntax                                            |
 +======================+===================================================+
-| **NumPy**            | ``rg.dirichlet(alpha)``                           |
+| **NumPy**            | ``rng.dirichlet(alpha)``                          |
 +----------------------+---------------------------------------------------+
 | **SciPy**            | ``scipy.stats.dirichlet(alpha)``                  |
 +----------------------+---------------------------------------------------+
-| **Stan**             | ``dirichlet(alpha)``                              |
-+----------------------+---------------------------------------------------+
 | **Distributions.jl** | ``Dirichlet(alpha)``                              |
++----------------------+---------------------------------------------------+
+| **Stan**             | ``dirichlet(alpha)``                              |
 +----------------------+---------------------------------------------------+
 
 ----
@@ -114,7 +113,7 @@ Notes
     }
 
     model {
-      target += gamma_lpdf(lambda | alpha, 1);
+      target += gamma_lupdf(lambda | alpha, 1);
     }
 
 ----
@@ -125,4 +124,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Dirichlet_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.dirichlet.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.dirichlet.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/dirichlet-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/multivariate/#Distributions.Dirichlet>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/dirichlet-distribution.html>`_

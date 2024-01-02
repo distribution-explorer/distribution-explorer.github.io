@@ -155,7 +155,7 @@ The resulting random numbers then all lie in the interval :math:`[-\pi, \pi)`.
 - Stan considers the PDF to be periodic such that it will use the same result for the (log) PDF for :math:`y` and :math:`y + 2n\pi` for any integer :math:`n`. However, it only defines the CDF on the interval :math:`[-\pi, \pi)`, applying the same transformation to the location parameter as NumPy, shown above. Similarly, when sampling, the location parameter :math:`\mu` lies in the interval :math:`[-\pi, \pi)`.
 - In the context of Markov chain Monte Carlo, evaluation of the Von Mises (log) PDF and CDF for large :math:`\kappa` can be numerically unstable. NumPy and SciPy both automatically use Normal approximations in this regime (invisible to the user). Stan, however, does not. The Stan documentation therefore recommends doing that manually, adopting the following sampling statement.
 
-.. code::
+.. code:: stan
 
     if (kappa < 100) y ~ von_mises(mu, kappa);
     else y ~ normal(mu, sqrt(1 / kappa));

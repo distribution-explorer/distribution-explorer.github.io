@@ -129,6 +129,19 @@ When :math:`x` and :math:`y` are integers, say :math:`m` and :math:`n`, the beta
 
 ----
 
+Multivariate beta function
+--------------------------
+
+The beta function may be generalized to a multivariate case, called the `multivariate Beta function <https://en.wikipedia.org/wiki/Beta_function#Multivariate_beta_function>`_.
+
+.. math::
+
+    \begin{align}
+    B(\boldsymbol{\alpha}) = \frac{\prod_{i=1}^K\Gamma(\alpha_i)}{\Gamma\left(\sum_{i=1}^K \alpha_i\right)}
+    \end{align}
+
+----
+
 Incomplete beta function
 ------------------------
 

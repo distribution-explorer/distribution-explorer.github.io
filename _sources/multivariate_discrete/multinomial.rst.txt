@@ -74,15 +74,15 @@ The usage below assumes ``theta`` is a length :math:`K` array.
 +----------------------+----------------------------------------+
 | Package              | Syntax                                 |
 +======================+========================================+
-| **NumPy**            | ``rg.multinomial(N, theta)``           |
+| **NumPy**            | ``rng.multinomial(N, theta)``          |
 +----------------------+----------------------------------------+
 | **SciPy**            | ``scipy.stats.multinomial(N, theta)``  |
++----------------------+----------------------------------------+
+| **Distributions.jl** | ``Multinomial(N, theta)``              |
 +----------------------+----------------------------------------+
 | **Stan sampling**    | ``multinomial(theta)``                 |
 +----------------------+----------------------------------------+
 | **Stan rng**         | ``multinomial_rng(theta, N)``          |
-+----------------------+----------------------------------------+
-| **Distributions.jl** | ``Multinomial(N, theta)``              |
 +----------------------+----------------------------------------+
 
 
@@ -109,4 +109,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Multinomial_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.multinomial.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.multinomial.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/multinomial-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/multivariate/#Distributions.Multinomial>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/multinomial-distribution.html>`_

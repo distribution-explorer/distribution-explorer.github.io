@@ -46,9 +46,16 @@ The LKJ distribution is a distribution over a :math:`K\times K` correlation matr
 		f(\mathsf{C}|\eta) =\left(2^{\sum_{k=1}^{K-1}(2(\eta-1)+K-k)(K-k)}\prod_{k=1}^{K-1}\left(B(\eta+(K-k-1)/2,\eta + (K-k-1)/2)\right)^{K-k}\right) (\mathrm{det}\,\mathsf{C})^{\eta-1}.
 		\end{align}
 
-Here, :math:`B(\alpha, \beta)` is a `Beta function <https://en.wikipedia.org/wiki/Beta_function>`_. 
+Here, :math:`B(\alpha, \beta)` is a :ref:`beta function <Beta function>`. 
 
 The marginal distribution for each off-diagonal entry in :math:`\mathsf{C}` is a :ref:`beta` with parameters :math:`\alpha = \beta = \eta - 1 + K/2`.
+
+----
+
+Cumulative distribution function
+--------------------------------
+
+There is no analytic expression for the CDF.
 
 ----
 
@@ -68,19 +75,26 @@ Usage
 
 The usage below assumes that ``mu`` is a length :math:`K` array, ``Sigma`` is a :math:`K\times K` symmetric positive definite matrix, and ``L`` is a :math:`K\times K` lower-triangular matrix with strictly positive values on the diagonal that is a Cholesky factor.
 
-+----------------------+----------------------------------------------------------+
-| Package              | Syntax                                                   |
-+==================-===+==========================================================+
-| **NumPy**            | not available                                            |
-+----------------------+----------------------------------------------------------+
-| **SciPy**            | not available                                            |
-+----------------------+----------------------------------------------------------+
-| **Stan**             | ``lkj_corr(eta)``                                        |
-+----------------------+----------------------------------------------------------+
-| **Stan Cholesky**    | ``lkj_corr_cholesky(eta)``                               |
-+----------------------+----------------------------------------------------------+
-| **Distributions.jl** | ``LKJCholesky(K, eta, uplo='L')                          |
-+----------------------+----------------------------------------------------------+
++----------------------------------+----------------------------------------------------------+
+| Package                          | Syntax                                                   |
++==================================+==========================================================+
+| **NumPy**                        | not available                                            |
++----------------------------------+----------------------------------------------------------+
+| **SciPy**                        | not available                                            |
++----------------------------------+----------------------------------------------------------+
+| **Distributions.jl**             | ``LKJ(K, eta)``                                          |
++----------------------------------+----------------------------------------------------------+
+| **Distributions.jl Cholesky**    | ``LKJCholesky(K, eta, uplo='L')``                        |
++----------------------------------+----------------------------------------------------------+
+| **Stan sampling**                | ``lkj_corr(eta)``                                        |
++----------------------------------+----------------------------------------------------------+
+| **Stan Cholesky sampling**       | ``lkj_corr_cholesky(eta)``                               |
++----------------------------------+----------------------------------------------------------+
+| **Stan rng**                     | ``lkj_corr(K, eta)``                                     |
++----------------------------------+----------------------------------------------------------+
+| **Stan Cholesky rng**            | ``lkj_corr_cholesky(K, eta)``                            |
++----------------------------------+----------------------------------------------------------+
+
 
 
 ----
@@ -96,7 +110,7 @@ Related distributions
 Notes
 -----
 
-- The most common use case is as a prior for a covariance matrix. Note that LKJ distribution as implemented in Stan gives *correlation* matrices, not covariance matrices. We typically work with Cholesky factors. To get the covariance Cholesky factor from the correlation Cholesky factor, we need to multiply the correlation Cholesky factor by a diagonal matrix constructed from the variances of the individual variates. Here is an example using the LKJ distribution in a model with a multivariate Normal likelihood in Stan.
+- The most common use case is as a prior for a covariance matrix. Note that LKJ distribution gives *correlation* matrices, not covariance matrices. We typically work with Cholesky factors. To get the covariance Cholesky factor from the correlation Cholesky factor, we need to multiply the correlation Cholesky factor by a diagonal matrix constructed from the variances of the individual variates. Here is an example using the LKJ distribution in a model with a multivariate Normal likelihood in Stan.
 
 .. code-block:: stan
 
@@ -136,6 +150,8 @@ Links
 -----
 
 - `Original paper <https://doi.org/10.1016/j.jmva.2009.04.008>`_
-- `Stan <https://mc-stan.org/docs/2_22/functions-reference/lkj-correlation.html>`_
-- `Stan Cholesky formulation <https://mc-stan.org/docs/2_22/functions-reference/cholesky-lkj-correlation-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/matrix/#Distributions.LKJ>`_
+- `Distributions.jl Cholesky formulåation<https://juliastats.org/Distributions.jl/stable/cholesky/#Distributions.LKJCholesky>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/lkj-correlation.html>`_
+- `Stan Cholesky formulation <https://mc-stan.org/docs/functions-reference/cholesky-lkj-correlation-distribution.html>`_
 
