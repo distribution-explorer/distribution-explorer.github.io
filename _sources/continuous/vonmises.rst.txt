@@ -175,7 +175,7 @@ Not all value-quantile pairs are achievable, and quantile setting may fail in so
     import bokeh.io
     import distribution_explorer
 
-    bokeh.io.show(distribution_explorer.explore('normal', background_fill_alpha=0, border_fill_alpha=0))
+    bokeh.io.show(distribution_explorer.explore('von_mises', background_fill_alpha=0, border_fill_alpha=0))
 
 ----
 
