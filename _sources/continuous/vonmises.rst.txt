@@ -94,11 +94,11 @@ Evaluating this integral gives a circular mean of
     \text{circular mean} = \frac{I_1(\kappa)}{I_0(\kappa)}\,\mathrm{e}^{i\mu}.
     \end{align}
 
-Perhaps confusingly, traditionally the "mean" of a distribution on a circular domain refers to the argument of the exponential, in this case :math:`\mu`. The circular variance can also be evaluated and is is traditionally reported as the variance.
+Perhaps confusingly, traditionally the "mean" of a distribution on a circular domain refers to the argument of the exponential, in this case :math:`\mu`.
 
 Mean: :math:`\mu`
 
-Circular variance: :math:`1 - \frac{I_1(\kappa)}{I_0(\kappa)}`
+Circular variance: :math:`\displaystyle{1 - \frac{I_1(\kappa)}{I_0(\kappa)}}`
 
 
 ----
@@ -128,6 +128,8 @@ Related distributions
 ---------------------
 
 - In the limit of large :math:`\kappa`, the Von Mises distribution approximates a :ref:`normal` with variance :math:`\sigma^2 = 1/\kappa`.
+- In the limit of :math:`\kappa \to 0`, the Von Mises distribution becomes a :ref:`uniform` on the interval :math:`[-\pi, \pi)`.
+
 
 
 ----
@@ -136,7 +138,7 @@ Related distributions
 Notes
 -----
 
-- NumPy assumes an interval for :math:`y` of :math:`[-\pi, \pi)`. If the location parameter is specified as :math:`\mu`, as in a function call ``rng.vonmises(mu, kappa)``, the inputted :math:`\mu` is transformed to lie in the domain as
+- NumPy assumes an interval for :math:`y` of :math:`[-\pi, \pi)`. If the location parameter is specified as :math:`\mu`, as in a function call ``rng.vonmises(mu, kappa)``, the inputted :math:`\mu` is transformed to lie in the :math:`[-\pi, \pi)` interval as
 
 .. math::
 
@@ -148,7 +150,7 @@ Notes
 The resulting random numbers then all lie in the interval :math:`[-\pi, \pi)`.
 
 - SciPy's ``scipy.stats.vonmises`` considers the PDF to be periodic, giving the same value of the PDF at :math:`y` and :math:`y + 2n\pi` for any integer :math:`n`. Furthermore the CDF computed with ``scipy.stats.vonmises`` returns negative values for values of :math:`y` to the left of the domain and values greater than one for values to the right.
-- SciPy offers ``scipy.stats.vonmises_line``, in which the interval on which the distribution is defined is :math:`[\mu - \pi, \mu + \pi)`. The PDF evaluates to zero outside of that domain, and the CDF evaluates to zero to the left of the domain and evaluates to one to the right. Sampling from the Von Mises distribution using ``st.vonmises_line.rvs()`` performs as NumPy's sampling with the transformation of the location parameter and all samples lying in the interval :math:`[-\pi, \pi)`.
+- SciPy offers ``scipy.stats.vonmises_line``, in which the interval on which the distribution is defined is :math:`[\mu - \pi, \mu + \pi)`. The PDF evaluates to zero outside of that domain, and the CDF evaluates to zero to the left of the interval and evaluates to one to the right. Sampling from the Von Mises distribution using ``st.vonmises_line.rvs()`` performs as NumPy's sampling with the transformation of the location parameter and all samples lying in the interval :math:`[-\pi, \pi)`.
 - In the Distributions.jl, the interval on which the distribution is defined is :math:`[\mu - \pi, \mu + \pi)`, like ``scipy.stats.vonmises_line``, with the PDF and CDF being evaluated similarly. By contrast, sampling from the Von Mises distribution using Distributions.jl returns values in the domain :math:`[\mu - \pi, \mu + \pi)`; there is no transformation of the location parameter.
 - Stan considers the PDF to be periodic such that it will use the same result for the (log) PDF for :math:`y` and :math:`y + 2n\pi` for any integer :math:`n`. However, it only defines the CDF on the interval :math:`[-\pi, \pi)`, applying the same transformation to the location parameter as NumPy, shown above. Similarly, when sampling, the location parameter :math:`\mu` lies in the interval :math:`[-\pi, \pi)`.
 - In the context of Markov chain Monte Carlo, evaluation of the Von Mises (log) PDF and CDF for large :math:`\kappa` can be numerically unstable. NumPy and SciPy both automatically use Normal approximations in this regime (invisible to the user). Stan, however, does not. The Stan documentation therefore recommends doing that manually, adopting the following sampling statement.

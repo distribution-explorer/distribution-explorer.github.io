@@ -185,9 +185,9 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 \[\begin{align}
 \text{circular mean} = \frac{I_1(\kappa)}{I_0(\kappa)}\,\mathrm{e}^{i\mu}.
 \end{align}\]</div>
-<p>Perhaps confusingly, traditionally the “mean” of a distribution on a circular domain refers to the argument of the exponential, in this case <span class="math notranslate nohighlight">\(\mu\)</span>. The circular variance can also be evaluated and is is traditionally reported as the variance.</p>
+<p>Perhaps confusingly, traditionally the “mean” of a distribution on a circular domain refers to the argument of the exponential, in this case <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>Mean: <span class="math notranslate nohighlight">\(\mu\)</span></p>
-<p>Circular variance: <span class="math notranslate nohighlight">\(1 - \frac{I_1(\kappa)}{I_0(\kappa)}\)</span></p>
+<p>Circular variance: <span class="math notranslate nohighlight">\(\displaystyle{1 - \frac{I_1(\kappa)}{I_0(\kappa)}}\)</span></p>
 </div>
 <hr class="docutils" />
 <div class="section" id="usage">
@@ -226,13 +226,14 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>In the limit of large <span class="math notranslate nohighlight">\(\kappa\)</span>, the Von Mises distribution approximates a <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a> with variance <span class="math notranslate nohighlight">\(\sigma^2 = 1/\kappa\)</span>.</p></li>
+<li><p>In the limit of <span class="math notranslate nohighlight">\(\kappa \to 0\)</span>, the Von Mises distribution becomes a <a class="reference internal" href="uniform.html#uniform"><span class="std std-ref">Uniform distribution</span></a> on the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>NumPy assumes an interval for <span class="math notranslate nohighlight">\(y\)</span> of <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>. If the location parameter is specified as <span class="math notranslate nohighlight">\(\mu\)</span>, as in a function call <code class="docutils literal notranslate"><span class="pre">rng.vonmises(mu,</span> <span class="pre">kappa)</span></code>, the inputted <span class="math notranslate nohighlight">\(\mu\)</span> is transformed to lie in the domain as</p></li>
+<li><p>NumPy assumes an interval for <span class="math notranslate nohighlight">\(y\)</span> of <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>. If the location parameter is specified as <span class="math notranslate nohighlight">\(\mu\)</span>, as in a function call <code class="docutils literal notranslate"><span class="pre">rng.vonmises(mu,</span> <span class="pre">kappa)</span></code>, the inputted <span class="math notranslate nohighlight">\(\mu\)</span> is transformed to lie in the <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span> interval as</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -241,7 +242,7 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <p>The resulting random numbers then all lie in the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p>
 <ul class="simple">
 <li><p>SciPy’s <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises</span></code> considers the PDF to be periodic, giving the same value of the PDF at <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(y + 2n\pi\)</span> for any integer <span class="math notranslate nohighlight">\(n\)</span>. Furthermore the CDF computed with <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises</span></code> returns negative values for values of <span class="math notranslate nohighlight">\(y\)</span> to the left of the domain and values greater than one for values to the right.</p></li>
-<li><p>SciPy offers <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises_line</span></code>, in which the interval on which the distribution is defined is <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>. The PDF evaluates to zero outside of that domain, and the CDF evaluates to zero to the left of the domain and evaluates to one to the right. Sampling from the Von Mises distribution using <code class="docutils literal notranslate"><span class="pre">st.vonmises_line.rvs()</span></code> performs as NumPy’s sampling with the transformation of the location parameter and all samples lying in the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p></li>
+<li><p>SciPy offers <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises_line</span></code>, in which the interval on which the distribution is defined is <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>. The PDF evaluates to zero outside of that domain, and the CDF evaluates to zero to the left of the interval and evaluates to one to the right. Sampling from the Von Mises distribution using <code class="docutils literal notranslate"><span class="pre">st.vonmises_line.rvs()</span></code> performs as NumPy’s sampling with the transformation of the location parameter and all samples lying in the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p></li>
 <li><p>In the Distributions.jl, the interval on which the distribution is defined is <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>, like <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises_line</span></code>, with the PDF and CDF being evaluated similarly. By contrast, sampling from the Von Mises distribution using Distributions.jl returns values in the domain <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>; there is no transformation of the location parameter.</p></li>
 <li><p>Stan considers the PDF to be periodic such that it will use the same result for the (log) PDF for <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(y + 2n\pi\)</span> for any integer <span class="math notranslate nohighlight">\(n\)</span>. However, it only defines the CDF on the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>, applying the same transformation to the location parameter as NumPy, shown above. Similarly, when sampling, the location parameter <span class="math notranslate nohighlight">\(\mu\)</span> lies in the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p></li>
 <li><p>In the context of Markov chain Monte Carlo, evaluation of the Von Mises (log) PDF and CDF for large <span class="math notranslate nohighlight">\(\kappa\)</span> can be numerically unstable. NumPy and SciPy both automatically use Normal approximations in this regime (invisible to the user). Stan, however, does not. The Stan documentation therefore recommends doing that manually, adopting the following sampling statement.</p></li>
@@ -255,7 +256,7 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <div class="section" id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
 <p>Not all value-quantile pairs are achievable, and quantile setting may fail in some cases.</p>
-<script src="bokeh-content-ed0066d9264f4749bb591418819fd1f0-continuous-vonmises.js" id="b22809b4-cb9f-4980-9afc-5bfaf8dc4e2d"></script></div>
+<script src="bokeh-content-0833e1b246824a2fa1bbf27a2dd9ddac-continuous-vonmises.js" id="b731ff13-6c79-478a-aebd-eaa14d861921"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
@@ -285,7 +286,7 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x11ffcec10> 
+   <jinja2.runtime.BlockReference object at 0x12f01f590> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
