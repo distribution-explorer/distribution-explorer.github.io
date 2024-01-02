@@ -9,6 +9,7 @@ Welcome to the probability distribution explorer. This is a tool for you to expl
 
    background/motivation
    background/review_of_key_concepts
+   background/special_functions
    background/software
    background/resources
    background/vignette_contents
@@ -43,6 +44,7 @@ Welcome to the probability distribution explorer. This is a tool for you to expl
    continuous/pareto
    continuous/student_t
    continuous/uniform
+   continuous/vonmises
    continuous/weibull
 
 .. toctree::

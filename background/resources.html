@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Other resources &mdash; Probability Distribution Explorer  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -29,12 +29,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -44,6 +48,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="review_of_key_concepts.html">Review of key concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special_functions.html">Special functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software packages</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vignette_contents.html">Vignette contents</a></li>
@@ -74,6 +79,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../continuous/pareto.html">Pareto distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/student_t.html">Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/uniform.html">Uniform distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/vonmises.html">Von Mises distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/weibull.html">Weibull distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
@@ -108,44 +114,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="other-resources">
-<span id="resources"></span><h1>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this headline"></a></h1>
-<p>This app is meant to be a an easy-to-explore catalog of some of the most widely used probability distributions. Other similar resources exist.</p>
+  <div class="section" id="other-resources">
+<span id="resources"></span><h1>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this heading"></a></h1>
+<p>The Distribution Explorer is meant to be a an easy-to-explore catalog of some of the most widely used probability distributions. Other similar resources exist.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_probability_distributions">Wikipedia’s list of distributions</a></p></li>
 <li><p>Michael Betancourt’s <a class="reference external" href="https://betanalpha.github.io/assets/case_studies/probability_densities.html">Probabilistic Building Blocks</a> is similar to this app, but goes into more depth of the probability theory. (Highly recommended!)</p></li>
-<li><p><a class="reference external" href="https://ben-lambert.com/bayesian/">Ben Lambert</a>’s excellent <a class="reference external" href="https://ben18785.shinyapps.io/distribution-zoo/">Distribution Zoo</a> is quite similar to this resource.</p></li>
+<li><p><a class="reference external" href="https://ben-lambert.com/bayesian/">Ben Lambert</a>’s and <a class="reference external" href="https://www.cs.ox.ac.uk/people/fergus.cooper/site/">Fergus Cooper</a>’s excellent <a class="reference external" href="https://ben18785.shinyapps.io/distribution-zoo/">Distribution Zoo</a> is quite similar to this resource.</p></li>
 <li><p>Chapter 3 of <a class="reference external" href="https://seeing-theory.brown.edu/probability-distributions/index.html#section2">Seeing Theory</a> allows for interactive exploration of distributions using some pretty slick <a class="reference external" href="https://d3js.org">D3</a> visualizations.</p></li>
 <li><p>The <a class="reference external" href="http://www.distributome.org">Distributome</a> also allows for interactive exploration of distributions.</p></li>
 <li><p>Chapter 23 of <a class="reference external" href="http://www.inference.org.uk/mackay/itila/">David MacKay’s book</a> is also a useful reference for probability distributions.</p></li>
 </ul>
 <p>Most books in probability and statistics have an appendix with a convenient list or table of probability distributions. The one in the appendix of <a class="reference external" href="http://www.stat.columbia.edu/~gelman/book/">Gelman, et al.’s Bayesian Data Analysis</a> is quite good.</p>
 <p>Finally, Joe Blitzstein’s teaching on connecting distributions to stories is excellent. You can check out <a class="reference external" href="http://probabilitybook.net/">his book with Jessica Hwang</a> and his famous <a class="reference external" href="https://projects.iq.harvard.edu/stat110">Stat 110 course</a>.</p>
-</section>
+</div>
 
 
            </div>
@@ -159,13 +141,13 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 25, 2022.
+      <span class="lastupdated">Last updated on Jan 01, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fd6a32bba00> 
+   <jinja2.runtime.BlockReference object at 0x11ff38ad0> 
 
-<p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
+<p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

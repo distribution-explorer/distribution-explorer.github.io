@@ -45,6 +45,19 @@ Probability density function
 ----
 
 
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\mu,\sigma) = \frac{1}{2} + \frac{1}{\pi}\,\arctan\left(\frac{y - \mu}{\sigma}\right).
+    \end{align}
+
+----
+
+
+
 Moments
 -------
 
@@ -59,15 +72,17 @@ Variance: Undefined
 Usage
 -----
 
-+-----------------+----------------------------------------+
-| Package         | Syntax                                 |
-+=================+========================================+
-| **NumPy**       | ``mu + sigma * rg.standard_cauchy()``  |
-+-----------------+----------------------------------------+
-| **SciPy**       | ``scipy.stats.cauchy(mu, sigma)``      |
-+-----------------+----------------------------------------+
-| **Stan**        | ``cauchy(mu, sigma)``                  |
-+-----------------+----------------------------------------+
++----------------------+----------------------------------------+
+| Package              | Syntax                                 |
++======================+========================================+
+| **NumPy**            | ``mu + sigma * rng.standard_cauchy()`` |
++----------------------+----------------------------------------+
+| **SciPy**            | ``scipy.stats.cauchy(mu, sigma)``      |
++----------------------+----------------------------------------+
+| **Distributions.jl** | ``Cauchy(mu, sigma) ``                 |
++----------------------+----------------------------------------+
+| **Stan**             | ``cauchy(mu, sigma)``                  |
++----------------------+----------------------------------------+
 
 
 ----
@@ -110,4 +125,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Cauchy_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.standard_cauchy.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.cauchy.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/cauchy-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Cauchy>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/cauchy-distribution.html>`_

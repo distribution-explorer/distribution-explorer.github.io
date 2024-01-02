@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dirichlet distribution &mdash; Probability Distribution Explorer  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,10 +14,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -31,12 +31,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,6 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../background/motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/review_of_key_concepts.html">Review of key concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../background/special_functions.html">Special functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/software.html">Software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/resources.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/vignette_contents.html">Vignette contents</a></li>
@@ -76,6 +81,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../continuous/pareto.html">Pareto distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/student_t.html">Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/uniform.html">Uniform distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/vonmises.html">Von Mises distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/weibull.html">Weibull distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
@@ -121,50 +127,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="dirichlet-distribution">
-<span id="dirichlet"></span><h1>Dirichlet distribution<a class="headerlink" href="#dirichlet-distribution" title="Permalink to this headline"></a></h1>
+  <div class="section" id="dirichlet-distribution">
+<span id="dirichlet"></span><h1>Dirichlet distribution<a class="headerlink" href="#dirichlet-distribution" title="Permalink to this heading"></a></h1>
 <hr class="docutils" />
-<section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline"></a></h2>
+<div class="section" id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
 <p>The Dirichlet distribution is a generalization of the <a class="reference internal" href="../continuous/beta.html#beta"><span class="std std-ref">Beta distribution</span></a>. It is a probability distribution describing probabilities of outcomes. Instead of describing probability of one of two outcomes of a Bernoulli trial, like the Beta distribution does, it describes probability of <span class="math notranslate nohighlight">\(K\)</span> outcomes. The <a class="reference internal" href="../continuous/beta.html#beta"><span class="std std-ref">Beta distribution</span></a> is the special case of the Dirichlet distribution with <span class="math notranslate nohighlight">\(K=2\)</span>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <p>The parameters are <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2\)</span>, …, <span class="math notranslate nohighlight">\(\alpha_K\)</span>, all strictly positive, defined analogously to <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> of the <a class="reference internal" href="../continuous/beta.html#beta"><span class="std std-ref">Beta distribution</span></a>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline"></a></h2>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
 <p>The Dirichlet distribution has support on the interval [0, 1] such that <span class="math notranslate nohighlight">\(\sum_{i=1}^K \theta_i = 1\)</span>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="probability-density-function">
-<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this headline"></a></h2>
+<div class="section" id="probability-density-function">
+<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(\boldsymbol{\theta};\boldsymbol{\alpha}) = \frac{1}{B(\boldsymbol{\alpha})}\,\prod_{i=1}^K \theta_i^{\alpha_i-1},
@@ -175,22 +157,22 @@ f(\boldsymbol{\theta};\boldsymbol{\alpha}) = \frac{1}{B(\boldsymbol{\alpha})}\,\
 B(\boldsymbol{\alpha}) = \frac{\prod_{i=1}^K\Gamma(\alpha_i)}{\Gamma\left(\sum_{i=1}^K \alpha_i\right)}
 \end{align}\]</div>
 <p>is the <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_function#Multivariate_beta_function">multivariate Beta function</a>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline"></a></h2>
+<div class="section" id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
 <p>Mean of <span class="math notranslate nohighlight">\(\theta_i\)</span>: <span class="math notranslate nohighlight">\(\left&lt;\theta_i\right&gt; = \displaystyle{\frac{\alpha_i}{\sum_{i=k}^K \alpha_k}}\)</span></p>
 <p>Variance of <span class="math notranslate nohighlight">\(\theta_i\)</span>: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\left&lt;\theta_i\right&gt;(1-\left&lt;\theta_i\right&gt;)}{1 + \sum_{k=1}^K \alpha_k}}\)</span></p>
 <p>Covariance of <span class="math notranslate nohighlight">\(\theta_i, \theta_j\)</span> with <span class="math notranslate nohighlight">\(j\ne i\)</span>: <span class="math notranslate nohighlight">\(\displaystyle{-\frac{\left&lt;\theta_i\right&gt;\left&lt;\theta_j\right&gt;}{1 + \sum_{k=1}^K \alpha_k}}\)</span></p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>The usage below assumes that <code class="docutils literal notranslate"><span class="pre">alpha</span></code> is a length <span class="math notranslate nohighlight">\(K\)</span> array.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 29%" />
-<col style="width: 71%" />
+<col style="width: 30%" />
+<col style="width: 70%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -207,20 +189,23 @@ B(\boldsymbol{\alpha}) = \frac{\prod_{i=1}^K\Gamma(\alpha_i)}{\Gamma\left(\sum_{
 <tr class="row-even"><td><p><strong>Stan</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">dirichlet(alpha)</span></code></p></td>
 </tr>
+<tr class="row-odd"><td><p><strong>Distributions.jl</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Dirichlet(alpha)</span></code></p></td>
+</tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline"></a></h2>
+<div class="section" id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>The special case where <span class="math notranslate nohighlight">\(K=2\)</span> is a <a class="reference internal" href="../continuous/beta.html#beta"><span class="std std-ref">Beta distribution</span></a> with parameters <span class="math notranslate nohighlight">\(\alpha=\alpha_1\)</span> and <span class="math notranslate nohighlight">\(\beta = \alpha_2\)</span>.</p></li>
 <li><p>If we have <span class="math notranslate nohighlight">\(K\)</span> random variables that have a <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a>, <span class="math notranslate nohighlight">\(X_i \sim \text{Gamma}(\alpha_i, \beta)\)</span>, then <span class="math notranslate nohighlight">\((X_1/V, X_2/V, \ldots, X_K/V) \sim \text{Dirichlet}(\boldsymbol{\alpha})\)</span> with <span class="math notranslate nohighlight">\(\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \ldots, \alpha_3)\)</span> and <span class="math notranslate nohighlight">\(V = \sum_{i=1}^K X_i\)</span>. Note that the value of <span class="math notranslate nohighlight">\(\beta\)</span> does not enter into the Dirichlet distribution. This relationship becomes important in modeling of ordered Dirichlet distribution, as described below.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>In some cases, we may wish to specify the distribution of an <em>ordered</em> Dirichlet distributed vector <span class="math notranslate nohighlight">\(\theta\)</span>. That is, we want <span class="math notranslate nohighlight">\(\theta \sim \text{Dirichlet}(\alpha_1, \alpha_2, \ldots, \alpha_L)\)</span> with <span class="math notranslate nohighlight">\(\theta_i &lt; \theta_{i+1}\)</span> for all <span class="math notranslate nohighlight">\(i &lt; K\)</span>. Because of the relationship of the Dirchlet distribution to a set of Gamma distributed random variables, we may specify this in Stan as follows.</p></li>
 </ul>
@@ -242,18 +227,18 @@ B(\boldsymbol{\alpha}) = \frac{\prod_{i=1}^K\Gamma(\alpha_i)}{\Gamma\left(\sum_{
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline"></a></h2>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dirichlet_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.dirichlet.html">Numpy</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.dirichlet.html">Scipy</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/dirichlet-distribution.html">Stan</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -267,13 +252,13 @@ B(\boldsymbol{\alpha}) = \frac{\prod_{i=1}^K\Gamma(\alpha_i)}{\Gamma\left(\sum_{
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 25, 2022.
+      <span class="lastupdated">Last updated on Jan 01, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fd6a36d3070> 
+   <jinja2.runtime.BlockReference object at 0x12032fc90> 
 
-<p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
+<p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

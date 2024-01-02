@@ -39,8 +39,28 @@ Probability density function
 .. math::
 
 	\begin{align}
-	f(y;\nu, \mu, \sigma) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\frac{\nu}{2}\right)\sqrt{\pi \nu \sigma^2}}\left(1 + \frac{(y-\mu)^2}{\nu \sigma^2}\right)^{-\frac{\nu + 1}{2}}.
+	f(y;\nu, \mu, \sigma) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\frac{\nu}{2}\right)\sqrt{\pi \nu \sigma^2}}\left(1 + \frac{(y-\mu)^2}{\nu \sigma^2}\right)^{-\frac{\nu + 1}{2}},
 	\end{align}
+
+where :math:`\Gamma(x)` denote a :ref:`gamma function <Gamma function>`.
+
+
+----
+
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\nu, \mu, \sigma) = \left\{\begin{array}{lll}
+    \displaystyle{1 - \frac{1}{2}I_{\nu/x^2 + \nu}\left(\frac{\nu}{2}, \frac{1}{2}\right)} & & \text{for }\displaystyle{x = \frac{y-\mu}{\sigma} \le 0},\\[0.5em]
+    \displaystyle{\frac{1}{2}I_{\nu/x^2 + \nu}\left(\frac{\nu}{2}, \frac{1}{2}\right)} & & \text{for }\displaystyle{x = \frac{y-\mu}{\sigma} > 0},
+    \end{array}
+    \right.
+    \end{align}
+
+where :math:`I_x(a, b)` denotes the :ref:`regularized incomplete beta function <Regularized incomplete beta function>`.
 
 
 ----
@@ -59,16 +79,19 @@ Variance: :math:`\displaystyle{\frac{\nu}{\nu - 2}}\,\sigma^2` for :math:`\nu > 
 Usage
 -----
 
-+-----------------+--------------------------------------------+
-| Package         | Syntax                                     |
-+=================+============================================+
-| **NumPy**       | ``mu + sigma * rg.standard_t(nu)``         |
-+-----------------+--------------------------------------------+
-| **SciPy**       | ``scipy.stats.t(nu, mu, sigma)``           |
-+-----------------+--------------------------------------------+
-| **Stan**        | ``student_t(nu, mu, sigma)``               |
-+-----------------+--------------------------------------------+
-
++-------------------------------+--------------------------------------------+
+| Package                       | Syntax                                     |
++===============================+============================================+
+| **NumPy**                     | ``mu + sigma * rng.standard_t(nu)``        |
++-------------------------------+--------------------------------------------+
+| **SciPy**                     | ``scipy.stats.t(nu, mu, sigma)``           |
++-------------------------------+--------------------------------------------+
+| **Stan**                      | ``student_t(nu, mu, sigma)``               |
++-------------------------------+--------------------------------------------+
+| **Distributions.jl rng**      | ``mu .+ sigma .* rand(TDist(nu))``         |
++-------------------------------+--------------------------------------------+
+| **Distributions.jl sampling** | ``x0 ~ TDist(nu); x = mu + sigma * x0``    |
++-------------------------------+--------------------------------------------+
 
 ----
 
@@ -87,8 +110,7 @@ Related distributions
 Notes
 -----
 
-- Only the standard Student-t distribution (:math:`\mu = 0` and :math:`\sigma = 1`) is available in NumPy. You can still draw out of the Student-t distribution by performing a transformation on the samples out of the standard Student-t distribution, as shown in the usage, above.
-
+- Only the standard Student-t distribution (:math:`\mu = 0` and :math:`\sigma = 1`) is available in NumPy. You can still draw out of the Student-t distribution by performing a transformation on the samples out of the standard Student-t distribution, as shown in the usage, above. The same is true for Distributions.jl. Shown is an example where :math:`x` random numbers are drawn from the distribution and transformed using broadcasting.
 
 ----
 
@@ -109,7 +131,8 @@ PDF and CDF plots
 Links
 -----
 
-- `Wikipedia <https://en.wikipedia.org/wiki/Normal_distribution>`_
+- `Wikipedia <https://en.wikipedia.org/wiki/Student%27s_t-distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.standard_t.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.t.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/student-t-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.TDist>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/student-t-distribution.html>`_

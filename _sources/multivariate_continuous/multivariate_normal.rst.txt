@@ -76,22 +76,25 @@ Usage
 
 The usage below assumes that ``mu`` is a length :math:`K` array, ``Sigma`` is a :math:`K\times K` symmetric positive definite matrix, and ``L`` is a :math:`K\times K` lower-triangular matrix with strictly positive values on the diagonal that is a Cholesky factor.
 
-+---------------------+----------------------------------------------------------+
-| Package             | Syntax                                                   |
-+=====================+==========================================================+
-| **NumPy**           | ``rg.multivariate_normal(mu, Sigma)``                    |
-+---------------------+----------------------------------------------------------+
-| **NumPy Cholesky**  | ``rg.multivariate_normal(mu, np.dot(L, L.T))``           |
-+---------------------+----------------------------------------------------------+
-| **SciPy**           | ``scipy.stats.multivariate_normal(mu, Sigma)``           |
-+---------------------+----------------------------------------------------------+
-| **SciPy Cholesky**  | ``scipy.stats.multivariate_normal(mu, np.dot(L, L.T))``  |
-+---------------------+----------------------------------------------------------+
-| **Stan**            | ``multi_normal(mu, Sigma)``                              |
-+---------------------+----------------------------------------------------------+
-+ **Stan Cholesky**   | ``multi_normal_cholesky(mu, L)``                         |
-+---------------------+----------------------------------------------------------+
-
++-------------------------------+----------------------------------------------------------+
+| Package                       | Syntax                                                   |
++===============================+==========================================================+
+| **NumPy**                     | ``rg.multivariate_normal(mu, Sigma)``                    |
++-------------------------------+----------------------------------------------------------+
+| **NumPy Cholesky**            | ``rg.multivariate_normal(mu, np.dot(L, L.T))``           |
++-------------------------------+----------------------------------------------------------+
+| **SciPy**                     | ``scipy.stats.multivariate_normal(mu, Sigma)``           |
++-------------------------------+----------------------------------------------------------+
+| **SciPy Cholesky**            | ``scipy.stats.multivariate_normal(mu, np.dot(L, L.T))``  |
++-------------------------------+----------------------------------------------------------+
+| **Stan**                      | ``multi_normal(mu, Sigma)``                              |
++-------------------------------+----------------------------------------------------------+
+| **Stan Cholesky**             | ``multi_normal_cholesky(mu, L)``                         |
++-------------------------------+----------------------------------------------------------+
+| **Distributions.jl**          | ``MvNormal(mu, Sigma)``                                  |
++-------------------------------+----------------------------------------------------------+
+| **Distributions.jl Cholesky** | ``MvNormal(mu, L * L')``                                 |
++-------------------------------+----------------------------------------------------------+
 
 ----
 
@@ -107,7 +110,7 @@ Notes
 -----
 
 - The covariance matrix may also be written as :math:`\mathsf{\Sigma} = \mathsf{S} \cdot \mathsf{C} \cdot \mathsf{S}`, where :math:`\mathsf{S} = \sqrt{\mathrm{diag}(\mathsf{\Sigma})}`, and entry :math:`i, j` in the **correlation matrix** :math:`\mathsf{C}` is :math:`C_{ij} = \sigma_{ij}/\sigma_i\sigma_j`.
-- Because :math:`\Sigma` is symmetric and strictly positive definite, it can be uniquely defined in terms of its :ref:`Cholesky decomposition <https://en.wikipedia.org/wiki/Cholesky_decomposition>`, :math:`\mathsf{L}`, which satisfies :math:`\mathsf{\Sigma} = \mathsf{L}\cdot\mathsf{L}^\mathsf{T}`. In practice, you will almost always use the Cholesky representation of the Multivariate Normal distribution in Stan.
+- Because :math:`\mathsf{\Sigma}` is symmetric and strictly positive definite, it can be uniquely defined in terms of its :ref:`Cholesky decomposition <https://en.wikipedia.org/wiki/Cholesky_decomposition>`, :math:`\mathsf{L}`, which satisfies :math:`\mathsf{\Sigma} = \mathsf{L}\cdot\mathsf{L}^\mathsf{T}`. In practice, you will almost always use the Cholesky representation of the Multivariate Normal distribution in Stan.
 
 ----
 

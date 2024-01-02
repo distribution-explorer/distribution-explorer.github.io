@@ -10,7 +10,7 @@ Gamma distribution
 Story
 -----
 
-The amount of time we have to wait for :math:`\alpha` arrivals of a Poisson process. More concretely, if we have events, :math:`X_1, X_2, \ldots X_\alpha` that are Exponentially distributed, :math:`X_1 + X_2 + \cdots X_\alpha` is Gamma distributed.
+The amount of time we have to wait for :math:`\alpha` arrivals of a Poisson process. More concretely, if we have events, :math:`X_1, X_2, \ldots X_\alpha` that are Exponentially distributed, :math:`X_1 + X_2 + \cdots X_\alpha` is Gamma distributed. While this is the story for an integer number of arrivals, the Gamma distribution is defined for noninteger :math:`\alpha` as well.
 
 ----
 
@@ -26,7 +26,7 @@ Any multistep process where each step happens at the same rate. This is common i
 Parameters
 ----------
 
-The number of arrivals, :math:`\alpha`, and the rate of arrivals, :math:`\beta`.
+The Gamma distribution has two parameter, both strictly positive. The shape parameter, corresponding to the number of arrivals of a Poisson process is :math:`\alpha`. The inverse scale parameter, corresponding to the rate of arrivals, is :math:`\beta`.
 
 ----
 
@@ -47,9 +47,24 @@ Probability density function
 .. math::
 
 	\begin{align}
-	f(y;\alpha, \beta) = \frac{1}{\Gamma(\alpha)}\,\frac{(\beta y)^\alpha}{y} \,\mathrm{e}^{-\beta y}.
+	f(y;\alpha, \beta) = \frac{1}{\Gamma(\alpha)}\,\frac{(\beta y)^\alpha}{y} \,\mathrm{e}^{-\beta y},
 	\end{align}
 
+where :math:`\Gamma(\alpha)` is the :ref:`gamma function <Gamma function>`.
+
+----
+
+
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\alpha, \beta) = P(\alpha, \beta y),
+    \end{align}
+
+a :ref:`regularized lower incomplete gamma function <Regularized lower incomplete gamma function>`.
 
 ----
 
@@ -69,16 +84,17 @@ Variance: :math:`\displaystyle{\frac{\alpha}{\beta^2}}`
 Usage
 -----
 
-+-----------------+----------------------------------------------------+
-| Package         | Syntax                                             |
-+=================+====================================================+
-| **NumPy**       | ``rg.gamma(alpha, 1/beta)``                        |
-+-----------------+----------------------------------------------------+
-| **SciPy**       | ``scipy.stats.gamma(alpha, loc=0, scale=1/beta)``  |
-+-----------------+----------------------------------------------------+
-| **Stan**        | ``gamma(alpha, beta)``                             |
-+-----------------+----------------------------------------------------+
-
++----------------------+----------------------------------------------------+
+| Package              | Syntax                                             |
++======================+====================================================+
+| **NumPy**            | ``rng.gamma(alpha, 1/beta)``                       |
++----------------------+----------------------------------------------------+
+| **SciPy**            | ``scipy.stats.gamma(alpha, loc=0, scale=1/beta)``  |
++----------------------+----------------------------------------------------+
+| **Distributions.jl** | ``Gamma(alpha, 1/beta)``                           |
++----------------------+----------------------------------------------------+
+| **Stan**             | ``gamma(alpha, beta)``                             |
++----------------------+----------------------------------------------------+
 
 ----
 
@@ -121,4 +137,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Gamma_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.gamma.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gamma.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Gamma>`_
 - `Stan <https://mc-stan.org/docs/2_21/functions-reference/gamma-distribution.html>`_

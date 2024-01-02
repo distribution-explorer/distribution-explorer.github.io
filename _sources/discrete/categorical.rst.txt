@@ -10,7 +10,7 @@ Categorical distribution
 Story
 -----
 
-A probability is assigned to each of a set of discrete outcomes.
+A probability is assigned to each of a set of discrete unordered outcomes.
 
 
 ----
@@ -55,8 +55,24 @@ Probability mass function
 .. math::
 
     \begin{align}
-    f(y;\{\theta)y\}) = \theta_y
+    f(y;\{\theta_y\}) = \theta_y
     \end{align}
+
+
+----
+
+
+Cumulative distribution function
+--------------------------------
+
+If we choose to impose an order on the categories, we can define a CDF. Here, we denote the index by :math:`y`.
+
+.. math::
+
+    \begin{align}
+    F(y;\{\theta_y\}) = \sum_{y'\le y} \theta_y.
+    \end{align}
+
 
 
 ----
@@ -74,15 +90,17 @@ Moments are not defined for a Categorical distribution because the value of :mat
 Usage
 -----
 
-+-----------------+-----------------------------------------------------------------------+
-| Package         | Syntax                                                                |
-+=================+=======================================================================+
-| **NumPy**       | ``rg.choice(len(theta), p=theta)``                                    |
-+-----------------+-----------------------------------------------------------------------+
-| **SciPy**       | ``scipy.stats.rv_discrete(values=(range(len(theta)), theta)).rvs()``  |
-+-----------------+-----------------------------------------------------------------------+
-| **Stan**        | ``categorical(theta)``                                                |
-+-----------------+-----------------------------------------------------------------------+
++----------------------+-----------------------------------------------------------------------+
+| Package              | Syntax                                                                |
++======================+=======================================================================+
+| **NumPy**            | ``rng.choice(len(theta), p=theta)``                                   |
++----------------------+-----------------------------------------------------------------------+
+| **SciPy**            | ``scipy.stats.rv_discrete(values=(range(len(theta)), theta))``        |
++----------------------+-----------------------------------------------------------------------+
+| **Distributions.jl** | ``Categorical(theta)``                                                |
++----------------------+-----------------------------------------------------------------------+
+| **Stan**             | ``categorical(theta)``                                                |
++----------------------+-----------------------------------------------------------------------+
 
 ----
 
@@ -101,7 +119,7 @@ Notes
 -----
 
 - This distribution must be manually constructed if you are using the ``scipy.stats`` module using ``scipy.stats.rv_discrete()``. The categories need to be encoded by an index. For interactive plotting purposes, below, we need to specify a custom PMF and CDF.
-- To sample out of a Categorical distribution, use ``numpy.random.choice()``, specifying the values of :math:`\theta` using the `p` kwarg.
+- To sample out of a Categorical distribution, use ``rng.choice()``, specifying the values of :math:`\theta` using the `p` kwarg.
 
 
 ----
@@ -109,6 +127,8 @@ Notes
 
 PMF and CDF plots
 -----------------
+
+In the plot below, there are four categories, but we can only specify the probability for three of the four categories because the probability of the fourth is set by the normalization condition. If the parameters are such that the probabilities of the respective categories exceed one, the PMF is not displayed.
 
 .. bokeh-plot::
     :source-position: none
@@ -128,4 +148,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Categorical_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.choice.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_discrete.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/categorical-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Categorical>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/categorical-distribution.html>`_

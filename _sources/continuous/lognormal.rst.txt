@@ -10,7 +10,7 @@ Log-Normal distribution
 Story
 -----
 
-If :math:`\ln y` is Normally distributed, then `y` is Log-Normally distributed.
+If :math:`\ln y` is Normally distributed, then :math:`y` is Log-Normally distributed.
 
 
 ----
@@ -54,6 +54,19 @@ Probability density function
 ----
 
 
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\mu, \sigma) =\frac{1}{2}\left(1 + \text{erf}\left(\frac{\ln y - \mu}{\sigma\sqrt{2}}\right)\right),
+    \end{align}
+
+where :math:`\text{erf}(x)` denotes the :ref:`error function <Error function>`.
+
+----
+
 Moments
 -------
 
@@ -68,16 +81,17 @@ Variance: :math:`\left(\mathrm{e}^{\sigma^2} - 1\right)\mathrm{e}^{2\mu + \sigma
 Usage
 -----
 
-+-----------------+----------------------------------------------------------+
-| Package         | Syntax                                                   |
-+=================+==========================================================+
-| **NumPy**       | ``rg.lognormal(mu, sigma)``                              |
-+-----------------+----------------------------------------------------------+
-| **SciPy**       | ``scipy.stats.lognorm(sigma, loc=0, scale=np.exp(mu))``  |
-+-----------------+----------------------------------------------------------+
-| **Stan**        | ``lognormal(mu, sigma)``                                 |
-+-----------------+----------------------------------------------------------+
-
++----------------------+----------------------------------------------------------+
+| Package              | Syntax                                                   |
++======================+==========================================================+
+| **NumPy**            | ``rng.lognormal(mu, sigma)``                             |
++----------------------+----------------------------------------------------------+
+| **SciPy**            | ``scipy.stats.lognorm(sigma, loc=0, scale=np.exp(mu))``  |
++----------------------+----------------------------------------------------------+
+| **Distributions.jl** | ``LogNormal(mu, sigma)``                                 |
++----------------------+----------------------------------------------------------+
+| **Stan**             | ``lognormal(mu, sigma)``                                 |
++----------------------+----------------------------------------------------------+
 
 ----
 
@@ -119,4 +133,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Log-normal_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.lognormal.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.lognorm.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/lognormal.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.LogNormal>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/lognormal.html>`_

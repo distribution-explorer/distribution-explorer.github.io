@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Software packages &mdash; Probability Distribution Explorer  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,15 +14,16 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Other resources" href="resources.html" />
-    <link rel="prev" title="Review of key concepts" href="review_of_key_concepts.html" /> 
+    <link rel="prev" title="Special functions" href="special_functions.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,12 +31,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,10 +50,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="review_of_key_concepts.html">Review of key concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special_functions.html">Special functions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Software packages</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#usage-of-numpy">Usage of NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage-of-scipy">Usage of SciPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage-of-stan">Usage of Stan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage-of-distributions-jl">Usage of Distributions.jl</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Other resources</a></li>
@@ -81,6 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../continuous/pareto.html">Pareto distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/student_t.html">Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/uniform.html">Uniform distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/vonmises.html">Von Mises distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/weibull.html">Weibull distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
@@ -115,75 +122,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="software-packages">
-<h1>Software packages<a class="headerlink" href="#software-packages" title="Permalink to this headline"></a></h1>
+  <div class="section" id="software-packages">
+<h1>Software packages<a class="headerlink" href="#software-packages" title="Permalink to this heading"></a></h1>
 <p>In many modeling applications, we wish to <strong>sample</strong> out of a distribution. That means that we randomly draw numbers out of the sample space of the distribution such that the probability of drawing a number less than <span class="math notranslate nohighlight">\(x\)</span> is given by <span class="math notranslate nohighlight">\(F(x)\)</span>. Sampling out of a distribution is often easier than computing the distribution over a range of values because many of those values are close to zero.</p>
-<p>We may also want to have access to other properties about the distributions, like their PDF/PMF, CDF, quantiles, etc. We will focus on Python-based packages for working with distributions, and each vignette about a distribution includes syntax on how to use NumPy and SciPy tools. I also show how to use the distributions in the probabilistic programming language <a class="reference external" href="http://mc-stan.org/">Stan</a>. In the future, I hope to add distributions/samplers available in <a class="reference external" href="https://www.rdocumentation.org/packages/stats/versions/current/">R</a> and <a class="reference external" href="https://juliastats.org/Distributions.jl/stable/">Julia</a>.</p>
-<section id="usage-of-numpy">
-<h2>Usage of NumPy<a class="headerlink" href="#usage-of-numpy" title="Permalink to this headline"></a></h2>
+<p>We may also want to have access to other properties about the distributions, like their PDF/PMF, CDF, quantiles, etc. The Distribution Explorer currently describes usage syntax for the Python-based packages NumPy and SciPy, as well as Julia’s <a class="reference external" href="https://juliastats.org/Distributions.jl/stable/">Distributions.jl</a> package and the <a class="reference external" href="http://mc-stan.org/">Stan</a> probabilistic programming language. In the future, we hope to include use for <a class="reference external" href="https://www.pymc.io/">PyMC</a> and <a class="reference external" href="https://www.rdocumentation.org/packages/stats/">R</a>.</p>
+<div class="section" id="usage-of-numpy">
+<h2>Usage of NumPy<a class="headerlink" href="#usage-of-numpy" title="Permalink to this heading"></a></h2>
 <p>To use the the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> module to sample out of a distribution, you first need to instantiate a random number generator (RNG) with a specified bit generator. The bit generator generates random bits, and then the RNG converts these to number following a specific probability distribution you want to sample out of. The default generator using the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/bit_generators/pcg64.html">PCG64</a> bit generator, which is a good choice to use. You can instantiate a random number generator with the default bit generator as follows.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy.random</span>
 
-<span class="n">rg</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Alternatively, you can seed the random number generator to get a reproducible stream of random numbers.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rg</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">923841</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">923841</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In the syntax in this app, I assume that a random number generator has already been instantiated and is called <code class="docutils literal notranslate"><span class="pre">rg</span></code>. You can then use <code class="docutils literal notranslate"><span class="pre">rg</span></code> to draw random number out of a distribution, such as the Normal distribution.</p>
+<p>In the syntax in the Distribution Explorer, we assume that a random number generator has already been instantiated and is called <code class="docutils literal notranslate"><span class="pre">rng</span></code>. You can then use <code class="docutils literal notranslate"><span class="pre">rng</span></code> to draw random number out of a distribution, such as the Normal distribution.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw a single random number from standard Normal</span>
-<span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The syntax for drawing multiple samples involves use of the <code class="docutils literal notranslate"><span class="pre">size</span></code> keyword argument.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw 20 random numbers from standard Normal</span>
-<span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In this app, we always use <cite>rg</cite> for an instantiated generator, as is done in the NumPy documentation.</p>
-<section id="using-numba">
-<h3>Using Numba<a class="headerlink" href="#using-numba" title="Permalink to this headline"></a></h3>
-<p>For some calculations you may want to <a class="reference external" href="https://en.wikipedia.org/wiki/Just-in-time_compilation">just-in-time compile</a> your code that does sampling using <a class="reference external" href="https://numba.pydata.org/">Numba</a>. Numba currently only supports the Mersenne Twister bit generator. To use this, simply substitute <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> for <code class="docutils literal notranslate"><span class="pre">rg</span></code> in calls to NumPy random number generators. As an example, to get a JITted function to sample out of a Normal distribution, you would do the following.</p>
+<p>In this app, we always use <code class="docutils literal notranslate"><span class="pre">rng</span></code> for an instantiated generator, as is typically done in the NumPy documentation (though the docs sometimes use <code class="docutils literal notranslate"><span class="pre">rg</span></code>). The entry for each distribution show the syntax for sampling out of the distribution using NumPy, importantly in a way where the parametrization is consistent with all other packages shown.</p>
+<div class="section" id="using-numba">
+<h3>Using Numba<a class="headerlink" href="#using-numba" title="Permalink to this heading"></a></h3>
+<p>For some calculations you may want to <a class="reference external" href="https://en.wikipedia.org/wiki/Just-in-time_compilation">just-in-time compile</a> your code that does sampling using <a class="reference external" href="https://numba.pydata.org/">Numba</a>. Numba currently only supports the Mersenne Twister bit generator. To use this, simply substitute <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> for <code class="docutils literal notranslate"><span class="pre">rng</span></code> in calls to NumPy random number generators. As an example, to get a JITted function to sample out of a Normal distribution, you would do the following.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy.random</span>
 <span class="kn">import</span> <span class="nn">numba</span>
 
 <span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
 <span class="k">def</span> <span class="nf">draw_normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return array of Normally distributed random numbers.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">loc</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return array of Normally distributed random numbers.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">loc</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="usage-of-scipy">
-<h2>Usage of SciPy<a class="headerlink" href="#usage-of-scipy" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+<div class="section" id="usage-of-scipy">
+<h2>Usage of SciPy<a class="headerlink" href="#usage-of-scipy" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module is more feature-rich than the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> package in that it allows more functionality beyond sampling out of a distribution. It also features more distributions. The module also has functions to perform statistical tests, transformations, and other statistical computation. Here, we will focus only on its distributions.</p>
-<p>As described in the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">documentation</a>, every distribution is an instance of a subclass of an <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_continuous.html#scipy.stats.rv_continuous">rv_continuous</a> or <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_discrete.html#scipy.stats.rv_discrete">rv_discrete</a> base class. These classes have useful methods, like <code class="docutils literal notranslate"><span class="pre">rvs()</span></code>, which draws samples out of the distribution <code class="docutils literal notranslate"><span class="pre">pmf()</span></code> for discrete and <code class="docutils literal notranslate"><span class="pre">cdf()</span></code> for continuous, which return the value of the probability mass function or probability density function, and others. The instance is instantiated by supplying the appropriate parameters, which vary depending on the distribution. For example, the Normal distribution is implemented as <cite>scipy.stats.normal</cite>.</p>
+<p>As described in the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">documentation</a>, every distribution is an instance of a subclass of an <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_continuous.html#scipy.stats.rv_continuous">rv_continuous</a> or <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_discrete.html#scipy.stats.rv_discrete">rv_discrete</a> base class. These classes have useful methods, like <code class="docutils literal notranslate"><span class="pre">rvs()</span></code>, which draws samples out of the distribution, <code class="docutils literal notranslate"><span class="pre">pmf()</span></code> for discrete distribution and <code class="docutils literal notranslate"><span class="pre">pdf()</span></code> for continuous distributions, which return the value of the probability mass function or probability density function, and others. The instance is instantiated by supplying the appropriate parameters, which vary depending on the distribution. For example, the Normal distribution is implemented as <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span>
 
 <span class="c1"># Instantiate subclass for standard Normal</span>
@@ -194,7 +177,7 @@
 </pre></div>
 </div>
 <p>If I wanted to compute the probability density function for specific values of <span class="math notranslate nohighlight">\(x\)</span> and plot it, I could do the following.</p>
-<div class="highlight-python notranslate" id="background/software.bokeh-plot-9fdce053bb4443aa8e979c4c62d13ccf-external-background-software.js"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate" id="background-software.bokeh-content-ccc32b41e1b24fed9fc5485e7c80192b-background-software.js"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span>
 
 <span class="kn">import</span> <span class="nn">bokeh.io</span>
@@ -215,29 +198,53 @@
 <span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
-
-<script src="bokeh-plot-9fdce053bb4443aa8e979c4c62d13ccf-external-background-software.js" id="09104955-ecea-487e-9f06-19604d3e08cc"></script><p>In the vignettes for each distribution, I show the syntax of how to instantiate the class using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm(mu,</span> <span class="pre">sigma)</span></code>.</p>
-</section>
-<section id="usage-of-stan">
-<h2>Usage of Stan<a class="headerlink" href="#usage-of-stan" title="Permalink to this headline"></a></h2>
-<p>We follow <a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/conventions-for-probability-functions.html">Stan’s conventions for probability functions</a>. Within a Stan program specifying a model, we would write</p>
+<div style="height:200px;"><script src="bokeh-content-ccc32b41e1b24fed9fc5485e7c80192b-background-software.js" id="b29bf847-0668-43d1-b2df-b2dd36c31472"></script></div><p>In the entry for each distribution, I show the syntax of how to instantiate the class using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">scipy.stats.norm(mu,</span> <span class="pre">sigma)</span></code>.</p>
+</div>
+<div class="section" id="usage-of-stan">
+<h2>Usage of Stan<a class="headerlink" href="#usage-of-stan" title="Permalink to this heading"></a></h2>
+<p>We follow <a class="reference external" href="https://mc-stan.org/docs/functions-reference/conventions-for-probability-functions.html">Stan’s conventions for probability functions</a>. Within a Stan program specifying a model, we would write</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">~</span> <span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>to specify that <code class="docutils literal notranslate"><span class="pre">y</span></code> is Normally distributed with parameters <code class="docutils literal notranslate"><span class="pre">mu</span></code> and <code class="docutils literal notranslate"><span class="pre">sigma</span></code>. If we want to draw a random number from a distribution using Stan, we add a <code class="docutils literal notranslate"><span class="pre">_rng</span></code> suffix to the probability function name. To draw a random number from a Normal distribution and store it as <code class="docutils literal notranslate"><span class="pre">x</span></code>, we do</p>
+<p>to specify that <code class="docutils literal notranslate"><span class="pre">y</span></code> is Normally distributed with parameters <code class="docutils literal notranslate"><span class="pre">mu</span></code> and <code class="docutils literal notranslate"><span class="pre">sigma</span></code>. If we want to draw a random number from a distribution using Stan, we add a <code class="docutils literal notranslate"><span class="pre">_rng</span></code> suffix to the probability function name. So, to draw a random number from a Normal distribution and store it as <code class="docutils literal notranslate"><span class="pre">x</span></code>, we do</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">normal_rng</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Other suffixes are available, and the call signature can change depending on the suffix. For example, to compute the value of the logarithm of the PDF of the Normal distribution at point <code class="docutils literal notranslate"><span class="pre">x</span></code>, we use <code class="docutils literal notranslate"><span class="pre">normal_lpdf(x</span> <span class="pre">|</span> <span class="pre">mu,</span> <span class="pre">sigma)</span></code>.</p>
 <p>In the syntax listed in the vignettes, I show the syntax used in a sampling statement. That is a statement like <code class="docutils literal notranslate"><span class="pre">normal(mu,</span> <span class="pre">sigma)</span></code>.</p>
-</section>
-</section>
+</div>
+<div class="section" id="usage-of-distributions-jl">
+<h2>Usage of Distributions.jl<a class="headerlink" href="#usage-of-distributions-jl" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference external" href="https://juliastats.org/Distributions.jl/stable/">Distributions.jl package</a> is the primary means for using probability distributions in Julia. Like the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> package described above, the primary mode of usage is to instantiate a distribution and then use associated functions. As an example, of some of the many things we can do with a distribution, we can draw random numbers, compute the PDF, and compute quantiles for the Normal distribution.</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># Import package</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Distributions</span>
+
+<span class="c"># Instantiate Normal distribution with parameters µ = 0, σ = 1</span>
+<span class="n">normal_dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c"># Draw 100 random numbers</span>
+<span class="n">rand</span><span class="p">(</span><span class="n">normal_dist</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c"># Compute the value of the PDF at points from -10 to 10</span>
+<span class="n">pdf</span><span class="p">(</span><span class="n">normal_dist</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="o">:</span><span class="mf">0.01</span><span class="o">:</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c"># Compute the 2.5th and 97.5th percentile</span>
+<span class="n">quantile</span><span class="p">(</span><span class="n">normal_dist</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.025</span><span class="p">,</span><span class="w"> </span><span class="mf">0.975</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The available distributions in the Distributions.jl package can be used in Bayesian inference in the <a class="reference external" href="https://turinglang.org/">Turing.jl</a> package. When specifying a model, the syntax is similar to Stan. For example, if y is Normally distributed with parameters µ and σ, the model specification statement is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">~</span> <span class="n">Normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the Explorer, we present the instantiation/model specification syntax for the distributions with parametrization consistent with Stan.</p>
+</div>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="review_of_key_concepts.html" class="btn btn-neutral float-left" title="Review of key concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="special_functions.html" class="btn btn-neutral float-left" title="Special functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="resources.html" class="btn btn-neutral float-right" title="Other resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -245,13 +252,13 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 25, 2022.
+      <span class="lastupdated">Last updated on Jan 01, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fd69db0af40> 
+   <jinja2.runtime.BlockReference object at 0x12047dd90> 
 
-<p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
+<p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

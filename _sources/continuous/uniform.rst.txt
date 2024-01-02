@@ -48,8 +48,20 @@ Probability density function
 .. math::
 
 	\begin{align}
-	f(y;\alpha, \beta) = \left\{\begin{array}{ccl}\frac{1}{\beta-\alpha}&&\alpha\le y\le\beta\\[0.5em] 0 && \text{otherwise.}\end{array}\right.
+	f(y;\alpha, \beta) = \left\{\begin{array}{ccl}\displaystyle{\frac{1}{\beta-\alpha}}&&\alpha\le y\le\beta\\[0.5em] 0 && \text{otherwise.}\end{array}\right.
 	\end{align}
+
+
+----
+
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y; \alpha, \beta) = \left\{\begin{array}{ccl} 0 && y < a \\[0.5em]\displaystyle{\frac{y-\alpha}{\beta-\alpha}}&&\alpha\le y\le\beta\\[0.5em] 1 && y > \beta\end{array}\right.
+    \end{align}
 
 
 ----
@@ -58,9 +70,9 @@ Probability density function
 Moments
 -------
 
-Mean: :math:`\displaystyle{\frac{a+b}{2}}`
+Mean: :math:`\displaystyle{\frac{\alpha + \beta}{2}}`
 
-Variance: :math:`\displaystyle{\frac{(b-a)^2}{12}}`
+Variance: :math:`\displaystyle{\frac{(\beta - \alpha)^2}{12}}`
 
 
 ----
@@ -68,16 +80,17 @@ Variance: :math:`\displaystyle{\frac{(b-a)^2}{12}}`
 Usage
 -----
 
-+-----------------+-----------------------------------------------+
-| Package         | Syntax                                        |
-+=================+===============================================+
-| **NumPy**       | ``np.uniform(alpha, beta)``                   |
-+-----------------+-----------------------------------------------+
-| **SciPy**       | ``scipy.stats.uniform(alpha, beta - alpha)``  |
-+-----------------+-----------------------------------------------+
-| **Stan**        | ``uniform(alpha, beta)``                      |
-+-----------------+-----------------------------------------------+
-
++----------------------+-----------------------------------------------+
+| Package              | Syntax                                        |
++======================+===============================================+
+| **NumPy**            | ``rng.uniform(alpha, beta)``                  |
++----------------------+-----------------------------------------------+
+| **SciPy**            | ``scipy.stats.uniform(alpha, beta - alpha)``  |
++----------------------+-----------------------------------------------+
+| **Distributions.jl** | ``Uniform(alpha, beta)``                      |
++----------------------+-----------------------------------------------+
+| **Stan**             | ``uniform(alpha, beta)``                      |
++----------------------+-----------------------------------------------+
 
 ----
 
@@ -109,4 +122,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.uniform.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.uniform.html#scipy.stats.uniform>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/uniform-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Uniform>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/uniform-distribution.html>`_

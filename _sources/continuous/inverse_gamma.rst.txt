@@ -37,12 +37,25 @@ Probability density function
 .. math::
 
 	\begin{align}
-	f(y;\alpha, \beta) = \frac{1}{\Gamma(\alpha)}\,\frac{\beta^\alpha}{y^{\alpha+1}} \,\mathrm{e}^{-\beta / y}.
+	f(y;\alpha, \beta) = \frac{1}{\Gamma(\alpha)}\,\frac{\beta^\alpha}{y^{\alpha+1}} \,\mathrm{e}^{-\beta / y},
 	\end{align}
 
+where :math:`\Gamma(\alpha)` is :ref:`the gamma function <Gamma function>`.
 
 ----
 
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\alpha, \beta) = Q(\alpha, \beta/x),
+    \end{align}
+
+a :ref:`regularized upper incomplete gamma function <Regularized upper incomplete gamma function>`.
+
+----
 
 Moments
 -------
@@ -58,16 +71,17 @@ Variance: :math:`\displaystyle{\frac{\beta^2}{(\alpha-1)^2(\alpha-2)}}` for :mat
 Usage
 -----
 
-+-----------------+----------------------------------------------------+
-| Package         | Syntax                                             |
-+=================+====================================================+
-| **NumPy**       | ``1 / rg.gamma(alpha, 1/beta)``                    |
-+-----------------+----------------------------------------------------+
-| **SciPy**       | ``scipy.stats.invgamma(alpha, loc=0, scale=beta)`` |
-+-----------------+----------------------------------------------------+
-| **Stan**        | ``inv_gamma(alpha, beta)``                         |
-+-----------------+----------------------------------------------------+
-
++----------------------+----------------------------------------------------+
+| Package              | Syntax                                             |
++======================+====================================================+
+| **NumPy**            | ``1 / rng.gamma(alpha, 1/beta)``                   |
++----------------------+----------------------------------------------------+
+| **SciPy**            | ``scipy.stats.invgamma(alpha, loc=0, scale=beta)`` |
++----------------------+----------------------------------------------------+
+| **Distributions.jl** | ``InverseGamma(alpha, beta)``                      |
++----------------------+----------------------------------------------------+
+| **Stan**             | ``inv_gamma(alpha, beta)``                         |
++----------------------+----------------------------------------------------+
 
 ----
 
@@ -108,4 +122,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Inverse-gamma_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.gamma.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.invgamma.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/inverse-gamma-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.InverseGamma>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/inverse-gamma-distribution.html>`_

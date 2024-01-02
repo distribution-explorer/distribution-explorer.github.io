@@ -18,7 +18,7 @@ Consider an urn with :math:`a` white balls and :math:`b` black balls. Draw :math
 Example
 -------
 
-There are :math:`a+b` finches on an island, and :math:`a` of them are tagged (and therefore :math:`b` of them are untagged). You capture :math:`N` finches. The number of tagged finches :math:`n` is Hypergeometrically distributed.
+There are :math:`a+b` finches on an island, and :math:`a` of them are tagged (and therefore :math:`b` of them are untagged). You capture :math:`N` finches. The number of captured tagged finches :math:`n` is Hypergeometrically distributed.
 
 
 ----
@@ -54,6 +54,22 @@ Probability mass function
 ----
 
 
+Cumulative distribution function
+--------------------------------
+
+The cumulative distribution function evaluated for integer :math:`n` is
+
+.. math::
+
+    \begin{align}
+    F(n; N, a, b) = 1 - \frac{\begin{pmatrix}N \\ n+1\end{pmatrix} \begin{pmatrix}a + b - B \\ a - n - 1\end{pmatrix}}{\begin{pmatrix}a+b \\ a\end{pmatrix}}\,_3F_2(1, n-a+1, n+1-N; n+2, n+b-N+2; 1),
+    \end{align}
+
+where :math:`_3F_2(a_1, a_2, a_3;b_1, b_2; z)` denotes the `generalized hypergeometric function <https://en.wikipedia.org/wiki/Generalized_hypergeometric_function>`_.
+
+----
+
+
 Moments
 -------
 
@@ -69,15 +85,17 @@ Variance: :math:`\displaystyle{N\,\frac{ab}{(a + b)^2}\,\frac{a+b-N}{a+b-1}}`
 Usage
 -----
 
-+-----------------+----------------------------------------+
-| Package         | Syntax                                 |
-+=================+========================================+
-| **NumPy**       | ``rg.hypergeometric(a, b, N)``         |
-+-----------------+----------------------------------------+
-| **SciPy**       | ``scipy.stats.hypergeom(a+b, a, N)``   |
-+-----------------+----------------------------------------+
-| **Stan**        | ``hypergeometric(N, a, b)``            |
-+-----------------+----------------------------------------+
++----------------------+----------------------------------------+
+| Package              | Syntax                                 |
++======================+========================================+
+| **NumPy**            | ``rng.hypergeometric(a, b, N)``        |
++----------------------+----------------------------------------+
+| **SciPy**            | ``scipy.stats.hypergeom(a+b, a, N)``   |
++----------------------+----------------------------------------+
+| **Distributions.jl** | ``Hypergeometric(a, b, N)``            |
++----------------------+----------------------------------------+
+| **Stan**             | ``hypergeometric(N, a, b)``            |
++----------------------+----------------------------------------+
 
 
 ----
@@ -128,4 +146,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Hypergeometric_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.hypergeometric.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.hypergeom.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/hypergeometric-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Hypergeometric>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/hypergeometric-distribution.html>`_

@@ -27,7 +27,7 @@ This is a model for aging. The longer an organism lives, the more likely it is t
 Parameters
 ----------
 
-There are two parameters, both strictly positive: the shape parameter :math:`\alpha`, which dictates the shape of the curve, and the scale parameter :math:`\sigma`, which dictates the rate of arrivals of the event.
+There are two parameters, both strictly positive: the shape parameter :math:`\alpha`, which dictates the shape of the curve, and the scale parameter :math:`\sigma`, which dictates the rate of arrivals of the modeled process.
 
 ----
 
@@ -54,6 +54,18 @@ Probability density function
 
 ----
 
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\alpha, \sigma) = 1 - \mathrm{e}^{-(x/\sigma)^\alpha}.
+    \end{align}
+
+
+----
+
 Moments
 -------
 
@@ -67,16 +79,17 @@ Variance: :math:`\displaystyle{\sigma^2\left[\Gamma(1+2/\alpha) - \left(\Gamma(1
 Usage
 -----
 
-+-----------------+---------------------------------------------------------+
-| Package         | Syntax                                                  |
-+=================+=========================================================+
-| **NumPy**       | ``rg.weibull(alpha) * sigma``                           |
-+-----------------+---------------------------------------------------------+
-| **SciPy**       | ``scipy.stats.weibull_min(alpha, loc=0, scale=sigma)``  |
-+-----------------+---------------------------------------------------------+
-| **Stan**        | ``weibull(alpha, sigma)``                               |
-+-----------------+---------------------------------------------------------+
-
++----------------------+---------------------------------------------------------+
+| Package              | Syntax                                                  |
++======================+=========================================================+
+| **NumPy**            | ``sigma * rng.weibull(alpha)``                          |
++----------------------+---------------------------------------------------------+
+| **SciPy**            | ``scipy.stats.weibull_min(alpha, loc=0, scale=sigma)``  |
++----------------------+---------------------------------------------------------+
+| **Distributions.jl** | ``Weibull(alpha, sigma)``                               |
++----------------------+---------------------------------------------------------+
+| **Stan**             | ``weibull(alpha, sigma)``                               |
++----------------------+---------------------------------------------------------+
 
 ----
 
@@ -117,4 +130,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Weibull_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.weibull.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.weibull_min.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/weibull-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Weibull>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/weibull-distribution.html>`_

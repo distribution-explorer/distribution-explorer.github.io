@@ -41,11 +41,25 @@ Probability density function
 .. math::
 
 	\begin{align}
-	f(y;\mu, \sigma) = \left\{\begin{array}{cll}
-    \frac{2}{\pi \sigma}\,\frac{1}{1 + (y-\mu)^2/\sigma^2} &  & y \ge \mu \\[1em]
+	f(y;\mu, \sigma) = \frac{2}{\pi \sigma}\,\frac{1}{1 + (y-\mu)^2/\sigma^2}.
+	\end{align}
+
+Note that the distribution is only supported for :math:`y \ge \mu`.
+
+----
+
+
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\mu, \sigma) = \left\{\begin{array}{cll}
+    \displaystyle{\frac{2}{\pi}\,\arctan\left(\frac{y-\mu}{\sigma}\right)} &  & y \ge \mu \\[1em]
     0 & & \text{otherwise}.
     \end{array}\right.
-	\end{align}
+    \end{align}
 
 ----
 
@@ -64,18 +78,19 @@ Variance: Undefined
 Usage
 -----
 
-+--------------------+-----------------------------------------------------------+
-| Package            | Syntax                                                    |
-+====================+===========================================================+
-| **NumPy**          | ``mu + np.abs(sigma * rg.standard_cauchy())``             |
-+--------------------+-----------------------------------------------------------+
-| **SciPy**          | ``scipy.stats.halfcauchy(mu, sigma)``                     |
-+--------------------+-----------------------------------------------------------+
-| **Stan sampling**  | ``real<lower=mu> y; y ~ cauchy(mu, sigma)``               |
-+--------------------+-----------------------------------------------------------+
-| **Stan rng**       | ``real<lower=mu> y; y = mu + fabs(cauchy_rng(0, sigma))`` |
-+--------------------+-----------------------------------------------------------+
-
++----------------------+-----------------------------------------------------------+
+| Package              | Syntax                                                    |
++======================+===========================================================+
+| **NumPy**            | ``mu + np.abs(sigma * rng.standard_cauchy())``            |
++----------------------+-----------------------------------------------------------+
+| **SciPy**            | ``scipy.stats.halfcauchy(mu, sigma)``                     |
++----------------------+-----------------------------------------------------------+
+| **Distributions.jl** | ``truncated(Cauchy(mu, sigma); lower=mu)``                |
++----------------------+-----------------------------------------------------------+
+| **Stan sampling**    | ``real<lower=mu> y; y ~ cauchy(mu, sigma)``               |
++----------------------+-----------------------------------------------------------+
+| **Stan rng**         | ``real<lower=mu> y; y = mu + fabs(cauchy_rng(0, sigma))`` |
++----------------------+-----------------------------------------------------------+
 
 ----
 
@@ -83,8 +98,8 @@ Usage
 Related distributions
 ---------------------
 
-- The :ref:`cauchy`, distribution is obviously closely related. The Half-Cauchy is simply a truncated Cauchy distribution where only values at the peak or to its right have nonzero probability density.
-- The Half-Cauchy distribution is the :math:`\nu=1` special case of the :ref:`half_student_t`.
+- The :ref:`cauchy` distribution is obviously closely related. The Half-Cauchy is simply a truncated Cauchy distribution where only values at the peak or to its right have nonzero probability density.
+- The Half-Cauchy distribution is the :math:`\nu = 1` special case of the :ref:`half_student_t`.
 
 
 ----
@@ -119,4 +134,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Cauchy_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.standard_cauchy.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.halfcauchy.html#scipy.stats.halfcauchy>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/cauchy-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Cauchy>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/cauchy-distribution.html>`_

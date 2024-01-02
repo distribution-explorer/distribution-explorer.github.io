@@ -56,6 +56,20 @@ Probability density function
 ----
 
 
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\mu, \sigma) =\frac{1}{2}\left(1 + \text{erf}\left(\frac{y - \mu}{\sigma\sqrt{2}}\right)\right),
+    \end{align}
+
+where :math:`\text{erf}(x)` denotes the :ref:`error function <Error function>`.
+
+----
+
+
 Moments
 -------
 
@@ -70,16 +84,17 @@ Variance: :math:`\sigma^2`
 Usage
 -----
 
-+-----------------+----------------------------------+
-| Package         | Syntax                           |
-+=================+==================================+
-| **NumPy**       | ``rg.normal(mu, sigma)``         |
-+-----------------+----------------------------------+
-| **SciPy**       | ``scipy.stats.norm(mu, sigma)``  |
-+-----------------+----------------------------------+
-| **Stan**        | ``normal(mu, sigma)``            |
-+-----------------+----------------------------------+
-
++----------------------+----------------------------------+
+| Package              | Syntax                           |
++======================+==================================+
+| **NumPy**            | ``rng.normal(mu, sigma)``        |
++----------------------+----------------------------------+
+| **SciPy**            | ``scipy.stats.norm(mu, sigma)``  |
++----------------------+----------------------------------+
+| **Distributions.jl** | ``Normal(mu, sigma)``            |
++----------------------+----------------------------------+
+| **Stan**             | ``normal(mu, sigma)``            |
++----------------------+----------------------------------+
 
 ----
 
@@ -141,4 +156,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Normal_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.normal.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html#scipy.stats.norm>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/normal-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Normal>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/normal-distribution.html>`_

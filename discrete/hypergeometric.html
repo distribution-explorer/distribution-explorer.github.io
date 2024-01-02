@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hypergeometric distribution &mdash; Probability Distribution Explorer  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,10 +14,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -31,12 +31,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,6 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../background/motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/review_of_key_concepts.html">Review of key concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../background/special_functions.html">Special functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/software.html">Software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/resources.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/vignette_contents.html">Vignette contents</a></li>
@@ -63,6 +68,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support">Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#probability-mass-function">Probability mass function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cumulative-distribution-function">Cumulative distribution function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#moments">Moments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#related-distributions">Related distributions</a></li>
@@ -89,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../continuous/pareto.html">Pareto distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/student_t.html">Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/uniform.html">Uniform distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/vonmises.html">Von Mises distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/weibull.html">Weibull distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
@@ -123,75 +130,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="hypergeometric-distribution">
-<span id="hypergeometric"></span><h1>Hypergeometric distribution<a class="headerlink" href="#hypergeometric-distribution" title="Permalink to this headline"></a></h1>
+  <div class="section" id="hypergeometric-distribution">
+<span id="hypergeometric"></span><h1>Hypergeometric distribution<a class="headerlink" href="#hypergeometric-distribution" title="Permalink to this heading"></a></h1>
 <hr class="docutils" />
-<section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline"></a></h2>
+<div class="section" id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
 <p>Consider an urn with <span class="math notranslate nohighlight">\(a\)</span> white balls and <span class="math notranslate nohighlight">\(b\)</span> black balls. Draw <span class="math notranslate nohighlight">\(N\)</span> balls from this urn without replacement. The number white balls drawn, <span class="math notranslate nohighlight">\(n\)</span>, is Hypergeometrically distributed.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h2>
-<p>There are <span class="math notranslate nohighlight">\(a+b\)</span> finches on an island, and <span class="math notranslate nohighlight">\(a\)</span> of them are tagged (and therefore <span class="math notranslate nohighlight">\(b\)</span> of them are untagged). You capture <span class="math notranslate nohighlight">\(N\)</span> finches. The number of tagged finches <span class="math notranslate nohighlight">\(n\)</span> is Hypergeometrically distributed.</p>
-</section>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p>There are <span class="math notranslate nohighlight">\(a+b\)</span> finches on an island, and <span class="math notranslate nohighlight">\(a\)</span> of them are tagged (and therefore <span class="math notranslate nohighlight">\(b\)</span> of them are untagged). You capture <span class="math notranslate nohighlight">\(N\)</span> finches. The number of captured tagged finches <span class="math notranslate nohighlight">\(n\)</span> is Hypergeometrically distributed.</p>
+</div>
 <hr class="docutils" />
-<section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <p>There are three parameters: the number of draws <span class="math notranslate nohighlight">\(N\)</span>, the number of white balls <span class="math notranslate nohighlight">\(a\)</span>, and the number of black balls <span class="math notranslate nohighlight">\(b\)</span>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline"></a></h2>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><p>The Hypergeometric distribution is supported on the set of integers between <span class="math notranslate nohighlight">\(\mathrm{max}(0, N-b)\)</span> and <span class="math notranslate nohighlight">\(\mathrm{min}(N, a)\)</span>, inclusive.</p>
 </div></blockquote>
-</section>
+</div>
 <hr class="docutils" />
-<section id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this headline"></a></h2>
+<div class="section" id="probability-mass-function">
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 f(n; N, a, b) = \frac{\begin{pmatrix}a \\ n\end{pmatrix} \begin{pmatrix}b \\ N-n\end{pmatrix}}{\begin{pmatrix}a+b \\ N\end{pmatrix}}.
 \end{align}\end{split}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline"></a></h2>
+<div class="section" id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
+<p>The cumulative distribution function evaluated for integer <span class="math notranslate nohighlight">\(n\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+F(n; N, a, b) = 1 - \frac{\begin{pmatrix}N \\ n+1\end{pmatrix} \begin{pmatrix}a + b - B \\ a - n - 1\end{pmatrix}}{\begin{pmatrix}a+b \\ a\end{pmatrix}}\,_3F_2(1, n-a+1, n+1-N; n+2, n+b-N+2; 1),
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(_3F_2(a_1, a_2, a_3;b_1, b_2; z)\)</span> denotes the <a class="reference external" href="https://en.wikipedia.org/wiki/Generalized_hypergeometric_function">generalized hypergeometric function</a>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{N\,\frac{a}{a+b}}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{N\,\frac{ab}{(a + b)^2}\,\frac{a+b-N}{a+b-1}}\)</span></p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 30%" />
-<col style="width: 70%" />
+<col style="width: 35%" />
+<col style="width: 65%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -200,27 +193,30 @@ f(n; N, a, b) = \frac{\begin{pmatrix}a \\ n\end{pmatrix} \begin{pmatrix}b \\ N-n
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>NumPy</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">rg.hypergeometric(a,</span> <span class="pre">b,</span> <span class="pre">N)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rng.hypergeometric(a,</span> <span class="pre">b,</span> <span class="pre">N)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>SciPy</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">scipy.stats.hypergeom(a+b,</span> <span class="pre">a,</span> <span class="pre">N)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Stan</strong></p></td>
+<tr class="row-even"><td><p><strong>Distributions.jl</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Hypergeometric(a,</span> <span class="pre">b,</span> <span class="pre">N)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stan</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">hypergeometric(N,</span> <span class="pre">a,</span> <span class="pre">b)</span></code></p></td>
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline"></a></h2>
+<div class="section" id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>In the limit of <span class="math notranslate nohighlight">\(a+b\to\infty\)</span> such that <span class="math notranslate nohighlight">\(a/(a+b)\)</span> is fixed, we get a <a class="reference internal" href="binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> with parameters <span class="math notranslate nohighlight">\(N = N\)</span> and <span class="math notranslate nohighlight">\(\theta = a/(a+b)\)</span>.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>This distribution is analogous to the <a class="reference internal" href="binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a>, except that the Binomial distribution describes draws from an urn <em>with</em> replacement. In the analogy, the Binomial parameter <span class="math notranslate nohighlight">\(\theta\)</span> is <span class="math notranslate nohighlight">\(\theta = a/(a+b)\)</span>.</p></li>
 <li><p>SciPy uses a different parametrization than NumPy and Stan. Let <span class="math notranslate nohighlight">\(M = a+b\)</span> be the total number of balls in the urn. Then, noting the order of the parameters, since this is what <code class="docutils literal notranslate"><span class="pre">scipy.stats.hypergeom</span></code> expects, the PMF may be written as</p></li>
@@ -232,23 +228,23 @@ f(n;M,a,N) = \frac{\begin{pmatrix}a \\ n\end{pmatrix} \begin{pmatrix}M-a \\ N-n\
 <ul class="simple">
 <li><p>Although NumPy and Stan use the same parametrization, note the difference in the ordering of the arguments.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="pmf-and-cdf-plots">
-<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this headline"></a></h2>
-
-<script src="bokeh-plot-76ee63bca5f042c39c0a906476caae6d-external-discrete-hypergeometric.js" id="270504c4-1a9e-42f0-9728-7c46027532d7"></script></section>
+<div class="section" id="pmf-and-cdf-plots">
+<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
+<script src="bokeh-content-f1618442328a40d6a2d7407710c704a8-discrete-hypergeometric.js" id="da5e9bbc-08a6-4152-a5f1-0043854e14f9"></script></div>
 <hr class="docutils" />
-<section id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline"></a></h2>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hypergeometric_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.hypergeometric.html">Numpy</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.hypergeom.html">Scipy</a></p></li>
-<li><p><a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/hypergeometric-distribution.html">Stan</a></p></li>
+<li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Hypergeometric">Distributions.jl</a></p></li>
+<li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/hypergeometric-distribution.html">Stan</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -262,13 +258,13 @@ f(n;M,a,N) = \frac{\begin{pmatrix}a \\ n\end{pmatrix} \begin{pmatrix}M-a \\ N-n\
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 25, 2022.
+      <span class="lastupdated">Last updated on Jan 01, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fd6a2e1f550> 
+   <jinja2.runtime.BlockReference object at 0x11f97b9d0> 
 
-<p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
+<p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

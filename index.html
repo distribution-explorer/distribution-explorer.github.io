@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Probability Distribution Explorer &mdash; Probability Distribution Explorer  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -28,12 +28,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
-            <a href="#">
-            <img src="_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="#">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -43,6 +47,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="background/motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background/review_of_key_concepts.html">Review of key concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background/special_functions.html">Special functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background/software.html">Software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background/resources.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background/vignette_contents.html">Vignette contents</a></li>
@@ -73,6 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="continuous/pareto.html">Pareto distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="continuous/student_t.html">Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="continuous/uniform.html">Uniform distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuous/vonmises.html">Von Mises distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="continuous/weibull.html">Weibull distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
@@ -107,38 +113,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="probability-distribution-explorer">
-<h1>Probability Distribution Explorer<a class="headerlink" href="#probability-distribution-explorer" title="Permalink to this headline"></a></h1>
+  <div class="section" id="probability-distribution-explorer">
+<h1>Probability Distribution Explorer<a class="headerlink" href="#probability-distribution-explorer" title="Permalink to this heading"></a></h1>
 <p>Welcome to the probability distribution explorer. This is a tool for you to explore commonly used probability distributions, including information about the stories behind them (e.g., the outcome of a coin flip is Bernoulli distributed), their probability mass/probability density functions, their moments, etc. Also included is syntax on how to use these distributions in <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/index.html">NumPy</a>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">SciPy</a>, and <a class="reference external" href="https://mc-stan.org">Stan</a>. Each distribution has its own vignette, which you can dive right in to exploring. You are, however, strongly advised to read up on the background before proceeding to the distributions so you understand the notation and key concepts.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Background</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="background/motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background/review_of_key_concepts.html">Review of key concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="background/special_functions.html">Special functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background/software.html">Software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background/resources.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="background/vignette_contents.html">Vignette contents</a></li>
@@ -173,6 +156,7 @@
 <li class="toctree-l1"><a class="reference internal" href="continuous/pareto.html">Pareto distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="continuous/student_t.html">Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="continuous/uniform.html">Uniform distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuous/vonmises.html">Von Mises distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="continuous/weibull.html">Weibull distribution</a></li>
 </ul>
 </div>
@@ -190,7 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="multivariate_continuous/multivariate_normal.html">Multivariate Normal distribution</a></li>
 </ul>
 </div>
-</section>
+</div>
 
 
            </div>
@@ -203,13 +187,13 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 25, 2022.
+      <span class="lastupdated">Last updated on Jan 01, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fd6a34d9850> 
+   <jinja2.runtime.BlockReference object at 0x12021dfd0> 
 
-<p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
+<p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

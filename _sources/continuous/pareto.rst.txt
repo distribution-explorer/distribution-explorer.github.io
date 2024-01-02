@@ -18,7 +18,7 @@ There is no real story to the Pareto distribution, except that it is a distribut
 Example
 -------
 
-The `Gutenberg-Richter Law <https://en.wikipedia.org/wiki/Gutenberg–Richter_law>`_ says that the magnitudes of earthquakes in a given region are Pareto distributed. Other random variables that are often described by power laws include size of human settlement (many small towns, a few huge cities), income distribution (many poor, few obscenely rich).
+The `Gutenberg-Richter Law <https://en.wikipedia.org/wiki/Gutenberg–Richter_law>`_ says that the magnitudes of earthquakes in a given region are Pareto distributed. Other random variables that are often described by power laws include size of human settlement (many small towns, a few huge cities), and income distribution (many poor, few extremely rich).
 
 
 ----
@@ -54,6 +54,22 @@ Probability density function
 ----
 
 
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    \bar{F}(y) = \left\{\begin{array}{lll}
+    1 - \left(\frac{y_\mathrm{min}}{y}\right)^\alpha & & y \ge y_\mathrm{min} \\
+    0 & & y < y_\mathrm{min}
+    \end{array}
+    \right.
+    \end{align}
+
+
+----
+
 Moments
 -------
 
@@ -67,16 +83,17 @@ Variance: The variance is infinite for :math:`\alpha \le 2` and :math:`\displays
 Usage
 -----
 
-+-----------------+---------------------------------------------+
-| Package         | Syntax                                      |
-+=================+=============================================+
-| **NumPy**       | ``y_min * (1 + rg.pareto(alpha))``          |
-+-----------------+---------------------------------------------+
-| **SciPy**       | ``scipy.stats.pareto(alpha, scale=y_min)``  |
-+-----------------+---------------------------------------------+
-| **Stan**        | ``pareto(y_min, alpha)``                    |
-+-----------------+---------------------------------------------+
-
++----------------------+---------------------------------------------+
+| Package              | Syntax                                      |
++======================+=============================================+
+| **NumPy**            | ``y_min * (1 + rng.pareto(alpha))``         |
++----------------------+---------------------------------------------+
+| **SciPy**            | ``scipy.stats.pareto(alpha, scale=y_min)``  |
++----------------------+---------------------------------------------+
+| **Distributions.jl** | ``Pareto(alpha, y_min)``                    |
++----------------------+---------------------------------------------+
+| **Stan**             | ``pareto(y_min, alpha)``                    |
++----------------------+---------------------------------------------+
 
 ----
 
@@ -110,8 +127,9 @@ Thus, the power law is clear. A plot of the CCDF on a log-log plot yields a line
     x = np.array([0.1, 1, 1e3])
     y = np.array([1, 1, 1e-6])
 
-    p = bokeh.plotting.figure(frame_height=150, frame_width=200, x_axis_type='log', y_axis_type='log', x_axis_label='y', y_axis_label='CCDF', tools="save", x_range=[1e-1, 1e3], background_fill_alpha=0, border_fill_alpha=0)
+    p = bokeh.plotting.figure(height=175, width=275, x_axis_type='log', y_axis_type='log', x_axis_label='y', y_axis_label='CCDF', tools="save", x_range=[1e-1, 1e3], background_fill_alpha=0, border_fill_alpha=0)
     p.line(x, y, line_width=2)
+
     bokeh.io.show(p)
 
 
@@ -137,4 +155,5 @@ Links
 - `Wikipedia <https://en.wikipedia.org/wiki/Pareto_distribution>`_
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.pareto.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pareto.html>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/pareto-distribution.html>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Pareto>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/pareto-distribution.html>`_

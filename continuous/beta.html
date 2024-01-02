@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beta distribution &mdash; Probability Distribution Explorer  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,10 +14,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -31,12 +31,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #827F7F" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,6 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../background/motivation.html">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/review_of_key_concepts.html">Review of key concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../background/special_functions.html">Special functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/software.html">Software packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/resources.html">Other resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../background/vignette_contents.html">Vignette contents</a></li>
@@ -68,6 +73,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support">Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#probability-density-function">Probability density function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cumulative-distribution-function">Cumulative distribution function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#moments">Moments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#related-distributions">Related distributions</a></li>
@@ -88,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="pareto.html">Pareto distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="student_t.html">Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uniform.html">Uniform distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vonmises.html">Von Mises distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weibull.html">Weibull distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Multivariate discrete</span></p>
@@ -122,74 +129,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="beta-distribution">
-<span id="beta"></span><h1>Beta distribution<a class="headerlink" href="#beta-distribution" title="Permalink to this headline"></a></h1>
+  <div class="section" id="beta-distribution">
+<span id="beta"></span><h1>Beta distribution<a class="headerlink" href="#beta-distribution" title="Permalink to this heading"></a></h1>
 <hr class="docutils" />
-<section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this headline"></a></h2>
+<div class="section" id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
 <p>Say you wait for two multistep Poisson processes to arive. The individual steps of each process happen at the same rate, but the first multistep process requires <span class="math notranslate nohighlight">\(\alpha\)</span> steps and the second requires <span class="math notranslate nohighlight">\(\beta\)</span> steps. The fraction of the total waiting time taken by the first process is Beta distributed.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
-<p>There are two parameters, both strictly positive: <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, defined in the above story.</p>
-</section>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<p>There are two shape parameters, both strictly positive: <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, defined in the above story.</p>
+</div>
 <hr class="docutils" />
-<section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline"></a></h2>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
 <p>The Beta distribution has support on the interval [0, 1].</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="probability-density-function">
-<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this headline"></a></h2>
+<div class="section" id="probability-density-function">
+<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(\theta; \alpha, \beta) = \frac{\theta^{\alpha-1}(1-\theta)^{\beta-1}}{B(\alpha, \beta)},
 \end{align}\]</div>
-<p>where</p>
+<p>where <span class="math notranslate nohighlight">\(B(\alpha, \beta)\)</span> is the <a class="reference internal" href="../background/special_functions.html#beta-function"><span class="std std-ref">beta function</span></a>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-B(\alpha, \beta) = \frac{\Gamma(\alpha)\,\Gamma(\beta)}{\Gamma(\alpha + \beta)}
+F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\,\int_0^\theta \mathrm{d}x\,x^{\alpha-1}(1-x)^{\beta-1},
 \end{align}\]</div>
-<p>is the <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_function">Beta function</a>.</p>
-</section>
+<p>where <span class="math notranslate nohighlight">\(I_\theta(\alpha, \beta)\)</span> is the <a class="reference internal" href="../background/special_functions.html#regularized-incomplete-beta-function"><span class="std std-ref">regularized incomplete beta function</span></a>.</p>
+</div>
 <hr class="docutils" />
-<section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline"></a></h2>
+<div class="section" id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\alpha}{\alpha + \beta}}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}}\)</span></p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 75%" />
+<col style="width: 30%" />
+<col style="width: 70%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -198,28 +185,31 @@ B(\alpha, \beta) = \frac{\Gamma(\alpha)\,\Gamma(\beta)}{\Gamma(\alpha + \beta)}
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>NumPy</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">rg.beta(alpha,</span> <span class="pre">beta)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rng.beta(alpha,</span> <span class="pre">beta)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>SciPy</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">scipy.stats.beta(alpha,</span> <span class="pre">beta)</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Stan</strong></p></td>
+<tr class="row-even"><td><p><strong>Distributions.jl</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Beta(alpha,</span> <span class="pre">beta)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stan</strong></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">beta(alpha,</span> <span class="pre">beta)</span></code></p></td>
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this headline"></a></h2>
+<div class="section" id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="uniform.html#uniform"><span class="std std-ref">Uniform distribution</span></a> on the interval [0, 1] is a special case of the Beta distribution with <span class="math notranslate nohighlight">\(\alpha = \beta = 1\)</span>.</p></li>
 <li><p>The Beta distribution is a special case of the <a class="reference internal" href="../multivariate_continuous/dirichlet.html#dirichlet"><span class="std std-ref">Dirichlet distribution</span></a> with <span class="math notranslate nohighlight">\(K=2\)</span>.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>The story of the Beta distribution is difficult to parse. Most importantly, the Beta distribution allows us to put probabilities on unknown probabilities. It is only defined on <span class="math notranslate nohighlight">\(0 \le \theta \le 1\)</span>, and <span class="math notranslate nohighlight">\(\theta\)</span> here can be interpreted as a probability, say of success in a Bernoulli trial.</p></li>
 <li><p>The case where <span class="math notranslate nohighlight">\(\alpha = \beta = 0\)</span> is not technically a probability distribution because the PDF cannot be normalized. Nonetheless, it is often used as an improper prior, and this prior is known a Haldane prior, names after biologist <a class="reference external" href="https://en.wikipedia.org/wiki/J._B._S._Haldane">J. B. S. Haldane</a>. The case where <span class="math notranslate nohighlight">\(\alpha = \beta = 1/2\)</span>  is sometimes called a Jeffreys prior.</p></li>
@@ -239,23 +229,23 @@ B(\alpha, \beta) = \frac{\Gamma(\alpha)\,\Gamma(\beta)}{\Gamma(\alpha + \beta)}
 <p>The mean and variance in terms of <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\kappa\)</span> are</p>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{\phi}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\phi(1-\phi)}{1+\kappa}}\)</span>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="pdf-and-cdf-plots">
-<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this headline"></a></h2>
-
-<script src="bokeh-plot-3f164b9fd16f481c8d093123e3eab917-external-continuous-beta.js" id="1eecd6ae-e26e-432e-b78b-b9245e2cf2e0"></script></section>
+<div class="section" id="pdf-and-cdf-plots">
+<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
+<script src="bokeh-content-404d11adda05483e879d255c37fb4e82-continuous-beta.js" id="d91d1bc9-6316-477b-8087-16da66965bf6"></script></div>
 <hr class="docutils" />
-<section id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline"></a></h2>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Beta_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.beta.html">Numpy</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.beta.html">Scipy</a></p></li>
-<li><p><a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/beta-distribution.html">Stan</a></p></li>
+<li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Beta">Distributions.jl</a></p></li>
+<li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/beta-distribution.html">Stan</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -269,13 +259,13 @@ B(\alpha, \beta) = \frac{\Gamma(\alpha)\,\Gamma(\beta)}{\Gamma(\alpha + \beta)}
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 25, 2022.
+      <span class="lastupdated">Last updated on Jan 01, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fd6a34a7490> 
+   <jinja2.runtime.BlockReference object at 0x120603290> 
 
-<p>© 2019 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
+<p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 
