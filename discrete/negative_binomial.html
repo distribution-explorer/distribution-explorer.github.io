@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Negative Binomial distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -272,11 +274,11 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 <h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
 <p><strong>Note</strong>: Quantile setting of both parameters for a Negative Binomial distribution is a challenging problem for a few reasons. First, there is no guarantee that a parameter set exists to give two specified value-quantile pairs can be obtained. Secondly, in other cases, there is a degeneracy of parameters that give the same quantiles. As an example, if we wished for 4 to be the 2.5th percentile and 17 to be the 97.5th percentile, we could achieve this with <span class="math notranslate nohighlight">\(\alpha = 100\)</span> and <span class="math notranslate nohighlight">\(\beta = 10\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 350\)</span> and <span class="math notranslate nohighlight">\(\beta = 35\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 10^9\)</span> and <span class="math notranslate nohighlight">\(\beta = 10^8\)</span>, and countless other combinations. (This is because the large <span class="math notranslate nohighlight">\(\alpha\)</span> limit is Poisson.) So, instead of manipulating two parameters to hit two quantiles, we can lock one parameter and set the other parameter to give a single desired percentile. In the <span class="math notranslate nohighlight">\(\alpha\)</span>-<span class="math notranslate nohighlight">\(\beta\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\alpha\)</span>, and in the <span class="math notranslate nohighlight">\(\mu\text{-}\phi\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>In the α-β formulation:</p>
-<script src="bokeh-content-31f45484fe764d27b58522570bab6e4b-discrete-negative_binomial.js" id="a6bc60de-e341-4dc8-b708-1b4866002c14"></script><div class="line-block">
+<script src="bokeh-content-5368b9b2dcaa4eb3abdee0441381bb7a-discrete-negative_binomial.js" id="b229ecbc-1a66-4b7e-9244-eb7493e97af9"></script><div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>In the µ-φ formulation:</p>
-<script src="bokeh-content-58c8575d4edf4b33969292301fc247ce-discrete-negative_binomial.js" id="c94591ab-e78c-4698-babc-30e3c9f9b84d"></script></div>
+<script src="bokeh-content-a0392a69d4e140bd81ef0130657adbd9-discrete-negative_binomial.js" id="e015e95c-22e1-4758-95e1-269c05a83633"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
@@ -303,11 +305,11 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 02, 2024.
+      <span class="lastupdated">Last updated on Jan 04, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x121e72810> 
+   <jinja2.runtime.BlockReference object at 0x1264a3090> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
