@@ -205,8 +205,15 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 <hr class="docutils" />
 <div class="section" id="related-distributions">
 <h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
-<ul class="simple">
+<ul>
 <li><p>The Multinomial distribution generalizes the <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> to multiple dimensions.</p></li>
+<li><p>The Multinomial distribution is also connected to the <a class="reference internal" href="../discrete/poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a>. Consider <span class="math notranslate nohighlight">\(K\)</span> Poisson processes with arrival rates <span class="math notranslate nohighlight">\(\lambda_1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span>, …, <span class="math notranslate nohighlight">\(\lambda_K\)</span>. Let</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\lambda = \sum_{i=1}^K \lambda_i
+\end{align}\]</div>
+<p>and let <span class="math notranslate nohighlight">\(\theta_i = \lambda_i / \lambda\)</span>. Consider a total of <span class="math notranslate nohighlight">\(N\)</span> arrivals of these <span class="math notranslate nohighlight">\(K\)</span> Poisson processes, where <span class="math notranslate nohighlight">\(y_i\)</span> is the number of arrivals of Poisson process <span class="math notranslate nohighlight">\(i\)</span>. Then <span class="math notranslate nohighlight">\(N \sim \text{Poisson}(\lambda)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y} \sim \text{MultiNomial}(N, \boldsymbol{\theta})\)</span>.</p>
+</li>
 </ul>
 </div>
 <hr class="docutils" />
@@ -241,11 +248,11 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 28, 2024.
+      <span class="lastupdated">Last updated on Mar 07, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12d773d50> 
+   <jinja2.runtime.BlockReference object at 0x14b790b10> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

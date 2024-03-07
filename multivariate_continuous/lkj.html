@@ -222,9 +222,8 @@
 <hr class="docutils" />
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>The most common use case is as a prior for a covariance matrix. Note that LKJ distribution gives <em>correlation</em> matrices, not covariance matrices. We typically work with Cholesky factors. To get the covariance Cholesky factor from the correlation Cholesky factor, we need to multiply the correlation Cholesky factor by a diagonal matrix constructed from the variances of the individual variates. Here is an example using the LKJ distribution in a model with a multivariate Normal likelihood in Stan.</p></li>
-</ul>
+<ul>
+<li><p>The most common use case is as a prior for a covariance matrix. Note that LKJ distribution gives <em>correlation</em> matrices, not covariance matrices. We typically work with Cholesky factors. To get the covariance Cholesky factor from the correlation Cholesky factor, we need to multiply the correlation Cholesky factor by a diagonal matrix constructed from the variances of the individual variates. Here is an example using the LKJ distribution in a model with a multivariate Normal likelihood in Stan.</p>
 <div class="highlight-stan notranslate"><div class="highlight"><pre><span></span><span class="kn">parameters</span> <span class="p">{</span>
   <span class="c1">// Vector of means</span>
   <span class="kt">vector</span><span class="p">[</span><span class="n">K</span><span class="p">]</span> <span class="n">mu</span><span class="p">;</span>
@@ -255,6 +254,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+</li>
+</ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="links">
@@ -281,11 +282,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 28, 2024.
+      <span class="lastupdated">Last updated on Mar 07, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12d55e010> 
+   <jinja2.runtime.BlockReference object at 0x14b651d90> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

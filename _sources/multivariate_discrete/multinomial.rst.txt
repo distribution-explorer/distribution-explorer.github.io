@@ -92,7 +92,15 @@ Related distributions
 ---------------------
 
 - The Multinomial distribution generalizes the :ref:`binomial` to multiple dimensions.
+- The Multinomial distribution is also connected to the :ref:`poisson`. Consider :math:`K` Poisson processes with arrival rates :math:`\lambda_1`, :math:`\lambda_2`, ..., :math:`\lambda_K`. Let
 
+  .. math::
+  
+  	\begin{align}
+  	\lambda = \sum_{i=1}^K \lambda_i
+  	\end{align}
+  
+  and let :math:`\theta_i = \lambda_i / \lambda`. Consider a total of :math:`N` arrivals of these :math:`K` Poisson processes, where :math:`y_i` is the number of arrivals of Poisson process :math:`i`. Then :math:`N \sim \text{Poisson}(\lambda)` and :math:`\mathbf{y} \sim \text{MultiNomial}(N, \boldsymbol{\theta})`.
 
 ----
 

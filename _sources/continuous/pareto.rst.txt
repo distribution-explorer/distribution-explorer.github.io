@@ -105,32 +105,32 @@ Notes
 - The Type II Pareto distribution is often used. It is a Pareto distribution, except with a redefinition of :math:`y \to y - \mu + y_\mathrm{min}`. This shifts :math:`y` such that its support starts at :math:`y=\mu`. In the case there :math:`\mu = 0`, the Type II distribution is called a Lomax distribution. NumPy's Pareto sample samples out of a Lomax distirbution with :math:`y_\mathrm{min}` set to one. Thus, to sample out of a Pareto distribution, the transformations described in the usage table above are necessary. To use a Type II Pareto distribution in Stan, :math:`y_\mathrm{min}` is renamed :math:`\lambda`, and the syntax is ``pareto_type_2(mu, lambda, alpha)``.
 - The Pareto distribution is often best visualized by plotting the complementary cumulative distribution function (CCDF), denoted :math:`\bar{F}(y)`, which is related to the CDF :math:`F(y)` by :math:`\bar{F}(y) = 1 - F(y)`. The CCDF for a Pareto distribution is
 
-.. math::
-
-    \begin{align}
-    \bar{F}(y) = \left\{\begin{array}{lll}
-    \left(\frac{y_\mathrm{min}}{y}\right)^\alpha & & y \ge y_\mathrm{min} \\
-    1 & & y < y_\mathrm{min}
-    \end{array}
-    \right.
-    \end{align}
-
-Thus, the power law is clear. A plot of the CCDF on a log-log plot yields a line with slope equal to :math:`-\alpha`, as shown below for :math:`y_\mathrm{min} = 1` and :math:`\alpha = 2`.
-
-.. bokeh-plot::
-    :source-position: none
-
-    import bokeh.io
-    import bokeh.plotting
-    import numpy as np
-
-    x = np.array([0.1, 1, 1e3])
-    y = np.array([1, 1, 1e-6])
-
-    p = bokeh.plotting.figure(height=175, width=275, x_axis_type='log', y_axis_type='log', x_axis_label='y', y_axis_label='CCDF', tools="save", x_range=[1e-1, 1e3], background_fill_alpha=0, border_fill_alpha=0)
-    p.line(x, y, line_width=2)
-
-    bokeh.io.show(p)
+  .. math::
+  
+      \begin{align}
+      \bar{F}(y) = \left\{\begin{array}{lll}
+      \left(\frac{y_\mathrm{min}}{y}\right)^\alpha & & y \ge y_\mathrm{min} \\
+      1 & & y < y_\mathrm{min}
+      \end{array}
+      \right.
+      \end{align}
+  
+  Thus, the power law is clear. A plot of the CCDF on a log-log plot yields a line with slope equal to :math:`-\alpha`, as shown below for :math:`y_\mathrm{min} = 1` and :math:`\alpha = 2`.
+  
+  .. bokeh-plot::
+      :source-position: none
+  
+      import bokeh.io
+      import bokeh.plotting
+      import numpy as np
+  
+      x = np.array([0.1, 1, 1e3])
+      y = np.array([1, 1, 1e-6])
+  
+      p = bokeh.plotting.figure(height=175, width=275, x_axis_type='log',   y_axis_type='log', x_axis_label='y', y_axis_label='CCDF', tools="save",   x_range=[1e-1, 1e3], background_fill_alpha=0, border_fill_alpha=0)
+      p.line(x, y, line_width=2)
+  
+      bokeh.io.show(p)
 
 
 ----

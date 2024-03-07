@@ -108,22 +108,22 @@ Related distributions
 - The :ref:`gamma`, parametrized by shape and inverse scale parameters :math:`\alpha` and :math:`\beta`, respectively, is approximately Normal with respective location and scale parameters :math:`\alpha/\beta` and :math:`\sqrt{\alpha}/\beta` in the limit of large :math:`\alpha`.
 - Any univariate continuous distribution is approximately Normal very close to a peak. Imagine a distribution with a PDF given by :math:`f(y;\theta)`, where :math:`\theta` represents the set of parameters for the distribution. If we expand the log PDF to second order in a Taylor series about a point :math:`y^*` where the PDF is maximal, we get
 
-.. math::
-
-    \begin{align}
-    \ln f(y;\theta) \approx \ln f(y^*;\theta) + \left.\frac{1}{2}\,\frac{\mathrm{d}^2 \ln f(y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\,(y-y^*)^2.
-    \end{align}
-
-This is the log PDF that is that of a Normal distribution. The location parameter of the approximate Normal distribution is :math:`y^*` (the location of the peak) and the scale parameter is 
-
-.. math::
-
-    \begin{align}
-    \left(\left.-\frac{\mathrm{d}^2 \ln f(y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\right)^{-1/2}.
-    \end{align}
-
-Note, though, that this may be a very poor approximation as we move even a small distance from the peak.
-
+  .. math::
+  
+      \begin{align}
+      \ln f(y;\theta) \approx \ln f(y^*;\theta) + \left.\frac{1}{2}\,\frac{\mathrm{d}^2   \ln f(y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\,(y-y^*)^2.
+      \end{align}
+  
+  This is the log PDF that is that of a Normal distribution. The location parameter of   the approximate Normal distribution is :math:`y^*` (the location of the peak) and the   scale parameter is 
+  
+  .. math::
+  
+      \begin{align}
+      \left(\left.-\frac{\mathrm{d}^2 \ln f(  y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\right)^{-1/2}.
+      \end{align}
+  
+  Note, though, that this may be a very poor approximation as we move even a small   distance from the peak.
+  
 
 ----
 

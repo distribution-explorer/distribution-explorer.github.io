@@ -210,23 +210,24 @@ F(y;\mu, \sigma) =\frac{1}{2}\left(1 + \text{erf}\left(\frac{y - \mu}{\sigma\sqr
 <hr class="docutils" />
 <div class="section" id="related-distributions">
 <h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
-<ul class="simple">
+<ul>
 <li><p>The <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a>, parametrized by <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> is approximated Normal with location parameter <span class="math notranslate nohighlight">\(N\theta\)</span> and scale parameter <span class="math notranslate nohighlight">\(\sqrt{N\theta(1-\theta)}\)</span> for large <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> not too close to zero or one. Although the <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> is discrete, for large <span class="math notranslate nohighlight">\(N\)</span> we approximate it as continuous, allowing the Normal approximation.</p></li>
 <li><p>It follows that the <a class="reference internal" href="../discrete/poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a> with parameter <span class="math notranslate nohighlight">\(\lambda\)</span> is approximately normal with location parameter <span class="math notranslate nohighlight">\(\lambda\)</span> and scale parameter <span class="math notranslate nohighlight">\(\sqrt{\lambda}\)</span> for large <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
 <li><p>The <a class="reference internal" href="student_t.html#student-t"><span class="std std-ref">Student-t distribution</span></a>, parametrized by location and scale parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, respectively, and degrees of freedom <span class="math notranslate nohighlight">\(\nu\)</span> becomes Normal (with the same location and scale parameters) in the limit of <span class="math notranslate nohighlight">\(\nu\to\infty\)</span>.</p></li>
 <li><p>The <a class="reference internal" href="gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a>, parametrized by shape and inverse scale parameters <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, respectively, is approximately Normal with respective location and scale parameters <span class="math notranslate nohighlight">\(\alpha/\beta\)</span> and <span class="math notranslate nohighlight">\(\sqrt{\alpha}/\beta\)</span> in the limit of large <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
-<li><p>Any univariate continuous distribution is approximately Normal very close to a peak. Imagine a distribution with a PDF given by <span class="math notranslate nohighlight">\(f(y;\theta)\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> represents the set of parameters for the distribution. If we expand the log PDF to second order in a Taylor series about a point <span class="math notranslate nohighlight">\(y^*\)</span> where the PDF is maximal, we get</p></li>
+<li><p>Any univariate continuous distribution is approximately Normal very close to a peak. Imagine a distribution with a PDF given by <span class="math notranslate nohighlight">\(f(y;\theta)\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> represents the set of parameters for the distribution. If we expand the log PDF to second order in a Taylor series about a point <span class="math notranslate nohighlight">\(y^*\)</span> where the PDF is maximal, we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\ln f(y;\theta) \approx \ln f(y^*;\theta) + \left.\frac{1}{2}\,\frac{\mathrm{d}^2   \ln f(y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\,(y-y^*)^2.
+\end{align}\]</div>
+<p>This is the log PDF that is that of a Normal distribution. The location parameter of   the approximate Normal distribution is <span class="math notranslate nohighlight">\(y^*\)</span> (the location of the peak) and the   scale parameter is</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\left(\left.-\frac{\mathrm{d}^2 \ln f(  y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\right)^{-1/2}.
+\end{align}\]</div>
+<p>Note, though, that this may be a very poor approximation as we move even a small   distance from the peak.</p>
+</li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-\ln f(y;\theta) \approx \ln f(y^*;\theta) + \left.\frac{1}{2}\,\frac{\mathrm{d}^2 \ln f(y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\,(y-y^*)^2.
-\end{align}\]</div>
-<p>This is the log PDF that is that of a Normal distribution. The location parameter of the approximate Normal distribution is <span class="math notranslate nohighlight">\(y^*\)</span> (the location of the peak) and the scale parameter is</p>
-<div class="math notranslate nohighlight">
-\[\begin{align}
-\left(\left.-\frac{\mathrm{d}^2 \ln f(y;\theta)}{\mathrm{d}y^2}\right|_{y=y^*}\right)^{-1/2}.
-\end{align}\]</div>
-<p>Note, though, that this may be a very poor approximation as we move even a small distance from the peak.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="notes">
@@ -238,7 +239,7 @@ F(y;\mu, \sigma) =\frac{1}{2}\left(1 + \text{erf}\left(\frac{y - \mu}{\sigma\sqr
 <hr class="docutils" />
 <div class="section" id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-2209e523848b494485a398cb1ae8cfc7-continuous-normal.js" id="a0ded389-4105-41fa-9427-048f13e78eb1"></script></div>
+<script src="bokeh-content-3961f7c5e2f44b3e81ac3bb82e1cf13a-continuous-normal.js" id="d1a93ade-a210-4bbd-a609-df6a528402a9"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
@@ -264,11 +265,11 @@ F(y;\mu, \sigma) =\frac{1}{2}\left(1 + \text{erf}\left(\frac{y - \mu}{\sigma\sqr
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 28, 2024.
+      <span class="lastupdated">Last updated on Mar 07, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12d5e2bd0> 
+   <jinja2.runtime.BlockReference object at 0x1497cb350> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

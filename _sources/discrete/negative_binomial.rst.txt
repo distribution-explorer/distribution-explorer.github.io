@@ -144,35 +144,35 @@ Notes
 
 - The Negative Binomial distribution may be parametrized such that the probability mass function is
 
-.. math::
-
-    \begin{align}
-       f(y;\mu,\phi) = \frac{\Gamma(y+\phi)}{\Gamma(\phi) \, y!}\,\left(\frac{\phi}{\mu+\phi}\right)^\phi\left(\frac{\mu}{\mu+\phi}\right)^y. 
-    \end{align}
-
-These parameters are related to the parametrization above by :math:`\phi = \alpha` and :math:`\mu = \alpha/\beta`. In the limit of :math:`\phi\to\infty`, which can be taken for the PMF, the Negative Binomial distribution becomes Poisson with parameter :math:`\mu`. This also gives meaning to the parameters :math:`\mu` and :math:`\phi`; :math:`\mu` is the mean of the Negative Binomial, and :math:`\phi` controls extra width of the distribution beyond Poisson. The smaller :math:`\phi` is, the broader the distribution.
-
-In this parametrization, the pertinent moments are
-
-Mean: :math:`\displaystyle{\mu}`
-
-Variance: :math:`\displaystyle{\mu\left(1 + \frac{\mu}{\phi}\right)}`.
-
-In Stan, the Negative Binomial distribution using the :math:`(\mu,\phi)` parametrization is called ``neg_binomial_2``.
+  .. math::
+  
+      \begin{align}
+         f(y;\mu,\phi) = \frac{\Gamma(y+\phi)}{\Gamma(\phi) \, y!}\,\left(\frac{\phi}{\mu  +\phi}\right)^\phi\left(\frac{\mu}{\mu+\phi}\right)^y. 
+      \end{align}
+  
+  These parameters are related to the parametrization above by :math:`\phi = \alpha` and   :math:`\mu = \alpha/\beta`. In the limit of :math:`\phi\to\infty`, which can be taken   for the PMF, the Negative Binomial distribution becomes Poisson with parameter :math:`  \mu`. This also gives meaning to the parameters :math:`\mu` and :math:`\phi`; :math:`  \mu` is the mean of the Negative Binomial, and :math:`\phi` controls extra width of   the distribution beyond Poisson. The smaller :math:`\phi` is, the broader the   distribution.
+  
+  In this parametrization, the pertinent moments are
+  
+  Mean: :math:`\displaystyle{\mu}`
+  
+  Variance: :math:`\displaystyle{\mu\left(1 + \frac{\mu}{\phi}\right)}`.
+  
+  In Stan, the Negative Binomial distribution using the :math:`(\mu,\phi)`   parametrization is called ``neg_binomial_2``.
 
 - SciPy and NumPy use yet another parametrization. The PMF for SciPy is
 
-.. math::
-
-    \begin{align}
-       f(y;n, p) = \frac{\Gamma(y+n)}{\Gamma(n) \, y!}\,p^n \left(1-p\right)^y. 
-    \end{align}
-
-The parameter :math:`1-p` is the probability of success of a Bernoulli trial (as defined in the story above). The parameters are related to the others we have defined by :math:`n=\alpha=\phi` and :math:`p=\beta/(1+\beta) = \phi/(\mu+\phi)`. In this parametrization, the pertinent moments are
-
-Mean: :math:`\displaystyle{n\,\frac{1-p}{p}}`
-
-Variance: :math:`\displaystyle{n\,\frac{1-p}{p^2}}`.
+  .. math::
+  
+      \begin{align}
+         f(y;n, p) = \frac{\Gamma(y+n)}{\Gamma(n) \, y!}\,p^n \left(1-p\right)^y. 
+      \end{align}
+  
+  The parameter :math:`1-p` is the probability of success of a Bernoulli trial (as   defined in the story above). The parameters are related to the others we have defined   by :math:`n=\alpha=\phi` and :math:`p=\beta/(1+\beta) = \phi/(\mu+\phi)`. In this   parametrization, the pertinent moments are
+  
+  Mean: :math:`\displaystyle{n\,\frac{1-p}{p}}`
+  
+  Variance: :math:`\displaystyle{n\,\frac{1-p}{p^2}}`.
 
 
 ----

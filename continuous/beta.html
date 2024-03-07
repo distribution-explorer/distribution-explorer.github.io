@@ -212,17 +212,16 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 <hr class="docutils" />
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
-<ul class="simple">
+<ul>
 <li><p>The story of the Beta distribution is difficult to parse. Most importantly, the Beta distribution allows us to put probabilities on unknown probabilities. It is only defined on <span class="math notranslate nohighlight">\(0 \le \theta \le 1\)</span>, and <span class="math notranslate nohighlight">\(\theta\)</span> here can be interpreted as a probability, say of success in a Bernoulli trial.</p></li>
 <li><p>The case where <span class="math notranslate nohighlight">\(\alpha = \beta = 0\)</span> is not technically a probability distribution because the PDF cannot be normalized. Nonetheless, it is often used as an improper prior, and this prior is known a Haldane prior, names after biologist <a class="reference external" href="https://en.wikipedia.org/wiki/J._B._S._Haldane">J. B. S. Haldane</a>. The case where <span class="math notranslate nohighlight">\(\alpha = \beta = 1/2\)</span>  is sometimes called a Jeffreys prior.</p></li>
-<li><p>The Beta distribution may also be parametrized in terms of the location parameter <span class="math notranslate nohighlight">\(\phi\)</span> and concentration <span class="math notranslate nohighlight">\(\kappa\)</span>, which are related to <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> as</p></li>
-</ul>
+<li><p>The Beta distribution may also be parametrized in terms of the location parameter <span class="math notranslate nohighlight">\(\phi\)</span> and concentration <span class="math notranslate nohighlight">\(\kappa\)</span>, which are related to <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 &amp;\phi = \frac{\alpha}{\alpha + \beta}, \\
 &amp;\kappa = \alpha + \beta.
 \end{align}\end{split}\]</div>
-<p>The location parameter <span class="math notranslate nohighlight">\(\phi\)</span> is the mean of the distribution and <span class="math notranslate nohighlight">\(\kappa\)</span> is a measure of how broad it is. To convert back to an <span class="math notranslate nohighlight">\((\alpha, \beta)\)</span> parametrization from a <span class="math notranslate nohighlight">\((\phi, \kappa)\)</span> parametrization, use</p>
+<p>The location parameter <span class="math notranslate nohighlight">\(\phi\)</span> is the mean of the distribution and <span class="math notranslate nohighlight">\(\kappa\)</span>   is a measure of how broad it is. To convert back to an <span class="math notranslate nohighlight">\((\alpha, \beta)\)</span>   parametrization from a <span class="math notranslate nohighlight">\((\phi, \kappa)\)</span> parametrization, use</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 &amp;\alpha = \phi \kappa, \\
@@ -231,11 +230,18 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 <p>The mean and variance in terms of <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\kappa\)</span> are</p>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{\phi}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\phi(1-\phi)}{1+\kappa}}\)</span>.</p>
+</li>
+</ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-63ecf3bdc3cf4d77bba0ed77874a3bb6-continuous-beta.js" id="d110a753-e4b3-4190-ad5a-7d52615f354f"></script></div>
+<p>In the α-β formulation:</p>
+<script src="bokeh-content-4a195eb0d71846c99bdbc684a5711ddf-continuous-beta.js" id="d9e7f877-1766-484d-8ab2-8a2120ccfba4"></script><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In the φ-κ formulation:</p>
+<script src="bokeh-content-c5f038976f554affb692bd64e633470e-continuous-beta.js" id="f31e81b9-1f72-46f5-9cf3-f41576264205"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
@@ -261,11 +267,11 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 28, 2024.
+      <span class="lastupdated">Last updated on Mar 07, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12d8568d0> 
+   <jinja2.runtime.BlockReference object at 0x14b9f48d0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

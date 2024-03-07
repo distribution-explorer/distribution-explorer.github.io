@@ -140,14 +140,14 @@ Notes
 
 - NumPy assumes an interval for :math:`y` of :math:`[-\pi, \pi)`. If the location parameter is specified as :math:`\mu`, as in a function call ``rng.vonmises(mu, kappa)``, the inputted :math:`\mu` is transformed to lie in the :math:`[-\pi, \pi)` interval as
 
-.. math::
+  .. math::
+  
+      \begin{align}
+      \mu \leftarrow \text{sign}(\mu)\left(\text{mod}(|\mu| + \pi, 2\pi) - \pi\right).
+      \end{align}
 
-    \begin{align}
-    \mu \leftarrow \text{sign}(\mu)\left(\text{mod}(|\mu| + \pi, 2\pi) - \pi\right).
-    \end{align}
 
-
-The resulting random numbers then all lie in the interval :math:`[-\pi, \pi)`.
+  The resulting random numbers then all lie in the interval :math:`[-\pi, \pi)`.
 
 - SciPy's ``scipy.stats.vonmises`` considers the PDF to be periodic, giving the same value of the PDF at :math:`y` and :math:`y + 2n\pi` for any integer :math:`n`. Furthermore the CDF computed with ``scipy.stats.vonmises`` returns negative values for values of :math:`y` to the left of the domain and values greater than one for values to the right.
 - SciPy offers ``scipy.stats.vonmises_line``, in which the interval on which the distribution is defined is :math:`[\mu - \pi, \mu + \pi)`. The PDF evaluates to zero outside of that domain, and the CDF evaluates to zero to the left of the interval and evaluates to one to the right. Sampling from the Von Mises distribution using ``st.vonmises_line.rvs()`` performs as NumPy's sampling with the transformation of the location parameter and all samples lying in the interval :math:`[-\pi, \pi)`.
@@ -155,10 +155,10 @@ The resulting random numbers then all lie in the interval :math:`[-\pi, \pi)`.
 - Stan considers the PDF to be periodic such that it will use the same result for the (log) PDF for :math:`y` and :math:`y + 2n\pi` for any integer :math:`n`. However, it only defines the CDF on the interval :math:`[-\pi, \pi)`, applying the same transformation to the location parameter as NumPy, shown above. Similarly, when sampling, the location parameter :math:`\mu` lies in the interval :math:`[-\pi, \pi)`.
 - In the context of Markov chain Monte Carlo, evaluation of the Von Mises (log) PDF and CDF for large :math:`\kappa` can be numerically unstable. NumPy and SciPy both automatically use Normal approximations in this regime (invisible to the user). Stan, however, does not. The Stan documentation therefore recommends doing that manually, adopting the following sampling statement.
 
-.. code:: stan
-
-    if (kappa < 100) y ~ von_mises(mu, kappa);
-    else y ~ normal(mu, sqrt(1 / kappa));
+  .. code:: stan
+  
+      if (kappa < 100) y ~ von_mises(mu, kappa);
+      else y ~ normal(mu, sqrt(1 / kappa));
 
 
 ----

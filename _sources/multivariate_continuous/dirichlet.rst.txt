@@ -97,24 +97,24 @@ Notes
 
 - In some cases, we may wish to specify the distribution of an *ordered* Dirichlet distributed vector :math:`\theta`. That is, we want :math:`\theta \sim \text{Dirichlet}(\alpha_1, \alpha_2, \ldots, \alpha_L)` with :math:`\theta_i < \theta_{i+1}` for all :math:`i < K`. Because of the relationship of the Dirchlet distribution to a set of Gamma distributed random variables, we may specify this in Stan as follows.
 
-.. code:: stan
-
-    data {
-      int<lower=1> K;
-    }
-
-    parameters {
-      vector<lower=0>[K] alpha;
-      positive_ordered[K] lambda;
-    }
-
-    transformed parameters {
-      simplex[K] theta = lambda / sum(lambda);
-    }
-
-    model {
-      target += gamma_lupdf(lambda | alpha, 1);
-    }
+  .. code:: stan
+  
+      data {
+        int<lower=1> K;
+      }
+  
+      parameters {
+        vector<lower=0>[K] alpha;
+        positive_ordered[K] lambda;
+      }
+  
+      transformed parameters {
+        simplex[K] theta = lambda / sum(lambda);
+      }
+  
+      model {
+        target += gamma_lupdf(lambda | alpha, 1);
+      }
 
 ----
 

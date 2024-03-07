@@ -216,6 +216,7 @@ F(n;N,\theta) = I_{1-\theta}(N - n, n + 1),
 <ul class="simple">
 <li><p>The <a class="reference internal" href="bernoulli.html#bernoulli"><span class="std std-ref">Bernoulli distribution</span></a> is a special case of the Binomial distribution where <span class="math notranslate nohighlight">\(N=1\)</span>.</p></li>
 <li><p>In the limit of <span class="math notranslate nohighlight">\(N\to\infty\)</span> and <span class="math notranslate nohighlight">\(\theta\to 0\)</span> such that the quantity <span class="math notranslate nohighlight">\(N\theta\)</span> is fixed, the Binomial distribution becomes a <a class="reference internal" href="poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a> with parameter <span class="math notranslate nohighlight">\(N\theta\)</span>.</p></li>
+<li><p>The Binomial distribution is further connected to the Poisson distribution. Consider two Poisson processes with arrival rates <span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span> such that the number of arrivals of the respective processes are <span class="math notranslate nohighlight">\(n_1\sim \text{Poisson}(\lambda_1)\)</span> and <span class="math notranslate nohighlight">\(n_2\sim \text{Poisson}(\lambda_2)\)</span>. Let <span class="math notranslate nohighlight">\(\theta = \lambda_1 / (\lambda_1 + \lambda_2)\)</span> and let <span class="math notranslate nohighlight">\(N = n_1 + n_2\)</span> be the total number of arrivals of both Poisson processes. Then, <span class="math notranslate nohighlight">\(N \sim \text{Poisson}(\lambda_1 + \lambda_2)\)</span> and <span class="math notranslate nohighlight">\(n_1 \sim \text{Binom}(N, \theta)\)</span>.</p></li>
 <li><p>The Binomial distribution is a limit of the <a class="reference internal" href="hypergeometric.html#hypergeometric"><span class="std std-ref">Hypergeometric distribution</span></a>. Considering the Hypergeometric distribution parametrized by <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(b\)</span>, and taking the limit of <span class="math notranslate nohighlight">\(a+b\to\infty\)</span> such that <span class="math notranslate nohighlight">\(a/(a+b)\)</span> is fixed, we get a Binomial distribution with parameters <span class="math notranslate nohighlight">\(N=N\)</span> and <span class="math notranslate nohighlight">\(\theta = a/(a+b)\)</span>.</p></li>
 <li><p>The Binomial distribution is a special case of the <a class="reference internal" href="../multivariate_discrete/multinomial.html#multinomial"><span class="std std-ref">Multinomial distribution</span></a> when <span class="math notranslate nohighlight">\(K = 2\)</span>.</p></li>
 </ul>
@@ -223,7 +224,7 @@ F(n;N,\theta) = I_{1-\theta}(N - n, n + 1),
 <hr class="docutils" />
 <div class="section" id="pmf-and-cdf-plots">
 <h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-c63903c83a034d02997361a70f0b439c-discrete-binomial.js" id="cd31168e-6d47-4baa-857c-b145d5060590"></script></div>
+<script src="bokeh-content-b8f510e5c07443f7a344e3c50f1219fc-discrete-binomial.js" id="befe9bc2-6a70-4bc2-8d41-3f8122e0aa19"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
@@ -249,11 +250,11 @@ F(n;N,\theta) = I_{1-\theta}(N - n, n + 1),
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 28, 2024.
+      <span class="lastupdated">Last updated on Mar 07, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12d406b10> 
+   <jinja2.runtime.BlockReference object at 0x149180790> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

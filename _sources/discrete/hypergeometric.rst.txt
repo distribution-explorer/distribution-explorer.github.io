@@ -36,7 +36,7 @@ There are three parameters: the number of draws :math:`N`, the number of white b
 Support
 -------
 
- The Hypergeometric distribution is supported on the set of integers between :math:`\mathrm{max}(0, N-b)` and :math:`\mathrm{min}(N, a)`, inclusive.
+The Hypergeometric distribution is supported on the set of integers between :math:`\mathrm{max}(0, N-b)` and :math:`\mathrm{min}(N, a)`, inclusive.
 
 ----
 
@@ -115,11 +115,11 @@ Notes
 - This distribution is analogous to the :ref:`binomial`, except that the Binomial distribution describes draws from an urn *with* replacement. In the analogy, the Binomial parameter :math:`\theta` is :math:`\theta = a/(a+b)`.
 - SciPy uses a different parametrization than NumPy and Stan. Let :math:`M = a+b` be the total number of balls in the urn. Then, noting the order of the parameters, since this is what ``scipy.stats.hypergeom`` expects, the PMF may be written as
 
-.. math::
-
-    \begin{align}
-    f(n;M,a,N) = \frac{\begin{pmatrix}a \\ n\end{pmatrix} \begin{pmatrix}M-a \\ N-n\end{pmatrix}}{\begin{pmatrix}M \\ N\end{pmatrix}}.
-    \end{align}
+  .. math::
+  
+      \begin{align}
+      f(n;M,a,N) = \frac{\begin{pmatrix}a \\ n\end{pmatrix} \begin{pmatrix}M-a \\   N-n\end{pmatrix}}{\begin{pmatrix}M \\ N\end{pmatrix}}.
+      \end{align}
 
 - Although NumPy and Stan use the same parametrization, note the difference in the ordering of the arguments.
 

@@ -209,9 +209,8 @@ f(\boldsymbol{\theta};\boldsymbol{\alpha}) = \frac{1}{B(\boldsymbol{\alpha})}\,\
 <hr class="docutils" />
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
-<ul class="simple">
-<li><p>In some cases, we may wish to specify the distribution of an <em>ordered</em> Dirichlet distributed vector <span class="math notranslate nohighlight">\(\theta\)</span>. That is, we want <span class="math notranslate nohighlight">\(\theta \sim \text{Dirichlet}(\alpha_1, \alpha_2, \ldots, \alpha_L)\)</span> with <span class="math notranslate nohighlight">\(\theta_i &lt; \theta_{i+1}\)</span> for all <span class="math notranslate nohighlight">\(i &lt; K\)</span>. Because of the relationship of the Dirchlet distribution to a set of Gamma distributed random variables, we may specify this in Stan as follows.</p></li>
-</ul>
+<ul>
+<li><p>In some cases, we may wish to specify the distribution of an <em>ordered</em> Dirichlet distributed vector <span class="math notranslate nohighlight">\(\theta\)</span>. That is, we want <span class="math notranslate nohighlight">\(\theta \sim \text{Dirichlet}(\alpha_1, \alpha_2, \ldots, \alpha_L)\)</span> with <span class="math notranslate nohighlight">\(\theta_i &lt; \theta_{i+1}\)</span> for all <span class="math notranslate nohighlight">\(i &lt; K\)</span>. Because of the relationship of the Dirchlet distribution to a set of Gamma distributed random variables, we may specify this in Stan as follows.</p>
 <div class="highlight-stan notranslate"><div class="highlight"><pre><span></span><span class="kn">data</span> <span class="p">{</span>
   <span class="kt">int</span><span class="o">&lt;</span><span class="k">lower</span><span class="p">=</span><span class="mf">1</span><span class="o">&gt;</span> <span class="n">K</span><span class="p">;</span>
 <span class="p">}</span>
@@ -230,6 +229,8 @@ f(\boldsymbol{\theta};\boldsymbol{\alpha}) = \frac{1}{B(\boldsymbol{\alpha})}\,\
 <span class="p">}</span>
 </pre></div>
 </div>
+</li>
+</ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="links">
@@ -256,11 +257,11 @@ f(\boldsymbol{\theta};\boldsymbol{\alpha}) = \frac{1}{B(\boldsymbol{\alpha})}\,\
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 28, 2024.
+      <span class="lastupdated">Last updated on Mar 07, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12d01b050> 
+   <jinja2.runtime.BlockReference object at 0x14b650650> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

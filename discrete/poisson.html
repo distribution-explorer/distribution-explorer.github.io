@@ -76,6 +76,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#moments">Moments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#related-distributions">Related distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pmf-and-cdf-plots">PMF and CDF plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#links">Links</a></li>
 </ul>
@@ -210,14 +211,27 @@ F(n;\lambda) = \frac{\Gamma(n + 1, \lambda)}{n!},
 <div class="section" id="related-distributions">
 <h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>In the limit of <span class="math notranslate nohighlight">\(N\to\infty\)</span> and <span class="math notranslate nohighlight">\(\theta\to 0\)</span> such that the quantity <span class="math notranslate nohighlight">\(N\theta\)</span> is fixed, the <a class="reference internal" href="binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> becomes a Poisson distribution with parameter <span class="math notranslate nohighlight">\(\lambda = N\theta\)</span>. Thus, for large <span class="math notranslate nohighlight">\(N\)</span> and small <span class="math notranslate nohighlight">\(\theta\)</span>, the Binomial distribution is well-approximated by the Poisson distribution. Considering the biological example of mutations, this is Binomially distributed: There are <span class="math notranslate nohighlight">\(N\)</span> bases, each with a probability <span class="math notranslate nohighlight">\(\theta\)</span> of mutation, so the number of mutations, <span class="math notranslate nohighlight">\(n\)</span> is Binomially distributed. Since <span class="math notranslate nohighlight">\(\theta\)</span> is small and <span class="math notranslate nohighlight">\(N\)</span> is large, it is approximately Poisson distributed.</p></li>
+<li><p>In the limit of <span class="math notranslate nohighlight">\(N\to\infty\)</span> and <span class="math notranslate nohighlight">\(\theta\to 0\)</span> such that the quantity <span class="math notranslate nohighlight">\(N\theta\)</span> is fixed, the <a class="reference internal" href="binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> becomes a <a class="reference internal" href="#poisson"><span class="std std-ref">Poisson distribution</span></a> with parameter <span class="math notranslate nohighlight">\(\lambda = N\theta\)</span>. Thus, for large <span class="math notranslate nohighlight">\(N\)</span> and small <span class="math notranslate nohighlight">\(\theta\)</span>, the Binomial distribution is well-approximated by the Poisson distribution. Considering the biological example of mutations, this is Binomially distributed: There are <span class="math notranslate nohighlight">\(N\)</span> bases, each with a probability <span class="math notranslate nohighlight">\(\theta\)</span> of mutation, so the number of mutations, <span class="math notranslate nohighlight">\(n\)</span> is Binomially distributed. Since <span class="math notranslate nohighlight">\(\theta\)</span> is small and <span class="math notranslate nohighlight">\(N\)</span> is large, it is approximately Poisson distributed.</p></li>
 <li><p>Under the <span class="math notranslate nohighlight">\((\mu,\phi)\)</span> parametrization of the <a class="reference internal" href="negative_binomial.html#negative-binomial"><span class="std std-ref">Negative Binomial distribution</span></a>, taking the limit of large <span class="math notranslate nohighlight">\(\phi\)</span> yields the Poisson distribution.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Consider <span class="math notranslate nohighlight">\(K\)</span> Poisson processes with arrival rates <span class="math notranslate nohighlight">\(\lambda_1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span>, …, <span class="math notranslate nohighlight">\(\lambda_K\)</span>. Let</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\lambda = \sum_{i=1}^K \lambda_i.
+\end{align}\]</div>
+<p>If <span class="math notranslate nohighlight">\(N\)</span> is the total number of arrivals of these <span class="math notranslate nohighlight">\(K\)</span> Poisson processes, <span class="math notranslate nohighlight">\(N \sim \text{Poisson}(\lambda)\)</span>.</p>
+</li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="pmf-and-cdf-plots">
 <h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-a30a7ded96c6428c907e7f8aa9097ca9-discrete-poisson.js" id="a5787176-d378-4ff6-aa51-0dd2edee004c"></script></div>
+<script src="bokeh-content-857bb1b023574e068acbc1e84be3f832-discrete-poisson.js" id="a923020d-bf73-46e3-aec1-ef4f1b4909f0"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
@@ -243,11 +257,11 @@ F(n;\lambda) = \frac{\Gamma(n + 1, \lambda)}{n!},
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jan 28, 2024.
+      <span class="lastupdated">Last updated on Mar 07, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12cf8f210> 
+   <jinja2.runtime.BlockReference object at 0x1497ac950> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

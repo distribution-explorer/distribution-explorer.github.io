@@ -108,6 +108,7 @@ Related distributions
 
 - The :ref:`bernoulli` is a special case of the Binomial distribution where :math:`N=1`.
 - In the limit of :math:`N\to\infty` and :math:`\theta\to 0` such that the quantity :math:`N\theta` is fixed, the Binomial distribution becomes a :ref:`Poisson` with parameter :math:`N\theta`.
+- The Binomial distribution is further connected to the Poisson distribution. Consider two Poisson processes with arrival rates :math:`\lambda_1` and :math:`\lambda_2` such that the number of arrivals of the respective processes are :math:`n_1\sim \text{Poisson}(\lambda_1)` and :math:`n_2\sim \text{Poisson}(\lambda_2)`. Let :math:`\theta = \lambda_1 / (\lambda_1 + \lambda_2)` and let :math:`N = n_1 + n_2` be the total number of arrivals of both Poisson processes. Then, :math:`N \sim \text{Poisson}(\lambda_1 + \lambda_2)` and :math:`n_1 \sim \text{Binom}(N, \theta)`.
 - The Binomial distribution is a limit of the :ref:`hypergeometric`. Considering the Hypergeometric distribution parametrized by :math:`N`, :math:`a`, and :math:`b`, and taking the limit of :math:`a+b\to\infty` such that :math:`a/(a+b)` is fixed, we get a Binomial distribution with parameters :math:`N=N` and :math:`\theta = a/(a+b)`.
 - The Binomial distribution is a special case of the :ref:`multinomial` when :math:`K = 2`.
 

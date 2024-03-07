@@ -112,36 +112,36 @@ Notes
 
 - The most common use case is as a prior for a covariance matrix. Note that LKJ distribution gives *correlation* matrices, not covariance matrices. We typically work with Cholesky factors. To get the covariance Cholesky factor from the correlation Cholesky factor, we need to multiply the correlation Cholesky factor by a diagonal matrix constructed from the variances of the individual variates. Here is an example using the LKJ distribution in a model with a multivariate Normal likelihood in Stan.
 
-.. code-block:: stan
-
-	parameters {
-	  // Vector of means
-	  vector[K] mu;
-
-	  // Cholesky factor for the correlation matrix
-	  cholesky_factor_corr[K] L_Omega;
-
-	  // Sqrt of variances for each variate
-	  vector<lower=0>[K] L_std;
-	} 
-
-
-	transformed parameters {
-	  // Cholesky factor for covariance matrix
-	  matrix[K, K] L_Sigma = diag_pre_multiply(L_std, L_Omega);
-	}
-
-
-	model {
-	  // Prior on Cholesky decomposition of correlation matrix
-	  L_Omega ~ lkj_corr_cholesky(1);
-
-	  // Prior on standard deviations for each variate
-	  L_std ~ normal(0, 2.5);
-
-	  // Likelihood
-	  y ~ multi_normal_cholesky(mu, L_Sigma);
-	}
+  .. code-block:: stan
+  
+  	parameters {
+  	  // Vector of means
+  	  vector[K] mu;
+  
+  	  // Cholesky factor for the correlation matrix
+  	  cholesky_factor_corr[K] L_Omega;
+  
+  	  // Sqrt of variances for each variate
+  	  vector<lower=0>[K] L_std;
+  	} 
+  
+  
+  	transformed parameters {
+  	  // Cholesky factor for covariance matrix
+  	  matrix[K, K] L_Sigma = diag_pre_multiply(L_std, L_Omega);
+  	}
+  
+  
+  	model {
+  	  // Prior on Cholesky decomposition of correlation matrix
+  	  L_Omega ~ lkj_corr_cholesky(1);
+  
+  	  // Prior on standard deviations for each variate
+  	  L_std ~ normal(0, 2.5);
+  
+  	  // Likelihood
+  	  y ~ multi_normal_cholesky(mu, L_Sigma);
+  	}
 
 
 ----
