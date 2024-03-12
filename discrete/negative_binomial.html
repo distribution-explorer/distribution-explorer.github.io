@@ -252,7 +252,7 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 \[\begin{align}
    f(y;\mu,\phi) = \frac{\Gamma(y+\phi)}{\Gamma(\phi) \, y!}\,\left(\frac{\phi}{\mu  +\phi}\right)^\phi\left(\frac{\mu}{\mu+\phi}\right)^y.
 \end{align}\]</div>
-<p>These parameters are related to the parametrization above by <span class="math notranslate nohighlight">\(\phi = \alpha\)</span> and   <span class="math notranslate nohighlight">\(\mu = \alpha/\beta\)</span>. In the limit of <span class="math notranslate nohighlight">\(\phi\to\infty\)</span>, which can be taken   for the PMF, the Negative Binomial distribution becomes Poisson with parameter :math:`  mu`. This also gives meaning to the parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>; :math:`  mu` is the mean of the Negative Binomial, and <span class="math notranslate nohighlight">\(\phi\)</span> controls extra width of   the distribution beyond Poisson. The smaller <span class="math notranslate nohighlight">\(\phi\)</span> is, the broader the   distribution.</p>
+<p>These parameters are related to the parametrization above by <span class="math notranslate nohighlight">\(\phi = \alpha\)</span> and   <span class="math notranslate nohighlight">\(\mu = \alpha/\beta\)</span>. In the limit of <span class="math notranslate nohighlight">\(\phi\to\infty\)</span>, which can be taken for the PMF, the Negative Binomial distribution becomes Poisson with parameter <span class="math notranslate nohighlight">\(\mu\)</span>. This also gives meaning to the parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>; <span class="math notranslate nohighlight">\(\mu\)</span> is the mean of the Negative Binomial, and <span class="math notranslate nohighlight">\(\phi\)</span> controls extra width of the distribution beyond Poisson. The smaller <span class="math notranslate nohighlight">\(\phi\)</span> is, the broader the distribution.</p>
 <p>In this parametrization, the pertinent moments are</p>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{\mu}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\mu\left(1 + \frac{\mu}{\phi}\right)}\)</span>.</p>
@@ -274,11 +274,11 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 <h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
 <p><strong>Note</strong>: Quantile setting of both parameters for a Negative Binomial distribution is a challenging problem for a few reasons. First, there is no guarantee that a parameter set exists to give two specified value-quantile pairs can be obtained. Secondly, in other cases, there is a degeneracy of parameters that give the same quantiles. As an example, if we wished for 4 to be the 2.5th percentile and 17 to be the 97.5th percentile, we could achieve this with <span class="math notranslate nohighlight">\(\alpha = 100\)</span> and <span class="math notranslate nohighlight">\(\beta = 10\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 350\)</span> and <span class="math notranslate nohighlight">\(\beta = 35\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 10^9\)</span> and <span class="math notranslate nohighlight">\(\beta = 10^8\)</span>, and countless other combinations. (This is because the large <span class="math notranslate nohighlight">\(\alpha\)</span> limit is Poisson.) So, instead of manipulating two parameters to hit two quantiles, we can lock one parameter and set the other parameter to give a single desired percentile. In the <span class="math notranslate nohighlight">\(\alpha\)</span>-<span class="math notranslate nohighlight">\(\beta\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\alpha\)</span>, and in the <span class="math notranslate nohighlight">\(\mu\text{-}\phi\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>In the α-β formulation:</p>
-<script src="bokeh-content-18dd058d68be421aa346861628e517df-discrete-negative_binomial.js" id="c4f5c36d-d7f6-4813-a146-ec05c2861ba1"></script><div class="line-block">
+<script src="bokeh-content-0508271462ae438c89aebb6a360ee2ed-discrete-negative_binomial.js" id="a925fe4a-a17c-4f5e-add4-536a08910851"></script><div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>In the µ-φ formulation:</p>
-<script src="bokeh-content-ac3b2d36b112493a9315da0e2afff10f-discrete-negative_binomial.js" id="f94321f9-5a83-4276-a85e-185b0d031197"></script></div>
+<script src="bokeh-content-a678431e51b145518abb4e14edec9133-discrete-negative_binomial.js" id="fe462a97-dc5f-4911-b6fb-b43730f45ee3"></script></div>
 <hr class="docutils" />
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
@@ -305,11 +305,11 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Mar 07, 2024.
+      <span class="lastupdated">Last updated on Mar 12, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x1496b08d0> 
+   <jinja2.runtime.BlockReference object at 0x115736290> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
