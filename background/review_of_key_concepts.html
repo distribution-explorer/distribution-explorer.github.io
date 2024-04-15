@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Review of key concepts &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -181,20 +179,20 @@ F(x) = \int_{-\infty}^x\mathrm{d}x'\,f(x').
 <div class="section" id="plots-of-pdfs">
 <h3>Plots of PDFs<a class="headerlink" href="#plots-of-pdfs" title="Permalink to this heading"></a></h3>
 <p>We plot a PDF as a smooth curve. The curve only appears for values of the x-axis for which the distribution is supported; that is on the domain of the distribution. As an example, below is a plot of a PDF for the <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a>, which is supported on the set of positive real numbers.</p>
-<div style="height:200px;"><script src="bokeh-content-2dc34a728b1549d69255e347cfce047e-background-review_of_key_concepts.js" id="dea4a6f7-b0e7-4c90-ab03-91ddad5922a5"></script></div></div>
+<div style="height:200px;"><script src="bokeh-content-f2e9ff5b1a12483aabf8ba4efe5196b5-background-review_of_key_concepts.js" id="d398f2cf-6a26-4140-8c2d-258d8754b83a"></script></div></div>
 <div class="section" id="plots-of-pmfs">
 <h3>Plots of PMFs<a class="headerlink" href="#plots-of-pmfs" title="Permalink to this heading"></a></h3>
 <p>Since they take on discrete values, we plot PMFs differently. Our convention is that each nonzero probability is shown by a point with a line connecting to the x-axis. As an example, below is a plot of a <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> PMF.</p>
-<div style="height:200px;"><script src="bokeh-content-606888187688461b8813b21312d37274-background-review_of_key_concepts.js" id="c0894463-6ad8-4665-bfa7-c007127bb333"></script></div></div>
+<div style="height:200px;"><script src="bokeh-content-d6f98e14e4034b41a045b930adbc945c-background-review_of_key_concepts.js" id="b32704fc-1f22-404c-a768-e0eaf648d2fb"></script></div></div>
 <div class="section" id="plots-of-cdfs-for-continuous-distributions">
 <h3>Plots of CDFs for continuous distributions<a class="headerlink" href="#plots-of-cdfs-for-continuous-distributions" title="Permalink to this heading"></a></h3>
 <p>Plots of CDFs for continuous distributions are plotted as smooth curves. Taking the example of the Gamma distribution again, the CDF is plotted as below.</p>
-<div style="height:200px;"><script src="bokeh-content-9d41a11ff7074ca19c7b999132a10a10-background-review_of_key_concepts.js" id="a936c84f-6dbc-4ee3-9780-30c8561be297"></script></div></div>
+<div style="height:200px;"><script src="bokeh-content-183b711ae43f4decb041517883238047-background-review_of_key_concepts.js" id="a74105bb-6220-4488-96cf-5015696b5a37"></script></div></div>
 <div class="section" id="plots-of-cdfs-for-discrete-distributions">
 <h3>Plots of CDFs for discrete distributions<a class="headerlink" href="#plots-of-cdfs-for-discrete-distributions" title="Permalink to this heading"></a></h3>
 <p>For discrete distributions, I plot the CDFs as “staircases,” as shown below.</p>
-<div style="height:200px;"><script src="bokeh-content-8ea6914156274fe19928acf92191f157-background-review_of_key_concepts.js" id="e27e1f31-e889-469f-81ca-6c13beb8817a"></script></div><p>The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.</p>
-<div style="height:200px;"><script src="bokeh-content-ddcc3a76878640f7af553fb0f7e2050e-background-review_of_key_concepts.js" id="f722146f-ab7a-4c9c-bbe9-86712b13bbbf"></script></div><p>However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret.</p>
+<div style="height:200px;"><script src="bokeh-content-c1fca7f18af449a7a014e7e0f1bdbdf1-background-review_of_key_concepts.js" id="f8c17135-c10c-4ab9-bf93-fcd171b58976"></script></div><p>The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.</p>
+<div style="height:200px;"><script src="bokeh-content-e1ece3e61f354723bfdc79f56bf185d7-background-review_of_key_concepts.js" id="f7df683a-6811-4636-b9cd-7dc5fdd183cf"></script></div><p>However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret.</p>
 </div>
 </div>
 <div class="section" id="parametrization">
@@ -264,11 +262,11 @@ E(g(x)) = \sum_i  g(x_i) f(x_i).
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Mar 12, 2024.
+      <span class="lastupdated">Last updated on Apr 14, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x12d227290> 
+   <jinja2.runtime.BlockReference object at 0x16ca74510> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
