@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Multinomial distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -128,54 +131,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="multinomial-distribution">
-<span id="multinomial"></span><h1>Multinomial distribution<a class="headerlink" href="#multinomial-distribution" title="Permalink to this heading"></a></h1>
+  <section id="multinomial-distribution">
+<span id="multinomial"></span><h1>Multinomial distribution<a class="headerlink" href="#multinomial-distribution" title="Link to this heading"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>This is a generalization of the <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a>. Instead of a Bernoulli trial consisting of two outcomes, each trial has <span class="math notranslate nohighlight">\(K\)</span> outcomes. The probability of getting <span class="math notranslate nohighlight">\(y_1\)</span> of outcome 1, <span class="math notranslate nohighlight">\(y_2\)</span> of outcome 2, …, and <span class="math notranslate nohighlight">\(y_K\)</span> of outcome <span class="math notranslate nohighlight">\(K\)</span> out of a total of <span class="math notranslate nohighlight">\(N\)</span> trials is Multinomially distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>There are two alleles in a population, A and a. Each individual may have genotype AA, Aa, or aa. The probability distribution describing having <span class="math notranslate nohighlight">\(y_1\)</span> AA individuals, <span class="math notranslate nohighlight">\(y_2\)</span> Aa individuals, and <span class="math notranslate nohighlight">\(y_3\)</span> aa individuals in a population of <span class="math notranslate nohighlight">\(N\)</span> total individuals is Multinomially distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p><span class="math notranslate nohighlight">\(N\)</span>, the total number of trials, and <span class="math notranslate nohighlight">\(\boldsymbol{\theta} = \left\{\theta_1, \theta_2, \ldots,\theta_K\right\}\)</span>, the probabilities of each outcome. Note that <span class="math notranslate nohighlight">\(\sum_{i=1}^K \theta_i = 1\)</span> and there is the further restriction that <span class="math notranslate nohighlight">\(N = \sum_{i=1}^K y_i\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>The <span class="math notranslate nohighlight">\(K\)</span>-nomial distribution is supported on <span class="math notranslate nohighlight">\(\mathbb{N}^K\)</span>.</p>
 </div></blockquote>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this heading"></a></h2>
+<section id="probability-mass-function">
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_1^{y_1}\,\theta_2^{y_2}\cdots\theta_K^{y_K}.
 \end{align}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
 <p>Mean of <span class="math notranslate nohighlight">\(y_i\)</span>: <span class="math notranslate nohighlight">\(N\theta_i\)</span></p>
 <p>Variance of <span class="math notranslate nohighlight">\(y_i\)</span>: <span class="math notranslate nohighlight">\(N\theta_i(1-\theta_i)\)</span></p>
 <p>Covariance of <span class="math notranslate nohighlight">\(y_i, y_j\)</span> with <span class="math notranslate nohighlight">\(j\ne i\)</span>: <span class="math notranslate nohighlight">\(-N\theta_i\theta_j\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <p>The usage below assumes <code class="docutils literal notranslate"><span class="pre">theta</span></code> is a length <span class="math notranslate nohighlight">\(K\)</span> array.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -199,10 +198,10 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul>
 <li><p>The Multinomial distribution generalizes the <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> to multiple dimensions.</p></li>
 <li><p>The Multinomial distribution is also connected to the <a class="reference internal" href="../discrete/poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a>. Consider <span class="math notranslate nohighlight">\(K\)</span> Poisson processes with arrival rates <span class="math notranslate nohighlight">\(\lambda_1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span>, …, <span class="math notranslate nohighlight">\(\lambda_K\)</span>. Let</p>
@@ -213,17 +212,17 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 <p>and let <span class="math notranslate nohighlight">\(\theta_i = \lambda_i / \lambda\)</span>. Consider a total of <span class="math notranslate nohighlight">\(N\)</span> arrivals of these <span class="math notranslate nohighlight">\(K\)</span> Poisson processes, where <span class="math notranslate nohighlight">\(y_i\)</span> is the number of arrivals of Poisson process <span class="math notranslate nohighlight">\(i\)</span>. Then <span class="math notranslate nohighlight">\(N \sim \text{Poisson}(\lambda)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y} \sim \text{MultiNomial}(N, \boldsymbol{\theta})\)</span>.</p>
 </li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>For a sampling statement in Stan, the value of <span class="math notranslate nohighlight">\(N\)</span> is implied.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Multinomial_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.multinomial.html">Numpy</a></p></li>
@@ -231,8 +230,8 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/multivariate/#Distributions.Multinomial">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/multinomial-distribution.html">Stan</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -246,11 +245,11 @@ f(\mathbf{y};\boldsymbol{\theta}, N) = \frac{N!}{y_1!\,y_2!\cdots y_K!}\,\theta_
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 14, 2024.
+      <span class="lastupdated">Last updated on May 07, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x16ca450d0> 
+   <jinja2.runtime.BlockReference object at 0x13a9799d0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

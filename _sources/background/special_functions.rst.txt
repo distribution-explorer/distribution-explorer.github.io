@@ -40,7 +40,7 @@ The `gamma function <https://en.wikipedia.org/wiki/Gamma_function>`_, :math:`\Ga
 .. math::
 
 	\begin{align}
-	\Gamma(x) = \int_0^\infty\mathrm{d}t\,t^{x-1}\mathrm{e}^t.
+	\Gamma(x) = \int_0^\infty\mathrm{d}t\,t^{x-1}\mathrm{e}^{-t}.
 	\end{align}
 
 ----
@@ -53,7 +53,7 @@ Notice that the integral in the gamma function runs from zero to infinity. If we
 .. math::
 
 	\begin{align}
-	\gamma(x, y) = \int_0^y \mathrm{d}t \, t^{x-1}\mathrm{e}^t.
+	\gamma(x, y) = \int_0^y \mathrm{d}t \, t^{x-1}\mathrm{e}^{-t}.
 	\end{align}
 
 Note that the function is denoted with a lowercase :math:`\gamma`.
@@ -68,7 +68,7 @@ Similarly, the `upper incomplete gamma function <https://en.wikipedia.org/wiki/I
 .. math::
 
 	\begin{align}
-	\Gamma(x, y) = \int_y^\infty \mathrm{d}t \, t^{x-1}\mathrm{e}^t.
+	\Gamma(x, y) = \int_y^\infty \mathrm{d}t \, t^{x-1}\mathrm{e}^{-t}.
 	\end{align}
 
 Note that am uppercase :math:`\Gamma` is used, but the presence of two arguments distinguishes this function notationally from the gamma function.
