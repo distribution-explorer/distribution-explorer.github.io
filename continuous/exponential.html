@@ -5,8 +5,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exponential distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
@@ -17,9 +19,17 @@
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -93,6 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="halfnormal.html">Half-Normal distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="halfstudent_t.html">Half-Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inverse_gamma.html">Inverse Gamma distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inverse_gaussian.html">Inverse Gaussian distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lognormal.html">Log-Normal distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="normal.html">Normal distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pareto.html">Pareto distribution</a></li>
@@ -225,7 +236,7 @@ f(y;\tau) = \frac{1}{\tau}\,\mathrm{e}^{-y/\tau}.
 <hr class="docutils" />
 <section id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
-<script src="bokeh-content-f2dec2ec84284cd28dafb6ae5e1f6b7c-continuous-exponential.js" id="e16e758c-e35d-49a2-9a82-73c347bf2b14"></script></section>
+<script src="bokeh-content-c2f2f03d0de34b718a19de4f05b0dd7d-continuous-exponential.js" id="caf2333e-7f8b-4146-8e60-a10a2138a15e"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -251,11 +262,11 @@ f(y;\tau) = \frac{1}{\tau}\,\mathrm{e}^{-y/\tau}.
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 07, 2024.
+      <span class="lastupdated">Last updated on Oct 06, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13b355dc0> 
+   <jinja2.runtime.BlockReference object at 0x150c4df70> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

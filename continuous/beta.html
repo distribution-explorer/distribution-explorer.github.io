@@ -5,8 +5,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beta distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
@@ -17,9 +19,17 @@
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -92,6 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="halfnormal.html">Half-Normal distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="halfstudent_t.html">Half-Student-t distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inverse_gamma.html">Inverse Gamma distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inverse_gaussian.html">Inverse Gaussian distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lognormal.html">Log-Normal distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="normal.html">Normal distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pareto.html">Pareto distribution</a></li>
@@ -246,11 +257,11 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 <section id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
 <p>In the α-β formulation:</p>
-<script src="bokeh-content-8d8786ac1e0f42dbbbd040500a9a1b7b-continuous-beta.js" id="dbe2152f-78d1-4730-880c-5128f912ba23"></script><div class="line-block">
+<script src="bokeh-content-e057251471714a43a06f37cb641b90a1-continuous-beta.js" id="d0def017-1c8a-41f9-9a45-853a6b027867"></script><div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>In the φ-κ formulation:</p>
-<script src="bokeh-content-774bda094fe946ed813b0f9ef806fbd4-continuous-beta.js" id="a063de0c-43a8-41b3-9c7f-884c9f893345"></script></section>
+<script src="bokeh-content-70beb932dea34bd8926479c2579d1b67-continuous-beta.js" id="a948a6a5-e586-4785-aebe-1e86cca17daf"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -276,11 +287,11 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 07, 2024.
+      <span class="lastupdated">Last updated on Oct 06, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13b3b85c0> 
+   <jinja2.runtime.BlockReference object at 0x151d217f0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

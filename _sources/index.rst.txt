@@ -39,6 +39,7 @@ Welcome to the probability distribution explorer. This is a tool for you to expl
    continuous/halfnormal
    continuous/halfstudent_t
    continuous/inverse_gamma
+   continuous/inverse_gaussian
    continuous/lognormal
    continuous/normal
    continuous/pareto

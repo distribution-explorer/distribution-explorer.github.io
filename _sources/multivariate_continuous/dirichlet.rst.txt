@@ -87,7 +87,7 @@ Related distributions
 ---------------------
 
 - The special case where :math:`K=2` is a :ref:`beta` with parameters :math:`\alpha=\alpha_1` and :math:`\beta = \alpha_2`.
-- If we have :math:`K` random variables that have a :ref:`gamma`, :math:`X_i \sim \text{Gamma}(\alpha_i, \beta)`, then :math:`(X_1/V, X_2/V, \ldots, X_K/V) \sim \text{Dirichlet}(\boldsymbol{\alpha})` with :math:`\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \ldots, \alpha_3)` and :math:`V = \sum_{i=1}^K X_i`. Note that the value of :math:`\beta` does not enter into the Dirichlet distribution. This relationship becomes important in modeling of ordered Dirichlet distribution, as described below.
+- If we have :math:`K` random variables that have a :ref:`gamma`, :math:`X_i \sim \text{Gamma}(\alpha_i, \beta)`, then :math:`(X_1/V, X_2/V, \ldots, X_K/V) \sim \text{Dirichlet}(\boldsymbol{\alpha})` with :math:`\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \ldots, \alpha_3)` and :math:`V = \sum_{i=1}^K X_i`. Note that the value of :math:`\beta` does not enter into the Dirichlet distribution. This relationship becomes important in modeling of ordered Dirichlet distributions, as described below.
 
 
 ----

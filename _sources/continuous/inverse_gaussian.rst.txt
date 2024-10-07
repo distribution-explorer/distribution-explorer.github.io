@@ -1,0 +1,321 @@
+.. _inverse_gaussian:
+
+Inverse Gaussian distribution
+=============================
+
+
+----
+
+
+Story
+-----
+
+The amount of time it takes for a Brownian particle with drift to diffuse to a boundary a given distance away is Inverse Gaussian distributed.
+
+
+----
+
+
+Example
+-------
+
+Interspike intervals of neurons are often Inverse Gaussian distributed. In such cases, the firing threshold corresponds to a first passage to a boundary of a diffusive process with drift.
+
+
+----
+
+Parameters
+----------
+
+The Inverse Gaussian distribution has two parameters, :math:`\mu` and :math:`\lambda`, both of which must be positive. In the diffusion-with-drift story, if :math:`x` is the position of the boundary, :math:`D` is the diffusion coefficient, and :math:`v` is the drift velocity, then :math:`\mu = x / v` and :math:`\lambda = x^2/2D`. When used to model first passage times, both parameters have dimension of time.
+
+
+----
+
+
+Support
+-------
+
+The Inverse Gaussian distribution is supported on the set of positive real numbers.
+
+
+----
+
+
+Probability density function
+----------------------------
+
+.. math::
+
+	\begin{align}
+	f(y;\mu, \lambda) = \sqrt{\frac{\lambda}{2\pi y^3}}\,\exp\left[-\frac{\lambda(y-\mu)^2}{2 \mu^2 y}\right].
+	\end{align}
+
+----
+
+
+Cumulative distribution function
+--------------------------------
+
+.. math::
+
+    \begin{align}
+    F(y;\mu, \lambda) = \Phi\left(\sqrt{\frac{\lambda}{y}}\left(\frac{y}{\mu} - 1\right)\right) + \mathrm{e}^{2\lambda/\mu}\,\Phi\left(-\sqrt{\frac{\lambda}{y}}\left(\frac{y}{\mu} + 1\right)\right),
+    \end{align}
+
+where
+
+.. math::
+
+    \begin{align}
+    \Phi(y) = \frac{1}{2}\left(1 + \text{erf}\left(\frac{y}{\sqrt{2}}\right)\right)
+    \end{align}
+
+is the CDF of the standard :ref:`normal` and :math:`\text{erf}(x)` denotes the :ref:`error function <Error function>`.
+
+----
+
+
+Moments
+-------
+
+Mean: :math:`\mu`
+
+Variance: :math:`\mu^3/\lambda`
+
+
+----
+
+
+Usage
+-----
+
++----------------------+-------------------------------------------------------+
+| Package              | Syntax                                                |
++======================+=======================================================+
+| **NumPy**            | ``rng.wald(mu, lam)``                                 |
++----------------------+-------------------------------------------------------+
+| **SciPy**            | ``scipy.stats.invgauss(mu / lam, loc=0, scale=lam)``  |
++----------------------+-------------------------------------------------------+
+| **Distributions.jl** | ``InverseGaussian(mu, lam)``                          |
++----------------------+-------------------------------------------------------+
+| **Stan**             | See notes below                                       |
++----------------------+-------------------------------------------------------+
+
+----
+
+
+Related distributions
+---------------------
+
+- Despite its name, the Inverse Gaussian distribution is not directly related to the :ref:`normal` (a.k.a. Gaussian distribution), at least not mathematically (though, like many unimodal continuous distributions may be locally approximated as Normal). The name derives from the relation of the story of the Inverse Gaussian to that of the Normal. A story of the Normal distribution is as follows: The position of a diffusing Brownian particle with drift at a specified time is Normally distributed. So, the Inverse Gaussian is an "inverse" of the Normal (Gaussian) distribution in the sense that the roles of time and position are swapped in their respective stories. Note that even in the context of Brownian particles, the parameters of the Normal distribution are different from those of the Inverse Gaussian distribution.
+- The limit of :math:`\mu \to \infty` corresponds to zero drift velocity. In this limit, the Inverse Gaussian distribution becomes a special case of the :ref:`inverse_gamma`, with :math:`y\sim\text{InvGamma}(1/2, \lambda/2)`, that is, an Inverse Gamma distribution with parameters :math:`\alpha = 1/2` and :math:`\beta = \lambda/2`. This special case is also called a `Lévy distribution <https://en.wikipedia.org/wiki/Lévy_distribution>`_.
+
+
+----
+
+
+Notes
+-----
+
+- The Inverse Gaussian distribution is sometimes called the Wald distribution, named after `Abraham Wald <https://en.wikipedia.org/wiki/Abraham_Wald>`_.
+- The Inverse Gaussian distribution is not implemented in Stan. In order to use the Inverse Gaussian distribution in Stan, include the code below in the ``functions`` block. This will allow sampling statements like ``y ~ inv_gaussian(mu, lambda)``. (Note that this will be slower than directly coding the distribution into Stan's C++ library and including derivative calculations.)
+
+.. toggle::
+
+    .. code-block:: stan
+
+        /*
+        Functions for inverse Gaussian distribution.
+        */
+
+        /**
+        * Log PDF of Inverse Gaussian distribution
+        *
+        * @param real y
+        * @param real mu
+        * @param lreal ambda
+        * @return log PDF of Inverse Gaussian distribution for scalar input
+        */
+        real inv_gaussian_lpdf(real y, real mu, real lambda) {
+        if (y <= 0 || is_nan(y)) {
+            reject("inverse_gaussian_lpdf: y must be greater than 0; found y = ", y);
+        }
+        if (mu <= 0 || is_nan(mu)) {
+            reject("inverse_gaussian_lpdf: mu must be greater than 0; found mu = ", mu);
+        }
+        if (lambda <= 0 || is_nan(lambda)) {
+            reject("inverse_gaussian_lpdf: lambda must be greater than 0; found lambda = ", lambda);
+        }
+
+        real logpdf = -log(2 * pi()) / 2.0
+                    + (log(lambda) - 3.0 * log(y)) / 2.0
+                    - lambda * (y - mu)^2 / (2.0 * mu^2 * y);
+
+        return logpdf;
+        }
+
+        /**
+        * Log PDF of Inverse Gaussian distribution
+        *
+        * @param array[] real y
+        * @param real mu
+        * @param real lambda
+        * @return real log PDF of Inverse Gaussian distribution for array input
+        */
+        real inv_gaussian_lpdf(array[] real y, real mu, real lambda) {
+        if (mu <= 0 || is_nan(mu)) {
+            reject("inverse_gaussian_lpdf: mu must be greater than 0; found mu = ", mu);
+        }
+        if (lambda <= 0 || is_nan(lambda)) {
+            reject("inverse_gaussian_lpdf: lambda must be greater than 0; found lambda = ", lambda);
+        }
+
+        real logpdf = -num_elements(y) * log(2 * pi()) / 2.0;
+        for (yi in y) {
+            if (yi <= 0 || is_nan(yi)) {
+                reject("inverse_gaussian_lpdf: all elements of y must be greater than 0 and not NaN, got ", yi);
+            }
+            else {
+                logpdf += (log(lambda) - 3.0 * log(yi)) / 2.0 - lambda * (yi - mu)^2 / (2.0 * mu^2 * yi);
+            }
+        }
+
+        return logpdf;
+        }
+
+
+        /**
+        * Log PDF of Inverse Gaussian distribution
+        *
+        * @param vector y
+        * @param real mu
+        * @param real lambda
+        * @return real log PDF of Inverse Gaussian distribution for vector input
+        */
+        real inv_gaussian_lpdf(vector y, real mu, real lambda) {
+        if (mu <= 0 || is_nan(mu)) {
+            reject("inverse_gaussian_lpdf: mu must be greater than 0; found mu = ", mu);
+        }
+        if (lambda <= 0 || is_nan(lambda)) {
+            reject("inverse_gaussian_lpdf: lambda must be greater than 0; found lambda = ", lambda);
+        }
+        for (yi in y) {
+            if (yi <= 0 || is_nan(yi)) {
+                reject("inverse_gaussian_lpdf: all elements of y must be greater than 0 and not NaN, got ", yi);
+            }
+        }
+
+        real logpdf = num_elements(y) * (log(lambda) - log(2 * pi())) / 2.0
+                    - 1.5 * sum(log(y))
+                    - lambda * sum((y - mu).^2 ./ y) / (2.0 * mu^2);
+
+        return logpdf;
+        }
+
+        /**
+        * Log CDF of Inverse Gaussian distribution
+        *
+        * @param real y
+        * @param real mu
+        * @param real lambda
+        * @return log CDF of Inverse Gaussian distribution for scalar input
+        */
+        real inv_gaussian_lcdf(real y, real mu, real lambda) {
+        if (y <= 0 || is_nan(y)) {
+            reject("inverse_gaussian_lcdf: y must be greater than 0; found y = ", y);
+        }
+        if (mu <= 0 || is_nan(mu)) {
+            reject("inverse_gaussian_lcdf: mu must be greater than 0; found mu = ", mu);
+        }
+        if (lambda <= 0 || is_nan(lambda)) {
+            reject("inverse_gaussian_lcdf: lambda must be greater than 0; found lambda = ", lambda);
+        }
+
+        real term1 = std_normal_lcdf(sqrt(lambda / y) * (y / mu - 1.0));
+        real term2 = 2.0 * lambda / mu + std_normal_lcdf(-sqrt(lambda / y) * (y / mu + 1.0));
+
+        return log_sum_exp(term1, term2);
+        }
+
+
+        /**
+        * Log CCDF of Inverse Gaussian distribution
+        *
+        * @param real y
+        * @param real mu
+        * @param real lambda
+        * @return log CCDF of Inverse Gaussian distribution
+        */
+        real inv_gaussian_lccdf(real y, real mu, real lambda) {
+        if (y <= 0 || is_nan(y)) {
+            reject("inverse_gaussian_lccdf: y must be greater than 0; found y = ", y);
+        }
+        if (mu <= 0 || is_nan(mu)) {
+            reject("inverse_gaussian_lccdf: mu must be greater than 0; found mu = ", mu);
+        }
+        if (lambda <= 0 || is_nan(lambda)) {
+            reject("inverse_gaussian_lccdf: lambda must be greater than 0; found lambda = ", lambda);
+        }
+
+        real term1 = std_normal_lccdf(sqrt(lambda / y) * (y / mu - 1.0));
+        real term2 = 2.0 * lambda / mu + std_normal_lcdf(-sqrt(lambda / y) * (y / mu + 1.0));
+
+        return log_diff_exp(term1, term2);
+        }
+
+
+        /**
+        * Draw a random number from Inverse Gaussian distribution
+        *
+        * @param real mu
+        * @param real lambda
+        * @return A random number drawn from Inverse Gaussian distribution
+        */
+        real inv_gaussian_rng(real mu, real lambda) {
+        if (mu <= 0 || is_nan(mu)) {
+            reject("inverse_gaussian_rng: mu must be greater than 0; found mu = ", mu);
+        }
+        if (lambda <= 0 || is_nan(lambda)) {
+            reject("inverse_gaussian_rng: lambda must be greater than 0; found lambda = ", lambda);
+        }
+
+        real y = std_normal_rng()^2;
+        real mu2 = mu^2;
+        real x = mu + (mu2 * y - mu * sqrt(4.0 * mu * lambda * y + mu2 * y^2)) / (2.0 * lambda);
+        real z = uniform_rng(0, 1);
+
+        real return_value;
+        if (z <= mu / (mu + x)) {
+            return_value = x;
+        } else {
+            return_value = mu2 / x;
+        }
+
+        return return_value;
+        }
+
+
+----
+
+
+PDF and CDF plots
+-----------------
+
+.. bokeh-plot::
+    :source-position: none
+
+    import bokeh.io
+    import distribution_explorer
+
+    bokeh.io.show(distribution_explorer.explore('inverse_gaussian', background_fill_alpha=0, border_fill_alpha=0))
+
+----
+
+Links
+-----
+
+- `Wikipedia <https://en.wikipedia.org/wiki/Inverse_Gaussian_distribution>`_
+- `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.wald.html>`_
+- `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.invgauss.html#scipy.stats.invgauss>`_
+- `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.InverseGaussian>`_

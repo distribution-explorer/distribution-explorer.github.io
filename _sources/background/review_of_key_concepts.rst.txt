@@ -135,7 +135,7 @@ Since they take on discrete values, we plot PMFs differently. Our convention is 
 	p = bokeh.plotting.figure(height=200, width=300, x_axis_label='n', 
 	y_axis_label='f(n; 20, 0.34)', title='Binomial PMF', tools="save")
 
-	p.circle(x, y_pmf, size=5)
+	p.scatter(x, y_pmf, size=5)
 	p.segment(x0=x, x1=x, y0=0, y1=y_pmf, line_width=2)
 	p.background_fill_alpha = 0
 	p.border_fill_alpha = 0
@@ -247,9 +247,9 @@ The CDF appears to be multivalued at the vertical lines of the staircase. It is 
 	p.segment(x[:-1], y[:-1], x[1:], y[:-1], line_width=2)
 	p.ray(0, 0, angle=np.pi, length=0, line_width=2)
 	p.ray(x[-1], 1, angle=0, length=0, line_width=2)
-	p.circle([0], [0], fill_color='white')
-	p.circle(x[1:], y[:-1], fill_color='white')
-	p.circle(x, y)
+	p.scatter([0], [0], fill_color='white')
+	p.scatter(x[1:], y[:-1], fill_color='white')
+	p.scatter(x, y)
 	p.background_fill_alpha = 0
 	p.border_fill_alpha = 0
 

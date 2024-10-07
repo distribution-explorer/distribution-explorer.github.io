@@ -40,7 +40,7 @@ Because the Von Mises distribution is defined in a periodic domain, its random v
 Support
 -------
 
-The Von Mises distribution is supported on any set of real numbers on an interval :math:`[a - \pi, a + \pi)`, where :math:`a` is any real number. Here, we specify :math:`a=0` such that the support is :math:`[-\pi, pi)`.
+The Von Mises distribution is supported on any set of real numbers on an interval :math:`[a - \pi, a + \pi)`, where :math:`a` is any real number. Here, we specify :math:`a=0` such that the support is :math:`[-\pi, \pi)`.
 
 
 
