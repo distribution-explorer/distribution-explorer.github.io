@@ -134,7 +134,7 @@ Notes
         *
         * @param real y
         * @param real mu
-        * @param lreal ambda
+        * @param real lambda
         * @return log PDF of Inverse Gaussian distribution for scalar input
         */
         real inv_gaussian_lpdf(real y, real mu, real lambda) {
