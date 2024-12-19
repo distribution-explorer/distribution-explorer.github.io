@@ -102,7 +102,7 @@ Usage
 Related distributions
 ---------------------
 
-- The :ref:`binomial`, parametrized by :math:`N` and :math:`\theta` is approximated Normal with location parameter :math:`N\theta` and scale parameter :math:`\sqrt{N\theta(1-\theta)}` for large :math:`N` and :math:`\theta` not too close to zero or one. Although the :ref:`binomial` is discrete, for large :math:`N` we approximate it as continuous, allowing the Normal approximation.
+- The :ref:`binomial`, parametrized by :math:`N` and :math:`\theta` is approximately Normal with location parameter :math:`N\theta` and scale parameter :math:`\sqrt{N\theta(1-\theta)}` for large :math:`N` and :math:`\theta` not too close to zero or one. Although the :ref:`binomial` is discrete, for large :math:`N` we approximate it as continuous, allowing the Normal approximation.
 - It follows that the :ref:`poisson` with parameter :math:`\lambda` is approximately normal with location parameter :math:`\lambda` and scale parameter :math:`\sqrt{\lambda}` for large :math:`\lambda`.
 - The :ref:`student_t`, parametrized by location and scale parameters :math:`\mu` and :math:`\sigma`, respectively, and degrees of freedom :math:`\nu` becomes Normal (with the same location and scale parameters) in the limit of :math:`\nu\to\infty`.
 - The :ref:`gamma`, parametrized by shape and inverse scale parameters :math:`\alpha` and :math:`\beta`, respectively, is approximately Normal with respective location and scale parameters :math:`\alpha/\beta` and :math:`\sqrt{\alpha}/\beta` in the limit of large :math:`\alpha`.

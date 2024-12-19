@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poisson distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -97,6 +96,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/halfcauchy.html">Half-Cauchy distribution</a></li>
@@ -144,56 +144,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="poisson-distribution">
-<span id="poisson"></span><h1>Poisson distribution<a class="headerlink" href="#poisson-distribution" title="Link to this heading"></a></h1>
+  <div class="section" id="poisson-distribution">
+<span id="poisson"></span><h1>Poisson distribution<a class="headerlink" href="#poisson-distribution" title="Permalink to this heading"></a></h1>
 <hr class="docutils" />
-<section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
+<div class="section" id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
 <p>The number <span class="math notranslate nohighlight">\(n\)</span> of arrivals of a Poisson process in unit time is Poisson distributed.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <p>The number of mutations in a strand of DNA per unit length (since mutations are rare) are Poisson distributed.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <p>The single parameter is the rate <span class="math notranslate nohighlight">\(\lambda\)</span> of the arrival of the Poisson process.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
 <p>The Poisson distribution is supported on the set of nonnegative integers.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Link to this heading"></a></h2>
+<div class="section" id="probability-mass-function">
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(n;\lambda) = \frac{\lambda^n}{n!}\,\mathrm{e}^{-\lambda}.
 \end{align}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
+<div class="section" id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
 <p>The CDF evaluated at nonnegative integer <span class="math notranslate nohighlight">\(n\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 F(n;\lambda) = \frac{\Gamma(n + 1, \lambda)}{n!},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma(n + 1, \lambda)\)</span> is the <a class="reference internal" href="../background/special_functions.html#upper-incomplete-gamma-function"><span class="std std-ref">upper incomplete gamma function</span></a>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
+<div class="section" id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\lambda\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\lambda\)</span></p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -214,18 +218,18 @@ F(n;\lambda) = \frac{\Gamma(n + 1, \lambda)}{n!},
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
+<div class="section" id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>In the limit of <span class="math notranslate nohighlight">\(N\to\infty\)</span> and <span class="math notranslate nohighlight">\(\theta\to 0\)</span> such that the quantity <span class="math notranslate nohighlight">\(N\theta\)</span> is fixed, the <a class="reference internal" href="binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> becomes a <a class="reference internal" href="#poisson"><span class="std std-ref">Poisson distribution</span></a> with parameter <span class="math notranslate nohighlight">\(\lambda = N\theta\)</span>. Thus, for large <span class="math notranslate nohighlight">\(N\)</span> and small <span class="math notranslate nohighlight">\(\theta\)</span>, the Binomial distribution is well-approximated by the Poisson distribution. Considering the biological example of mutations, this is Binomially distributed: There are <span class="math notranslate nohighlight">\(N\)</span> bases, each with a probability <span class="math notranslate nohighlight">\(\theta\)</span> of mutation, so the number of mutations, <span class="math notranslate nohighlight">\(n\)</span> is Binomially distributed. Since <span class="math notranslate nohighlight">\(\theta\)</span> is small and <span class="math notranslate nohighlight">\(N\)</span> is large, it is approximately Poisson distributed.</p></li>
 <li><p>Under the <span class="math notranslate nohighlight">\((\mu,\phi)\)</span> parametrization of the <a class="reference internal" href="negative_binomial.html#negative-binomial"><span class="std std-ref">Negative Binomial distribution</span></a>, taking the limit of large <span class="math notranslate nohighlight">\(\phi\)</span> yields the Poisson distribution.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Consider <span class="math notranslate nohighlight">\(K\)</span> Poisson processes with arrival rates <span class="math notranslate nohighlight">\(\lambda_1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2\)</span>, …, <span class="math notranslate nohighlight">\(\lambda_K\)</span>. Let</p>
 <div class="math notranslate nohighlight">
@@ -235,14 +239,14 @@ F(n;\lambda) = \frac{\Gamma(n + 1, \lambda)}{n!},
 <p>If <span class="math notranslate nohighlight">\(N\)</span> is the total number of arrivals of these <span class="math notranslate nohighlight">\(K\)</span> Poisson processes, <span class="math notranslate nohighlight">\(N \sim \text{Poisson}(\lambda)\)</span>.</p>
 </li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="pmf-and-cdf-plots">
-<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Link to this heading"></a></h2>
-<script src="bokeh-content-45d9a756fbbf49d6bae13b5f26d434d8-discrete-poisson.js" id="f3afe5b8-0c5a-4fe5-9ee9-2aa7034f495b"></script></section>
+<div class="section" id="pmf-and-cdf-plots">
+<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
+<script src="bokeh-content-d14fa00176aa40cabb06a33e5fab6305-discrete-poisson.js" id="a30f0eee-4a2b-4052-8713-21365b1a3231"></script></div>
 <hr class="docutils" />
-<section id="links">
-<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.poisson.html">Numpy</a></p></li>
@@ -250,8 +254,8 @@ F(n;\lambda) = \frac{\Gamma(n + 1, \lambda)}{n!},
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Poisson">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/poisson.html">Stan</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -265,11 +269,11 @@ F(n;\lambda) = \frac{\Gamma(n + 1, \lambda)}{n!},
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Oct 06, 2024.
+      <span class="lastupdated">Last updated on Dec 18, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x131a286b0> 
+   <jinja2.runtime.BlockReference object at 0x16b115850> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

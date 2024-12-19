@@ -33,6 +33,7 @@ Welcome to the probability distribution explorer. This is a tool for you to expl
 
    continuous/beta
    continuous/cauchy
+   continuous/double_exponential
    continuous/exponential
    continuous/gamma
    continuous/halfcauchy

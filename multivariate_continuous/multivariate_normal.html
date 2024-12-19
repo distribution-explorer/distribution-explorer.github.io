@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Multivariate Normal distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -82,6 +81,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/halfcauchy.html">Half-Cauchy distribution</a></li>
@@ -142,57 +142,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="multivariate-normal-distribution">
-<span id="multivariate-normal"></span><h1>Multivariate Normal distribution<a class="headerlink" href="#multivariate-normal-distribution" title="Link to this heading"></a></h1>
+  <div class="section" id="multivariate-normal-distribution">
+<span id="multivariate-normal"></span><h1>Multivariate Normal distribution<a class="headerlink" href="#multivariate-normal-distribution" title="Permalink to this heading"></a></h1>
 <hr class="docutils" />
-<section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
+<div class="section" id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
 <p>This is a generalization of the univariate <a class="reference internal" href="../continuous/normal.html#normal"><span class="std std-ref">Normal distribution</span></a>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <p>Finch beaks are measured for beak depth and beak length. The resulting distribution of depths and length is Normal. In this case, the Normal is bivariate, with <span class="math notranslate nohighlight">\(\boldsymbol{\mu} = (\mu_d, \mu_l)\)</span> and the covariance matrix is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 \mathsf{\Sigma} = \begin{pmatrix}\sigma_\mathrm{d}^2 &amp; \sigma_\mathrm{dl} \\ \sigma_\mathrm{dl} &amp; \sigma_\mathrm{l}^2\end{pmatrix}.
 \end{align}\end{split}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <p>There is one vector-valued parameter, <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>, and a matrix-valued parameter, <span class="math notranslate nohighlight">\(\mathsf{\Sigma}\)</span>, which are location and scale parameters respectively. The matrix scale parameter is referred to as a covariance matrix. The covariance matrix is symmetric and strictly positive definite.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
 <p>The <span class="math notranslate nohighlight">\(K\)</span>-variate Normal distribution is supported on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="probability-density-function">
-<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Link to this heading"></a></h2>
+<div class="section" id="probability-density-function">
+<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(\mathbf{y};\boldsymbol{\mu}, \mathsf{\Sigma}) = \frac{1}{\sqrt{(2\pi)^K \mathrm{det}\mathsf{\Sigma}}}\,\exp\left[-\frac{1}{2}(\mathbf{y} - \boldsymbol{\mu})^\mathsf{T} \cdot \mathsf{\Sigma}^{-1} \cdot (\mathbf{y} - \boldsymbol{\mu})\right].
 \end{align}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
+<div class="section" id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
 <p>There is no analytic expression for the CDF.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
+<div class="section" id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
 <p>Mean of <span class="math notranslate nohighlight">\(y_i\)</span>: <span class="math notranslate nohighlight">\(\mu_i\)</span></p>
 <p>Variance of <span class="math notranslate nohighlight">\(y_i\)</span>: <span class="math notranslate nohighlight">\(\Sigma_{ii}\)</span></p>
 <p>Covariance of <span class="math notranslate nohighlight">\(y_i, y_j\)</span> with <span class="math notranslate nohighlight">\(j\ne i\)</span>: <span class="math notranslate nohighlight">\(\Sigma_{ij}\)</span></p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>The usage below assumes that <code class="docutils literal notranslate"><span class="pre">mu</span></code> is a length <span class="math notranslate nohighlight">\(K\)</span> array, <code class="docutils literal notranslate"><span class="pre">Sigma</span></code> is a <span class="math notranslate nohighlight">\(K\times K\)</span> symmetric positive definite matrix, and <code class="docutils literal notranslate"><span class="pre">L</span></code> is a <span class="math notranslate nohighlight">\(K\times K\)</span> lower-triangular matrix with strictly positive values on the diagonal that is a Cholesky factor.</p>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -225,25 +229,25 @@ f(\mathbf{y};\boldsymbol{\mu}, \mathsf{\Sigma}) = \frac{1}{\sqrt{(2\pi)^K \mathr
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
+<div class="section" id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>The Multivariate Normal is a generalization of the univariate <a class="reference internal" href="../continuous/normal.html#normal"><span class="std std-ref">Normal distribution</span></a>.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>The covariance matrix may also be written as <span class="math notranslate nohighlight">\(\mathsf{\Sigma} = \mathsf{S} \cdot \mathsf{C} \cdot \mathsf{S}\)</span>, where <span class="math notranslate nohighlight">\(\mathsf{S} = \sqrt{\mathrm{diag}(\mathsf{\Sigma})}\)</span>, and entry <span class="math notranslate nohighlight">\(i, j\)</span> in the <strong>correlation matrix</strong> <span class="math notranslate nohighlight">\(\mathsf{C}\)</span> is <span class="math notranslate nohighlight">\(C_{ij} = \sigma_{ij}/\sigma_i\sigma_j\)</span>.</p></li>
 <li><p>Because <span class="math notranslate nohighlight">\(\mathsf{\Sigma}\)</span> is symmetric and strictly positive definite, it can be uniquely defined in terms of its <span class="xref std std-ref">Cholesky decomposition</span>, <span class="math notranslate nohighlight">\(\mathsf{L}\)</span>, which satisfies <span class="math notranslate nohighlight">\(\mathsf{\Sigma} = \mathsf{L}\cdot\mathsf{L}^\mathsf{T}\)</span>.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="links">
-<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.multivariate_normal.html">Numpy</a></p></li>
@@ -252,8 +256,8 @@ f(\mathbf{y};\boldsymbol{\mu}, \mathsf{\Sigma}) = \frac{1}{\sqrt{(2\pi)^K \mathr
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/multivariate-normal-distribution.html">Stan</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/multi-normal-cholesky-fun.html">Stan Cholesky</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -266,11 +270,11 @@ f(\mathbf{y};\boldsymbol{\mu}, \mathsf{\Sigma}) = \frac{1}{\sqrt{(2\pi)^K \mathr
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Oct 06, 2024.
+      <span class="lastupdated">Last updated on Dec 18, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x131b809e0> 
+   <jinja2.runtime.BlockReference object at 0x16b08bb30> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

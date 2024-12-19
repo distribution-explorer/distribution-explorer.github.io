@@ -10,7 +10,7 @@ Beta distribution
 Story
 -----
 
-Say you wait for two multistep Poisson processes to arive. The individual steps of each process happen at the same rate, but the first multistep process requires :math:`\alpha` steps and the second requires :math:`\beta` steps. The fraction of the total waiting time taken by the first process is Beta distributed.
+Say you wait for two multistep Poisson processes to arrive. The individual steps of each process happen at the same rate, but the first multistep process requires :math:`\alpha` steps and the second requires :math:`\beta` steps. The fraction of the total waiting time taken by the first process is Beta distributed.
 
 ----
 

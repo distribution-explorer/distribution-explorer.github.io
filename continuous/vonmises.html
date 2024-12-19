@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Von Mises distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -83,6 +82,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gamma.html">Gamma distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="halfcauchy.html">Half-Cauchy distribution</a></li>
@@ -144,51 +144,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="von-mises-distribution">
-<span id="vonmises"></span><h1>Von Mises distribution<a class="headerlink" href="#von-mises-distribution" title="Link to this heading"></a></h1>
+  <div class="section" id="von-mises-distribution">
+<span id="vonmises"></span><h1>Von Mises distribution<a class="headerlink" href="#von-mises-distribution" title="Permalink to this heading"></a></h1>
 <hr class="docutils" />
-<section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
+<div class="section" id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
 <p>A particle diffuses along a circle in a harmonic potential for a given amount of time. Its angular position along the circle is Von Mises distributed.</p>
 <p>It is perhaps easier to think of the Von Mises distribution as an approximation to Normal distribution that lives on a periodic domain.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <p>A steady wind blows on a weather vane with occasional variations in direction. The angle from north to which the vane points can be modeled as Von Mises distributed.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <p>The Von Mises distribution has two parameters, the location parameter <span class="math notranslate nohighlight">\(\mu\)</span>, which determines the location of its peak, and the shape parameter <span class="math notranslate nohighlight">\(\kappa\)</span>, which is strictly positive and determines the width of the peak. The larger <span class="math notranslate nohighlight">\(\kappa\)</span> is, the narrower the peak.</p>
 <p>Because the Von Mises distribution is defined in a periodic domain, its random variable must be restricted to live on an interval of length <span class="math notranslate nohighlight">\(2\pi\)</span> in order to be normalizable. The value of <span class="math notranslate nohighlight">\(\mu\)</span> must therefore also be restricted to lie on the same interval. Common conventions include <span class="math notranslate nohighlight">\([0, 2\pi)\)</span> and <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>, and we will employ the latter.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
 <p>The Von Mises distribution is supported on any set of real numbers on an interval <span class="math notranslate nohighlight">\([a - \pi, a + \pi)\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is any real number. Here, we specify <span class="math notranslate nohighlight">\(a=0\)</span> such that the support is <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="probability-density-function">
-<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Link to this heading"></a></h2>
+<div class="section" id="probability-density-function">
+<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(y;\mu, \kappa) = \frac{\mathrm{e}^{-\kappa\cos(y-\mu)}}{2\pi I_0(\kappa)},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(I_0(\kappa)\)</span> is the <a class="reference internal" href="../background/special_functions.html#modified-bessel-function-of-the-first-kind"><span class="std std-ref">modified Bessel function of the first kind of order zero</span></a>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
+<div class="section" id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
 <p>The CDF for the Von Mises distribution can only be properly defined if we first specify a finite domain of length <span class="math notranslate nohighlight">\(2\pi\)</span> on which the distribution lives. There is no analytical expression for it, and it is typically evaluated numerically. On the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>, the CDF is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0(\kappa)}\,\int_{-\pi}^y\mathrm{d}x\,\mathrm{e}^{-\kappa\cos(y-\mu)}.
 \end{align}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
+<div class="section" id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
 <p>By convention, moments of distributions defined on periodic domains are usually calculated as the moments of the complex exponential of the the angle <span class="math notranslate nohighlight">\(y\)</span> instead of the angle itself. There are referred to as <strong>circular moments</strong>. The circular mean is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -202,11 +202,15 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <p>Perhaps confusingly, traditionally the “mean” of a distribution on a circular domain refers to the argument of the exponential, in this case <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>Mean: <span class="math notranslate nohighlight">\(\mu\)</span></p>
 <p>Circular variance: <span class="math notranslate nohighlight">\(\displaystyle{1 - \frac{I_1(\kappa)}{I_0(\kappa)}}\)</span></p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -230,18 +234,18 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 </tr>
 </tbody>
 </table>
-</section>
+</div>
 <hr class="docutils" />
-<section id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
+<div class="section" id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>In the limit of large <span class="math notranslate nohighlight">\(\kappa\)</span>, the Von Mises distribution approximates a <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a> with variance <span class="math notranslate nohighlight">\(\sigma^2 = 1/\kappa\)</span>.</p></li>
 <li><p>In the limit of <span class="math notranslate nohighlight">\(\kappa \to 0\)</span>, the Von Mises distribution becomes a <a class="reference internal" href="uniform.html#uniform"><span class="std std-ref">Uniform distribution</span></a> on the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p></li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>NumPy assumes an interval for <span class="math notranslate nohighlight">\(y\)</span> of <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>. If the location parameter is specified as <span class="math notranslate nohighlight">\(\mu\)</span>, as in a function call <code class="docutils literal notranslate"><span class="pre">rng.vonmises(mu,</span> <span class="pre">kappa)</span></code>, the inputted <span class="math notranslate nohighlight">\(\mu\)</span> is transformed to lie in the <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span> interval as</p>
 <div class="math notranslate nohighlight">
@@ -261,15 +265,15 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 </div>
 </li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="pdf-and-cdf-plots">
-<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
+<div class="section" id="pdf-and-cdf-plots">
+<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
 <p>Not all value-quantile pairs are achievable, and quantile setting may fail in some cases.</p>
-<script src="bokeh-content-b257e87d413741518cd0a319fe5cfaec-continuous-vonmises.js" id="ffef0c05-fa3e-42ae-8e44-88e03a5587e9"></script></section>
+<script src="bokeh-content-f0c9793932c5434a87b2afafb5ddf032-continuous-vonmises.js" id="b52024c3-74ee-435f-bece-49974712da15"></script></div>
 <hr class="docutils" />
-<section id="links">
-<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Von_Mises_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.vonmises.html">Numpy</a></p></li>
@@ -277,8 +281,8 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Continuous-Distributions">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/von-mises-distribution.html">Stan</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -292,11 +296,11 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Oct 06, 2024.
+      <span class="lastupdated">Last updated on Dec 18, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13196f0e0> 
+   <jinja2.runtime.BlockReference object at 0x16a127980> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

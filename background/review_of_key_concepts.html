@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Review of key concepts &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -94,6 +93,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/halfcauchy.html">Half-Cauchy distribution</a></li>
@@ -141,12 +141,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="review-of-key-concepts">
-<h1>Review of key concepts<a class="headerlink" href="#review-of-key-concepts" title="Link to this heading"></a></h1>
+  <div class="section" id="review-of-key-concepts">
+<h1>Review of key concepts<a class="headerlink" href="#review-of-key-concepts" title="Permalink to this heading"></a></h1>
 <p>Before preceding, we define what is included for each distribution in the Explorer. We cut some corners in our definitions here, but these definitions are functional for applied purposes.</p>
 <p>We start with the obvious. What is a probability distribution? A <strong>probability distribution</strong> specifies the probabilities of all of the possible outcomes in a sample space. For example, if the sample space is nonnegative integers, the probability distribution describes the probability of observing each nonnegative integer.</p>
-<section id="pmfs-and-pdfs">
-<h2>PMFs and PDFs<a class="headerlink" href="#pmfs-and-pdfs" title="Link to this heading"></a></h2>
+<div class="section" id="pmfs-and-pdfs">
+<h2>PMFs and PDFs<a class="headerlink" href="#pmfs-and-pdfs" title="Permalink to this heading"></a></h2>
 <p>Probability distributions may be specified in various ways. For distributions describing discrete random variables, that is random variables that may take on only discrete values, such as integers, the <strong>probability mass function</strong> (PMF) is a useful specification of the distribution. In the discrete case, we define <span class="math notranslate nohighlight">\(f(x)\)</span> to be the probability of obtaining discrete value <span class="math notranslate nohighlight">\(x\)</span>. The <strong>normalization condition</strong> of the PMF is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -158,9 +158,9 @@
 \[\begin{align}
 P(a \le x \le b) = \int_a^b \mathrm{d}x\,f(x).
 \end{align}\]</div>
-</section>
-<section id="cdfs">
-<h2>CDFs<a class="headerlink" href="#cdfs" title="Link to this heading"></a></h2>
+</div>
+<div class="section" id="cdfs">
+<h2>CDFs<a class="headerlink" href="#cdfs" title="Permalink to this heading"></a></h2>
 <p>The <strong>cumulative distribution function</strong> (CDF), denoted <span class="math notranslate nohighlight">\(F(x)\)</span>, is defined such that <span class="math notranslate nohighlight">\(F(x)\)</span> is the probability that the value of a variable <span class="math notranslate nohighlight">\(X\)</span> is less than or equal to <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -182,40 +182,40 @@ f(x) = \frac{\mathrm{d}F}{\mathrm{d}x},
 F(x) = \int_{-\infty}^x\mathrm{d}x'\,f(x').
 \end{align}\]</div>
 <p>Note that if <span class="math notranslate nohighlight">\(x\)</span> is ordered, the CDF grows monotonically from zero to one.</p>
-</section>
-<section id="quantiles-and-quantile-functions">
-<h2>Quantiles and quantile functions<a class="headerlink" href="#quantiles-and-quantile-functions" title="Link to this heading"></a></h2>
+</div>
+<div class="section" id="quantiles-and-quantile-functions">
+<h2>Quantiles and quantile functions<a class="headerlink" href="#quantiles-and-quantile-functions" title="Permalink to this heading"></a></h2>
 <p>The inverse of the CDF, <span class="math notranslate nohighlight">\(F^{-1}(p)\)</span> is referred to as a <strong>quantile function</strong>. The argument <span class="math notranslate nohighlight">\(p\)</span> of the quantile function is referred to as a <strong>quantile</strong> and ranges between zero and one. The argument is sometimes called a “percentile,” and is typically, though not always, expressed as varying from zero to one-hundred. In the Explorer, we refer to <span class="math notranslate nohighlight">\(p\)</span> as a quantile and insist that it vary from zero to one.</p>
-</section>
-<section id="methods-of-plotting-pdfs-pmfs-and-cdfs">
-<h2>Methods of plotting PDFs, PMFs and CDFs<a class="headerlink" href="#methods-of-plotting-pdfs-pmfs-and-cdfs" title="Link to this heading"></a></h2>
+</div>
+<div class="section" id="methods-of-plotting-pdfs-pmfs-and-cdfs">
+<h2>Methods of plotting PDFs, PMFs and CDFs<a class="headerlink" href="#methods-of-plotting-pdfs-pmfs-and-cdfs" title="Permalink to this heading"></a></h2>
 <p>To help in interpreting plots of the univariate PDFs, PMFs, and CDFs in this app, I show how each are plotted.</p>
-<section id="plots-of-pdfs">
-<h3>Plots of PDFs<a class="headerlink" href="#plots-of-pdfs" title="Link to this heading"></a></h3>
+<div class="section" id="plots-of-pdfs">
+<h3>Plots of PDFs<a class="headerlink" href="#plots-of-pdfs" title="Permalink to this heading"></a></h3>
 <p>We plot a PDF as a smooth curve. The curve only appears for values of the x-axis for which the distribution is supported; that is on the domain of the distribution. As an example, below is a plot of a PDF for the <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a>, which is supported on the set of positive real numbers.</p>
-<div style="height:200px;"><script src="bokeh-content-707fa16304da4d8bae0d19fef0c7801b-background-review_of_key_concepts.js" id="bcf01a55-5034-4f3b-9e20-1f406a6a29e7"></script></div></section>
-<section id="plots-of-pmfs">
-<h3>Plots of PMFs<a class="headerlink" href="#plots-of-pmfs" title="Link to this heading"></a></h3>
+<div style="height:200px;"><script src="bokeh-content-61bc3cd2047b40d692967862b8224d72-background-review_of_key_concepts.js" id="c39326a8-9072-4f13-805d-3320ed5f9598"></script></div></div>
+<div class="section" id="plots-of-pmfs">
+<h3>Plots of PMFs<a class="headerlink" href="#plots-of-pmfs" title="Permalink to this heading"></a></h3>
 <p>Since they take on discrete values, we plot PMFs differently. Our convention is that each nonzero probability is shown by a point with a line connecting to the x-axis. As an example, below is a plot of a <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> PMF.</p>
-<div style="height:200px;"><script src="bokeh-content-bf9418c9a9a2439bbea7ea3a337faef0-background-review_of_key_concepts.js" id="e1d0f9d7-da2e-4698-a0d5-2b505290925d"></script></div></section>
-<section id="plots-of-cdfs-for-continuous-distributions">
-<h3>Plots of CDFs for continuous distributions<a class="headerlink" href="#plots-of-cdfs-for-continuous-distributions" title="Link to this heading"></a></h3>
+<div style="height:200px;"><script src="bokeh-content-6a9ca7e5ee9c4b17a7b396dea20525ec-background-review_of_key_concepts.js" id="d6f1a1f5-2054-418b-b9db-1afa7ba5b70c"></script></div></div>
+<div class="section" id="plots-of-cdfs-for-continuous-distributions">
+<h3>Plots of CDFs for continuous distributions<a class="headerlink" href="#plots-of-cdfs-for-continuous-distributions" title="Permalink to this heading"></a></h3>
 <p>Plots of CDFs for continuous distributions are plotted as smooth curves. Taking the example of the Gamma distribution again, the CDF is plotted as below.</p>
-<div style="height:200px;"><script src="bokeh-content-bca1d9ab0cee433496062e04bafa2086-background-review_of_key_concepts.js" id="dccaa1ae-1eb5-4e97-94fb-96deb8fbe705"></script></div></section>
-<section id="plots-of-cdfs-for-discrete-distributions">
-<h3>Plots of CDFs for discrete distributions<a class="headerlink" href="#plots-of-cdfs-for-discrete-distributions" title="Link to this heading"></a></h3>
+<div style="height:200px;"><script src="bokeh-content-5ec020b55c7f41f6bb0d8bf29f84835c-background-review_of_key_concepts.js" id="bb1b11aa-1955-4f7a-86c7-422b7617dedd"></script></div></div>
+<div class="section" id="plots-of-cdfs-for-discrete-distributions">
+<h3>Plots of CDFs for discrete distributions<a class="headerlink" href="#plots-of-cdfs-for-discrete-distributions" title="Permalink to this heading"></a></h3>
 <p>For discrete distributions, I plot the CDFs as “staircases,” as shown below.</p>
-<div style="height:200px;"><script src="bokeh-content-8d218d54f0b345b1b34c303c4a9fd43a-background-review_of_key_concepts.js" id="f9f04b21-c9bd-4fa3-a222-dcfebd245a25"></script></div><p>The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.</p>
-<div style="height:200px;"><script src="bokeh-content-862a294854f14f95b4f446e3650f040c-background-review_of_key_concepts.js" id="b11f7b8e-42f5-4c3e-9526-316edad6e6b7"></script></div><p>However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret.</p>
-</section>
-</section>
-<section id="parametrization">
-<h2>Parametrization<a class="headerlink" href="#parametrization" title="Link to this heading"></a></h2>
+<div style="height:200px;"><script src="bokeh-content-749582a27fed4933a22abda604757dfd-background-review_of_key_concepts.js" id="e468598e-970d-4f36-b101-6e50b0392614"></script></div><p>The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.</p>
+<div style="height:200px;"><script src="bokeh-content-7afcc360e2974d16b82ddcaa5c7f8e80-background-review_of_key_concepts.js" id="f88226c2-36f0-4e88-9d5f-229c364ddec0"></script></div><p>However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret.</p>
+</div>
+</div>
+<div class="section" id="parametrization">
+<h2>Parametrization<a class="headerlink" href="#parametrization" title="Permalink to this heading"></a></h2>
 <p>If a probability mass or density function depends on parameters, say <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>, we write it as <span class="math notranslate nohighlight">\(f(x;N,\theta)\)</span>. There does not seem to be consensus on the best notation for this, and you may see this same quantity written as <span class="math notranslate nohighlight">\(f(x\mid N, \theta)\)</span>, implying conditioning, for example.</p>
 <p>Distributions may be parametrized in different ways. For example, we may parametrize a Normal distribution in terms of what is commonly called the standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span>, but we can also parametrize it by the precision <span class="math notranslate nohighlight">\(\tau \equiv 1/\sigma\)</span>. The parametrizations we use are those used in the <a class="reference external" href="http://mc-stan.org/">Stan</a> probabilistic programming language.</p>
-</section>
-<section id="location-scale-and-shape-parameters">
-<h2>Location, scale, and shape parameters<a class="headerlink" href="#location-scale-and-shape-parameters" title="Link to this heading"></a></h2>
+</div>
+<div class="section" id="location-scale-and-shape-parameters">
+<h2>Location, scale, and shape parameters<a class="headerlink" href="#location-scale-and-shape-parameters" title="Permalink to this heading"></a></h2>
 <p>Some parameters of distributions have special properties. A <strong>location</strong> parameter shifts the PMF/PDF and CDF along the x-axis. A <strong>scale</strong> parameter serves to rescale the x-axis. Scale parameters are necessarily positive. As an example, the Normal distribution has PDF</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -230,9 +230,9 @@ f(x' ; \mu') \propto \mathrm{e}^{-(x'-\mu')^2/2}.
 <p>This is as if I squished the x-axis by a factor of <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
 <p>If a parameter is not a location or a scale parameter (or a function thereof), it is called a <strong>shape</strong> parameter, as it necessarily affects the shape of the CDF. The Normal distribution does not have a shape parameter.</p>
 <p>In the context of Normal distributions, in the Explorer, we will refer to <span class="math notranslate nohighlight">\(\mu\)</span> not by its common name of “the mean,” but instead as “the location parameter.” This is because the word “mean” can have different meanings in different contexts, and using the term “location parameter” is unambiguous. Similarly, we will refer to <span class="math notranslate nohighlight">\(\sigma\)</span> as the scale parameter and not the standard deviation. This is also consistent with the nomenclature in NumPy and SciPy.</p>
-</section>
-<section id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
+</div>
+<div class="section" id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
 <p>A <strong>moment</strong> of a distribution can be defined in terms of its probability density function or probability mass function. Before defining moments, it is best to first define the <strong>expectation</strong> of a function <strong>g(x)</strong> for a given distribution. For a continuous distribution with PDF <span class="math notranslate nohighlight">\(f(x)\)</span>, this is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -245,24 +245,24 @@ E(g(x)) = \sum_i  g(x_i) f(x_i).
 \end{align}\]</div>
 <p>The nth moment of a distribution is <span class="math notranslate nohighlight">\(E(x^n)\)</span>. The first moment of a distribution is called the <strong>mean</strong>, and here we will denote it at <span class="math notranslate nohighlight">\(\mu\)</span>. We define the nth <strong>central moment</strong> as <span class="math notranslate nohighlight">\(E((x-\mu)^n)\)</span>.</p>
 <p>Perhaps the two most important moments of a distribution are the first moment (the mean) and the second central moment, <span class="math notranslate nohighlight">\(E((x-\mu)^n)\)</span>, which is called the <strong>variance</strong>. For each distribution I display its mean and variance, if they exist.</p>
-</section>
-<section id="useful-data-generation-concepts">
-<h2>Useful data generation concepts<a class="headerlink" href="#useful-data-generation-concepts" title="Link to this heading"></a></h2>
+</div>
+<div class="section" id="useful-data-generation-concepts">
+<h2>Useful data generation concepts<a class="headerlink" href="#useful-data-generation-concepts" title="Permalink to this heading"></a></h2>
 <p>In describing stories of distributions, the concepts of a <strong>Bernoulli trial</strong> and of a <strong>Poisson process</strong> are useful.</p>
-<section id="bernoulli-trial">
-<h3>Bernoulli trial<a class="headerlink" href="#bernoulli-trial" title="Link to this heading"></a></h3>
+<div class="section" id="bernoulli-trial">
+<h3>Bernoulli trial<a class="headerlink" href="#bernoulli-trial" title="Permalink to this heading"></a></h3>
 <p>A Bernoulli trial is an experiment that has two outcomes that can be encoded as success (<span class="math notranslate nohighlight">\(y=1\)</span>) or failure (<span class="math notranslate nohighlight">\(y = 0\)</span>). The words “success” and “failure” do not necessarily mean positive or negative outcomes as they appeal to human emotion. They are just names for the encodings of the outcomes.</p>
-</section>
-<section id="poisson-process">
-<h3>Poisson process<a class="headerlink" href="#poisson-process" title="Link to this heading"></a></h3>
+</div>
+<div class="section" id="poisson-process">
+<h3>Poisson process<a class="headerlink" href="#poisson-process" title="Permalink to this heading"></a></h3>
 <p>Rare events occur with a rate <span class="math notranslate nohighlight">\(\lambda\)</span> per unit time. There is no “memory” of previous events; i.e., that rate is independent of time. A process that generates such events is called a Poisson process. The occurrence of a rare event in this context is referred to as an <em>arrival</em>.</p>
-</section>
-</section>
-<section id="multivariate-distributions">
-<h2>Multivariate distributions<a class="headerlink" href="#multivariate-distributions" title="Link to this heading"></a></h2>
+</div>
+</div>
+<div class="section" id="multivariate-distributions">
+<h2>Multivariate distributions<a class="headerlink" href="#multivariate-distributions" title="Permalink to this heading"></a></h2>
 <p>So far, we have assumed <strong>univariate distributions</strong>, that is probability distributions of a single random variable. We may also consider <strong>multivariate distributions</strong>, which describe more than one random variable. For a distribution of <span class="math notranslate nohighlight">\(n\)</span> random variables, we define the PMF or PDF as <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span>. It is permissible that some variables are discrete and others continuous. For ease of discussion, we can consider the bivariate case describing random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> which may take on values <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. In that case, the PMF or PDF is written as <span class="math notranslate nohighlight">\(f(x, y)\)</span>. The bivariate cumulative distribution function is given by <span class="math notranslate nohighlight">\(F(x, y) = P(X \le x, Y \le y)\)</span>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -276,11 +276,11 @@ E(g(x)) = \sum_i  g(x_i) f(x_i).
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Oct 06, 2024.
+      <span class="lastupdated">Last updated on Dec 18, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x1308d6990> 
+   <jinja2.runtime.BlockReference object at 0x16aff3530> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

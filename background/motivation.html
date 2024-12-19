@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motivation &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -81,6 +80,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/halfcauchy.html">Half-Cauchy distribution</a></li>
@@ -128,13 +128,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="motivation">
-<span id="id1"></span><h1>Motivation<a class="headerlink" href="#motivation" title="Link to this heading"></a></h1>
+  <div class="section" id="motivation">
+<span id="id1"></span><h1>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading"></a></h1>
 <p>The building blocks of statistical models are probability distributions. Specifying a model amounts to choosing probability distributions that describe the process of data generation. In some cases, you need to derive the distribution based on specific considerations or your experiment or model (or even numerically compute it when it cannot be written in closed form). In many practical cases, though, your model is composed of standard probability distributions. These distributions have <strong>stories</strong> associated with them. That is, the mathematical particulars of the distribution follow from a description of a data generation process. For example, the story behind the Bernoulli distribution is as follows. The outcome of a coin flip is Bernoulli distributed. So in building models, if your data generation process matches the story of a distribution, you know that this is the distribution to choose for your model.</p>
 <p>In Bayesian contexts, you need to specify priors for parameters. The prior encodes your knowledge about the values of a parameter before seeing the data. In practice, you can sketch a probability density function (PDF) for a parameter ,or more rarely the probability mass function (PMF) in the case where the parameter takes on discrete values. (Read on for definitions for PDFs and PMFs if those terms are unfamiliar to you.) It is convenient to find a named distribution with associated parameters that gives a PDF or PMF that match your sketch.</p>
 <p>The named distributions are accessed through various software packages. It is often time consuming to search through documentation to find the right syntax to use for sampling out of a distribution, plotting its PDF, etc. Having a convenient central place to look up the syntax for using a distribution in various software packages <em>with consistent choice of parametrization</em> is useful.</p>
 <p>It is with these ideas in mind that I developed the Distribution Explorer. Each entry in the Explorer features a distribution with useful information, including its story, mathematical expressions for its PDF/PMF and CDF, moments, interactive plots of the PDF/PMF and CDF with sliders allowing adjustment of the parameters, and more. This helps you get a feel for the distribution, and also find parameters that match a sketch you may have for a prior.</p>
-</section>
+</div>
 
 
            </div>
@@ -148,11 +148,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Oct 06, 2024.
+      <span class="lastupdated">Last updated on Dec 18, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x130649d30> 
+   <jinja2.runtime.BlockReference object at 0x16af9eb10> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

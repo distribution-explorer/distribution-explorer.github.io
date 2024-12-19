@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Special functions &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -98,6 +97,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/halfcauchy.html">Half-Cauchy distribution</a></li>
@@ -145,75 +145,75 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="special-functions">
-<h1>Special functions<a class="headerlink" href="#special-functions" title="Link to this heading"></a></h1>
+  <div class="section" id="special-functions">
+<h1>Special functions<a class="headerlink" href="#special-functions" title="Permalink to this heading"></a></h1>
 <p>Some PDFs and PMFs and many CDFs are expressed in terms of <a class="reference external" href="https://en.wikipedia.org/wiki/Special_functions">special functions</a>. Here, for reference, are special functions featured in various distributions in the Distribution Explorer. In general, these functions are functions of complex variables, but for our purposes we will only consider real numbers.</p>
-<section id="factorial">
-<h2>Factorial<a class="headerlink" href="#factorial" title="Link to this heading"></a></h2>
+<div class="section" id="factorial">
+<h2>Factorial<a class="headerlink" href="#factorial" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial</a> of a positive real number <span class="math notranslate nohighlight">\(n\)</span> is denoted as <span class="math notranslate nohighlight">\(n!\)</span> and is defined as</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 n! = n \cdot (n-1) \cdot (n-2) \cdots 1,
 \end{align}\]</div>
 <p>with the convention that <span class="math notranslate nohighlight">\(0! = 1\)</span>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="binomial-coefficient">
-<h2>Binomial coefficient<a class="headerlink" href="#binomial-coefficient" title="Link to this heading"></a></h2>
+<div class="section" id="binomial-coefficient">
+<h2>Binomial coefficient<a class="headerlink" href="#binomial-coefficient" title="Permalink to this heading"></a></h2>
 <p>A Binomial coefficient of two nonnegative real numbers <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, with <span class="math notranslate nohighlight">\(n \le N\)</span>, is denoted as <span class="math notranslate nohighlight">\(\displaystyle \begin{pmatrix}N \\n\end{pmatrix}\)</span>, and is defined as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 \begin{pmatrix}N \\n\end{pmatrix} = \frac{N!}{n!(N-n)!}.
 \end{align}\end{split}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="gamma-function">
-<h2>Gamma function<a class="headerlink" href="#gamma-function" title="Link to this heading"></a></h2>
+<div class="section" id="gamma-function">
+<h2>Gamma function<a class="headerlink" href="#gamma-function" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_function">gamma function</a>, <span class="math notranslate nohighlight">\(\Gamma(x)\)</span>, may be thought of as a continuous generalization of the factorial. For positive integer <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\Gamma(n) = (n-1)!\)</span>. The Gamma function for positive real <span class="math notranslate nohighlight">\(x\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \Gamma(x) = \int_0^\infty\mathrm{d}t\,t^{x-1}\mathrm{e}^{-t}.
 \end{align}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="lower-incomplete-gamma-function">
-<h2>Lower incomplete gamma function<a class="headerlink" href="#lower-incomplete-gamma-function" title="Link to this heading"></a></h2>
+<div class="section" id="lower-incomplete-gamma-function">
+<h2>Lower incomplete gamma function<a class="headerlink" href="#lower-incomplete-gamma-function" title="Permalink to this heading"></a></h2>
 <p>Notice that the integral in the gamma function runs from zero to infinity. If we instead truncate the integration at <span class="math notranslate nohighlight">\(y\)</span>, we get the <a class="reference external" href="https://en.wikipedia.org/wiki/Incomplete_gamma_function">lower incomplete gamma function</a>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \gamma(x, y) = \int_0^y \mathrm{d}t \, t^{x-1}\mathrm{e}^{-t}.
 \end{align}\]</div>
 <p>Note that the function is denoted with a lowercase <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="upper-incomplete-gamma-function">
-<h2>Upper incomplete gamma function<a class="headerlink" href="#upper-incomplete-gamma-function" title="Link to this heading"></a></h2>
+<div class="section" id="upper-incomplete-gamma-function">
+<h2>Upper incomplete gamma function<a class="headerlink" href="#upper-incomplete-gamma-function" title="Permalink to this heading"></a></h2>
 <p>Similarly, the <a class="reference external" href="https://en.wikipedia.org/wiki/Incomplete_gamma_function">upper incomplete gamma function</a> results from beginning the integral in the gamma function at <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \Gamma(x, y) = \int_y^\infty \mathrm{d}t \, t^{x-1}\mathrm{e}^{-t}.
 \end{align}\]</div>
 <p>Note that am uppercase <span class="math notranslate nohighlight">\(\Gamma\)</span> is used, but the presence of two arguments distinguishes this function notationally from the gamma function.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="regularized-lower-incomplete-gamma-function">
-<h2>Regularized lower incomplete gamma function<a class="headerlink" href="#regularized-lower-incomplete-gamma-function" title="Link to this heading"></a></h2>
+<div class="section" id="regularized-lower-incomplete-gamma-function">
+<h2>Regularized lower incomplete gamma function<a class="headerlink" href="#regularized-lower-incomplete-gamma-function" title="Permalink to this heading"></a></h2>
 <p>When we divide the lower incomplete gamma function by the corresponding complete gamma function, we get a regularized lower incomplete gamma function, often denoted <span class="math notranslate nohighlight">\(P(x, y)\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 P(x, y) = \frac{\gamma(x, y)}{\Gamma(x)}.
 \end{align}\]</div>
-</section>
-<section id="regularized-upper-incomplete-gamma-function">
-<h2>Regularized upper incomplete gamma function<a class="headerlink" href="#regularized-upper-incomplete-gamma-function" title="Link to this heading"></a></h2>
+</div>
+<div class="section" id="regularized-upper-incomplete-gamma-function">
+<h2>Regularized upper incomplete gamma function<a class="headerlink" href="#regularized-upper-incomplete-gamma-function" title="Permalink to this heading"></a></h2>
 <p>Similarly, the upper incomplete gamma function may also be regularized, and is often denoted <span class="math notranslate nohighlight">\(Q(x, y)\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 Q(x, y) = \frac{\Gamma(x, y)}{\Gamma(x)}.
 \end{align}\]</div>
-</section>
-<section id="beta-function">
-<h2>Beta function<a class="headerlink" href="#beta-function" title="Link to this heading"></a></h2>
+</div>
+<div class="section" id="beta-function">
+<h2>Beta function<a class="headerlink" href="#beta-function" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_function">beta function</a> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -229,47 +229,47 @@ B(x, y) = \int_0^1\mathrm{d}t\,t^{x-1} (1-t)^{y-1}.
 \[\begin{split}\begin{align}
 B(m, n) = \frac{(m+n)/mn}{\displaystyle \begin{pmatrix}N \\n\end{pmatrix}}.
 \end{align}\end{split}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="multivariate-beta-function">
-<h2>Multivariate beta function<a class="headerlink" href="#multivariate-beta-function" title="Link to this heading"></a></h2>
+<div class="section" id="multivariate-beta-function">
+<h2>Multivariate beta function<a class="headerlink" href="#multivariate-beta-function" title="Permalink to this heading"></a></h2>
 <p>The beta function may be generalized to a multivariate case, called the <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_function#Multivariate_beta_function">multivariate Beta function</a>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 B(\boldsymbol{\alpha}) = \frac{\prod_{i=1}^K\Gamma(\alpha_i)}{\Gamma\left(\sum_{i=1}^K \alpha_i\right)}
 \end{align}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="incomplete-beta-function">
-<h2>Incomplete beta function<a class="headerlink" href="#incomplete-beta-function" title="Link to this heading"></a></h2>
+<div class="section" id="incomplete-beta-function">
+<h2>Incomplete beta function<a class="headerlink" href="#incomplete-beta-function" title="Permalink to this heading"></a></h2>
 <p>Looking at the integral form of the beta function, above, we can define an <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_function#Incomplete_beta_function">incomplete beta function</a> by truncating the integral. The incomplete beta function is denoted <span class="math notranslate nohighlight">\(B(x; a, b)\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 B(x; a, b) = \int_0^x\mathrm{d}t\,t^{a-1} (1-t)^{b-1}.
 \end{align}\]</div>
 <p>Note that <span class="math notranslate nohighlight">\(x\)</span> must be between zero and one.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="regularized-incomplete-beta-function">
-<h2>Regularized incomplete beta function<a class="headerlink" href="#regularized-incomplete-beta-function" title="Link to this heading"></a></h2>
+<div class="section" id="regularized-incomplete-beta-function">
+<h2>Regularized incomplete beta function<a class="headerlink" href="#regularized-incomplete-beta-function" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_function#Incomplete_beta_function">regularized incomplete beta function</a>. <span class="math notranslate nohighlight">\(I_x(a,b)\)</span> is computed by dividing the incomplete beta function by the corresponding beta function.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 I_x(a, b) = \frac{B(x; a, b)}{B(a, b)} = \frac{\int_0^x\mathrm{d}t\,t^{a-1} (1-t)^{b-1}}{\int_0^1\mathrm{d}t\,t^{x-1} (1-t)^{y-1}}.
 \end{align}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="error-function">
-<h2>Error function<a class="headerlink" href="#error-function" title="Link to this heading"></a></h2>
+<div class="section" id="error-function">
+<h2>Error function<a class="headerlink" href="#error-function" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Error_function">error function</a>, <span class="math notranslate nohighlight">\(\text{erf}(x)\)</span> is defined by</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \text{erf}(x) = \frac{2}{\sqrt{\pi}}\int_0^x \mathrm{d}t\,\mathrm{e}^{-t^2}.
 \end{align}\]</div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="modified-bessel-function-of-the-first-kind">
-<h2>Modified Bessel function of the first kind<a class="headerlink" href="#modified-bessel-function-of-the-first-kind" title="Link to this heading"></a></h2>
+<div class="section" id="modified-bessel-function-of-the-first-kind">
+<h2>Modified Bessel function of the first kind<a class="headerlink" href="#modified-bessel-function-of-the-first-kind" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Bessel_function">Bessel functions</a> are solutions to Bessel’s differential equation, which appears in solutions to diffusion problems in cylindrical coordinates. Modified Bessel functions of the first kind appear in the analysis of the Von Mises distribution. For integer <span class="math notranslate nohighlight">\(\alpha\)</span>, these are given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -281,8 +281,8 @@ I_\alpha(x) = \frac{1}{\pi}\int_0^\pi\,\mathrm{d}\theta\,\cos(\alpha\theta)\,\ma
 I_\alpha(x) = \left(\frac{x}{2}\right)^n\sum_{k=0}^\infty\frac{(x/2)^{2k}}{k!\,\Gamma(\alpha + k + 1)},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma(x)\)</span> denotes the <a class="reference external" href="Gammafunction">gamma function</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -296,11 +296,11 @@ I_\alpha(x) = \left(\frac{x}{2}\right)^n\sum_{k=0}^\infty\frac{(x/2)^{2k}}{k!\,\
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Oct 06, 2024.
+      <span class="lastupdated">Last updated on Dec 18, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x130f22e40> 
+   <jinja2.runtime.BlockReference object at 0x16b145640> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
