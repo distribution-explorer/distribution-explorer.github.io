@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geometric distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -144,59 +145,55 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="geometric-distribution">
-<span id="geometric"></span><h1>Geometric distribution<a class="headerlink" href="#geometric-distribution" title="Permalink to this heading"></a></h1>
+  <section id="geometric-distribution">
+<span id="geometric"></span><h1>Geometric distribution<a class="headerlink" href="#geometric-distribution" title="Link to this heading"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>We perform a series of Bernoulli trials with probability of success <span class="math notranslate nohighlight">\(\theta\)</span> until we get a success. The number of failures <span class="math notranslate nohighlight">\(y\)</span> before the success is Geometrically distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>Consider polymerization of an actin filament. At each time step, an actin monomer may add to the end of the filament (“failure”), or an actin monomer may fall off the end (“success”) with (usually very low) probability <span class="math notranslate nohighlight">\(\theta\)</span>. The length of actin filaments, measured in number of constitutive monomers, is Geometrically distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>The Geometric distribution is parametrized by a single value, <span class="math notranslate nohighlight">\(\theta\)</span>, the probability that the Bernoulli trial is successful.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>The Geometric distribution, as defined here, has support on the nonnegative integers.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this heading"></a></h2>
+<section id="probability-mass-function">
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(y;\theta) = (1-\theta)^y \, \theta.
 \end{align}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
+<section id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
 <p>The CDF for nonnegative integer <span class="math notranslate nohighlight">\(y\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 F(y;\theta) = 1 - (1 - \theta)^{y+1}.
 \end{align}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{\frac{1-\theta}{\theta}}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{1-\theta}{\theta^2}}\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 63%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -217,30 +214,30 @@ F(y;\theta) = 1 - (1 - \theta)^{y+1}.
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The Geometric distribution is a special case of the <a class="reference internal" href="negative_binomial.html#negative-binomial"><span class="std std-ref">Negative Binomial distribution</span></a> in which <span class="math notranslate nohighlight">\(\alpha=1\)</span> and <span class="math notranslate nohighlight">\(\theta = \beta/(1+\beta)\)</span>.</p></li>
 <li><p>The continuous analog of the Geometric distribution is the <a class="reference internal" href="../continuous/exponential.html#exponential"><span class="std std-ref">Exponential distribution</span></a>.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The Geometric distribution sometimes defined by replacing <span class="math notranslate nohighlight">\(y\)</span> with <span class="math notranslate nohighlight">\(y-1\)</span> such that the PMF is <span class="math notranslate nohighlight">\(f(y;\theta) = (1-\theta)^{y-1} \, \theta\)</span>. In this parametrization the Geometric distribution describes the number of successive Bernoulli <em>trials</em> (not just the failures; the success is included) necessary to get a success. This is the parametrization that NumPy and SciPy use. To adjust for this while still using the PMF defined above, we use the <code class="docutils literal notranslate"><span class="pre">loc=-1</span></code> keyword argument in the SciPy implementation and we subtract one from the random numbers generated using Numpy.</p></li>
 <li><p>The Geometric distribution is not implemented in Stan. You can instead use a <a class="reference internal" href="negative_binomial.html#negative-binomial"><span class="std std-ref">Negative Binomial distribution</span></a> fixing the parameter <span class="math notranslate nohighlight">\(\alpha\)</span> to be unity and relating the parameter <span class="math notranslate nohighlight">\(\beta\)</span> of the Negative Binomial distribution to <span class="math notranslate nohighlight">\(\theta\)</span> as <span class="math notranslate nohighlight">\(\theta = \beta/(1+\beta)\)</span>.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pmf-and-cdf-plots">
-<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-0517ca00eb0d4c8f91529b6ce4b99bb3-discrete-geometric.js" id="a663cc60-346a-4e79-807d-034f3e83e73b"></script></div>
+<section id="pmf-and-cdf-plots">
+<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Link to this heading"></a></h2>
+<script src="bokeh-content-c573da8f5dc045749b4a3ee234cce0cb-discrete-geometric.js" id="b6df2884-ce22-4008-a8d8-9f4c66535e3a"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Geometric_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.geometric.html">Numpy</a></p></li>
@@ -248,8 +245,8 @@ F(y;\theta) = 1 - (1 - \theta)^{y+1}.
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Geometric">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/negative-binomial-distribution.html">Stan</a> (Negative Binomial, from which Geometric may be generated)</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -263,11 +260,11 @@ F(y;\theta) = 1 - (1 - \theta)^{y+1}.
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 18, 2024.
+      <span class="lastupdated">Last updated on Dec 23, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x16a5e4920> 
+   <jinja2.runtime.BlockReference object at 0x139a69eb0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

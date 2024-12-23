@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Negative Binomial distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -144,32 +145,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="negative-binomial-distribution">
-<span id="negative-binomial"></span><h1>Negative Binomial distribution<a class="headerlink" href="#negative-binomial-distribution" title="Permalink to this heading"></a></h1>
+  <section id="negative-binomial-distribution">
+<span id="negative-binomial"></span><h1>Negative Binomial distribution<a class="headerlink" href="#negative-binomial-distribution" title="Link to this heading"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>We perform a series of Bernoulli trials, each with probability <span class="math notranslate nohighlight">\(\beta/(1+\beta)\)</span> of success. The number of failures, <span class="math notranslate nohighlight">\(y\)</span>, before we get <span class="math notranslate nohighlight">\(\alpha\)</span> successes is Negative Binomially distributed.</p>
 <p>An equivalent story is this: Draw a parameter <span class="math notranslate nohighlight">\(\lambda\)</span> out of a <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a> with parameters <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. Then draw a number <span class="math notranslate nohighlight">\(y\)</span> out of a <a class="reference internal" href="poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a> with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>. Then <span class="math notranslate nohighlight">\(y\)</span> is Negative Binomially distributed with parameters <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. For this reason, the Negative Binomial distribution is sometimes called the Gamma-Poisson distribution.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>Bursty gene expression can give mRNA count distributions that are Negative Binomially distributed. Here, “success” is that a burst in gene expression stops. In this case, the parameter <span class="math notranslate nohighlight">\(1/\beta\)</span> is the mean number of transcripts in a burst of expression. The parameter <span class="math notranslate nohighlight">\(\alpha\)</span> is related to the frequency of the bursts.  If multiple bursts are possible within the lifetime of mRNA, then <span class="math notranslate nohighlight">\(\alpha &gt; 1\)</span>. Then, the number of “failures” is the number of mRNA transcripts that are made in the characteristic lifetime of mRNA.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>There are two parameters: <span class="math notranslate nohighlight">\(\alpha\)</span>, the desired number of successes, and <span class="math notranslate nohighlight">\(\beta\)</span>, which is the scale parameter of the Gamma distribution that gives rise to the Negative Binomial. The probability of success of each Bernoulli trial is given by <span class="math notranslate nohighlight">\(\beta/(1+\beta)\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>The Negative-Binomial distribution is supported on the set of nonnegative integers.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this heading"></a></h2>
+<section id="probability-mass-function">
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 f(y;\alpha,\beta) = \begin{pmatrix}
@@ -184,10 +185,10 @@ y+\alpha-1 \\
 f(y;\alpha,\beta) = \frac{\Gamma(y+\alpha)}{\Gamma(\alpha) \, y!}\,\left(\frac{\beta}{1+\beta}\right)^\alpha \left(\frac{1}{1+\beta}\right)^y.
 \end{align}\]</div>
 <p>See the notes below for other parametrizations.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
+<section id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
 <p>The CDF evaluated at nonnegative integers <span class="math notranslate nohighlight">\(n\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -198,21 +199,17 @@ F(n;N,\theta) = I_{\beta/(1+\beta)}(\alpha, n + 1),
 \[\begin{align}
 I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 \end{align}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\alpha}{\beta}}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\alpha(1+\beta)}{\beta^2}}\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 48%" />
-<col style="width: 52%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -245,19 +242,19 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="geometric.html#geometric"><span class="std std-ref">Geometric distribution</span></a> is a special case of the Negative Binomial distribution in which <span class="math notranslate nohighlight">\(\alpha=1\)</span> and <span class="math notranslate nohighlight">\(\theta = \beta/(1+\beta)\)</span>.</p></li>
 <li><p>The continuous analog of the Negative Binomial distribution is the <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a>.</p></li>
 <li><p>In the limit where <span class="math notranslate nohighlight">\(\alpha\)</span> is very large, but the ratio <span class="math notranslate nohighlight">\(\beta/\alpha\)</span> is fixed, the Negative Binomial distribution becomes a <a class="reference internal" href="poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a> with parameter <span class="math notranslate nohighlight">\(\alpha/\beta\)</span>. See the note below for this limit.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul>
 <li><p>The Negative Binomial distribution may be parametrized such that the probability mass function is</p>
 <div class="math notranslate nohighlight">
@@ -280,20 +277,20 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{n\,\frac{1-p}{p^2}}\)</span>.</p>
 </li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pmf-and-cdf-plots">
-<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
+<section id="pmf-and-cdf-plots">
+<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Link to this heading"></a></h2>
 <p><strong>Note</strong>: Quantile setting of both parameters for a Negative Binomial distribution is a challenging problem for a few reasons. First, there is no guarantee that a parameter set exists to give two specified value-quantile pairs can be obtained. Secondly, in other cases, there is a degeneracy of parameters that give the same quantiles. As an example, if we wished for 4 to be the 2.5th percentile and 17 to be the 97.5th percentile, we could achieve this with <span class="math notranslate nohighlight">\(\alpha = 100\)</span> and <span class="math notranslate nohighlight">\(\beta = 10\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 350\)</span> and <span class="math notranslate nohighlight">\(\beta = 35\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 10^9\)</span> and <span class="math notranslate nohighlight">\(\beta = 10^8\)</span>, and countless other combinations. (This is because the large <span class="math notranslate nohighlight">\(\alpha\)</span> limit is Poisson.) So, instead of manipulating two parameters to hit two quantiles, we can lock one parameter and set the other parameter to give a single desired percentile. In the <span class="math notranslate nohighlight">\(\alpha\)</span>-<span class="math notranslate nohighlight">\(\beta\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\alpha\)</span>, and in the <span class="math notranslate nohighlight">\(\mu\text{-}\phi\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>In the α-β formulation:</p>
-<script src="bokeh-content-ef1dc830f7404167b79a4e6434f286ba-discrete-negative_binomial.js" id="d74040d6-a5e0-426d-84eb-90ab327e4fa8"></script><div class="line-block">
+<script src="bokeh-content-cd913d26835a4e0fa9ddf441c86c4195-discrete-negative_binomial.js" id="aeb85c15-c16c-4468-b398-bee44ddf5145"></script><div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>In the µ-φ formulation:</p>
-<script src="bokeh-content-a84215f3c8d64aafa2ea5889f051dec6-discrete-negative_binomial.js" id="b30451a5-b0fe-4712-a063-950b306b39f1"></script></div>
+<script src="bokeh-content-d954a1e1c2cb4e63b1200ed8938799a3-discrete-negative_binomial.js" id="d7619faa-5289-41fd-9711-c55331268c9c"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.negative_binomial.html">Numpy</a></p></li>
@@ -302,8 +299,8 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/negative-binomial-distribution.html">Stan α-β formulation</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/nbalt.html">Stan µ-φ formulation formulation</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -317,11 +314,11 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 18, 2024.
+      <span class="lastupdated">Last updated on Dec 23, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x16afea000> 
+   <jinja2.runtime.BlockReference object at 0x139759850> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

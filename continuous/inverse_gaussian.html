@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inverse Gaussian distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -144,39 +145,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="inverse-gaussian-distribution">
-<span id="inverse-gaussian"></span><h1>Inverse Gaussian distribution<a class="headerlink" href="#inverse-gaussian-distribution" title="Permalink to this heading"></a></h1>
+  <section id="inverse-gaussian-distribution">
+<span id="inverse-gaussian"></span><h1>Inverse Gaussian distribution<a class="headerlink" href="#inverse-gaussian-distribution" title="Link to this heading"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>The amount of time it takes for a Brownian particle with drift to diffuse to a boundary a given distance away is Inverse Gaussian distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>Interspike intervals of neurons are often Inverse Gaussian distributed. In such cases, the firing threshold corresponds to a first passage to a boundary of a diffusive process with drift.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>The Inverse Gaussian distribution has two parameters, <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span>, both of which must be positive. In the diffusion-with-drift story, if <span class="math notranslate nohighlight">\(x\)</span> is the position of the boundary, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient, and <span class="math notranslate nohighlight">\(v\)</span> is the drift velocity, then <span class="math notranslate nohighlight">\(\mu = x / v\)</span> and <span class="math notranslate nohighlight">\(\lambda = x^2/2D\)</span>. When used to model first passage times, both parameters have dimension of time.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>The Inverse Gaussian distribution is supported on the set of positive real numbers.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-density-function">
-<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this heading"></a></h2>
+<section id="probability-density-function">
+<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(y;\mu, \lambda) = \sqrt{\frac{\lambda}{2\pi y^3}}\,\exp\left[-\frac{\lambda(y-\mu)^2}{2 \mu^2 y}\right].
 \end{align}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
+<section id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 F(y;\mu, \lambda) = \Phi\left(\sqrt{\frac{\lambda}{y}}\left(\frac{y}{\mu} - 1\right)\right) + \mathrm{e}^{2\lambda/\mu}\,\Phi\left(-\sqrt{\frac{\lambda}{y}}\left(\frac{y}{\mu} + 1\right)\right),
@@ -187,21 +188,17 @@ F(y;\mu, \lambda) = \Phi\left(\sqrt{\frac{\lambda}{y}}\left(\frac{y}{\mu} - 1\ri
 \Phi(y) = \frac{1}{2}\left(1 + \text{erf}\left(\frac{y}{\sqrt{2}}\right)\right)
 \end{align}\]</div>
 <p>is the CDF of the standard <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a> and <span class="math notranslate nohighlight">\(\text{erf}(x)\)</span> denotes the <a class="reference internal" href="../background/special_functions.html#error-function"><span class="std std-ref">error function</span></a>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\mu\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\mu^3/\lambda\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 71%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -222,18 +219,18 @@ F(y;\mu, \lambda) = \Phi\left(\sqrt{\frac{\lambda}{y}}\left(\frac{y}{\mu} - 1\ri
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Despite its name, the Inverse Gaussian distribution is not directly related to the <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a> (a.k.a. Gaussian distribution), at least not mathematically (though, like many unimodal continuous distributions may be locally approximated as Normal). The name derives from the relation of the story of the Inverse Gaussian to that of the Normal. A story of the Normal distribution is as follows: The position of a diffusing Brownian particle with drift at a specified time is Normally distributed. So, the Inverse Gaussian is an “inverse” of the Normal (Gaussian) distribution in the sense that the roles of time and position are swapped in their respective stories. Note that even in the context of Brownian particles, the parameters of the Normal distribution are different from those of the Inverse Gaussian distribution.</p></li>
 <li><p>The limit of <span class="math notranslate nohighlight">\(\mu \to \infty\)</span> corresponds to zero drift velocity. In this limit, the Inverse Gaussian distribution becomes a special case of the <a class="reference internal" href="inverse_gamma.html#inverse-gamma"><span class="std std-ref">Inverse Gamma distribution</span></a>, with <span class="math notranslate nohighlight">\(y\sim\text{InvGamma}(1/2, \lambda/2)\)</span>, that is, an Inverse Gamma distribution with parameters <span class="math notranslate nohighlight">\(\alpha = 1/2\)</span> and <span class="math notranslate nohighlight">\(\beta = \lambda/2\)</span>. This special case is also called a <a class="reference external" href="https://en.wikipedia.org/wiki/Lévy_distribution">Lévy distribution</a>.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The Inverse Gaussian distribution is sometimes called the Wald distribution, named after <a class="reference external" href="https://en.wikipedia.org/wiki/Abraham_Wald">Abraham Wald</a>.</p></li>
 <li><p>The Inverse Gaussian distribution is not implemented in Stan. In order to use the Inverse Gaussian distribution in Stan, include the code below in the <code class="docutils literal notranslate"><span class="pre">functions</span></code> block. This will allow sampling statements like <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">~</span> <span class="pre">inv_gaussian(mu,</span> <span class="pre">lambda)</span></code>. (Note that this will be slower than directly coding the distribution into Stan’s C++ library and including derivative calculations.)</p></li>
@@ -411,22 +408,22 @@ F(y;\mu, \lambda) = \Phi\left(\sqrt{\frac{\lambda}{y}}\left(\frac{y}{\mu} - 1\ri
 </pre></div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pdf-and-cdf-plots">
-<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-ae711f8b2ac14ba7ab6cc91b60e61f24-continuous-inverse_gaussian.js" id="a3c9907d-4518-4767-b2cf-f4fbf4412de5"></script></div>
+<section id="pdf-and-cdf-plots">
+<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
+<script src="bokeh-content-316f9a02e4d44b26af89c3649cd18fa1-continuous-inverse_gaussian.js" id="d0f435fd-fa70-4643-9445-7cae6e298c34"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_Gaussian_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.wald.html">Numpy</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.invgauss.html#scipy.stats.invgauss">Scipy</a></p></li>
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.InverseGaussian">Distributions.jl</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -440,11 +437,11 @@ F(y;\mu, \lambda) = \Phi\left(\sqrt{\frac{\lambda}{y}}\left(\frac{y}{\mu} - 1\ri
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 18, 2024.
+      <span class="lastupdated">Last updated on Dec 23, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x16a0729f0> 
+   <jinja2.runtime.BlockReference object at 0x13970b170> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

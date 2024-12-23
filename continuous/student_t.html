@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student-t distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -143,35 +144,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="student-t-distribution">
-<span id="student-t"></span><h1>Student-t distribution<a class="headerlink" href="#student-t-distribution" title="Permalink to this heading"></a></h1>
+  <section id="student-t-distribution">
+<span id="student-t"></span><h1>Student-t distribution<a class="headerlink" href="#student-t-distribution" title="Link to this heading"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>The story of the Student-t distribution largely derives from its relationships with other distributions. One way to think about it is as like the <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a> with heavier tails.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>The Student-t distribution is symmetrically peaked, and its peak is located at <span class="math notranslate nohighlight">\(\mu\)</span>, the location paramter. The peak’s width is dictated by scale parameter <span class="math notranslate nohighlight">\(\sigma\)</span>, which is positive. Finally, the shape parameter, called “degrees of freedom,” is <span class="math notranslate nohighlight">\(\nu\)</span>. This last parameter imparts the distribution with heavy tails for small <span class="math notranslate nohighlight">\(\nu\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>The Student-t distribution is supported on the set of real numbers.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-density-function">
-<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this heading"></a></h2>
+<section id="probability-density-function">
+<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(y;\nu, \mu, \sigma) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\frac{\nu}{2}\right)\sqrt{\pi \nu \sigma^2}}\left(1 + \frac{(y-\mu)^2}{\nu \sigma^2}\right)^{-\frac{\nu + 1}{2}},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma(x)\)</span> denote a <a class="reference internal" href="../background/special_functions.html#gamma-function"><span class="std std-ref">gamma function</span></a>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
+<section id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 F(y;\nu, \mu, \sigma) = \left\{\begin{array}{lll}
@@ -181,21 +182,17 @@ F(y;\nu, \mu, \sigma) = \left\{\begin{array}{lll}
 \right.
 \end{align}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(I_x(a, b)\)</span> denotes the <a class="reference internal" href="../background/special_functions.html#regularized-incomplete-beta-function"><span class="std std-ref">regularized incomplete beta function</span></a>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\mu\)</span> for <span class="math notranslate nohighlight">\(\nu &gt; 1\)</span>, otherwise undefined.</p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\nu}{\nu - 2}}\,\sigma^2\)</span> for <span class="math notranslate nohighlight">\(\nu &gt; 2\)</span>. If <span class="math notranslate nohighlight">\(1 &lt; \nu &lt; 2\)</span>, then the variance is infinite. If <span class="math notranslate nohighlight">\(\nu \le 1\)</span>, the variance is undefined.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 59%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -219,30 +216,30 @@ F(y;\nu, \mu, \sigma) = \left\{\begin{array}{lll}
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>In the <span class="math notranslate nohighlight">\(\nu \to \infty\)</span> limit, the Student-t distribution becomes a <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a>.</p></li>
 <li><p>The <a class="reference internal" href="cauchy.html#cauchy"><span class="std std-ref">Cauchy distribution</span></a> distribution is a special case of the Student-t distribution in which <span class="math notranslate nohighlight">\(\nu = 1\)</span>.</p></li>
 <li><p>We get this distribution whenever we marginalize an unknown <span class="math notranslate nohighlight">\(\sigma\)</span> out of a <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a> with an improper prior on <span class="math notranslate nohighlight">\(\sigma\)</span> of <span class="math notranslate nohighlight">\(1/\sigma\)</span>.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Only the standard Student-t distribution (<span class="math notranslate nohighlight">\(\mu = 0\)</span> and <span class="math notranslate nohighlight">\(\sigma = 1\)</span>) is available in NumPy. You can still draw out of the Student-t distribution by performing a transformation on the samples out of the standard Student-t distribution, as shown in the usage, above. The same is true for Distributions.jl. Shown is an example where <span class="math notranslate nohighlight">\(x\)</span> random numbers are drawn from the distribution and transformed using broadcasting.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pdf-and-cdf-plots">
-<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-3a2d97d977be461f87e9359ae4c0e404-continuous-student_t.js" id="a29cd0d2-d66e-4b39-91f7-1b088410abe7"></script></div>
+<section id="pdf-and-cdf-plots">
+<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
+<script src="bokeh-content-84761e5634bd40e5b0729ed0a18475cc-continuous-student_t.js" id="f7b82c78-70ee-4176-904d-d2ef00daabf2"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Student%27s_t-distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.standard_t.html">Numpy</a></p></li>
@@ -250,8 +247,8 @@ F(y;\nu, \mu, \sigma) = \left\{\begin{array}{lll}
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.TDist">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/student-t-distribution.html">Stan</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -265,11 +262,11 @@ F(y;\nu, \mu, \sigma) = \left\{\begin{array}{lll}
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 18, 2024.
+      <span class="lastupdated">Last updated on Dec 23, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x16a8b9f70> 
+   <jinja2.runtime.BlockReference object at 0x139a6a1b0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

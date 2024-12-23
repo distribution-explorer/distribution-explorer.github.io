@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beta distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -143,55 +144,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="beta-distribution">
-<span id="beta"></span><h1>Beta distribution<a class="headerlink" href="#beta-distribution" title="Permalink to this heading"></a></h1>
+  <section id="beta-distribution">
+<span id="beta"></span><h1>Beta distribution<a class="headerlink" href="#beta-distribution" title="Link to this heading"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>Say you wait for two multistep Poisson processes to arrive. The individual steps of each process happen at the same rate, but the first multistep process requires <span class="math notranslate nohighlight">\(\alpha\)</span> steps and the second requires <span class="math notranslate nohighlight">\(\beta\)</span> steps. The fraction of the total waiting time taken by the first process is Beta distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>There are two shape parameters, both strictly positive: <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>, defined in the above story.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>The Beta distribution has support on the interval [0, 1].</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-density-function">
-<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this heading"></a></h2>
+<section id="probability-density-function">
+<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 f(\theta; \alpha, \beta) = \frac{\theta^{\alpha-1}(1-\theta)^{\beta-1}}{B(\alpha, \beta)},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(B(\alpha, \beta)\)</span> is the <a class="reference internal" href="../background/special_functions.html#beta-function"><span class="std std-ref">beta function</span></a>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
+<section id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\,\int_0^\theta \mathrm{d}x\,x^{\alpha-1}(1-x)^{\beta-1},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(I_\theta(\alpha, \beta)\)</span> is the <a class="reference internal" href="../background/special_functions.html#regularized-incomplete-beta-function"><span class="std std-ref">regularized incomplete beta function</span></a>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\alpha}{\alpha + \beta}}\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}}\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 49%" />
-<col style="width: 51%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -224,18 +221,18 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="uniform.html#uniform"><span class="std std-ref">Uniform distribution</span></a> on the interval [0, 1] is a special case of the Beta distribution with <span class="math notranslate nohighlight">\(\alpha = \beta = 1\)</span>.</p></li>
 <li><p>The Beta distribution is a special case of the <a class="reference internal" href="../multivariate_continuous/dirichlet.html#dirichlet"><span class="std std-ref">Dirichlet distribution</span></a> with <span class="math notranslate nohighlight">\(K=2\)</span>.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul>
 <li><p>The story of the Beta distribution is difficult to parse. Most importantly, the Beta distribution allows us to put probabilities on unknown probabilities. It is only defined on <span class="math notranslate nohighlight">\(0 \le \theta \le 1\)</span>, and <span class="math notranslate nohighlight">\(\theta\)</span> here can be interpreted as a probability, say of success in a Bernoulli trial.</p></li>
 <li><p>The case where <span class="math notranslate nohighlight">\(\alpha = \beta = 0\)</span> is not technically a probability distribution because the PDF cannot be normalized. Nonetheless, it is often used as an improper prior, and this prior is known a Haldane prior, names after biologist <a class="reference external" href="https://en.wikipedia.org/wiki/J._B._S._Haldane">J. B. S. Haldane</a>. The case where <span class="math notranslate nohighlight">\(\alpha = \beta = 1/2\)</span>  is sometimes called a Jeffreys prior.</p></li>
@@ -256,19 +253,19 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 <p>Variance: <span class="math notranslate nohighlight">\(\displaystyle{\frac{\phi(1-\phi)}{1+\kappa}}\)</span>.</p>
 </li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pdf-and-cdf-plots">
-<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
+<section id="pdf-and-cdf-plots">
+<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
 <p>In the α-β formulation:</p>
-<script src="bokeh-content-77dc9f0ce9ec4ed680cf8eb28e4a62ce-continuous-beta.js" id="c9565b92-3174-4df6-9fef-09830d0d6a05"></script><div class="line-block">
+<script src="bokeh-content-000df5640c764c08ba8a76420be33fbf-continuous-beta.js" id="c94a9ad4-f547-4d34-8f95-7b5a3d1782ee"></script><div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>In the φ-κ formulation:</p>
-<script src="bokeh-content-33cb5d3a9f6946fc8959e70a11aaa91c-continuous-beta.js" id="e8a5d700-9ced-48d5-a4f4-0cc502c87fb4"></script></div>
+<script src="bokeh-content-6b107d58512847a8bb79b1cd24ba57d8-continuous-beta.js" id="e8fddd64-6d67-4e1c-a5c7-53e0e8914385"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Beta_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.beta.html">Numpy</a></p></li>
@@ -276,8 +273,8 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Beta">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/beta-distribution.html">Stan</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -291,11 +288,11 @@ F(\theta; \alpha, \beta) = I_\theta(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 18, 2024.
+      <span class="lastupdated">Last updated on Dec 23, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x16af23920> 
+   <jinja2.runtime.BlockReference object at 0x139805df0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

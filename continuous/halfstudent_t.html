@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Half-Student-t distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -143,36 +144,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="half-student-t-distribution">
-<span id="half-student-t"></span><h1>Half-Student-t distribution<a class="headerlink" href="#half-student-t-distribution" title="Permalink to this heading"></a></h1>
+  <section id="half-student-t-distribution">
+<span id="half-student-t"></span><h1>Half-Student-t distribution<a class="headerlink" href="#half-student-t-distribution" title="Link to this heading"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>The Half-Student-t distribution is a <a class="reference internal" href="student_t.html#student-t"><span class="std std-ref">Student-t distribution</span></a> truncated to only have nonzero probability density for values greater than or equal to the location of the peak.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>The Half-Student-t distribution is peaked at its location parameter <span class="math notranslate nohighlight">\(\mu\)</span>. The peak’s width is dictated by scale parameter <span class="math notranslate nohighlight">\(\sigma\)</span>, which is positive. Finally, the shape parameter, called “degrees of freedom,” is <span class="math notranslate nohighlight">\(\nu\)</span>. This last parameter imparts the distribution with a heavy tail for small <span class="math notranslate nohighlight">\(\nu\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>The Half-Student-t distribution is supported on the set of all real numbers that are greater than or equal to <span class="math notranslate nohighlight">\(\mu\)</span>, that is on <span class="math notranslate nohighlight">\([\mu, \infty)\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-density-function">
-<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Permalink to this heading"></a></h2>
+<section id="probability-density-function">
+<h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[    \begin{align}
     f(y;\nu, \mu, \sigma) =
 \frac{2\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\frac{\nu}{2}\right)\sqrt{\pi \nu \sigma^2}}\left(1 + \frac{(y-\mu)^2}{\nu \sigma^2}\right)^{-\frac{\nu + 1}{2}}.
     \end{align}\]</div>
 <p>Note that the distribution is only supported for <span class="math notranslate nohighlight">\(y \ge \mu\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
+<section id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
@@ -181,21 +182,17 @@ F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
 \end{array}\right.
 \end{align}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x = (y-\mu) / \sigma\)</span> and <span class="math notranslate nohighlight">\(I_x(a, b)\)</span> denotes the <a class="reference internal" href="../background/special_functions.html#regularized-incomplete-beta-function"><span class="std std-ref">regularized incomplete beta function</span></a>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(\mu + 2\sigma\sqrt{\frac{\nu}{\pi}}\,\frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\frac{\nu}{2}\right)(\nu-1)}\)</span> for <span class="math notranslate nohighlight">\(\nu &gt; 1\)</span>, otherwise undefined.</p>
 <p>Variance: <span class="math notranslate nohighlight">\(\sigma^2\left(\frac{\nu}{\nu - 2}-\frac{4\nu}{\pi(\nu-1)^2}\left(\frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\frac{\nu}{2}\right)}\right)^2\right)\)</span> for <span class="math notranslate nohighlight">\(\nu &gt; 2\)</span>. If <span class="math notranslate nohighlight">\(1 &lt; \nu &lt; 2\)</span>, then the variance is infinite. If <span class="math notranslate nohighlight">\(\nu \le 1\)</span>, the variance is undefined.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 74%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -219,33 +216,33 @@ F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="student_t.html#student-t"><span class="std std-ref">Student-t distribution</span></a>, distribution is obviously closely related. The Half-Student-t is simply a truncated Student-t distribution where only values at the peak or to its right have nonzero probability density.</p></li>
 <li><p>In the <span class="math notranslate nohighlight">\(\nu \to \infty\)</span> limit, the Half-Student-t distribution becomes a <a class="reference internal" href="halfnormal.html#half-normal"><span class="std std-ref">Half-Normal distribution</span></a>.</p></li>
 <li><p>The <a class="reference internal" href="halfcauchy.html#half-cauchy"><span class="std std-ref">Half-Cauchy distribution</span></a> distribution is a special case of the Half-Student-t distribution in which <span class="math notranslate nohighlight">\(\nu = 1\)</span>.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>In Stan, a Half-Student-t is defined by putting a lower bound of <span class="math notranslate nohighlight">\(\mu\)</span> on the variable and then using a Student-t distribution with location parameter <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
 <li><p>Only the standard Student-t distribution (<span class="math notranslate nohighlight">\(\mu = 0\)</span> and <span class="math notranslate nohighlight">\(\sigma = 1\)</span>) is available in NumPy. You can still draw out of the Student-t distribution by performing a transformation on the samples out of the standard Student-t distribution, as shown in the usage, above. The same is true for Distributions.jl. Shown is an example where <span class="math notranslate nohighlight">\(x\)</span> random numbers are drawn from the distribution and transformed using broadcasting.</p></li>
 <li><p>The Half-Student-t distribution is not available in SciPy. To compute the PDF for <span class="math notranslate nohighlight">\(y \ge \mu\)</span>, use <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">scipy.stats.t.pdf(y,</span> <span class="pre">nu,</span> <span class="pre">mu,</span> <span class="pre">sigma)</span></code>. To compute the CDF for <span class="math notranslate nohighlight">\(y \ge \mu\)</span>, use <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">scipy.stats.t.cdf(y,</span> <span class="pre">nu,</span> <span class="pre">mu,</span> <span class="pre">sigma)</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></li>
 <li><p>The Half-Student-t distribution with <span class="math notranslate nohighlight">\(\mu = 0\)</span> is a useful prior for nonnegative parameters. The parameter <span class="math notranslate nohighlight">\(\nu\)</span> of the Half-Student-t can be tuned to allow for a heavy tail (<span class="math notranslate nohighlight">\(\nu\)</span> close to 1) or a light tail (large <span class="math notranslate nohighlight">\(\nu\)</span>).</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pdf-and-cdf-plots">
-<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-afb744fcb6b64679a3b5f4c2a838afec-continuous-halfstudent_t.js" id="b05eb5d0-3518-49c1-a2e1-549829b2f587"></script></div>
+<section id="pdf-and-cdf-plots">
+<h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
+<script src="bokeh-content-20552e46344c46d4af50b6844e6f261f-continuous-halfstudent_t.js" id="b9dd262b-b700-4a8d-bff4-ef88db149816"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Folded-t_and_half-t_distributions">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.standard_t.html">Numpy</a></p></li>
@@ -253,8 +250,8 @@ F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.TDist">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/student-t-distribution.html">Stan</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -268,11 +265,11 @@ F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 18, 2024.
+      <span class="lastupdated">Last updated on Dec 23, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x16a475e20> 
+   <jinja2.runtime.BlockReference object at 0x139928800> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Binomial distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'Click to show';</script>
         <script>let toggleHintHide = 'Click to hide';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -143,31 +144,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="binomial-distribution">
-<span id="binomial"></span><h1>Binomial distribution<a class="headerlink" href="#binomial-distribution" title="Permalink to this heading"></a></h1>
+  <section id="binomial-distribution">
+<span id="binomial"></span><h1>Binomial distribution<a class="headerlink" href="#binomial-distribution" title="Link to this heading"></a></h1>
 <hr class="docutils" />
-<div class="section" id="story">
-<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading"></a></h2>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>We perform <span class="math notranslate nohighlight">\(N\)</span> Bernoulli trials, each with probability <span class="math notranslate nohighlight">\(\theta\)</span> of success.  The number of successes, <span class="math notranslate nohighlight">\(n\)</span>, is Binomially distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>Distribution of plasmids between daughter cells in cell division. Each of the <span class="math notranslate nohighlight">\(N\)</span> plasmids as a chance <span class="math notranslate nohighlight">\(\theta\)</span> of being in daughter cell 1 (“success”). The number of plasmids, <span class="math notranslate nohighlight">\(n\)</span>, in daughter cell 1 is Binomially distributed.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>There are two parameters: the number of Bernoulli trials, <span class="math notranslate nohighlight">\(N\)</span>, and the probability <span class="math notranslate nohighlight">\(\theta\)</span> of success for each trial.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading"></a></h2>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading"></a></h2>
 <p>The Binomial distribution is supported on the set of nonnegative integers less than or equal to <span class="math notranslate nohighlight">\(N\)</span>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="probability-mass-function">
-<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Permalink to this heading"></a></h2>
+<section id="probability-mass-function">
+<h2>Probability mass function<a class="headerlink" href="#probability-mass-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 f(n;N,\theta) = \begin{pmatrix}
@@ -176,31 +177,27 @@ n
 \end{pmatrix}
 \theta^n (1-\theta)^{N-n}.
 \end{align}\end{split}\]</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="cumulative-distribution-function">
-<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this heading"></a></h2>
+<section id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
 <p>The CDF evaluated at integers <span class="math notranslate nohighlight">\(n\)</span> with <span class="math notranslate nohighlight">\(0 \le n \le N\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 F(n;N,\theta) = I_{1-\theta}(N - n, n + 1),
 \end{align}\]</div>
 <p>a <a class="reference internal" href="../background/special_functions.html#regularized-incomplete-beta-function"><span class="std std-ref">regularized incomplete beta function</span></a>.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="moments">
-<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this heading"></a></h2>
+<section id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
 <p>Mean: <span class="math notranslate nohighlight">\(N\theta\)</span></p>
 <p>Variance: <span class="math notranslate nohighlight">\(N\theta(1-\theta)\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Syntax</p></th>
@@ -221,10 +218,10 @@ F(n;N,\theta) = I_{1-\theta}(N - n, n + 1),
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="related-distributions">
-<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Permalink to this heading"></a></h2>
+<section id="related-distributions">
+<h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The <a class="reference internal" href="bernoulli.html#bernoulli"><span class="std std-ref">Bernoulli distribution</span></a> is a special case of the Binomial distribution where <span class="math notranslate nohighlight">\(N=1\)</span>.</p></li>
 <li><p>In the limit of <span class="math notranslate nohighlight">\(N\to\infty\)</span> and <span class="math notranslate nohighlight">\(\theta\to 0\)</span> such that the quantity <span class="math notranslate nohighlight">\(N\theta\)</span> is fixed, the Binomial distribution becomes a <a class="reference internal" href="poisson.html#poisson"><span class="std std-ref">Poisson distribution</span></a> with parameter <span class="math notranslate nohighlight">\(N\theta\)</span>.</p></li>
@@ -232,14 +229,14 @@ F(n;N,\theta) = I_{1-\theta}(N - n, n + 1),
 <li><p>The Binomial distribution is a limit of the <a class="reference internal" href="hypergeometric.html#hypergeometric"><span class="std std-ref">Hypergeometric distribution</span></a>. Considering the Hypergeometric distribution parametrized by <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(b\)</span>, and taking the limit of <span class="math notranslate nohighlight">\(a+b\to\infty\)</span> such that <span class="math notranslate nohighlight">\(a/(a+b)\)</span> is fixed, we get a Binomial distribution with parameters <span class="math notranslate nohighlight">\(N=N\)</span> and <span class="math notranslate nohighlight">\(\theta = a/(a+b)\)</span>.</p></li>
 <li><p>The Binomial distribution is a special case of the <a class="reference internal" href="../multivariate_discrete/multinomial.html#multinomial"><span class="std std-ref">Multinomial distribution</span></a> when <span class="math notranslate nohighlight">\(K = 2\)</span>.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pmf-and-cdf-plots">
-<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Permalink to this heading"></a></h2>
-<script src="bokeh-content-d84e10f4f5cf44abb46ab8f98b6747ac-discrete-binomial.js" id="c4d2ebef-3d1f-4bc6-9363-e694c5be3473"></script></div>
+<section id="pmf-and-cdf-plots">
+<h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Link to this heading"></a></h2>
+<script src="bokeh-content-4a536be7f32c47c89280cbc4fdaabed3-discrete-binomial.js" id="d544ae3a-e9a3-4654-81bc-79f2e52b696f"></script></section>
 <hr class="docutils" />
-<div class="section" id="links">
-<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading"></a></h2>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.binomial.html">Numpy</a></p></li>
@@ -247,8 +244,8 @@ F(n;N,\theta) = I_{1-\theta}(N - n, n + 1),
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Binomial">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/binomial-distribution.html">Stan</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -262,11 +259,11 @@ F(n;N,\theta) = I_{1-\theta}(N - n, n + 1),
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 18, 2024.
+      <span class="lastupdated">Last updated on Dec 23, 2024.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x16aac1a30> 
+   <jinja2.runtime.BlockReference object at 0x139aa50a0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 
