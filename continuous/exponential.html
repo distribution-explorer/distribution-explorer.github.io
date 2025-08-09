@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,33 +7,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exponential distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -83,6 +80,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Exponential distribution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#story">Story</a></li>
@@ -150,7 +148,7 @@
 <hr class="docutils" />
 <section id="story">
 <h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
-<p>Rare events occur with a rate <span class="math notranslate nohighlight">\(\beta\)</span> per unit time. There is no “memory” of previous events; i.e., that rate is independent of time. A process that generates such events is called a <em>Poisson process</em>. The occurrence of a rare event in this context is referred to as an arrival. The inter-arrival time of a Poisson process is Exponentially distributed.</p>
+<p>The inter-arrival time of a <a class="reference internal" href="../background/review_of_key_concepts.html#poisson-process"><span class="std std-ref">Poisson process</span></a> is Exponentially distributed.</p>
 </section>
 <hr class="docutils" />
 <section id="example">
@@ -237,7 +235,7 @@ f(y;\tau) = \frac{1}{\tau}\,\mathrm{e}^{-y/\tau}.
 <hr class="docutils" />
 <section id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
-<script src="bokeh-content-a2aedc18b43747af8ee6b78c5dce17fc-continuous-exponential.js" id="ebc00455-c264-4ddb-ab8d-6eafe52b1c70"></script></section>
+<script src="bokeh-content-446b848d7aec4b20bc6dff41537769c8-continuous-exponential.js" id="d89453fd-731e-48dc-8db6-623583929f62"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -263,11 +261,11 @@ f(y;\tau) = \frac{1}{\tau}\,\mathrm{e}^{-y/\tau}.
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x1398b7e30> 
+   <jinja2.runtime.BlockReference object at 0x14750c2f0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

@@ -10,7 +10,7 @@ Exponential distribution
 Story
 -----
 
-Rare events occur with a rate :math:`\beta` per unit time. There is no "memory" of previous events; i.e., that rate is independent of time. A process that generates such events is called a *Poisson process*. The occurrence of a rare event in this context is referred to as an arrival. The inter-arrival time of a Poisson process is Exponentially distributed.
+The inter-arrival time of a :ref:`Poisson process` is Exponentially distributed.
 
 
 ----

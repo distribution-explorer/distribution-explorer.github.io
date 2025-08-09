@@ -50,7 +50,7 @@ Cumulative distribution function
 .. math::
 
     \begin{align}
-    F(y;\alpha, \beta) = Q(\alpha, \beta/x),
+    F(y;\alpha, \beta) = Q(\alpha, \beta/y),
     \end{align}
 
 a :ref:`regularized upper incomplete gamma function <Regularized upper incomplete gamma function>`.
@@ -98,7 +98,7 @@ Notes
 -----
 
 - The Inverse Gamma distribution is useful as a prior for positive parameters. It imparts a quite heavy tail and keeps probability further from zero than the :ref:`gamma`.
-- NumPy module does not have a function to sample directly from the Inverse Gamma distribution, but it can be achieved by sampling out of a Gamma distribution and then taking the inverser, as shown in the NumPy usage above.
+- The NumPy module does not have a function to sample directly from the Inverse Gamma distribution, but it can be achieved by sampling from a Gamma distribution and then taking the inverse, as shown in the NumPy usage above.
 
 ----
 

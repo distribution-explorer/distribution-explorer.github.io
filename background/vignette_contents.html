@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,31 +7,26 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vignette contents &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -84,6 +81,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
@@ -154,9 +152,9 @@
 <section id="how-to-use-the-interactive-plots">
 <h2>How to use the interactive plots<a class="headerlink" href="#how-to-use-the-interactive-plots" title="Link to this heading"></a></h2>
 <p>Below I show an interactive plot for the Normal distribution to demonstrate how to use the plots.</p>
-<script src="bokeh-content-2886f42cefe44451a419c49aff6e9600-background-vignette_contents.js" id="bcb6210c-96b1-4820-9942-3a1f9e740213"></script><p>The widgets above the PDF plot include a slider for each of the parameters of the distribution. You can adjust the position of the slider to adjust the value of the parameter, and the plots update accordingly. The text windows on either side of the sliders allow you to adjust the allowable range of the sliders. If you choose a value outside of the allowable values of the parameter, the minimum or maximum allowed value of the parameter will be used instead.</p>
+<script src="bokeh-content-96cd8f2bbbae4fc3b7c53fc14aa1ab08-background-vignette_contents.js" id="b15aa833-3679-4508-8a7b-b379a791962f"></script><p>The widgets above the PDF plot include a slider for each of the parameters of the distribution. You can adjust the position of the slider to adjust the value of the parameter, and the plots update accordingly. The text windows on either side of the sliders allow you to adjust the allowable range of the sliders. If you choose a value outside of the allowable values of the parameter, the minimum or maximum allowed value of the parameter will be used instead.</p>
 <p>For some distributions, there are a set of quantile setting widgets above the CDF plot. You can specify the value for each quantile and the parameters are adjusted such that the distribution has the specified quantile. This can be particularly useful for coming up with priors in a Bayesian setting. The quantile setting is only active when the “Quantile setter mode” switch is active. When it is active, the sliders become inactive.</p>
-<p>To the side of the CDF plot is a toolbar with various options to adjust your views of the plots. Most useful are the pan, wheel zoom, and reset tools. Selecting the pan tool (the four arrows), you can click on a plot and drag to more the curves to more convenient positions. If you select the wheel zoom tool, you can hover over the x-axis and zoom in or out to different regions of the sample space of the distribution. Clicking the reset tool resets the limits of the axes to reasonable values so that you can see the important parts of the PDF/PMF and CDF.</p>
+<p>To the side of the CDF plot is a toolbar with various options to adjust your views of the plots. Most useful are the pan, wheel zoom, and reset tools. Selecting the pan tool (the four arrows), you can click on a plot and drag to move the curves to more convenient positions. If you select the wheel zoom tool, you can hover over the x-axis and zoom in or out to different regions of the sample space of the distribution. Clicking the reset tool resets the limits of the axes to reasonable values so that you can see the important parts of the PDF/PMF and CDF.</p>
 </section>
 </section>
 
@@ -172,11 +170,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x139756090> 
+   <jinja2.runtime.BlockReference object at 0x14750d5c0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

@@ -9,7 +9,7 @@ Hypergeometric distribution
 Story
 -----
 
-Consider an urn with :math:`a` white balls and :math:`b` black balls. Draw :math:`N` balls from this urn without replacement. The number white balls drawn, :math:`n`, is Hypergeometrically distributed.
+Consider an urn with :math:`a` white balls and :math:`b` black balls. Draw :math:`N` balls from this urn without replacement. The number of white balls drawn, :math:`n`, is Hypergeometrically distributed.
 
 
 ----
@@ -62,7 +62,7 @@ The cumulative distribution function evaluated for integer :math:`n` is
 .. math::
 
     \begin{align}
-    F(n; N, a, b) = 1 - \frac{\begin{pmatrix}N \\ n+1\end{pmatrix} \begin{pmatrix}a + b - B \\ a - n - 1\end{pmatrix}}{\begin{pmatrix}a+b \\ a\end{pmatrix}}\,_3F_2(1, n-a+1, n+1-N; n+2, n+b-N+2; 1),
+    F(n; N, a, b) = 1 - \frac{\begin{pmatrix}N \\ n+1\end{pmatrix} \begin{pmatrix}a + b - N \\ a - n - 1\end{pmatrix}}{\begin{pmatrix}a+b \\ a\end{pmatrix}}\,_3F_2(1, n-a+1, n+1-N; n+2, n+b-N+2; 1),
     \end{align}
 
 where :math:`_3F_2(a_1, a_2, a_3;b_1, b_2; z)` denotes the `generalized hypergeometric function <https://en.wikipedia.org/wiki/Generalized_hypergeometric_function>`_.

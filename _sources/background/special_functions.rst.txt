@@ -7,7 +7,7 @@ Some PDFs and PMFs and many CDFs are expressed in terms of `special functions <h
 Factorial
 ---------
 
-The `factorial <https://en.wikipedia.org/wiki/Factorial>`_ of a positive real number :math:`n` is denoted as :math:`n!` and is defined as
+The `factorial <https://en.wikipedia.org/wiki/Factorial>`_ of a positive integer :math:`n` is denoted as :math:`n!` and is defined as
 
 .. math::
 
@@ -71,7 +71,7 @@ Similarly, the `upper incomplete gamma function <https://en.wikipedia.org/wiki/I
 	\Gamma(x, y) = \int_y^\infty \mathrm{d}t \, t^{x-1}\mathrm{e}^{-t}.
 	\end{align}
 
-Note that am uppercase :math:`\Gamma` is used, but the presence of two arguments distinguishes this function notationally from the gamma function.
+Note that an uppercase :math:`\Gamma` is used, but the presence of two arguments distinguishes this function notationally from the gamma function.
 
 ----
 
@@ -124,7 +124,7 @@ When :math:`x` and :math:`y` are integers, say :math:`m` and :math:`n`, the beta
 .. math::
 
 	\begin{align}
-	B(m, n) = \frac{(m+n)/mn}{\displaystyle \begin{pmatrix}N \\n\end{pmatrix}}.
+	B(m, n) = \frac{(m+n)/mn}{\displaystyle \begin{pmatrix}m + n \\n\end{pmatrix}}.
 	\end{align}
 
 ----
@@ -160,12 +160,12 @@ Note that :math:`x` must be between zero and one.
 Regularized incomplete beta function
 ------------------------------------
 
-The `regularized incomplete beta function <https://en.wikipedia.org/wiki/Beta_function#Incomplete_beta_function>`_. :math:`I_x(a,b)` is computed by dividing the incomplete beta function by the corresponding beta function.
+The `regularized incomplete beta function <https://en.wikipedia.org/wiki/Beta_function#Incomplete_beta_function>`_, :math:`I_x(a,b)` is computed by dividing the incomplete beta function by the corresponding beta function.
 
 .. math::
 
 	\begin{align}
-	I_x(a, b) = \frac{B(x; a, b)}{B(a, b)} = \frac{\int_0^x\mathrm{d}t\,t^{a-1} (1-t)^{b-1}}{\int_0^1\mathrm{d}t\,t^{x-1} (1-t)^{y-1}}.
+	I_x(a, b) = \frac{B(x; a, b)}{B(a, b)} = \frac{\int_0^x\mathrm{d}t\,t^{a-1} (1-t)^{b-1}}{\int_0^1\mathrm{d}t\,t^{a-1} (1-t)^{b-1}}.
 	\end{align}
 
 ----
@@ -199,7 +199,7 @@ and can also be expressed as a series
 .. math::
 
 	\begin{align}
-	I_\alpha(x) = \left(\frac{x}{2}\right)^n\sum_{k=0}^\infty\frac{(x/2)^{2k}}{k!\,\Gamma(\alpha + k + 1)},
+	I_\alpha(x) = \left(\frac{x}{2}\right)^\alpha\sum_{k=0}^\infty\frac{(x/2)^{2k}}{k!\,\Gamma(\alpha + k + 1)},
 	\end{align}
 
 where :math:`\Gamma(x)` denotes the `gamma function <Gamma function>`_.

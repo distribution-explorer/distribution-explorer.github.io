@@ -60,7 +60,7 @@ Cumulative distribution function
 .. math::
 
     \begin{align}
-    F(y; \alpha, \beta) = \left\{\begin{array}{ccl} 0 && y < a \\[0.5em]\displaystyle{\frac{y-\alpha}{\beta-\alpha}}&&\alpha\le y\le\beta\\[0.5em] 1 && y > \beta\end{array}\right.
+    F(y; \alpha, \beta) = \left\{\begin{array}{ccl} 0 && y < \alpha \\[0.5em]\displaystyle{\frac{y-\alpha}{\beta-\alpha}}&&\alpha\le y\le\beta\\[0.5em] 1 && y > \beta\end{array}\right.
     \end{align}
 
 

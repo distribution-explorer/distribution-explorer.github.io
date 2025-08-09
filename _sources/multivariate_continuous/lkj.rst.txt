@@ -10,7 +10,7 @@ Lewandowski-Kurowicka-Joe (LKJ) distribution
 Story
 -----
 
-Probability distribution for positive definite correlation matrices, or equivalently for their Cholesky factors.
+Probability distribution for positive definite correlation matrices, or equivalently for their :ref:`Cholesky factors<Positive definite matrices and Cholesky decompositions>`.
 
 To understand what a correlation matrix is, it helps to think first of a covariance matrix :math:`\mathsf{\Sigma}`, such as those used in the :ref:`multivariate_normal`. The covariance matrix may also be written as :math:`\mathsf{\Sigma} = \mathsf{S} \cdot \mathsf{C} \cdot \mathsf{S}`, where :math:`\mathsf{S} = \sqrt{\mathrm{diag}(\mathsf{\Sigma})}`, and entry :math:`i, j` in the **correlation matrix** :math:`\mathsf{C}` is :math:`C_{ij} = \sigma_{ij}/\sigma_i\sigma_j`. The diagonal of the correlation matrix is all ones, and the off-diagonal entries can range from :math:`-1` to :math:`1`. Note also that because :math:`\mathsf{\Sigma}` is symmetric and positive definite, so is :math:`\mathsf{C}`. 
 
@@ -21,7 +21,7 @@ To understand what a correlation matrix is, it helps to think first of a covaria
 Parameters
 ----------
 
-There is one positive scalar parameter, :math:`\eta`, which tunes the strength of the correlations. If :math:`\eta=1`, the density is uniform over all correlation matrix. If :math:`\eta>1`, matrices with a stronger diagonal (and therefore smaller correlations) are favored. If :math:`\eta<1`, the diagonal is weak and correlations are favored.
+There is one positive scalar parameter, :math:`\eta`, which tunes the strength of the correlations. If :math:`\eta=1`, the density is uniform over all correlation matrices. If :math:`\eta>1`, matrices with a stronger diagonal (and therefore smaller correlations) are favored. If :math:`\eta<1`, the diagonal is weak and correlations are favored.
 
 ----
 
@@ -29,7 +29,7 @@ There is one positive scalar parameter, :math:`\eta`, which tunes the strength o
 Support
 -------
 
-The LKJ distribution is supported over the set of :math:`K\times K` Cholesky factors of real symmetric positive definite matrices.
+The LKJ distribution is supported over the set of :math:`K\times K` :ref:`Cholesky factors<Positive definite matrices and Cholesky decompositions>` of real symmetric positive definite matrices.
 
 
 ----
@@ -43,7 +43,7 @@ The LKJ distribution is a distribution over a :math:`K\times K` correlation matr
 .. math::
 
         \begin{align}
-		f(\mathsf{C}|\eta) =\left(2^{\sum_{k=1}^{K-1}(2(\eta-1)+K-k)(K-k)}\prod_{k=1}^{K-1}\left(B(\eta+(K-k-1)/2,\eta + (K-k-1)/2)\right)^{K-k}\right) (\mathrm{det}\,\mathsf{C})^{\eta-1}.
+		f(\mathsf{C}|\eta) = \left(2^{\sum_{k=1}^{K-1}(2(\eta-1)+K-k)(K-k)}\prod_{k=1}^{K-1}\left(B(\eta+(K-k-1)/2,\eta + (K-k-1)/2)\right)^{K-k}\right) (\mathrm{det}\,\mathsf{C})^{\eta-1}.
 		\end{align}
 
 Here, :math:`B(\alpha, \beta)` is a :ref:`beta function <Beta function>`. 
@@ -73,7 +73,7 @@ Variance of each entry off-diagonal entry: :math:`\displaystyle{\frac{4\left(\et
 Usage
 -----
 
-The usage below assumes that ``mu`` is a length :math:`K` array, ``Sigma`` is a :math:`K\times K` symmetric positive definite matrix, and ``L`` is a :math:`K\times K` lower-triangular matrix with strictly positive values on the diagonal that is a Cholesky factor.
+The usage below assumes that ``mu`` is a length :math:`K` array, ``Sigma`` is a :math:`K\times K` symmetric positive definite matrix, and ``L`` is a :math:`K\times K` lower-triangular matrix with strictly positive values on the diagonal that is a :ref:`Cholesky factor<Positive definite matrices and Cholesky decompositions>`.
 
 +----------------------------------+----------------------------------------------------------+
 | Package                          | Syntax                                                   |
@@ -110,7 +110,7 @@ Related distributions
 Notes
 -----
 
-- The most common use case is as a prior for a covariance matrix. Note that LKJ distribution gives *correlation* matrices, not covariance matrices. We typically work with Cholesky factors. To get the covariance Cholesky factor from the correlation Cholesky factor, we need to multiply the correlation Cholesky factor by a diagonal matrix constructed from the variances of the individual variates. Here is an example using the LKJ distribution in a model with a multivariate Normal likelihood in Stan.
+- The most common use case is as a prior for a covariance matrix. Note that LKJ distribution gives *correlation* matrices, not covariance matrices. We typically work with :ref:`Cholesky factors<Positive definite matrices and Cholesky decompositions>`. To get the covariance Cholesky factor from the correlation Cholesky factor, we need to multiply the correlation Cholesky factor by a diagonal matrix constructed from the variances of the individual variates. Here is an example using the LKJ distribution in a model with a multivariate Normal likelihood in Stan.
 
   .. code-block:: stan
   
@@ -151,7 +151,7 @@ Links
 
 - `Original paper <https://doi.org/10.1016/j.jmva.2009.04.008>`_
 - `Distributions.jl <https://juliastats.org/Distributions.jl/stable/matrix/#Distributions.LKJ>`_
-- `Distributions.jl Cholesky formulåation<https://juliastats.org/Distributions.jl/stable/cholesky/#Distributions.LKJCholesky>`_
+- `Distributions.jl Cholesky formulation <https://juliastats.org/Distributions.jl/stable/cholesky/#Distributions.LKJCholesky>`_
 - `Stan <https://mc-stan.org/docs/functions-reference/lkj-correlation.html>`_
 - `Stan Cholesky formulation <https://mc-stan.org/docs/functions-reference/cholesky-lkj-correlation-distribution.html>`_
 

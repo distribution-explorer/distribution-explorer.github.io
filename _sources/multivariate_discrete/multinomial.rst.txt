@@ -36,7 +36,7 @@ Parameters
 Support
 -------
 
- The :math:`K`-nomial distribution is supported on :math:`\mathbb{N}^K`.
+The :math:`K`-nomial distribution is supported on :math:`\mathbb{N}^K`.
 
 
 ----

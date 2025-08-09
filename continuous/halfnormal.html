@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,33 +7,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Half-Normal distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -83,6 +80,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gamma.html">Gamma distribution</a></li>
@@ -221,7 +219,7 @@ F(y;\mu, \sigma) = \left\{\begin{array}{cll}
 <section id="related-distributions">
 <h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>The <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a>, distribution is obviously closely related. The Half-Normal is simply a truncated Normal distribution where only values at the peak or to its right have nonzero probability density.</p></li>
+<li><p>The <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a> distribution is obviously closely related. The Half-Normal is simply a truncated Normal distribution where only values at the peak or to its right have nonzero probability density.</p></li>
 <li><p>The Half-Normal distribution is the <span class="math notranslate nohighlight">\(\nu\to\infty\)</span> limit of the <a class="reference internal" href="halfstudent_t.html#half-student-t"><span class="std std-ref">Half-Student-t distribution</span></a>.</p></li>
 </ul>
 </section>
@@ -236,7 +234,7 @@ F(y;\mu, \sigma) = \left\{\begin{array}{cll}
 <hr class="docutils" />
 <section id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
-<script src="bokeh-content-62756116ac514f6d868fa3f47006afc2-continuous-halfnormal.js" id="d95d0519-96f0-442c-99bb-e92f8d2e9d34"></script></section>
+<script src="bokeh-content-6e1bc249e6904ed6ab415fc5ff26513e-continuous-halfnormal.js" id="a3163ac0-8e93-46cb-bdfc-eef2409699e2"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -244,7 +242,7 @@ F(y;\mu, \sigma) = \left\{\begin{array}{cll}
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Half-normal_distribution">Wikipedia</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.normal.html">Numpy</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.halfnorm.html#scipy.stats.halfnorm">Scipy</a></p></li>
-<li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Normal">Distribution.jl</a></p></li>
+<li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Normal">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/normal-distribution.html">Stan</a></p></li>
 </ul>
 </section>
@@ -262,11 +260,11 @@ F(y;\mu, \sigma) = \left\{\begin{array}{cll}
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13970af30> 
+   <jinja2.runtime.BlockReference object at 0x1474e4fa0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

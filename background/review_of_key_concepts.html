@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,33 +7,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Review of key concepts &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -94,6 +91,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
@@ -144,7 +142,7 @@
              
   <section id="review-of-key-concepts">
 <h1>Review of key concepts<a class="headerlink" href="#review-of-key-concepts" title="Link to this heading"></a></h1>
-<p>Before preceding, we define what is included for each distribution in the Explorer. We cut some corners in our definitions here, but these definitions are functional for applied purposes.</p>
+<p>Before proceeding, we define what is included for each distribution in the Explorer. We cut some corners in our definitions here, but these definitions are functional for applied purposes.</p>
 <p>We start with the obvious. What is a probability distribution? A <strong>probability distribution</strong> specifies the probabilities of all of the possible outcomes in a sample space. For example, if the sample space is nonnegative integers, the probability distribution describes the probability of observing each nonnegative integer.</p>
 <section id="pmfs-and-pdfs">
 <h2>PMFs and PDFs<a class="headerlink" href="#pmfs-and-pdfs" title="Link to this heading"></a></h2>
@@ -194,20 +192,20 @@ F(x) = \int_{-\infty}^x\mathrm{d}x'\,f(x').
 <section id="plots-of-pdfs">
 <h3>Plots of PDFs<a class="headerlink" href="#plots-of-pdfs" title="Link to this heading"></a></h3>
 <p>We plot a PDF as a smooth curve. The curve only appears for values of the x-axis for which the distribution is supported; that is on the domain of the distribution. As an example, below is a plot of a PDF for the <a class="reference internal" href="../continuous/gamma.html#gamma"><span class="std std-ref">Gamma distribution</span></a>, which is supported on the set of positive real numbers.</p>
-<div style="height:200px;"><script src="bokeh-content-f7c1dc37aedc48c4a4c5d301cde0efef-background-review_of_key_concepts.js" id="d08a1e7a-7673-485e-bc68-50320ec36aab"></script></div></section>
+<div style="height:200px;"><script src="bokeh-content-6df07d9cf3cd42f2b2114bd02807d7e6-background-review_of_key_concepts.js" id="a6c14248-ef60-473f-a353-a173746a6fc5"></script></div></section>
 <section id="plots-of-pmfs">
 <h3>Plots of PMFs<a class="headerlink" href="#plots-of-pmfs" title="Link to this heading"></a></h3>
 <p>Since they take on discrete values, we plot PMFs differently. Our convention is that each nonzero probability is shown by a point with a line connecting to the x-axis. As an example, below is a plot of a <a class="reference internal" href="../discrete/binomial.html#binomial"><span class="std std-ref">Binomial distribution</span></a> PMF.</p>
-<div style="height:200px;"><script src="bokeh-content-4b46813617ff4e729a3e6577a162a69e-background-review_of_key_concepts.js" id="af5457f6-d32d-4d2f-ba9b-3ef0478d2ff8"></script></div></section>
+<div style="height:200px;"><script src="bokeh-content-1a613940efa547079aa4f95da7cc23ac-background-review_of_key_concepts.js" id="c73f31f1-f961-49a4-beb6-e80e5f5bf5bf"></script></div></section>
 <section id="plots-of-cdfs-for-continuous-distributions">
 <h3>Plots of CDFs for continuous distributions<a class="headerlink" href="#plots-of-cdfs-for-continuous-distributions" title="Link to this heading"></a></h3>
 <p>Plots of CDFs for continuous distributions are plotted as smooth curves. Taking the example of the Gamma distribution again, the CDF is plotted as below.</p>
-<div style="height:200px;"><script src="bokeh-content-81d7b123646a49269ba3d1f30e13a466-background-review_of_key_concepts.js" id="f34a4c0b-8e45-4f38-af67-bc38747f0863"></script></div></section>
+<div style="height:200px;"><script src="bokeh-content-681ac14a3ca54f2fae7e6fdfc7b2e21c-background-review_of_key_concepts.js" id="eec6226e-78c7-4af0-b7b2-16c45d50b0d1"></script></div></section>
 <section id="plots-of-cdfs-for-discrete-distributions">
 <h3>Plots of CDFs for discrete distributions<a class="headerlink" href="#plots-of-cdfs-for-discrete-distributions" title="Link to this heading"></a></h3>
 <p>For discrete distributions, I plot the CDFs as “staircases,” as shown below.</p>
-<div style="height:200px;"><script src="bokeh-content-6ee58daa04ea485a8ddae8799238ba3a-background-review_of_key_concepts.js" id="fe74d37f-f275-44b4-abfc-6517cade4650"></script></div><p>The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.</p>
-<div style="height:200px;"><script src="bokeh-content-969f6d1a1eca4b15a984875afe061555-background-review_of_key_concepts.js" id="ec6845ec-42d1-43bb-b679-40036fbef567"></script></div><p>However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret.</p>
+<div style="height:200px;"><script src="bokeh-content-2687566a9bcc4f0d9f6d445cf624a301-background-review_of_key_concepts.js" id="ff038163-09a6-4074-b67b-3cee78a7db8e"></script></div><p>The CDF appears to be multivalued at the vertical lines of the staircase. It is not. Furthermore, the lines at zero and one on the CDF axis should extend out to <span class="math notranslate nohighlight">\(-\infty\)</span> and <span class="math notranslate nohighlight">\(\infty\)</span>, respectively along the horizontal axis. Strictly speaking, the CDF should be plotted as follows.</p>
+<div style="height:200px;"><script src="bokeh-content-9f2dd74495ab4a1aa42e3c63f5fa00fb-background-review_of_key_concepts.js" id="ce3dda19-80b1-4899-8f32-c5d721005913"></script></div><p>However, since it is understood that the CDF is not multivalued, there should be no ambiguity in plotting the staircase, and indeed staircase style CDFs are commonly used. The staircase has less clutter and I find it is easier to look at and interpret.</p>
 </section>
 </section>
 <section id="parametrization">
@@ -244,8 +242,8 @@ E(g(x)) = \int_{-\infty}^\infty \mathrm{d}x \, g(x) f(x).
 \[\begin{align}
 E(g(x)) = \sum_i  g(x_i) f(x_i).
 \end{align}\]</div>
-<p>The nth moment of a distribution is <span class="math notranslate nohighlight">\(E(x^n)\)</span>. The first moment of a distribution is called the <strong>mean</strong>, and here we will denote it at <span class="math notranslate nohighlight">\(\mu\)</span>. We define the nth <strong>central moment</strong> as <span class="math notranslate nohighlight">\(E((x-\mu)^n)\)</span>.</p>
-<p>Perhaps the two most important moments of a distribution are the first moment (the mean) and the second central moment, <span class="math notranslate nohighlight">\(E((x-\mu)^n)\)</span>, which is called the <strong>variance</strong>. For each distribution I display its mean and variance, if they exist.</p>
+<p>The nth moment of a distribution is <span class="math notranslate nohighlight">\(E(x^n)\)</span>. The first moment of a distribution is called the <strong>mean</strong>, and here we will denote it as <span class="math notranslate nohighlight">\(\mu\)</span>. We define the nth <strong>central moment</strong> as <span class="math notranslate nohighlight">\(E((x-\mu)^n)\)</span>.</p>
+<p>Perhaps the two most important moments of a distribution are the first moment (the mean) and the second central moment, <span class="math notranslate nohighlight">\(E((x-\mu)^2)\)</span>, which is called the <strong>variance</strong>. For each distribution I display its mean and variance, if they exist.</p>
 </section>
 <section id="useful-data-generation-concepts">
 <h2>Useful data generation concepts<a class="headerlink" href="#useful-data-generation-concepts" title="Link to this heading"></a></h2>
@@ -262,6 +260,13 @@ E(g(x)) = \sum_i  g(x_i) f(x_i).
 <section id="multivariate-distributions">
 <h2>Multivariate distributions<a class="headerlink" href="#multivariate-distributions" title="Link to this heading"></a></h2>
 <p>So far, we have assumed <strong>univariate distributions</strong>, that is probability distributions of a single random variable. We may also consider <strong>multivariate distributions</strong>, which describe more than one random variable. For a distribution of <span class="math notranslate nohighlight">\(n\)</span> random variables, we define the PMF or PDF as <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span>. It is permissible that some variables are discrete and others continuous. For ease of discussion, we can consider the bivariate case describing random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> which may take on values <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. In that case, the PMF or PDF is written as <span class="math notranslate nohighlight">\(f(x, y)\)</span>. The bivariate cumulative distribution function is given by <span class="math notranslate nohighlight">\(F(x, y) = P(X \le x, Y \le y)\)</span>.</p>
+<section id="positive-definite-matrices-and-cholesky-decompositions">
+<h3>Positive definite matrices and Cholesky decompositions<a class="headerlink" href="#positive-definite-matrices-and-cholesky-decompositions" title="Link to this heading"></a></h3>
+<p>Some multivariate distributions are parametrized by real symmetric positive definite matrices. An example is the Multivariate Normal distribution, which is parametrized by a symmetric positive definite covariance matrix typically denoted as <span class="math notranslate nohighlight">\(\mathsf{\Sigma}\)</span>.</p>
+<p>To be clear on definitions, a matrix <span class="math notranslate nohighlight">\(\mathsf{A}\)</span> is real if all elements are real. It is symmetric if <span class="math notranslate nohighlight">\(\mathsf{A}^\mathsf{T} = \mathsf{A}\)</span>. That is to say that <span class="math notranslate nohighlight">\(\mathsf{A}\)</span> is square and entry <span class="math notranslate nohighlight">\(i, j\)</span> is equal to entry <span class="math notranslate nohighlight">\(j, i\)</span>. Finally, a matrix is positive definite if all of its eigenvalues have positive real parts. (This is one of several equivalent statements of positive definiteness.) A real symmetric matrix has all real eigenvalues, so a real symmetric positive definite matrix has all real positive eigenvalues.</p>
+<p>Any <span class="math notranslate nohighlight">\(n\times n\)</span> real symmetric positive definite matrix has a unique <strong>Cholesky decomposition</strong>, <span class="math notranslate nohighlight">\(\mathsf{A} = \mathsf{L}\cdot \mathsf{L}^\mathsf{T}\)</span>, where <span class="math notranslate nohighlight">\(\mathsf{L}\)</span> is an <span class="math notranslate nohighlight">\(n\times n\)</span> real lower triangular matrix with positive diagonal entries. The matrix <span class="math notranslate nohighlight">\(\mathsf{L}\)</span> is referred to as a <strong>Cholesky factor</strong> of <span class="math notranslate nohighlight">\(\mathsf{A}\)</span>. (Sometimes the matrix <span class="math notranslate nohighlight">\(\mathsf{L}\)</span> is also referred to as the Cholesky decomposition.) Furthermore, <em>any</em> real lower triangular matrix with positive entries on the diagonal, <span class="math notranslate nohighlight">\(\mathsf{L}\)</span>, may be used to construct a real symmetric positive definite matrix <span class="math notranslate nohighlight">\(\mathsf{A}\)</span> via <span class="math notranslate nohighlight">\(\mathsf{A} = \mathsf{L}\cdot \mathsf{L}^\mathsf{T}\)</span>.</p>
+<p>As a result, it is often more convenient to work with Cholesky factors of a positive definite matrix involved in a probability distribution than with the matrix itself. The entries of <span class="math notranslate nohighlight">\(\mathsf{L}\)</span> are unconstrained, save for the positivity of the diagonal entries, which makes it much easier to handle than a whole matrix that is constrained to be positive definite.</p>
+</section>
 </section>
 </section>
 
@@ -277,11 +282,11 @@ E(g(x)) = \sum_i  g(x_i) f(x_i).
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13963c1d0> 
+   <jinja2.runtime.BlockReference object at 0x1476ddda0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

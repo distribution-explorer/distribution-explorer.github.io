@@ -16,7 +16,7 @@ The result :math:`y` of a single Bernoulli trial is Bernoulli distributed.
 ----
 
 
-Example 
+Example
 -------
 
 Check to see if a given bacterium is competent, given that it has probability :math:`\theta` of being competent.
@@ -25,7 +25,7 @@ Check to see if a given bacterium is competent, given that it has probability :m
 ----
 
 
-Parameter 
+Parameter
 ---------
 
 The Bernoulli distribution is parametrized by a
@@ -64,7 +64,7 @@ Cumulative distribution function
 
 .. math::
 	\begin{align}
-	f(y;\theta) = \left\{ \begin{array}{ccc}
+	F(y;\theta) = \left\{ \begin{array}{ccc}
 	0 & & y < 0 \\[0.5em]
 	1 - \theta & & 0 \le y < 1 \\[0.5em]
 	1 & & y \ge 1.
@@ -79,7 +79,7 @@ Moments
 -------
 
 Mean: :math:`\theta`
- 
+
 Variance: :math:`\theta(1-\theta)`
 
 

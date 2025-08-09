@@ -10,7 +10,7 @@ Gamma distribution
 Story
 -----
 
-The amount of time we have to wait for :math:`\alpha` arrivals of a Poisson process. More concretely, if we have events, :math:`X_1, X_2, \ldots X_\alpha` that are Exponentially distributed, :math:`X_1 + X_2 + \cdots X_\alpha` is Gamma distributed. While this is the story for an integer number of arrivals, the Gamma distribution is defined for noninteger :math:`\alpha` as well.
+The amount of time we have to wait for :math:`\alpha` arrivals of a Poisson process is Gamma distributed. More concretely, if we have events, :math:`X_1, X_2, \ldots X_\alpha` that are Exponentially distributed, :math:`X_1 + X_2 + \cdots X_\alpha` is Gamma distributed. While this is the story for an integer number of arrivals, the Gamma distribution is defined for noninteger :math:`\alpha` as well.
 
 ----
 
@@ -18,7 +18,7 @@ The amount of time we have to wait for :math:`\alpha` arrivals of a Poisson proc
 Example
 -------
 
-Any multistep process where each step happens at the same rate. This is common in molecular rearrangements. For example, the time it takes for three phosphorylation events have to happen, assuming all phosphorylation events happen at the same rate, is Gamma distributed.
+Any multistep process where each step happens at the same rate. This is common in molecular rearrangements. For example, the time it takes for three phosphorylation events to happen, assuming all phosphorylation events happen at the same rate, is Gamma distributed.
 
 
 ----
@@ -26,7 +26,7 @@ Any multistep process where each step happens at the same rate. This is common i
 Parameters
 ----------
 
-The Gamma distribution has two parameter, both strictly positive. The shape parameter, corresponding to the number of arrivals of a Poisson process is :math:`\alpha`. The inverse scale parameter, corresponding to the rate of arrivals, is :math:`\beta`.
+The Gamma distribution has two parameters, both strictly positive. The shape parameter, corresponding to the number of arrivals of a Poisson process is :math:`\alpha`. The inverse scale parameter, corresponding to the rate of arrivals, is :math:`\beta`.
 
 ----
 
@@ -138,4 +138,4 @@ Links
 - `Numpy <https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.gamma.html>`_
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gamma.html>`_
 - `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Gamma>`_
-- `Stan <https://mc-stan.org/docs/2_21/functions-reference/gamma-distribution.html>`_
+- `Stan <https://mc-stan.org/docs/functions-reference/positive_continuous_distributions.html#gamma-distribution>`_

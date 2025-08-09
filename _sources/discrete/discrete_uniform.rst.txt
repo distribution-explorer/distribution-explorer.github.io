@@ -36,7 +36,7 @@ The distribution is parametrized by the high and low allowed values, respectivel
 Support
 -------
 
-The Discrete Uniform distribution is supported on the set of integers ranging from :math:`y_\mathrm{low}` and :math:`y_\mathrm{high}`, inclusive.
+The Discrete Uniform distribution is supported on the set of integers ranging from :math:`y_\mathrm{low}` to :math:`y_\mathrm{high}`, inclusive.
 
 
 ----
@@ -74,7 +74,7 @@ Moments
 -------
 
 Mean: :math:`\displaystyle{\frac{y_\mathrm{low} + y_\mathrm{high}}{2}}`
- 
+
 Variance: :math:`\displaystyle{\frac{(y_\mathrm{high} - y_\mathrm{low} + 1)^2 - 1}{12}}`
 
 
@@ -111,7 +111,7 @@ Related distributions
 Notes
 -----
 
-- This distribution is not included in Stan. Instead, use a :ref:`categorical` with equal probailities.
+- This distribution is not included in Stan. Instead, use a :ref:`categorical` with equal probabilities.
 - In SciPy, this distribution is known as ``scipy.stats.randint``. The high parameter is not inclusive; i.e., the set of allowed values includes the low parameter, but not the high. The same is true for ``rng.integers()``, unless you use the ``endpoint=True`` keyword argument, in which case the high parameter is inclusive.
 
 ----

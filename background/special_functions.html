@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,33 +7,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Special functions &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -98,6 +95,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
@@ -151,7 +149,7 @@
 <p>Some PDFs and PMFs and many CDFs are expressed in terms of <a class="reference external" href="https://en.wikipedia.org/wiki/Special_functions">special functions</a>. Here, for reference, are special functions featured in various distributions in the Distribution Explorer. In general, these functions are functions of complex variables, but for our purposes we will only consider real numbers.</p>
 <section id="factorial">
 <h2>Factorial<a class="headerlink" href="#factorial" title="Link to this heading"></a></h2>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial</a> of a positive real number <span class="math notranslate nohighlight">\(n\)</span> is denoted as <span class="math notranslate nohighlight">\(n!\)</span> and is defined as</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial</a> of a positive integer <span class="math notranslate nohighlight">\(n\)</span> is denoted as <span class="math notranslate nohighlight">\(n!\)</span> and is defined as</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 n! = n \cdot (n-1) \cdot (n-2) \cdots 1,
@@ -194,7 +192,7 @@ n! = n \cdot (n-1) \cdot (n-2) \cdots 1,
 \[\begin{align}
 \Gamma(x, y) = \int_y^\infty \mathrm{d}t \, t^{x-1}\mathrm{e}^{-t}.
 \end{align}\]</div>
-<p>Note that am uppercase <span class="math notranslate nohighlight">\(\Gamma\)</span> is used, but the presence of two arguments distinguishes this function notationally from the gamma function.</p>
+<p>Note that an uppercase <span class="math notranslate nohighlight">\(\Gamma\)</span> is used, but the presence of two arguments distinguishes this function notationally from the gamma function.</p>
 </section>
 <hr class="docutils" />
 <section id="regularized-lower-incomplete-gamma-function">
@@ -228,7 +226,7 @@ B(x, y) = \int_0^1\mathrm{d}t\,t^{x-1} (1-t)^{y-1}.
 <p>When <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are integers, say <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, the beta function is related to the binomial coefficient as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-B(m, n) = \frac{(m+n)/mn}{\displaystyle \begin{pmatrix}N \\n\end{pmatrix}}.
+B(m, n) = \frac{(m+n)/mn}{\displaystyle \begin{pmatrix}m + n \\n\end{pmatrix}}.
 \end{align}\end{split}\]</div>
 </section>
 <hr class="docutils" />
@@ -253,10 +251,10 @@ B(x; a, b) = \int_0^x\mathrm{d}t\,t^{a-1} (1-t)^{b-1}.
 <hr class="docutils" />
 <section id="regularized-incomplete-beta-function">
 <h2>Regularized incomplete beta function<a class="headerlink" href="#regularized-incomplete-beta-function" title="Link to this heading"></a></h2>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_function#Incomplete_beta_function">regularized incomplete beta function</a>. <span class="math notranslate nohighlight">\(I_x(a,b)\)</span> is computed by dividing the incomplete beta function by the corresponding beta function.</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_function#Incomplete_beta_function">regularized incomplete beta function</a>, <span class="math notranslate nohighlight">\(I_x(a,b)\)</span> is computed by dividing the incomplete beta function by the corresponding beta function.</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-I_x(a, b) = \frac{B(x; a, b)}{B(a, b)} = \frac{\int_0^x\mathrm{d}t\,t^{a-1} (1-t)^{b-1}}{\int_0^1\mathrm{d}t\,t^{x-1} (1-t)^{y-1}}.
+I_x(a, b) = \frac{B(x; a, b)}{B(a, b)} = \frac{\int_0^x\mathrm{d}t\,t^{a-1} (1-t)^{b-1}}{\int_0^1\mathrm{d}t\,t^{a-1} (1-t)^{b-1}}.
 \end{align}\]</div>
 </section>
 <hr class="docutils" />
@@ -279,7 +277,7 @@ I_\alpha(x) = \frac{1}{\pi}\int_0^\pi\,\mathrm{d}\theta\,\cos(\alpha\theta)\,\ma
 <p>and can also be expressed as a series</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-I_\alpha(x) = \left(\frac{x}{2}\right)^n\sum_{k=0}^\infty\frac{(x/2)^{2k}}{k!\,\Gamma(\alpha + k + 1)},
+I_\alpha(x) = \left(\frac{x}{2}\right)^\alpha\sum_{k=0}^\infty\frac{(x/2)^{2k}}{k!\,\Gamma(\alpha + k + 1)},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma(x)\)</span> denotes the <a class="reference external" href="Gammafunction">gamma function</a>.</p>
 </section>
@@ -297,11 +295,11 @@ I_\alpha(x) = \left(\frac{x}{2}\right)^n\sum_{k=0}^\infty\frac{(x/2)^{2k}}{k!\,\
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13975ecc0> 
+   <jinja2.runtime.BlockReference object at 0x14750cec0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

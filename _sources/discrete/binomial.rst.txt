@@ -19,7 +19,7 @@ We perform :math:`N` Bernoulli trials, each with probability :math:`\theta` of s
 Example
 -------
 
-Distribution of plasmids between daughter cells in cell division. Each of the :math:`N` plasmids as a chance :math:`\theta` of being in daughter cell 1 ("success"). The number of plasmids, :math:`n`, in daughter cell 1 is Binomially distributed.
+Distribution of plasmids between daughter cells in cell division. Each of the :math:`N` plasmids has a chance :math:`\theta` of being in daughter cell 1 ("success"). The number of plasmids, :math:`n`, in daughter cell 1 is Binomially distributed.
 
 
 ----

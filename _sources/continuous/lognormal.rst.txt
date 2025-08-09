@@ -60,7 +60,7 @@ Cumulative distribution function
 .. math::
 
     \begin{align}
-    F(y;\mu, \sigma) =\frac{1}{2}\left(1 + \text{erf}\left(\frac{\ln y - \mu}{\sigma\sqrt{2}}\right)\right),
+    F(y;\mu, \sigma) = \frac{1}{2}\left(1 + \text{erf}\left(\frac{\ln y - \mu}{\sigma\sqrt{2}}\right)\right),
     \end{align}
 
 where :math:`\text{erf}(x)` denotes the :ref:`error function <Error function>`.

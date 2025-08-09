@@ -79,7 +79,7 @@ The CDF evaluated at nonnegative integers :math:`n` is
 .. math::
 
     \begin{align}
-    F(n;N,\theta) = I_{\beta/(1+\beta)}(\alpha, n + 1),
+    F(n;\alpha,\beta) = I_{\beta/(1+\beta)}(\alpha, n + 1),
     \end{align}
 
 where :math:`I_x(a, b)` is the `regularized incomplete beta function <https://en.wikipedia.org/wiki/Regularized_incomplete_beta_function>`_, given by
@@ -181,7 +181,7 @@ Notes
 PMF and CDF plots
 -----------------
 
-**Note**: Quantile setting of both parameters for a Negative Binomial distribution is a challenging problem for a few reasons. First, there is no guarantee that a parameter set exists to give two specified value-quantile pairs can be obtained. Secondly, in other cases, there is a degeneracy of parameters that give the same quantiles. As an example, if we wished for 4 to be the 2.5th percentile and 17 to be the 97.5th percentile, we could achieve this with :math:`\alpha = 100` and :math:`\beta = 10`, with :math:`\alpha = 350` and :math:`\beta = 35`, with :math:`\alpha = 10^9` and :math:`\beta = 10^8`, and countless other combinations. (This is because the large :math:`\alpha` limit is Poisson.) So, instead of manipulating two parameters to hit two quantiles, we can lock one parameter and set the other parameter to give a single desired percentile. In the :math:`\alpha`-:math:`\beta` formulation, we fix :math:`\alpha`, and in the :math:`\mu\text{-}\phi` formulation, we fix :math:`\mu`.
+**Note**: Quantile setting of both parameters for a Negative Binomial distribution is a challenging problem for a few reasons. First, there is no guarantee that a parameter set exists to give two specified value-quantile pairs. Secondly, in other cases, there is a degeneracy of parameters that give the same quantiles. As an example, if we wished for 4 to be the 2.5th percentile and 17 to be the 97.5th percentile, we could achieve this with :math:`\alpha = 100` and :math:`\beta = 10`, with :math:`\alpha = 350` and :math:`\beta = 35`, with :math:`\alpha = 10^9` and :math:`\beta = 10^8`, and countless other combinations. (This is because the large :math:`\alpha` limit is Poisson.) So, instead of manipulating two parameters to hit two quantiles, we can lock one parameter and set the other parameter to give a single desired percentile. In the :math:`\alpha`-:math:`\beta` formulation, we fix :math:`\alpha`, and in the :math:`\mu\text{-}\phi` formulation, we fix :math:`\mu`.
 
 In the α-β formulation:
 
@@ -217,4 +217,4 @@ Links
 - `Scipy <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.nbinom.html>`_
 - `Distributions.jl <https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.NegativeBinomial>`_
 - `Stan α-β formulation <https://mc-stan.org/docs/functions-reference/negative-binomial-distribution.html>`_
-- `Stan µ-φ formulation formulation <https://mc-stan.org/docs/functions-reference/nbalt.html>`_
+- `Stan µ-φ formulation <https://mc-stan.org/docs/functions-reference/nbalt.html>`_

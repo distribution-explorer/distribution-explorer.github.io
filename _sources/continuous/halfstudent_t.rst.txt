@@ -100,7 +100,7 @@ Usage
 Related distributions
 ---------------------
 
-- The :ref:`student_t`, distribution is obviously closely related. The Half-Student-t is simply a truncated Student-t distribution where only values at the peak or to its right have nonzero probability density.
+- The :ref:`student_t` distribution is obviously closely related. The Half-Student-t is simply a truncated Student-t distribution where only values at the peak or to its right have nonzero probability density.
 - In the :math:`\nu \to \infty` limit, the Half-Student-t distribution becomes a :ref:`half_normal`.
 - The :ref:`half_cauchy` distribution is a special case of the Half-Student-t distribution in which :math:`\nu = 1`.
 
@@ -113,7 +113,7 @@ Notes
 -----
 
 - In Stan, a Half-Student-t is defined by putting a lower bound of :math:`\mu` on the variable and then using a Student-t distribution with location parameter :math:`\mu`.
-- Only the standard Student-t distribution (:math:`\mu = 0` and :math:`\sigma = 1`) is available in NumPy. You can still draw out of the Student-t distribution by performing a transformation on the samples out of the standard Student-t distribution, as shown in the usage, above. The same is true for Distributions.jl. Shown is an example where :math:`x` random numbers are drawn from the distribution and transformed using broadcasting.
+- Only the standard Student-t distribution (:math:`\mu = 0` and :math:`\sigma = 1`) is available in NumPy. You can still draw from the Student-t distribution by performing a transformation on the samples from the standard Student-t distribution, as shown in the usage, above. The same is true for Distributions.jl. Shown is an example where :math:`x` random numbers are drawn from the distribution and transformed using broadcasting.
 - The Half-Student-t distribution is not available in SciPy. To compute the PDF for :math:`y \ge \mu`, use ``2 * scipy.stats.t.pdf(y, nu, mu, sigma)``. To compute the CDF for :math:`y \ge \mu`, use ``2 * scipy.stats.t.cdf(y, nu, mu, sigma) - 1``.
 - The Half-Student-t distribution with :math:`\mu = 0` is a useful prior for nonnegative parameters. The parameter :math:`\nu` of the Half-Student-t can be tuned to allow for a heavy tail (:math:`\nu` close to 1) or a light tail (large :math:`\nu`).
 

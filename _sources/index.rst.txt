@@ -1,7 +1,7 @@
 Probability Distribution Explorer
 =================================
 
-Welcome to the probability distribution explorer. This is a tool for you to explore commonly used probability distributions, including information about the stories behind them (e.g., the outcome of a coin flip is Bernoulli distributed), their probability mass/probability density functions, their moments, etc. Also included is syntax on how to use these distributions in `NumPy <https://docs.scipy.org/doc/numpy/reference/random/index.html>`_, `SciPy <https://docs.scipy.org/doc/scipy/reference/stats.html>`_, and `Stan <https://mc-stan.org>`_. Each distribution has its own vignette, which you can dive right in to exploring. You are, however, strongly advised to read up on the background before proceeding to the distributions so you understand the notation and key concepts.
+Welcome to the probability distribution explorer. This is a tool for you to explore commonly used probability distributions, including information about the stories behind them (e.g., the outcome of a coin flip is Bernoulli distributed), their probability mass/probability density functions, their moments, etc. Also included is syntax on how to use these distributions in `NumPy <https://docs.scipy.org/doc/numpy/reference/random/index.html>`_, `SciPy <https://docs.scipy.org/doc/scipy/reference/stats.html>`_, `Julia <https://juliastats.org/Distributions.jl/stable/>`_, and `Stan <https://mc-stan.org>`_. Each distribution has its own vignette. You are strongly advised to read up on the background before proceeding to the distributions so you understand the notation and key concepts.
 
 .. toctree::
    :maxdepth: 1
@@ -33,6 +33,7 @@ Welcome to the probability distribution explorer. This is a tool for you to expl
 
    continuous/beta
    continuous/cauchy
+   continuous/chi_square
    continuous/double_exponential
    continuous/exponential
    continuous/gamma

@@ -48,7 +48,7 @@ Probability density function
 .. math::
 
 	\begin{align}
-	f(y;\mu, \sigma) = \frac{1}{\sqrt{2 \sigma}}\,\mathrm{e}^{-\lvert y-\mu\rvert/\sigma}.
+	f(y;\mu, \sigma) = \frac{1}{2\sigma}\,\mathrm{e}^{-\lvert y-\mu\rvert/\sigma}.
 	\end{align}
 
 ----
@@ -60,7 +60,7 @@ Cumulative distribution function
 .. math::
 
     \begin{align}
-    F(y;\mu, \sigma) =\frac{1}{2} + \frac{1}{2}\text{sgn}(y-\mu)\left(1 - \mathrm{e}^{-\lvert y-\mu \rvert/\sigma}\right),
+    F(y;\mu, \sigma) = \frac{1}{2} + \frac{1}{2}\text{sgn}(y-\mu)\left(1 - \mathrm{e}^{-\lvert y-\mu \rvert/\sigma}\right),
     \end{align}
 
 where :math:`\text{sgn}(x)` denotes the sign of :math:`x`.
@@ -111,7 +111,7 @@ Notes
 -----
 
 - The Double Exponential distribution is often referred to as the Laplace distribution, named for `Pierre-Simon <https://en.wikipedia.org/wiki/Pierre-Simon_Laplace>`_.
-- When `LASSO regression <https://en.wikipedia.org/wiki/Lasso_(statistics)>`_ is considered in a Bayesian context, the priors on the regression parameters are Double Exponetial.
+- When `LASSO regression <https://en.wikipedia.org/wiki/Lasso_(statistics)>`_ is considered in a Bayesian context, the priors on the regression parameters are Double Exponential.
 
 ----
 

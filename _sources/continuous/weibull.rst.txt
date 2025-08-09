@@ -60,7 +60,7 @@ Cumulative distribution function
 .. math::
 
     \begin{align}
-    F(y;\alpha, \sigma) = 1 - \mathrm{e}^{-(x/\sigma)^\alpha}.
+    F(y;\alpha, \sigma) = 1 - \mathrm{e}^{-(y/\sigma)^\alpha}.
     \end{align}
 
 
@@ -106,7 +106,7 @@ Notes
 -----
 
 - SciPy has a location parameter, which should be set to zero, with :math:`\sigma` being the scale parameter.
-- NumPy only provides a version of the Weibull distribution with :math:`\sigma = 1`. Sampling out of the Weibull distribution may be accomplished by multiplying the resulting samples by :math:`\sigma`.
+- NumPy only provides a version of the Weibull distribution with :math:`\sigma = 1`. Sampling from the Weibull distribution may be accomplished by multiplying the resulting samples by :math:`\sigma`.
 
 ----
 

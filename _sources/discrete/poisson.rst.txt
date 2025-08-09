@@ -18,7 +18,7 @@ The number :math:`n` of arrivals of a Poisson process in unit time is Poisson di
 Example
 -------
 
-The number of mutations in a strand of DNA per unit length (since mutations are rare) are Poisson distributed.
+The number of mutations in a strand of DNA per unit length (since mutations are rare) is Poisson distributed.
 
 
 ----
@@ -27,7 +27,7 @@ The number of mutations in a strand of DNA per unit length (since mutations are 
 Parameters
 ----------
 
-The single parameter is the rate :math:`\lambda` of the arrival of the Poisson process.
+The single parameter is the rate :math:`\lambda` of arrivals of the Poisson process.
 
 
 ----

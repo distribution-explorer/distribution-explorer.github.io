@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,38 +7,33 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Double Exponential (Laplace) distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exponential distribution" href="exponential.html" />
-    <link rel="prev" title="Cauchy distribution" href="cauchy.html" /> 
+    <link rel="prev" title="Chi-square distribution" href="chi_square.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -83,6 +80,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Double Exponential (Laplace) distribution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#story">Story</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
@@ -172,7 +170,7 @@
 <h2>Probability density function<a class="headerlink" href="#probability-density-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-f(y;\mu, \sigma) = \frac{1}{\sqrt{2 \sigma}}\,\mathrm{e}^{-\lvert y-\mu\rvert/\sigma}.
+f(y;\mu, \sigma) = \frac{1}{2\sigma}\,\mathrm{e}^{-\lvert y-\mu\rvert/\sigma}.
 \end{align}\]</div>
 </section>
 <hr class="docutils" />
@@ -180,7 +178,7 @@ f(y;\mu, \sigma) = \frac{1}{\sqrt{2 \sigma}}\,\mathrm{e}^{-\lvert y-\mu\rvert/\s
 <h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Link to this heading"></a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-F(y;\mu, \sigma) =\frac{1}{2} + \frac{1}{2}\text{sgn}(y-\mu)\left(1 - \mathrm{e}^{-\lvert y-\mu \rvert/\sigma}\right),
+F(y;\mu, \sigma) = \frac{1}{2} + \frac{1}{2}\text{sgn}(y-\mu)\left(1 - \mathrm{e}^{-\lvert y-\mu \rvert/\sigma}\right),
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\text{sgn}(x)\)</span> denotes the sign of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </section>
@@ -228,13 +226,13 @@ F(y;\mu, \sigma) =\frac{1}{2} + \frac{1}{2}\text{sgn}(y-\mu)\left(1 - \mathrm{e}
 <h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The Double Exponential distribution is often referred to as the Laplace distribution, named for <a class="reference external" href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre-Simon</a>.</p></li>
-<li><p>When <a class="reference external" href="https://en.wikipedia.org/wiki/Lasso_(statistics)">LASSO regression</a> is considered in a Bayesian context, the priors on the regression parameters are Double Exponetial.</p></li>
+<li><p>When <a class="reference external" href="https://en.wikipedia.org/wiki/Lasso_(statistics)">LASSO regression</a> is considered in a Bayesian context, the priors on the regression parameters are Double Exponential.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
-<script src="bokeh-content-6b4c4ff2eaed4f5896de6f3b01d0fe66-continuous-double_exponential.js" id="de17555b-2dc2-4312-beab-b36360a5cd9d"></script></section>
+<script src="bokeh-content-14b6bd3341b24986ae198b8d8588256e-continuous-double_exponential.js" id="de35152c-eb99-411f-981c-a7666d82605f"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -252,7 +250,7 @@ F(y;\mu, \sigma) =\frac{1}{2} + \frac{1}{2}\text{sgn}(y-\mu)\left(1 - \mathrm{e}
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="cauchy.html" class="btn btn-neutral float-left" title="Cauchy distribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="chi_square.html" class="btn btn-neutral float-left" title="Chi-square distribution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="exponential.html" class="btn btn-neutral float-right" title="Exponential distribution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -260,11 +258,11 @@ F(y;\mu, \sigma) =\frac{1}{2} + \frac{1}{2}\text{sgn}(y-\mu)\left(1 - \mathrm{e}
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13964a960> 
+   <jinja2.runtime.BlockReference object at 0x147d12e40> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,33 +7,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Half-Student-t distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -83,6 +80,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gamma.html">Gamma distribution</a></li>
@@ -221,7 +219,7 @@ F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
 <section id="related-distributions">
 <h2>Related distributions<a class="headerlink" href="#related-distributions" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>The <a class="reference internal" href="student_t.html#student-t"><span class="std std-ref">Student-t distribution</span></a>, distribution is obviously closely related. The Half-Student-t is simply a truncated Student-t distribution where only values at the peak or to its right have nonzero probability density.</p></li>
+<li><p>The <a class="reference internal" href="student_t.html#student-t"><span class="std std-ref">Student-t distribution</span></a> distribution is obviously closely related. The Half-Student-t is simply a truncated Student-t distribution where only values at the peak or to its right have nonzero probability density.</p></li>
 <li><p>In the <span class="math notranslate nohighlight">\(\nu \to \infty\)</span> limit, the Half-Student-t distribution becomes a <a class="reference internal" href="halfnormal.html#half-normal"><span class="std std-ref">Half-Normal distribution</span></a>.</p></li>
 <li><p>The <a class="reference internal" href="halfcauchy.html#half-cauchy"><span class="std std-ref">Half-Cauchy distribution</span></a> distribution is a special case of the Half-Student-t distribution in which <span class="math notranslate nohighlight">\(\nu = 1\)</span>.</p></li>
 </ul>
@@ -231,7 +229,7 @@ F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
 <h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>In Stan, a Half-Student-t is defined by putting a lower bound of <span class="math notranslate nohighlight">\(\mu\)</span> on the variable and then using a Student-t distribution with location parameter <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
-<li><p>Only the standard Student-t distribution (<span class="math notranslate nohighlight">\(\mu = 0\)</span> and <span class="math notranslate nohighlight">\(\sigma = 1\)</span>) is available in NumPy. You can still draw out of the Student-t distribution by performing a transformation on the samples out of the standard Student-t distribution, as shown in the usage, above. The same is true for Distributions.jl. Shown is an example where <span class="math notranslate nohighlight">\(x\)</span> random numbers are drawn from the distribution and transformed using broadcasting.</p></li>
+<li><p>Only the standard Student-t distribution (<span class="math notranslate nohighlight">\(\mu = 0\)</span> and <span class="math notranslate nohighlight">\(\sigma = 1\)</span>) is available in NumPy. You can still draw from the Student-t distribution by performing a transformation on the samples from the standard Student-t distribution, as shown in the usage, above. The same is true for Distributions.jl. Shown is an example where <span class="math notranslate nohighlight">\(x\)</span> random numbers are drawn from the distribution and transformed using broadcasting.</p></li>
 <li><p>The Half-Student-t distribution is not available in SciPy. To compute the PDF for <span class="math notranslate nohighlight">\(y \ge \mu\)</span>, use <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">scipy.stats.t.pdf(y,</span> <span class="pre">nu,</span> <span class="pre">mu,</span> <span class="pre">sigma)</span></code>. To compute the CDF for <span class="math notranslate nohighlight">\(y \ge \mu\)</span>, use <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">scipy.stats.t.cdf(y,</span> <span class="pre">nu,</span> <span class="pre">mu,</span> <span class="pre">sigma)</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></li>
 <li><p>The Half-Student-t distribution with <span class="math notranslate nohighlight">\(\mu = 0\)</span> is a useful prior for nonnegative parameters. The parameter <span class="math notranslate nohighlight">\(\nu\)</span> of the Half-Student-t can be tuned to allow for a heavy tail (<span class="math notranslate nohighlight">\(\nu\)</span> close to 1) or a light tail (large <span class="math notranslate nohighlight">\(\nu\)</span>).</p></li>
 </ul>
@@ -239,7 +237,7 @@ F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
 <hr class="docutils" />
 <section id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
-<script src="bokeh-content-20552e46344c46d4af50b6844e6f261f-continuous-halfstudent_t.js" id="b9dd262b-b700-4a8d-bff4-ef88db149816"></script></section>
+<script src="bokeh-content-3383782807de41fb8c516869f3d9ee2b-continuous-halfstudent_t.js" id="c9783f43-d847-4864-a0c6-5707fb973690"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -265,11 +263,11 @@ F(y;\nu, \mu, \sigma) = \left\{ \begin{array}{cll}
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x139928800> 
+   <jinja2.runtime.BlockReference object at 0x147410ad0> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

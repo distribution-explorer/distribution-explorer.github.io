@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,33 +7,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gamma distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -83,6 +80,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Gamma distribution</a><ul>
@@ -150,17 +148,17 @@
 <hr class="docutils" />
 <section id="story">
 <h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
-<p>The amount of time we have to wait for <span class="math notranslate nohighlight">\(\alpha\)</span> arrivals of a Poisson process. More concretely, if we have events, <span class="math notranslate nohighlight">\(X_1, X_2, \ldots X_\alpha\)</span> that are Exponentially distributed, <span class="math notranslate nohighlight">\(X_1 + X_2 + \cdots X_\alpha\)</span> is Gamma distributed. While this is the story for an integer number of arrivals, the Gamma distribution is defined for noninteger <span class="math notranslate nohighlight">\(\alpha\)</span> as well.</p>
+<p>The amount of time we have to wait for <span class="math notranslate nohighlight">\(\alpha\)</span> arrivals of a Poisson process is Gamma distributed. More concretely, if we have events, <span class="math notranslate nohighlight">\(X_1, X_2, \ldots X_\alpha\)</span> that are Exponentially distributed, <span class="math notranslate nohighlight">\(X_1 + X_2 + \cdots X_\alpha\)</span> is Gamma distributed. While this is the story for an integer number of arrivals, the Gamma distribution is defined for noninteger <span class="math notranslate nohighlight">\(\alpha\)</span> as well.</p>
 </section>
 <hr class="docutils" />
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
-<p>Any multistep process where each step happens at the same rate. This is common in molecular rearrangements. For example, the time it takes for three phosphorylation events have to happen, assuming all phosphorylation events happen at the same rate, is Gamma distributed.</p>
+<p>Any multistep process where each step happens at the same rate. This is common in molecular rearrangements. For example, the time it takes for three phosphorylation events to happen, assuming all phosphorylation events happen at the same rate, is Gamma distributed.</p>
 </section>
 <hr class="docutils" />
 <section id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
-<p>The Gamma distribution has two parameter, both strictly positive. The shape parameter, corresponding to the number of arrivals of a Poisson process is <span class="math notranslate nohighlight">\(\alpha\)</span>. The inverse scale parameter, corresponding to the rate of arrivals, is <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>The Gamma distribution has two parameters, both strictly positive. The shape parameter, corresponding to the number of arrivals of a Poisson process is <span class="math notranslate nohighlight">\(\alpha\)</span>. The inverse scale parameter, corresponding to the rate of arrivals, is <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="support">
@@ -222,7 +220,7 @@ F(y;\alpha, \beta) = P(\alpha, \beta y),
 <ul class="simple">
 <li><p>The Gamma distribution is the continuous analog of the <a class="reference internal" href="../discrete/negative_binomial.html#negative-binomial"><span class="std std-ref">Negative Binomial distribution</span></a>.</p></li>
 <li><p>The special case where <span class="math notranslate nohighlight">\(\alpha = 1\)</span> is an <a class="reference internal" href="exponential.html#exponential"><span class="std std-ref">Exponential distribution</span></a>.</p></li>
-<li><p>The special case where <span class="math notranslate nohighlight">\(\alpha = \nu/2\)</span> and <span class="math notranslate nohighlight">\(\beta = 1/2\)</span> is a <span class="xref std std-ref">chi_square</span> parametrized by <span class="math notranslate nohighlight">\(\nu\)</span>.</p></li>
+<li><p>The special case where <span class="math notranslate nohighlight">\(\alpha = \nu/2\)</span> and <span class="math notranslate nohighlight">\(\beta = 1/2\)</span> is a <a class="reference internal" href="chi_square.html#chi-square"><span class="std std-ref">Chi-square distribution</span></a> parametrized by <span class="math notranslate nohighlight">\(\nu\)</span>.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -236,7 +234,7 @@ F(y;\alpha, \beta) = P(\alpha, \beta y),
 <hr class="docutils" />
 <section id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
-<script src="bokeh-content-e91dadab85294e818e18244f80f5a1c7-continuous-gamma.js" id="dab2de4c-6ecd-4fe1-ac5a-9f425e6b631d"></script></section>
+<script src="bokeh-content-198b71d5fd0d46debda76881c1595058-continuous-gamma.js" id="d71deff5-92d9-41a8-bd8d-96b08ae7e34e"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -245,7 +243,7 @@ F(y;\alpha, \beta) = P(\alpha, \beta y),
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/random/generated/numpy.random.Generator.gamma.html">Numpy</a></p></li>
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gamma.html">Scipy</a></p></li>
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.Gamma">Distributions.jl</a></p></li>
-<li><p><a class="reference external" href="https://mc-stan.org/docs/2_21/functions-reference/gamma-distribution.html">Stan</a></p></li>
+<li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/positive_continuous_distributions.html#gamma-distribution">Stan</a></p></li>
 </ul>
 </section>
 </section>
@@ -262,11 +260,11 @@ F(y;\alpha, \beta) = P(\alpha, \beta y),
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13992aab0> 
+   <jinja2.runtime.BlockReference object at 0x1484a8d00> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

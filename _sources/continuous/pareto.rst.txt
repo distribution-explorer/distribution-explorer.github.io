@@ -26,7 +26,7 @@ The `Gutenberg-Richter Law <https://en.wikipedia.org/wiki/Gutenberg–Richter_la
 Parameters
 ----------
 
-The Pareto distribution has two paramters, :math:`\alpha` and :math:`y_\mathrm{min}`. The parameter :math:`\alpha` sets the power in the power law and :math:`y_\mathrm{min}` is a lower cutoff to ensure that the distribution is normalizable. Both :math:`\alpha` and :math:`y_\mathrm{min}` must be positive.
+The Pareto distribution has two parameters, :math:`\alpha` and :math:`y_\mathrm{min}`. The parameter :math:`\alpha` sets the power in the power law and :math:`y_\mathrm{min}` is a lower cutoff to ensure that the distribution is normalizable. Both :math:`\alpha` and :math:`y_\mathrm{min}` must be positive.
 
 ----
 
@@ -102,7 +102,7 @@ Notes
 -----
 
 - A Pareto distribution is sometimes referred to as a power law distribution. Generically, a distribution is said to be a power law distribution if its tail decays like :math:`y^{-\beta}` for some positive :math:`\beta`.
-- The Type II Pareto distribution is often used. It is a Pareto distribution, except with a redefinition of :math:`y \to y - \mu + y_\mathrm{min}`. This shifts :math:`y` such that its support starts at :math:`y=\mu`. In the case there :math:`\mu = 0`, the Type II distribution is called a Lomax distribution. NumPy's Pareto sample samples out of a Lomax distirbution with :math:`y_\mathrm{min}` set to one. Thus, to sample out of a Pareto distribution, the transformations described in the usage table above are necessary. To use a Type II Pareto distribution in Stan, :math:`y_\mathrm{min}` is renamed :math:`\lambda`, and the syntax is ``pareto_type_2(mu, lambda, alpha)``.
+- The Type II Pareto distribution is often used. It is a Pareto distribution, except with a redefinition of :math:`y \to y - \mu + y_\mathrm{min}`. This shifts :math:`y` such that its support starts at :math:`y=\mu`. In the case there :math:`\mu = 0`, the Type II distribution is called a Lomax distribution. NumPy's Pareto sampler samples out of a Lomax distribution with :math:`y_\mathrm{min}` set to one. Thus, to sample from a Pareto distribution, the transformations described in the usage table above are necessary. To use a Type II Pareto distribution in Stan, :math:`y_\mathrm{min}` is renamed :math:`\lambda`, and the syntax is ``pareto_type_2(mu, lambda, alpha)``.
 - The Pareto distribution is often best visualized by plotting the complementary cumulative distribution function (CCDF), denoted :math:`\bar{F}(y)`, which is related to the CDF :math:`F(y)` by :math:`\bar{F}(y) = 1 - F(y)`. The CCDF for a Pareto distribution is
 
   .. math::

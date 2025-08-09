@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,33 +7,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Negative Binomial distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -97,6 +94,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../continuous/gamma.html">Gamma distribution</a></li>
@@ -192,7 +190,7 @@ f(y;\alpha,\beta) = \frac{\Gamma(y+\alpha)}{\Gamma(\alpha) \, y!}\,\left(\frac{\
 <p>The CDF evaluated at nonnegative integers <span class="math notranslate nohighlight">\(n\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-F(n;N,\theta) = I_{\beta/(1+\beta)}(\alpha, n + 1),
+F(n;\alpha,\beta) = I_{\beta/(1+\beta)}(\alpha, n + 1),
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(I_x(a, b)\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Regularized_incomplete_beta_function">regularized incomplete beta function</a>, given by</p>
 <div class="math notranslate nohighlight">
@@ -281,13 +279,13 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 <hr class="docutils" />
 <section id="pmf-and-cdf-plots">
 <h2>PMF and CDF plots<a class="headerlink" href="#pmf-and-cdf-plots" title="Link to this heading"></a></h2>
-<p><strong>Note</strong>: Quantile setting of both parameters for a Negative Binomial distribution is a challenging problem for a few reasons. First, there is no guarantee that a parameter set exists to give two specified value-quantile pairs can be obtained. Secondly, in other cases, there is a degeneracy of parameters that give the same quantiles. As an example, if we wished for 4 to be the 2.5th percentile and 17 to be the 97.5th percentile, we could achieve this with <span class="math notranslate nohighlight">\(\alpha = 100\)</span> and <span class="math notranslate nohighlight">\(\beta = 10\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 350\)</span> and <span class="math notranslate nohighlight">\(\beta = 35\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 10^9\)</span> and <span class="math notranslate nohighlight">\(\beta = 10^8\)</span>, and countless other combinations. (This is because the large <span class="math notranslate nohighlight">\(\alpha\)</span> limit is Poisson.) So, instead of manipulating two parameters to hit two quantiles, we can lock one parameter and set the other parameter to give a single desired percentile. In the <span class="math notranslate nohighlight">\(\alpha\)</span>-<span class="math notranslate nohighlight">\(\beta\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\alpha\)</span>, and in the <span class="math notranslate nohighlight">\(\mu\text{-}\phi\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p><strong>Note</strong>: Quantile setting of both parameters for a Negative Binomial distribution is a challenging problem for a few reasons. First, there is no guarantee that a parameter set exists to give two specified value-quantile pairs. Secondly, in other cases, there is a degeneracy of parameters that give the same quantiles. As an example, if we wished for 4 to be the 2.5th percentile and 17 to be the 97.5th percentile, we could achieve this with <span class="math notranslate nohighlight">\(\alpha = 100\)</span> and <span class="math notranslate nohighlight">\(\beta = 10\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 350\)</span> and <span class="math notranslate nohighlight">\(\beta = 35\)</span>, with <span class="math notranslate nohighlight">\(\alpha = 10^9\)</span> and <span class="math notranslate nohighlight">\(\beta = 10^8\)</span>, and countless other combinations. (This is because the large <span class="math notranslate nohighlight">\(\alpha\)</span> limit is Poisson.) So, instead of manipulating two parameters to hit two quantiles, we can lock one parameter and set the other parameter to give a single desired percentile. In the <span class="math notranslate nohighlight">\(\alpha\)</span>-<span class="math notranslate nohighlight">\(\beta\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\alpha\)</span>, and in the <span class="math notranslate nohighlight">\(\mu\text{-}\phi\)</span> formulation, we fix <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>In the α-β formulation:</p>
-<script src="bokeh-content-cd913d26835a4e0fa9ddf441c86c4195-discrete-negative_binomial.js" id="aeb85c15-c16c-4468-b398-bee44ddf5145"></script><div class="line-block">
+<script src="bokeh-content-688db3b1c5444158a1386353b1d80665-discrete-negative_binomial.js" id="db343546-2303-4037-82fd-bdb7d662f2da"></script><div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>In the µ-φ formulation:</p>
-<script src="bokeh-content-d954a1e1c2cb4e63b1200ed8938799a3-discrete-negative_binomial.js" id="d7619faa-5289-41fd-9711-c55331268c9c"></script></section>
+<script src="bokeh-content-0d29bcd4476041de9ef56c8212f4b9eb-discrete-negative_binomial.js" id="cde32e9e-5957-481d-820a-eca7465d5965"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -297,7 +295,7 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 <li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.nbinom.html">Scipy</a></p></li>
 <li><p><a class="reference external" href="https://juliastats.org/Distributions.jl/stable/univariate/#Distributions.NegativeBinomial">Distributions.jl</a></p></li>
 <li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/negative-binomial-distribution.html">Stan α-β formulation</a></p></li>
-<li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/nbalt.html">Stan µ-φ formulation formulation</a></p></li>
+<li><p><a class="reference external" href="https://mc-stan.org/docs/functions-reference/nbalt.html">Stan µ-φ formulation</a></p></li>
 </ul>
 </section>
 </section>
@@ -314,11 +312,11 @@ I_x(a, b) = \frac{1}{B(a, b)}\,\int_0^x \mathrm{d}y\,y^{a-1}(1-y)^{b-1}.
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x139759850> 
+   <jinja2.runtime.BlockReference object at 0x147accc90> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

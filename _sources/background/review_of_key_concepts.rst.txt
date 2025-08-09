@@ -1,7 +1,7 @@
 Review of key concepts
 ======================
 
-Before preceding, we define what is included for each distribution in the Explorer. We cut some corners in our definitions here, but these definitions are functional for applied purposes.
+Before proceeding, we define what is included for each distribution in the Explorer. We cut some corners in our definitions here, but these definitions are functional for applied purposes.
 
 We start with the obvious. What is a probability distribution? A **probability distribution** specifies the probabilities of all of the possible outcomes in a sample space. For example, if the sample space is nonnegative integers, the probability distribution describes the probability of observing each nonnegative integer.
 
@@ -315,9 +315,9 @@ For a discrete distribution with PMF :math:`f(x)`, the expectation of :math:`g(x
 	E(g(x)) = \sum_i  g(x_i) f(x_i).
 	\end{align}
 
-The nth moment of a distribution is :math:`E(x^n)`. The first moment of a distribution is called the **mean**, and here we will denote it at :math:`\mu`. We define the nth **central moment** as :math:`E((x-\mu)^n)`.
+The nth moment of a distribution is :math:`E(x^n)`. The first moment of a distribution is called the **mean**, and here we will denote it as :math:`\mu`. We define the nth **central moment** as :math:`E((x-\mu)^n)`.
 
-Perhaps the two most important moments of a distribution are the first moment (the mean) and the second central moment, :math:`E((x-\mu)^n)`, which is called the **variance**. For each distribution I display its mean and variance, if they exist.
+Perhaps the two most important moments of a distribution are the first moment (the mean) and the second central moment, :math:`E((x-\mu)^2)`, which is called the **variance**. For each distribution I display its mean and variance, if they exist.
 
 
 Useful data generation concepts
@@ -342,3 +342,13 @@ Multivariate distributions
 
 So far, we have assumed **univariate distributions**, that is probability distributions of a single random variable. We may also consider **multivariate distributions**, which describe more than one random variable. For a distribution of :math:`n` random variables, we define the PMF or PDF as :math:`f(x_1, x_2, \ldots, x_n)`. It is permissible that some variables are discrete and others continuous. For ease of discussion, we can consider the bivariate case describing random variables :math:`X` and :math:`Y` which may take on values :math:`x` and :math:`y`. In that case, the PMF or PDF is written as :math:`f(x, y)`. The bivariate cumulative distribution function is given by :math:`F(x, y) = P(X \le x, Y \le y)`.
 
+Positive definite matrices and Cholesky decompositions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some multivariate distributions are parametrized by real symmetric positive definite matrices. An example is the Multivariate Normal distribution, which is parametrized by a symmetric positive definite covariance matrix typically denoted as :math:`\mathsf{\Sigma}`. 
+
+To be clear on definitions, a matrix :math:`\mathsf{A}` is real if all elements are real. It is symmetric if :math:`\mathsf{A}^\mathsf{T} = \mathsf{A}`. That is to say that :math:`\mathsf{A}` is square and entry :math:`i, j` is equal to entry :math:`j, i`. Finally, a matrix is positive definite if all of its eigenvalues have positive real parts. (This is one of several equivalent statements of positive definiteness.) A real symmetric matrix has all real eigenvalues, so a real symmetric positive definite matrix has all real positive eigenvalues. 
+
+Any :math:`n\times n` real symmetric positive definite matrix has a unique **Cholesky decomposition**, :math:`\mathsf{A} = \mathsf{L}\cdot \mathsf{L}^\mathsf{T}`, where :math:`\mathsf{L}` is an :math:`n\times n` real lower triangular matrix with positive diagonal entries. The matrix :math:`\mathsf{L}` is referred to as a **Cholesky factor** of :math:`\mathsf{A}`. (Sometimes the matrix :math:`\mathsf{L}` is also referred to as the Cholesky decomposition.) Furthermore, *any* real lower triangular matrix with positive entries on the diagonal, :math:`\mathsf{L}`, may be used to construct a real symmetric positive definite matrix :math:`\mathsf{A}` via :math:`\mathsf{A} = \mathsf{L}\cdot \mathsf{L}^\mathsf{T}`.
+
+As a result, it is often more convenient to work with Cholesky factors of a positive definite matrix involved in a probability distribution than with the matrix itself. The entries of :math:`\mathsf{L}` are unconstrained, save for the positivity of the diagonal entries, which makes it much easier to handle than a whole matrix that is constrained to be positive definite.

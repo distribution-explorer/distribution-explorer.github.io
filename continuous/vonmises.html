@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,33 +7,28 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Von Mises distribution &mdash; Probability Distribution Explorer  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3356d8fa" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="../_static/copybutton.js?v=f281be69"></script>
-        <script>let toggleHintShow = 'Click to show';</script>
-        <script>let toggleHintHide = 'Click to hide';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -83,6 +80,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="beta.html">Beta distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cauchy.html">Cauchy distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chi_square.html">Chi-square distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="double_exponential.html">Double Exponential (Laplace) distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exponential.html">Exponential distribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gamma.html">Gamma distribution</a></li>
@@ -151,7 +149,7 @@
 <section id="story">
 <h2>Story<a class="headerlink" href="#story" title="Link to this heading"></a></h2>
 <p>A particle diffuses along a circle in a harmonic potential for a given amount of time. Its angular position along the circle is Von Mises distributed.</p>
-<p>It is perhaps easier to think of the Von Mises distribution as an approximation to Normal distribution that lives on a periodic domain.</p>
+<p>It is perhaps easier to think of the Von Mises distribution as an approximation to the <a class="reference internal" href="normal.html#normal"><span class="std std-ref">Normal distribution</span></a> that lives on a periodic domain.</p>
 </section>
 <hr class="docutils" />
 <section id="example">
@@ -190,7 +188,7 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <hr class="docutils" />
 <section id="moments">
 <h2>Moments<a class="headerlink" href="#moments" title="Link to this heading"></a></h2>
-<p>By convention, moments of distributions defined on periodic domains are usually calculated as the moments of the complex exponential of the the angle <span class="math notranslate nohighlight">\(y\)</span> instead of the angle itself. There are referred to as <strong>circular moments</strong>. The circular mean is</p>
+<p>By convention, moments of distributions defined on periodic domains are usually calculated as the moments of the complex exponential of the angle <span class="math notranslate nohighlight">\(y\)</span> instead of the angle itself. These are referred to as <strong>circular moments</strong>. The circular mean is</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
 \langle \mathrm{e}^{i y}\rangle = \int_{-\pi}^\pi\mathrm{d}y\,\mathrm{e}^{iy}\,f(y;\mu, \kappa).
@@ -251,9 +249,9 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 \end{align}\]</div>
 <p>The resulting random numbers then all lie in the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p>
 </li>
-<li><p>SciPy’s <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises</span></code> considers the PDF to be periodic, giving the same value of the PDF at <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(y + 2n\pi\)</span> for any integer <span class="math notranslate nohighlight">\(n\)</span>. Furthermore the CDF computed with <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises</span></code> returns negative values for values of <span class="math notranslate nohighlight">\(y\)</span> to the left of the domain and values greater than one for values to the right.</p></li>
+<li><p>SciPy’s <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises</span></code> considers the PDF to be periodic, giving the same value of the PDF at <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(y + 2n\pi\)</span> for any integer <span class="math notranslate nohighlight">\(n\)</span>. Furthermore, the CDF computed with <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises</span></code> returns negative values for values of <span class="math notranslate nohighlight">\(y\)</span> to the left of the domain and values greater than one for values to the right.</p></li>
 <li><p>SciPy offers <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises_line</span></code>, in which the interval on which the distribution is defined is <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>. The PDF evaluates to zero outside of that domain, and the CDF evaluates to zero to the left of the interval and evaluates to one to the right. Sampling from the Von Mises distribution using <code class="docutils literal notranslate"><span class="pre">st.vonmises_line.rvs()</span></code> performs as NumPy’s sampling with the transformation of the location parameter and all samples lying in the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p></li>
-<li><p>In the Distributions.jl, the interval on which the distribution is defined is <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>, like <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises_line</span></code>, with the PDF and CDF being evaluated similarly. By contrast, sampling from the Von Mises distribution using Distributions.jl returns values in the domain <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>; there is no transformation of the location parameter.</p></li>
+<li><p>In Distributions.jl, the interval on which the distribution is defined is <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>, like <code class="docutils literal notranslate"><span class="pre">scipy.stats.vonmises_line</span></code>, with the PDF and CDF being evaluated similarly. By contrast, sampling from the Von Mises distribution using Distributions.jl returns values in the domain <span class="math notranslate nohighlight">\([\mu - \pi, \mu + \pi)\)</span>; there is no transformation of the location parameter.</p></li>
 <li><p>Stan considers the PDF to be periodic such that it will use the same result for the (log) PDF for <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(y + 2n\pi\)</span> for any integer <span class="math notranslate nohighlight">\(n\)</span>. However, it only defines the CDF on the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>, applying the same transformation to the location parameter as NumPy, shown above. Similarly, when sampling, the location parameter <span class="math notranslate nohighlight">\(\mu\)</span> lies in the interval <span class="math notranslate nohighlight">\([-\pi, \pi)\)</span>.</p></li>
 <li><p>In the context of Markov chain Monte Carlo, evaluation of the Von Mises (log) PDF and CDF for large <span class="math notranslate nohighlight">\(\kappa\)</span> can be numerically unstable. NumPy and SciPy both automatically use Normal approximations in this regime (invisible to the user). Stan, however, does not. The Stan documentation therefore recommends doing that manually, adopting the following sampling statement.</p>
 <div class="highlight-stan notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">kappa</span> <span class="o">&lt;</span> <span class="mf">100</span><span class="p">)</span> <span class="n">y</span> <span class="o">~</span><span class="w"> </span><span class="nb">von_mises</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">kappa</span><span class="p">);</span>
@@ -267,7 +265,7 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 <section id="pdf-and-cdf-plots">
 <h2>PDF and CDF plots<a class="headerlink" href="#pdf-and-cdf-plots" title="Link to this heading"></a></h2>
 <p>Not all value-quantile pairs are achievable, and quantile setting may fail in some cases.</p>
-<script src="bokeh-content-303c3452827f43098d09326f97b8848f-continuous-vonmises.js" id="c13e8a17-9c82-4d78-a998-c4ca5fd029d8"></script></section>
+<script src="bokeh-content-c55f3a184fc5458a907138d07692e561-continuous-vonmises.js" id="b8195b44-5673-430e-8d1d-e0affd640347"></script></section>
 <hr class="docutils" />
 <section id="links">
 <h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
@@ -293,11 +291,11 @@ F(y;\mu, \kappa) = \int_{-\pi}^y\mathrm{d}x\,f(x;\mu,\kappa) = \frac{1}{2\pi I_0
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Dec 23, 2024.
+      <span class="lastupdated">Last updated on Aug 09, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x1399abbc0> 
+   <jinja2.runtime.BlockReference object at 0x14750ff50> 
 
 <p>© 2019–2024 Justin Bois. This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</p>
 

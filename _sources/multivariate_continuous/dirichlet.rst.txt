@@ -55,7 +55,7 @@ There is no analytic expression for the CDF.
 Moments
 -------
 
-Mean of :math:`\theta_i`: :math:`\left<\theta_i\right> = \displaystyle{\frac{\alpha_i}{\sum_{i=k}^K \alpha_k}}`
+Mean of :math:`\theta_i`: :math:`\left<\theta_i\right> = \displaystyle{\frac{\alpha_i}{\sum_{k=1}^K \alpha_k}}`
 
 Variance of :math:`\theta_i`: :math:`\displaystyle{\frac{\left<\theta_i\right>(1-\left<\theta_i\right>)}{1 + \sum_{k=1}^K \alpha_k}}`
 
@@ -87,7 +87,7 @@ Related distributions
 ---------------------
 
 - The special case where :math:`K=2` is a :ref:`beta` with parameters :math:`\alpha=\alpha_1` and :math:`\beta = \alpha_2`.
-- If we have :math:`K` random variables that have a :ref:`gamma`, :math:`X_i \sim \text{Gamma}(\alpha_i, \beta)`, then :math:`(X_1/V, X_2/V, \ldots, X_K/V) \sim \text{Dirichlet}(\boldsymbol{\alpha})` with :math:`\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \ldots, \alpha_3)` and :math:`V = \sum_{i=1}^K X_i`. Note that the value of :math:`\beta` does not enter into the Dirichlet distribution. This relationship becomes important in modeling of ordered Dirichlet distributions, as described below.
+- If we have :math:`K` random variables that have a :ref:`gamma`, :math:`X_i \sim \text{Gamma}(\alpha_i, \beta)`, then :math:`(X_1/V, X_2/V, \ldots, X_K/V) \sim \text{Dirichlet}(\boldsymbol{\alpha})` with :math:`\boldsymbol{\alpha} = (\alpha_1, \alpha_2, \ldots, \alpha_K)` and :math:`V = \sum_{i=1}^K X_i`. Note that the value of :math:`\beta` does not enter into the Dirichlet distribution. This relationship becomes important in modeling of ordered Dirichlet distributions, as described below.
 
 
 ----
@@ -95,7 +95,7 @@ Related distributions
 Notes
 -----
 
-- In some cases, we may wish to specify the distribution of an *ordered* Dirichlet distributed vector :math:`\theta`. That is, we want :math:`\theta \sim \text{Dirichlet}(\alpha_1, \alpha_2, \ldots, \alpha_L)` with :math:`\theta_i < \theta_{i+1}` for all :math:`i < K`. Because of the relationship of the Dirchlet distribution to a set of Gamma distributed random variables, we may specify this in Stan as follows.
+- In some cases, we may wish to specify the distribution of an *ordered* Dirichlet distributed vector :math:`\theta`. That is, we want :math:`\theta \sim \text{Dirichlet}(\alpha_1, \alpha_2, \ldots, \alpha_K)` with :math:`\theta_i < \theta_{i+1}` for all :math:`i < K`. Because of the relationship of the Dirichlet distribution to a set of Gamma distributed random variables, we may specify this in Stan as follows.
 
   .. code:: stan
   

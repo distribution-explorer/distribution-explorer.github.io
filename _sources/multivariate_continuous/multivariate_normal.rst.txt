@@ -19,7 +19,7 @@ This is a generalization of the univariate :ref:`normal`.
 Example
 -------
 
-Finch beaks are measured for beak depth and beak length. The resulting distribution of depths and length is Normal. In this case, the Normal is bivariate, with :math:`\boldsymbol{\mu} = (\mu_d, \mu_l)` and the covariance matrix is
+Finch beaks are measured for beak depth and beak length. The resulting distribution of depths and lengths is Normal. In this case, the Normal is bivariate, with :math:`\boldsymbol{\mu} = (\mu_d, \mu_l)` and the covariance matrix is
 
 .. math::
 
@@ -81,7 +81,7 @@ Covariance of :math:`y_i, y_j` with :math:`j\ne i`: :math:`\Sigma_{ij}`
 Usage
 -----
 
-The usage below assumes that ``mu`` is a length :math:`K` array, ``Sigma`` is a :math:`K\times K` symmetric positive definite matrix, and ``L`` is a :math:`K\times K` lower-triangular matrix with strictly positive values on the diagonal that is a Cholesky factor.
+The usage below assumes that ``mu`` is a length :math:`K` array, ``Sigma`` is a :math:`K\times K` symmetric positive definite matrix, and ``L`` is a :math:`K\times K` lower-triangular matrix with strictly positive values on the diagonal that is a :ref:`Cholesky factor<Positive definite matrices and Cholesky decompositions>`.
 
 +-------------------------------+----------------------------------------------------------+
 | Package                       | Syntax                                                   |
@@ -117,7 +117,7 @@ Notes
 -----
 
 - The covariance matrix may also be written as :math:`\mathsf{\Sigma} = \mathsf{S} \cdot \mathsf{C} \cdot \mathsf{S}`, where :math:`\mathsf{S} = \sqrt{\mathrm{diag}(\mathsf{\Sigma})}`, and entry :math:`i, j` in the **correlation matrix** :math:`\mathsf{C}` is :math:`C_{ij} = \sigma_{ij}/\sigma_i\sigma_j`.
-- Because :math:`\mathsf{\Sigma}` is symmetric and strictly positive definite, it can be uniquely defined in terms of its :ref:`Cholesky decomposition <https://en.wikipedia.org/wiki/Cholesky_decomposition>`, :math:`\mathsf{L}`, which satisfies :math:`\mathsf{\Sigma} = \mathsf{L}\cdot\mathsf{L}^\mathsf{T}`.
+- Because :math:`\mathsf{\Sigma}` is symmetric and strictly positive definite, it can be uniquely defined in terms of its :ref:`Cholesky decomposition<Positive definite matrices and Cholesky decompositions>`, :math:`\mathsf{L}`, which satisfies :math:`\mathsf{\Sigma} = \mathsf{L}\cdot\mathsf{L}^\mathsf{T}`.
 
 ----
 

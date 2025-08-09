@@ -70,7 +70,7 @@ If we choose to impose an order on the categories, we can define a CDF. Here, we
 .. math::
 
     \begin{align}
-    F(y;\{\theta_y\}) = \sum_{y'\le y} \theta_y.
+    F(y;\{\theta_y\}) = \sum_{y'\le y} \theta_{y'}.
     \end{align}
 
 

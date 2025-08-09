@@ -10,7 +10,7 @@ We may also want to have access to other properties about the distributions, lik
 Usage of NumPy
 --------------
 
-To use the the ``numpy.random`` module to sample out of a distribution, you first need to instantiate a random number generator (RNG) with a specified bit generator. The bit generator generates random bits, and then the RNG converts these to number following a specific probability distribution you want to sample out of. The default generator using the `PCG64 <https://docs.scipy.org/doc/numpy/reference/random/bit_generators/pcg64.html>`_ bit generator, which is a good choice to use. You can instantiate a random number generator with the default bit generator as follows.
+To use the ``numpy.random`` module to sample out of a distribution, you first need to instantiate a random number generator (RNG) with a specified bit generator. The bit generator generates random bits, and then the RNG converts these to numbers following a specific probability distribution you want to sample out of. The default generator uses the `PCG64 <https://docs.scipy.org/doc/numpy/reference/random/bit_generators/pcg64.html>`_ bit generator, which is a good choice to use. You can instantiate a random number generator with the default bit generator as follows.
 
 .. code:: python
 
@@ -25,7 +25,7 @@ Alternatively, you can seed the random number generator to get a reproducible st
 
 	rng = numpy.random.default_rng(seed=923841)
 
-In the syntax in the Distribution Explorer, we assume that a random number generator has already been instantiated and is called ``rng``. You can then use ``rng`` to draw random number out of a distribution, such as the Normal distribution.
+In the syntax in the Distribution Explorer, we assume that a random number generator has already been instantiated and is called ``rng``. You can then use ``rng`` to draw random numbers out of a distribution, such as the Normal distribution.
 
 .. code:: python
 
@@ -39,7 +39,7 @@ The syntax for drawing multiple samples involves use of the ``size`` keyword arg
 	# Draw 20 random numbers from standard Normal
 	rng.normal(loc=0, scale=1, size=20)
 
-In this app, we always use ``rng`` for an instantiated generator, as is typically done in the NumPy documentation (though the docs sometimes use ``rg``). The entry for each distribution show the syntax for sampling out of the distribution using NumPy, importantly in a way where the parametrization is consistent with all other packages shown.
+In this app, we always use ``rng`` for an instantiated generator, as is typically done in the NumPy documentation (though the docs sometimes use ``rg``). The entry for each distribution shows the syntax for sampling out of the distribution using NumPy, importantly in a way where the parametrization is consistent with all other packages shown.
 
 Using Numba
 ^^^^^^^^^^^
@@ -62,7 +62,7 @@ Usage of SciPy
 
 The ``scipy.stats`` module is more feature-rich than the ``numpy.random`` package in that it allows more functionality beyond sampling out of a distribution. It also features more distributions. The module also has functions to perform statistical tests, transformations, and other statistical computation. Here, we will focus only on its distributions.
 
-As described in the `documentation <https://docs.scipy.org/doc/scipy/reference/stats.html>`_, every distribution is an instance of a subclass of an `rv_continuous <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_continuous.html#scipy.stats.rv_continuous>`_ or `rv_discrete <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_discrete.html#scipy.stats.rv_discrete>`_ base class. These classes have useful methods, like ``rvs()``, which draws samples out of the distribution, ``pmf()`` for discrete distribution and ``pdf()`` for continuous distributions, which return the value of the probability mass function or probability density function, and others. The instance is instantiated by supplying the appropriate parameters, which vary depending on the distribution. For example, the Normal distribution is implemented as ``scipy.stats.norm``.
+As described in the `documentation <https://docs.scipy.org/doc/scipy/reference/stats.html>`_, every distribution is an instance of a subclass of an `rv_continuous <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_continuous.html#scipy.stats.rv_continuous>`_ or `rv_discrete <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.rv_discrete.html#scipy.stats.rv_discrete>`_ base class. These classes have useful methods, like ``rvs()``, which draws samples out of the distribution, ``pmf()`` for discrete distributions and ``pdf()`` for continuous distributions, which return the value of the probability mass function or probability density function, and others. The instance is instantiated by supplying the appropriate parameters, which vary depending on the distribution. For example, the Normal distribution is implemented as ``scipy.stats.norm``.
 
 .. code:: python
 
