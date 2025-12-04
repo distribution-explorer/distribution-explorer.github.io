@@ -60,7 +60,7 @@ Cumulative distribution function
 .. math::
 
     \begin{align}
-    \bar{F}(y) = \left\{\begin{array}{lll}
+    F(y) = \left\{\begin{array}{lll}
     1 - \left(\frac{y_\mathrm{min}}{y}\right)^\alpha & & y \ge y_\mathrm{min} \\
     0 & & y < y_\mathrm{min}
     \end{array}
