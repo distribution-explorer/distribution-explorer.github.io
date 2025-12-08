@@ -48,7 +48,7 @@ Probability mass function
 
 .. math::
 	\begin{align}
-	f(y;\theta) = \left\{ \begin{array}{ccc}
+	f(y;\theta) &= \theta^y(1-\theta)^{1-y}  = \left\{ \begin{array}{ccc}
 	1-\theta & & y = 0 \\[0.5em]
 	\theta & & y = 1.
 	\end{array}
